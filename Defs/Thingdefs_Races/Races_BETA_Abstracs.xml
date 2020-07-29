@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="BETABasePawn" Abstract="True">
+    <thingClass>Pawn</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <statBases>
+      <Mass>60</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <inspectorTabs>
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_Character</li>
+      <li>ITab_Pawn_Training</li>
+      <li>ITab_Pawn_Social</li>
+      <li>ITab_Pawn_Guest</li>
+      <li>ITab_Pawn_Prisoner</li>
+      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Log</li>
+    </inspectorTabs>
+    <comps>
+      <li>
+        <compClass>CompAttachBase</compClass>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </ThingDef>
+  
+  <ThingDef ParentName="BETABasePawn" Name="BETAThingBase" Abstract="True">
+    <statBases>
+      <LeatherAmount>30</LeatherAmount>
+    </statBases>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>BETA_ThinkTree</thinkTreeMain>
+      <hasGenders>false</hasGenders>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+      <nameOnNuzzleChance>0.5</nameOnNuzzleChance>
+      <trainability>Intermediate</trainability>
+      <hediffGiverSets>
+        <li>OrganicStandard</li>
+      </hediffGiverSets>
+    </race>
+    <recipes>
+      <li>ExciseCarcinoma</li>
+      <li>AdministerMechSerumHealer</li>
+      <li>RemoveBodyPart</li>
+      <li>Euthanize</li>
+      <li>Anesthetize</li>
+      <li>CureScaria</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">CureBloodRot</li>
+    </recipes>
+  </ThingDef>
+
+  <ThingDef Abstract="True" ParentName="BETAThingBase" Name="BaseBETA">
+    <statBases>
+      <PsychicSensitivity>2</PsychicSensitivity>
+      <ToxicSensitivity>1</ToxicSensitivity>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <MoveSpeed>4.50</MoveSpeed>
+      <ComfyTemperatureMin>-250</ComfyTemperatureMin>
+    </statBases>    
+    <race>
+      <fleshType>BETAFlesh</fleshType>
+      <bloodDef>Filth_Blood</bloodDef>
+      <meatColor>(160,168,139)</meatColor>
+      <meatMarketValue>0.5</meatMarketValue>
+      <foodType>OmnivoreAnimal, AnimalProduct</foodType>
+      <manhunterOnDamageChance>0.35</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0.20</manhunterOnTameFailChance>
+    </race>
+    <tradeTags>
+      <li>BETA</li>
+    </tradeTags>
+    <comps>
+      <li Class="MuvLuvBETA.CompProperties_Regeneration">
+		<healFreshWounds>true</healFreshWounds>
+		<healFreshChance>0.5</healFreshChance>
+		<allowSealWounds>false</allowSealWounds>
+		<sealWoundsChance>0.1</sealWoundsChance>
+		<healPermenantWounds>true</healPermenantWounds>
+		<healPermenantChance>0.1</healPermenantChance>
+		<allowScarRemoval>false</allowScarRemoval>
+		<scarRemovalChance>0.01</scarRemovalChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

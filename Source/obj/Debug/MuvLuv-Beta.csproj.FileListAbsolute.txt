@@ -1,0 +1,12 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MuvLuv-BETA\Assemblies\MuvLuv-Beta.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MuvLuv-BETA\Assemblies\MuvLuv-Beta.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MuvLuv-BETA\Source\obj\Debug\MuvLuv-Beta.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MuvLuv-BETA\Source\obj\Debug\MuvLuv-Beta.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MuvLuv-BETA\Source\obj\Debug\MuvLuv-Beta.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MuvLuv-BETA\Source\obj\Debug\MuvLuv-Beta.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-BETA\Assemblies\MuvLuv-Beta.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-BETA\Assemblies\MuvLuv-Beta.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-BETA\Source\obj\Debug\MuvLuv-Beta.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-BETA\Source\obj\Debug\MuvLuv-Beta.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-BETA\Source\obj\Debug\MuvLuv-Beta.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-BETA\Source\obj\Debug\MuvLuv-Beta.pdb

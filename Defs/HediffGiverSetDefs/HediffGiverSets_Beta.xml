@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffGiverSetDef>
+    <defName>Lux_Laser</defName>
+    <hediffGivers>
+      <li Class="MuvLuvBeta.HediffGiver_StartWithHediff">
+        <hediff>BETA_LaserClass_EyeBeam</hediff>
+		<partsToAffect>
+		<li>BETASightSensor</li>
+		</partsToAffect>
+		<chance>100</chance>
+        <countToAffect>2</countToAffect>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+
+  <HediffGiverSetDef>
+    <defName>MagnusLux_Laser</defName>
+    <hediffGivers>
+      <li Class="MuvLuvBeta.HediffGiver_StartWithHediff">
+        <hediff>BETA_HeavyLaserClass_EyeBeam</hediff>
+		<partsToAffect>
+		<li>BETASightSensor</li>
+		</partsToAffect>
+		<chance>100</chance>
+        <countToAffect>1</countToAffect>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+
+</Defs>

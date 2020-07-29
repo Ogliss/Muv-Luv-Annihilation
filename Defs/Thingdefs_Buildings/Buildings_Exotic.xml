@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- =============================== BETA ship part ============================ -->
+
+  <ThingDef ParentName="CrashedShipPartBase">
+    <defName>BETACrashedShipPart</defName>
+    <label>BETA Ship Part</label>
+    <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one contains a device which annihilates plant life near itself without directly affecting flesh creatures. These kinds of weapons are sometimes scattered across farmlands or forests during land, to remove the enemy's food supply and hiding places without permanently ruining the territory. They're usually associated with orbital-drop mechanoid armies.</description>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected> <!-- Hack to draw defoliant radius -->
+    <placeWorkers>
+      <li>PlaceWorker_ShowPlantHarmRadius</li>
+    </placeWorkers>
+    <graphicData>
+      <texPath>Things/Building/Exotic/CrashedPoisonShipPart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,3)</drawSize>
+      <shadowData><volume>(0.9, 1.0, 0.9)</volume></shadowData>
+      <damageData><rect>(0.5, 0.1, 5, 2.8)</rect></damageData>
+    </graphicData>
+    <comps>
+      <li Class="CrashedShipsExtension.CompProperties_SpawnerOnDamaged">
+        <allowedKinddefs>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>150</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <BETA_GrapplerClass>75</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </allowedKinddefs>
+        <Faction>MuvLuv_BETA</Faction>
+      </li>
+      <li Class="CompProperties_PlantHarmRadius">
+        <radiusPerDayCurve>
+          <points>
+            <li>0  , 5</li>
+            <li>1.5, 18</li>
+            <li>6  , 40</li>
+            <li>20 , 100</li>
+          </points>
+        </radiusPerDayCurve>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CrashedShipPartBase">
+    <defName>BETAMonument</defName>
+    <label>BETA Monument</label>
+    <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one contains a device which annihilates plant life near itself without directly affecting flesh creatures. These kinds of weapons are sometimes scattered across farmlands or forests during land, to remove the enemy's food supply and hiding places without permanently ruining the territory. They're usually associated with orbital-drop mechanoid armies.</description>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected> <!-- Hack to draw defoliant radius -->
+    <placeWorkers>
+      <li>PlaceWorker_ShowPlantHarmRadius</li>
+    </placeWorkers>
+    <graphicData>
+      <texPath>Things/Building/Exotic/CrashedPoisonShipPart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,3)</drawSize>
+      <shadowData><volume>(0.9, 1.0, 0.9)</volume></shadowData>
+      <damageData><rect>(0.5, 0.1, 5, 2.8)</rect></damageData>
+    </graphicData>
+	<modExtensions>
+		<li Class="ExtraHives.HiveExtension">
+			<TunnelDefchild>MLB_BETAHiveChildSpawner</TunnelDefchild>
+			<HiveDefchild>MLB_BETAHiveChild</HiveDefchild>
+		</li>
+	</modExtensions>
+    <comps>
+      <li Class="CrashedShipsExtension.CompProperties_SpawnerOnDamaged">
+        <allowedKinddefs>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>150</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <BETA_GrapplerClass>75</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </allowedKinddefs>
+        <Faction>MuvLuv_BETA</Faction>
+      </li>
+      <li Class="ExtraHives.CompProperties_SpawnerHives" />
+      <li Class="CompProperties_PlantHarmRadius">
+        <radiusPerDayCurve>
+          <points>
+            <li>0  , 5</li>
+            <li>1.5, 18</li>
+            <li>6  , 40</li>
+            <li>20 , 100</li>
+          </points>
+        </radiusPerDayCurve>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

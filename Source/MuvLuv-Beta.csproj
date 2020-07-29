@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F6FA017-C6D2-4A13-BEF6-42964EA04B6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MuvLuvBeta</RootNamespace>
+    <AssemblyName>MuvLuv-Beta</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="GameCondition_BetaHiveEvolution.cs" />
+    <Compile Include="DamageWorker_Agro.cs" />
+    <Compile Include="Harmony\Patches\MLB_IncidentWorker_RaidEnemy_TryExecuteWorker_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\MLB_HediffWithComps_BleedRate_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\MLB_Hediff_Injury_get_BleedingStoppedDueToAge_Patch.cs" />
+    <Compile Include="JobDriver_AnimalRangeAttack.cs" />
+    <Compile Include="HediffComp_VerbGiverExtra.cs" />
+    <Compile Include="HediffGiver_StartWithHediff.cs" />
+    <Compile Include="Harmony\Patches\MLB_PawnGenerator_GenerateInitialHediffs_StartWithHediff_Patch.cs" />
+    <Compile Include="Comp_Regeneration.cs" />
+    <Compile Include="Verb_MeleeAttackThrow.cs" />
+    <Compile Include="CompCharger.cs" />
+    <Compile Include="ChargingThing.cs" />
+    <Compile Include="MLB_ThrownObject.cs" />
+    <Compile Include="Harmony\Patches\MLB_JobGiver_Manhunter_TryGiveJob_RangedVerb_Patch.cs" />
+    <Compile Include="Harmony\Patches\MLB_Pawn_TryGetAttackVerb_VerbCheckNonhumanlike_Patch.cs" />
+    <Compile Include="MLB_AttackTargetFinder.cs" />
+    <Compile Include="Harmony\Patches\MLB_JobGiver_AIFightEnemy_TryGiveJob_RangedVerb_Patch.cs" />
+    <Compile Include="Harmony\MainHarmonyInstance.cs" />
+    <Compile Include="Harmony\Patches\MLB_Pawn_VerbProperties_Patch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>1.1.2654</Version>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony">
+      <Version>2.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CrashedShipsExtension">
+      <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\ExpandedCrashedShips\bin\Debug\CrashedShipsExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtraHives">
+      <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\FactionHives\bin\Debug\ExtraHives.dll</HintPath>
+    </Reference>
+    <Reference Include="OgsLasers">
+      <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\OgsLasers\bin\Debug\OgsLasers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

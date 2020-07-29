@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>MLB_BETAHive_Inside</defName>
+    <label>BETA hive</label>
+    <description>A BETA hive. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
+    <thingClass>ExtraHives.Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Special/TunnelExit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rect>(0.1,0.1,1.8,1.8)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(1.39,0.5,1.25)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <uiIconScale>0.65</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <pathCost>50</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>30</InsectJelly>
+    </killedLeavings>
+	<modExtensions>
+		<li Class="ExtraHives.HiveExtension">
+			<Faction>MuvLuv_BETA</Faction>
+			<TunnelDef>MLB_BETAHiveSpawner</TunnelDef>
+			<TunnelDefchild>MLB_BETAHiveChildSpawner</TunnelDefchild>
+			<HiveDefchild>MLB_BETAHiveChild</HiveDefchild>
+		</li>
+	</modExtensions>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>true</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>150</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <!--BETA_GrapplerClass>150</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>115</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>287</maxSpawnedPawnsPoints>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
+      </li>
+      <li Class="ExtraHives.CompProperties_SpawnerHives" />
+      <!--li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>26000~30000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li-->
+      <!--li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+        <inheritFaction>true</inheritFaction>
+      </li-->
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>38</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <!--li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li-->
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>MLB_BETAHiveSpawner</defName>
+    <label>BETA hive inside</label>
+    <thingClass>ExtraHives.TunnelHiveSpawner</thingClass>
+	<modExtensions>
+		<li Class="ExtraHives.TunnelExtension">
+			<HiveDef>MLB_BETAHive_Inside</HiveDef>
+			<AlwaysSpawnWithGuards>true</AlwaysSpawnWithGuards>
+			<AlwaysSpawnWith>
+			  <li>BETA_GrapplerClass</li>
+			  <li>BETA_LaserClass</li>
+			</AlwaysSpawnWith>
+		</li>
+	</modExtensions>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <alwaysFlee>true</alwaysFlee>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>MLB_BETAHive_Outside</defName>
+    <label>BETA hive</label>
+    <description>A BETA hive. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
+    <thingClass>ExtraHives.Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Special/TunnelExit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rect>(0.1,0.1,1.8,1.8)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(1.39,0.5,1.25)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <uiIconScale>0.65</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <pathCost>50</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>30</InsectJelly>
+    </killedLeavings>
+	<modExtensions>
+		<li Class="ExtraHives.HiveExtension">
+			<Faction>MuvLuv_BETA</Faction>
+			<TunnelDef>MLB_BETAHiveSpawner</TunnelDef>
+			<TunnelDefchild>MLB_BETAHiveChildSpawner</TunnelDefchild>
+			<HiveDefchild>MLB_BETAHiveChild</HiveDefchild>
+		</li>
+	</modExtensions>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>false</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+          <!--BETA_GrapplerClass>150</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>500</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+        </spawnablePawnKinds>
+		<AlwaysSpawnWith>
+		  <li>BETA_GrapplerClass</li>
+		  <li>BETA_LaserClass</li>
+		</AlwaysSpawnWith>
+      <!--li Class="CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <li>BETA_SoldierClass</li>
+          <li>BETA_WarriorClass</li>
+          <li>BETA_TankClass</li>
+          <li>BETA_LaserClass</li>
+        </spawnablePawnKinds-->
+        <initialPawnsPoints>115</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>287</maxSpawnedPawnsPoints>
+        <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
+        <!--lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob-->
+        <lordJob>LordJob_AssaultColony</lordJob>
+        <pawnSpawnIntervalDays>0.1</pawnSpawnIntervalDays>
+        <assaultOnSpawn>True</assaultOnSpawn>
+        <shouldJoinParentLord>True</shouldJoinParentLord>
+        <spawnSound>Hive_Spawn</spawnSound>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
+      </li>
+      <li Class="ExtraHives.CompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>26000~30000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <!--li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+        <inheritFaction>true</inheritFaction>
+      </li-->
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>38</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <!--li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li-->
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>MLB_BETAHiveSpawner_Outside</defName>
+    <label>BETA hive outside</label>
+    <thingClass>ExtraHives.TunnelHiveSpawner</thingClass>
+	<modExtensions>
+		<li Class="ExtraHives.TunnelExtension">
+			<HiveDef>MLB_BETAHive_Outside</HiveDef>
+		</li>
+	</modExtensions>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <alwaysFlee>true</alwaysFlee>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>MLB_BETAHiveChild</defName>
+    <label>BETA hive</label>
+    <description>A BETA hive. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
+    <thingClass>ExtraHives.Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Special/TunnelExit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rect>(0.1,0.1,1.8,1.8)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(1.39,0.5,1.25)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <uiIconScale>0.65</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <pathCost>50</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>30</InsectJelly>
+    </killedLeavings>
+	<modExtensions>
+		<li Class="ExtraHives.HiveExtension">
+			<Faction>MuvLuv_BETA</Faction>
+		</li>
+	</modExtensions>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>true</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>150</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <!--BETA_GrapplerClass>150</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>200</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+      </li>
+    </comps>
+  </ThingDef>
+
+  
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>MLB_BETAHiveChildSpawner</defName>
+    <label>BETA hive child</label>
+    <thingClass>ExtraHives.TunnelHiveSpawner</thingClass>
+	<modExtensions>
+		<li Class="ExtraHives.TunnelExtension">
+			<HiveDef>MLB_BETAHiveChild</HiveDef>
+		</li>
+	</modExtensions>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <alwaysFlee>true</alwaysFlee>
+  </ThingDef>
+  
+</Defs>

@@ -1,0 +1,13 @@
+C:\Users\User\Desktop\OgsTools\WeaponizedNanites\bin\Debug\WeaponizedNanites.dll
+C:\Users\User\Desktop\OgsTools\WeaponizedNanites\bin\Debug\WeaponizedNanites.pdb
+C:\Users\User\Desktop\OgsTools\WeaponizedNanites\bin\Debug\0Harmony.dll
+C:\Users\User\Desktop\OgsTools\WeaponizedNanites\obj\Debug\WeaponizedNanites.csprojAssemblyReference.cache
+C:\Users\User\Desktop\OgsTools\WeaponizedNanites\obj\Debug\WeaponizedNanites.csproj.CopyComplete
+C:\Users\User\Desktop\OgsTools\WeaponizedNanites\obj\Debug\WeaponizedNanites.dll
+C:\Users\User\Desktop\OgsTools\WeaponizedNanites\obj\Debug\WeaponizedNanites.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Weaponized-Nanites\Assemblies\WeaponizedNanites.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Weaponized-Nanites\Assemblies\WeaponizedNanites.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Weaponized-Nanites\Source\obj\Debug\WeaponizedNanites.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Weaponized-Nanites\Source\obj\Debug\WeaponizedNanites.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Weaponized-Nanites\Source\obj\Debug\WeaponizedNanites.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Weaponized-Nanites\Source\obj\Debug\WeaponizedNanites.pdb
