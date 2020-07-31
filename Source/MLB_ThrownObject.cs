@@ -240,7 +240,7 @@ namespace MuvLuvBeta
                 GenExplosion.DoExplosion(base.Position, base.Map, this.def.projectile.explosionRadius, this.def.projectile.damageDef, flyingThing, -1, -1f, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
             }
             Pawn p = this.flyingThing as Pawn;
-            if (drafted && p != null)
+            if (drafted && p != null && !p.Downed)
             {
                 p.drafter.Drafted = true;
             }

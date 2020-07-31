@@ -60,6 +60,29 @@
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Tunnel raids, No Destoyers/Forts-->
+        <kindDef>Tunneler_ExtraHives</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
+          <BETA_GrapplerClass>150</BETA_GrapplerClass>
+          <BETA_LaserClass>150</BETA_LaserClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
@@ -103,7 +126,7 @@
       <li>
         <!-- All types-->
         <kindDef>Combat</kindDef>
-        <commonality>100</commonality>
+        <commonality>200</commonality>
         <options>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
@@ -114,6 +137,29 @@
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Tunnel raids, No Destoyers/Forts-->
+        <kindDef>Tunneler_ExtraHives</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
+          <BETA_GrapplerClass>187</BETA_GrapplerClass>
+          <BETA_LaserClass>150</BETA_LaserClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
@@ -155,7 +201,7 @@
       <li>
         <!-- All types-->
         <kindDef>Combat</kindDef>
-        <commonality>100</commonality>
+        <commonality>300</commonality>
         <options>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
@@ -166,6 +212,29 @@
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Tunnel raids, No Destoyers/Forts-->
+        <kindDef>Tunneler_ExtraHives</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
+          <BETA_GrapplerClass>225</BETA_GrapplerClass>
+          <BETA_LaserClass>150</BETA_LaserClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
@@ -207,7 +276,7 @@
       <li>
         <!-- All types-->
         <kindDef>Combat</kindDef>
-        <commonality>100</commonality>
+        <commonality>400</commonality>
         <options>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
@@ -218,6 +287,29 @@
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Tunnel raids, No Destoyers/Forts-->
+        <kindDef>Tunneler_ExtraHives</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
+          <BETA_GrapplerClass>262</BETA_GrapplerClass>
+          <BETA_LaserClass>150</BETA_LaserClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
@@ -259,7 +351,7 @@
       <li>
         <!-- All types-->
         <kindDef>Combat</kindDef>
-        <commonality>100</commonality>
+        <commonality>500</commonality>
         <options>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
@@ -270,6 +362,29 @@
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Tunnel raids, No Destoyers/Forts-->
+        <kindDef>Tunneler_ExtraHives</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
+          <BETA_GrapplerClass>300</BETA_GrapplerClass>
+          <BETA_LaserClass>150</BETA_LaserClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
@@ -311,7 +426,7 @@
       <li>
         <!-- All types-->
         <kindDef>Combat</kindDef>
-        <commonality>100</commonality>
+        <commonality>600</commonality>
         <options>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
@@ -322,6 +437,29 @@
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Tunnel raids, No Destoyers/Forts-->
+        <kindDef>Tunneler_ExtraHives</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
+          <BETA_GrapplerClass>337</BETA_GrapplerClass>
+          <BETA_LaserClass>150</BETA_LaserClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
       </li>
       <li>
         <kindDef>Settlement</kindDef>

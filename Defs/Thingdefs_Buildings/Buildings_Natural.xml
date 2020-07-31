@@ -61,10 +61,10 @@
           <BETA_FortClass>1</BETA_FortClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </spawnablePawnKinds>
-		<AlwaysSpawnWith>
+		<!--AlwaysSpawnWith>
 		  <li>BETA_GrapplerClass</li>
 		  <li>BETA_LaserClass</li>
-		</AlwaysSpawnWith>
+		</AlwaysSpawnWith-->
 		<!--
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
 		-->
@@ -120,7 +120,6 @@
 		<li Class="ExtraHives.TunnelExtension">
 			<HiveDef>MLB_BETAHive_Interior</HiveDef>
 			<Faction>MuvLuv_BETA</Faction>
-			<AlwaysSpawnWithGuards>true</AlwaysSpawnWithGuards>
 		</li>
 	</modExtensions>
     <tickerType>Normal</tickerType>

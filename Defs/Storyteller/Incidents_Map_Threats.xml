@@ -10,7 +10,7 @@
     </targetTags>
     <workerClass>ExtraHives.IncidentWorker_Infestation</workerClass>
     <letterLabel>BETA Infestation</letterLabel>
-    <letterText>BETA are tunneling towards you! They will break through in a few seconds and plant hives.\n\nThe hives will spawn more insects and more hives.\n\nIf you don't want the insects to infest the whole area, destroy the hives. But beware - the bugs will defend their home.</letterText>
+    <letterText>BETA are tunneling towards the interior of your base! They will break through before too long, leaving tunnels where they emerge.\n\nThe tunnels will spawn more BETA and more tunnels.\n\nIf you don't want the BETA to infest the whole area, destroy the tunnels. But beware - the BETA will defend their tunnels.</letterText>
     <letterDef>ThreatBig</letterDef>
     <baseChance>2.7</baseChance>
     <minRefireDays>20</minRefireDays>
@@ -29,7 +29,7 @@
     </targetTags>
     <workerClass>ExtraHives.IncidentWorker_GrowZoneInfestation</workerClass>
     <letterLabel>BETA Infestation</letterLabel>
-    <letterText>BETA are tunneling towards you! They will break through in a few seconds and plant hives.\n\nThe hives will spawn more insects and more hives.\n\nIf you don't want the insects to infest the whole area, destroy the hives. But beware - the bugs will defend their home.</letterText>
+    <letterText>BETA are tunneling towards the exterior of your base! They will break through before too long, leaving tunnels where they emerge.\n\nThe tunnels will spawn more BETA and more tunnels.\n\nIf you don't want the BETA to infest the whole area, destroy the tunnels. But beware - the BETA will defend their tunnels.</letterText>
     <letterDef>ThreatBig</letterDef>
     <baseChance>2.7</baseChance>
     <minRefireDays>20</minRefireDays>

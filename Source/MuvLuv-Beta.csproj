@@ -31,10 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="IncidentDefOf.cs" />
     <Compile Include="GameCondition_BetaHiveEvolution.cs" />
     <Compile Include="DamageWorker_Agro.cs" />
-    <Compile Include="Harmony\Patches\MLB_IncidentWorker_RaidEnemy_Xenomorph_TryExecuteWorker_Patch.cs" />
+    <Compile Include="Harmony\Patches\MLB_IncidentParmsUtility_GetDefaultPawnGroupMakerParms_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\MLB_IncidentWorker_Raid_ResolveRaidArriveMode_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_IncidentWorker_RaidEnemy_TryExecuteWorker_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\MLB_PawnGenOption_get_Cost_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_HediffWithComps_BleedRate_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_Hediff_Injury_get_BleedingStoppedDueToAge_Patch.cs" />
     <Compile Include="JobDriver_AnimalRangeAttack.cs" />
