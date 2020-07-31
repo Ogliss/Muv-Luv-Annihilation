@@ -594,7 +594,7 @@
         <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
         <color>(0.6, 0.6, 0.6)</color>
         <reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
-        <activeSound>MortarShield_Ambience</activeSound>
+        <!--activeSound>MortarShield_Ambience</activeSound-->
         <disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
         <chargeIntervalTicks>0</chargeIntervalTicks>
         <chargeDurationTicks>0</chargeDurationTicks>
@@ -741,7 +741,7 @@
         <interceptAirProjectiles>true</interceptAirProjectiles>
         <color>(0.6, 0.6, 0.6)</color>
         <reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
-        <activeSound>MortarShield_Ambience</activeSound>
+        <!--activeSound>MortarShield_Ambience</activeSound-->
         <disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
         <chargeIntervalTicks>0</chargeIntervalTicks>
         <chargeDurationTicks>0</chargeDurationTicks>

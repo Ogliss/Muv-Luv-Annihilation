@@ -16,13 +16,13 @@
     </statBases>
     <inspectorTabs>
       <li>ITab_Pawn_Health</li>
-      <li>ITab_Pawn_Needs</li>
+      <!--li>ITab_Pawn_Needs</li>
       <li>ITab_Pawn_Character</li>
       <li>ITab_Pawn_Training</li>
       <li>ITab_Pawn_Social</li>
       <li>ITab_Pawn_Guest</li>
       <li>ITab_Pawn_Prisoner</li>
-      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_FormingCaravan</li-->
       <li>ITab_Pawn_Gear</li>
       <li>ITab_Pawn_Log</li>
     </inspectorTabs>
@@ -42,6 +42,7 @@
       <intelligence>ToolUser</intelligence>
       <thinkTreeMain>BETA_ThinkTree</thinkTreeMain>
       <hasGenders>false</hasGenders>
+      <needsRest>false</needsRest>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
       <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
       <nameOnNuzzleChance>0.5</nameOnNuzzleChance>
@@ -63,6 +64,7 @@
 
   <ThingDef Abstract="True" ParentName="BETAThingBase" Name="BaseBETA">
     <statBases>
+      <PainShockThreshold>0.9999</PainShockThreshold>
       <PsychicSensitivity>2</PsychicSensitivity>
       <ToxicSensitivity>1</ToxicSensitivity>
       <ComfyTemperatureMax>60</ComfyTemperatureMax>
@@ -74,7 +76,7 @@
       <bloodDef>Filth_Blood</bloodDef>
       <meatColor>(160,168,139)</meatColor>
       <meatMarketValue>0.5</meatMarketValue>
-      <foodType>OmnivoreAnimal, AnimalProduct</foodType>
+      <!--foodType>OmnivoreAnimal, AnimalProduct</foodType-->
       <manhunterOnDamageChance>0.35</manhunterOnDamageChance>
       <manhunterOnTameFailChance>0.20</manhunterOnTameFailChance>
     </race>

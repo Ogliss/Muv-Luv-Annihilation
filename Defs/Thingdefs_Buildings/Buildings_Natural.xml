@@ -2,7 +2,7 @@
 <Defs>
 
   <ThingDef ParentName="BuildingNaturalBase">
-    <defName>MLB_BETAHive_Inside</defName>
+    <defName>MLB_BETAHive_Interior</defName>
     <label>BETA hive</label>
     <description>A BETA hive. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
     <thingClass>ExtraHives.Hive</thingClass>
@@ -37,9 +37,11 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveExtension">
 			<Faction>MuvLuv_BETA</Faction>
-			<TunnelDef>MLB_BETAHiveSpawner</TunnelDef>
-			<TunnelDefchild>MLB_BETAHiveChildSpawner</TunnelDefchild>
-			<HiveDefchild>MLB_BETAHiveChild</HiveDefchild>
+			<TunnelDef>MLB_BETAHiveSpawner_Interior</TunnelDef>
+			<minTemp>-80</minTemp>
+			<maxTemp>80</maxTemp>
+			<bonusTempScore>20</bonusTempScore>
+			<bonusBelowTemp>0</bonusBelowTemp>
 		</li>
 	</modExtensions>
     <comps>
@@ -59,8 +61,16 @@
           <BETA_FortClass>1</BETA_FortClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </spawnablePawnKinds>
+		<AlwaysSpawnWith>
+		  <li>BETA_GrapplerClass</li>
+		  <li>BETA_LaserClass</li>
+		</AlwaysSpawnWith>
+		<!--
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
+		-->
+        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
+        <showNextSpawnInInspect>false</showNextSpawnInInspect>
         <initialPawnsPoints>115</initialPawnsPoints>
         <maxSpawnedPawnsPoints>287</maxSpawnedPawnsPoints>
       </li>
@@ -103,17 +113,14 @@
   </ThingDef>
 
   <ThingDef ParentName="EtherealThingBase">
-    <defName>MLB_BETAHiveSpawner</defName>
+    <defName>MLB_BETAHiveSpawner_Interior</defName>
     <label>BETA hive inside</label>
     <thingClass>ExtraHives.TunnelHiveSpawner</thingClass>
 	<modExtensions>
 		<li Class="ExtraHives.TunnelExtension">
-			<HiveDef>MLB_BETAHive_Inside</HiveDef>
+			<HiveDef>MLB_BETAHive_Interior</HiveDef>
+			<Faction>MuvLuv_BETA</Faction>
 			<AlwaysSpawnWithGuards>true</AlwaysSpawnWithGuards>
-			<AlwaysSpawnWith>
-			  <li>BETA_GrapplerClass</li>
-			  <li>BETA_LaserClass</li>
-			</AlwaysSpawnWith>
 		</li>
 	</modExtensions>
     <tickerType>Normal</tickerType>
@@ -123,7 +130,7 @@
   
   
   <ThingDef ParentName="BuildingNaturalBase">
-    <defName>MLB_BETAHive_Outside</defName>
+    <defName>MLB_BETAHive_Exterior</defName>
     <label>BETA hive</label>
     <description>A BETA hive. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
     <thingClass>ExtraHives.Hive</thingClass>
@@ -158,9 +165,7 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveExtension">
 			<Faction>MuvLuv_BETA</Faction>
-			<TunnelDef>MLB_BETAHiveSpawner</TunnelDef>
-			<TunnelDefchild>MLB_BETAHiveChildSpawner</TunnelDefchild>
-			<HiveDefchild>MLB_BETAHiveChild</HiveDefchild>
+			<TunnelDef>MLB_BETAHiveSpawner_Exterior</TunnelDef>
 		</li>
 	</modExtensions>
     <comps>
@@ -205,14 +210,6 @@
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
       <li Class="ExtraHives.CompProperties_SpawnerHives" />
-      <li Class="CompProperties_Spawner">
-        <thingToSpawn>InsectJelly</thingToSpawn>
-        <spawnCount>20</spawnCount>
-        <spawnIntervalRange>26000~30000</spawnIntervalRange>
-        <spawnMaxAdjacent>40</spawnMaxAdjacent>
-        <spawnForbidden>true</spawnForbidden>
-        <saveKeysPrefix>jelly</saveKeysPrefix>
-      </li>
       <!--li Class="CompProperties_Spawner">
         <thingToSpawn>GlowPod</thingToSpawn>
         <spawnCount>1</spawnCount>
@@ -240,12 +237,13 @@
   </ThingDef>
 
   <ThingDef ParentName="EtherealThingBase">
-    <defName>MLB_BETAHiveSpawner_Outside</defName>
+    <defName>MLB_BETAHiveSpawner_Exterior</defName>
     <label>BETA hive outside</label>
     <thingClass>ExtraHives.TunnelHiveSpawner</thingClass>
 	<modExtensions>
 		<li Class="ExtraHives.TunnelExtension">
-			<HiveDef>MLB_BETAHive_Outside</HiveDef>
+			<HiveDef>MLB_BETAHive_Exterior</HiveDef>
+			<Faction>MuvLuv_BETA</Faction>
 		</li>
 	</modExtensions>
     <tickerType>Normal</tickerType>
@@ -254,9 +252,9 @@
   </ThingDef>
   
   <ThingDef ParentName="BuildingNaturalBase">
-    <defName>MLB_BETAHiveChild</defName>
-    <label>BETA hive</label>
-    <description>A BETA hive. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
+    <defName>MLB_BETAHive_Tunnel</defName>
+    <label>BETA tunnel</label>
+    <description>A BETA tunnel. If activated, it will spawn additional BETA over time.</description>
     <thingClass>ExtraHives.Hive</thingClass>
     <graphicData>
       <texPath>Things/Special/TunnelExit</texPath>
@@ -269,7 +267,7 @@
         <volume>(1.39,0.5,1.25)</volume>
       </shadowData>
     </graphicData>
-    <size>(3,3)</size>
+    <size>(1,1)</size>
     <uiIconScale>0.65</uiIconScale>
     <altitudeLayer>Building</altitudeLayer>
     <rotatable>false</rotatable>
@@ -288,6 +286,7 @@
     </killedLeavings>
 	<modExtensions>
 		<li Class="ExtraHives.HiveExtension">
+			<TunnelDef>MLB_BETAHiveSpawner_Tunnel</TunnelDef>
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
 	</modExtensions>
@@ -308,22 +307,26 @@
           <BETA_FortClass>1</BETA_FortClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </spawnablePawnKinds>
+		<!-- 
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+		-->
+        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <initialPawnsPoints>200</initialPawnsPoints>
         <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
       </li>
     </comps>
   </ThingDef>
-
   
   <ThingDef ParentName="EtherealThingBase">
-    <defName>MLB_BETAHiveChildSpawner</defName>
+    <defName>MLB_BETAHiveSpawner_Tunnel</defName>
     <label>BETA hive child</label>
     <thingClass>ExtraHives.TunnelHiveSpawner</thingClass>
 	<modExtensions>
 		<li Class="ExtraHives.TunnelExtension">
-			<HiveDef>MLB_BETAHiveChild</HiveDef>
+			<HiveDef>MLB_BETAHive_Tunnel</HiveDef>
+			<Faction>MuvLuv_BETA</Faction>
 		</li>
 	</modExtensions>
     <tickerType>Normal</tickerType>

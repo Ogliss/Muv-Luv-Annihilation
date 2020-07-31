@@ -12,7 +12,7 @@
     <defName>BETA_SoldierClass</defName>
     <label>soldier class</label>
     <race>BETA_SoldierClass</race>
-    <combatPower>35</combatPower>
+    <combatPower>70</combatPower>
     <canArriveManhunter>false</canArriveManhunter>
     <ecoSystemWeight>0.35</ecoSystemWeight>
     <lifeStages>
@@ -49,7 +49,7 @@
     <defName>BETA_WarriorClass</defName>
     <label>warrior class</label>
     <race>BETA_WarriorClass</race>
-    <combatPower>50</combatPower>
+    <combatPower>100</combatPower>
     <canArriveManhunter>false</canArriveManhunter>
     <ecoSystemWeight>0.35</ecoSystemWeight>
     <lifeStages>
@@ -86,7 +86,7 @@
     <defName>BETA_TankClass</defName>
     <label>tank class</label>
     <race>BETA_TankClass</race>
-    <combatPower>75</combatPower>
+    <combatPower>150</combatPower>
     <canArriveManhunter>false</canArriveManhunter>
     <ecoSystemWeight>0.35</ecoSystemWeight>
     <lifeStages>
@@ -123,7 +123,7 @@
     <defName>BETA_GrapplerClass</defName>
     <label>grappler class</label>
     <race>BETA_GrapplerClass</race>
-    <combatPower>100</combatPower>
+    <combatPower>200</combatPower>
     <canArriveManhunter>false</canArriveManhunter>
     <ecoSystemWeight>0.50</ecoSystemWeight>
     <lifeStages>
@@ -160,7 +160,7 @@
     <defName>BETA_DestroyerClass</defName>
     <label>destroyer class</label>
     <race>BETA_DestroyerClass</race>
-    <combatPower>150</combatPower>
+    <combatPower>300</combatPower>
     <canArriveManhunter>false</canArriveManhunter>
     <ecoSystemWeight>0.50</ecoSystemWeight>
     <lifeStages>
@@ -234,7 +234,7 @@
     <defName>BETA_LaserClass</defName>
     <label>laser class</label>
     <race>BETA_LaserClass</race>
-    <combatPower>50</combatPower>
+    <combatPower>100</combatPower>
     <canArriveManhunter>false</canArriveManhunter>
     <ecoSystemWeight>0.35</ecoSystemWeight>
     <lifeStages>
@@ -271,7 +271,7 @@
     <defName>BETA_HeavyLaserClass</defName>
     <label>heavy laser class</label>
     <race>BETA_HeavyLaserClass</race>
-    <combatPower>75</combatPower>
+    <combatPower>150</combatPower>
     <canArriveManhunter>false</canArriveManhunter>
     <ecoSystemWeight>0.50</ecoSystemWeight>
     <lifeStages>

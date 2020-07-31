@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================== Big threats ==============================-->
+  <IncidentDef>
+    <defName>BETAInfestationInterior</defName>
+    <label>infestation</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ExtraHives.IncidentWorker_Infestation</workerClass>
+    <letterLabel>BETA Infestation</letterLabel>
+    <letterText>BETA are tunneling towards you! They will break through in a few seconds and plant hives.\n\nThe hives will spawn more insects and more hives.\n\nIf you don't want the insects to infest the whole area, destroy the hives. But beware - the bugs will defend their home.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>2.7</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>400</minThreatPoints>
+    <mechClusterBuilding>MLB_BETAHive_Interior</mechClusterBuilding>
+    <tale>Infestation</tale>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>BETAInfestationExterior</defName>
+    <label>infestation</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ExtraHives.IncidentWorker_GrowZoneInfestation</workerClass>
+    <letterLabel>BETA Infestation</letterLabel>
+    <letterText>BETA are tunneling towards you! They will break through in a few seconds and plant hives.\n\nThe hives will spawn more insects and more hives.\n\nIf you don't want the insects to infest the whole area, destroy the hives. But beware - the bugs will defend their home.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>2.7</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>400</minThreatPoints>
+    <mechClusterBuilding>MLB_BETAHive_Exterior</mechClusterBuilding>
+    <tale>Infestation</tale>
+  </IncidentDef>
+
+  <!--IncidentDef>
+    <defName>DeepDrillInfestation</defName>
+    <label>deep drill infestation</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+      <li>Map_TempIncident</li>
+      <li>Map_Misc</li>
+      <li>Map_RaidBeacon</li>
+    </targetTags>
+    <workerClass>IncidentWorker_DeepDrillInfestation</workerClass>
+    <letterLabel>Too deep: Infestation</letterLabel>
+    <letterText>Vibrations from your deep drills have angered some underground insects. Now they're tunneling upwards to seek revenge!\n\nBeware - the insects have been angered and will try to destroy your base.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>1</baseChance>
+    <category>DeepDrillInfestation</category>
+    <minDifficulty>1</minDifficulty>
+    <pointsScaleable>true</pointsScaleable>
+    <tale>Infestation</tale>
+  </IncidentDef-->
+
+  <IncidentDef>
+    <defName>BETAShipPartCrash</defName>
+    <label>ship part crash (BETA)</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>CrashedShipsExtension.IncidentWorker_CrashedShip</workerClass>
+    <letterLabel>BETA ship</letterLabel>
+    <letterText>A large piece of an ancient ship has crashed nearby.\n\nIts mysterious influence will kill all plants in an expanding circle around itself.\n\nDestroy it as soon as possible. But beware - it will probably defend itself.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+    <baseChance>2.0</baseChance>
+    <baseChanceWithRoyalty>0.4</baseChanceWithRoyalty>
+    <minRefireDays>15</minRefireDays>
+    <tags>
+      <li>BETAShip</li>
+    </tags>
+    <refireCheckTags>
+      <li>BETAShip</li>
+    </refireCheckTags>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>400</minThreatPoints>
+    <mechClusterBuilding>MLB_BETACrashedShipPart</mechClusterBuilding>
+    <tale>ShipPartCrash</tale>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>BETAMonumentCrash</defName>
+    <label>BETA Monument</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>CrashedShipsExtension.IncidentWorker_CrashedShip</workerClass>
+    <letterLabel>BETA monument</letterLabel>
+    <letterText>A large piece of an ancient ship has crashed nearby.\n\nYour colonists can feel it in the back of their mind, exhorting unspeakable acts. It must have an onboard machine persona with psychic projection ability. And this persona is not friendly.\n\nDestroy it as soon as possible. But beware - it will probably defend itself.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+    <baseChance>2.0</baseChance>
+    <baseChanceWithRoyalty>0.4</baseChanceWithRoyalty>
+    <minRefireDays>15</minRefireDays>
+    <tags>
+      <li>>BETAMonument</li>
+    </tags>
+    <refireCheckTags>
+      <li>>BETAMonument</li>
+    </refireCheckTags>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>400</minThreatPoints>
+    <mechClusterBuilding>MLB_BETAMonument</mechClusterBuilding>
+    <tale>ShipPartCrash</tale>
+  </IncidentDef>
+
+</Defs>

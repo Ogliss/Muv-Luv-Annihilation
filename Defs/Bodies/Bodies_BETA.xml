@@ -1178,12 +1178,12 @@
       <parts>
         <li>
           <def>BETANeck</def>
-          <coverage>0.50</coverage>
+          <coverage>0.45</coverage>
           <height>Top</height>
           <parts>
             <li>
               <def>BETAHead</def>
-              <coverage>0.50</coverage>
+              <coverage>0.95</coverage>
               <groups>
                 <li>HeadAttackTool</li>
               </groups>
@@ -1196,12 +1196,12 @@
                 <li>
                   <def>BETASightSensor</def>
                   <customLabel>right eye</customLabel>
-                  <coverage>0.13</coverage>
+                  <coverage>0.26</coverage>
                 </li>
                 <li>
                   <def>BETASightSensor</def>
                   <customLabel>left eye</customLabel>
-                  <coverage>0.13</coverage>
+                  <coverage>0.26</coverage>
                 </li>
                 <li>
                   <def>BETAHearingSensor</def>
@@ -1220,7 +1220,7 @@
         <li>
           <def>BETALeg</def>
           <customLabel>left leg</customLabel>
-          <coverage>0.2</coverage>
+          <coverage>0.18</coverage>
           <height>Bottom</height>
           <parts>
             <li>
@@ -1233,7 +1233,7 @@
         <li>
           <def>BETALeg</def>
           <customLabel>right leg</customLabel>
-          <coverage>0.2</coverage>
+          <coverage>0.18</coverage>
           <height>Bottom</height>
           <parts>
             <li>
