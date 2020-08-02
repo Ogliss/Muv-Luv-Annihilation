@@ -101,6 +101,7 @@
 		-->
         <lordJob>CrashedShipsExtension.LordJob_PawnsDefendShip</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
+        <initialSpawnDelay>60</initialSpawnDelay>
         <initialPawnsPoints>200</initialPawnsPoints>
         <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
       </li>

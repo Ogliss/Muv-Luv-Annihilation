@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <PawnsArrivalModeDef>
+  <!--PawnsArrivalModeDef>
     <defName>EdgeTunnelIn_ExtraHives</defName>
     <workerClass>ExtraHives.PawnsArrivalModeWorker_EdgeTunnel</workerClass>
     <selectionWeightCurve>
@@ -38,7 +38,7 @@
   <PawnsArrivalModeDef>
     <defName>CenterTunnelIn_ExtraHives</defName>
     <workerClass>ExtraHives.PawnsArrivalModeWorker_CenterTunnel</workerClass>
-    <selectionWeightCurve> <!-- not usable in many strategies and by many factions, so this gets boosted -->
+    <selectionWeightCurve>
       <points>
         <li>(300, 0.0)</li>
         <li>(1000, 3.5)</li>
@@ -46,8 +46,8 @@
     </selectionWeightCurve>
     <pointsFactorCurve>
       <points>
-        <li>0, 0.5</li>
-        <li>5000, 0.3</li>
+        <li>0, 0.75</li>
+        <li>5000, 0.5</li>
       </points>
     </pointsFactorCurve>
     <textEnemy>A group of {0} from {1} have tunneled in right on top of you!</textEnemy>
@@ -58,7 +58,7 @@
   <PawnsArrivalModeDef>
     <defName>RandomTunnelIn_ExtraHives</defName>
     <workerClass>ExtraHives.PawnsArrivalModeWorker_RandomTunnel</workerClass>
-    <selectionWeightCurve> <!-- not usable in many strategies and by many factions, so this gets boosted -->
+    <selectionWeightCurve>
       <points>
         <li>(300, 0)</li>
         <li>(1000, 1.9)</li>
@@ -73,6 +73,6 @@
     <textEnemy>A group of {0} from {1} have tunneled in. They are scattered all over the area!</textEnemy>
     <textFriendly>A group of friendly {0} from {1} have tunneled in. They are scattered all over the area!</textFriendly>
     <textWillArrive>{0_pawnsPluralDef} will tunnel in.</textWillArrive>
-  </PawnsArrivalModeDef>
+  </PawnsArrivalModeDef-->
 
 </Defs>

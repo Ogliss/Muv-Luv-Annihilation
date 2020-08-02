@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <PawnGroupKindDef>
+  <!--PawnGroupKindDef>
     <defName>Hive_ExtraHives</defName>
     <workerClass>PawnGroupKindWorker_Normal</workerClass>
   </PawnGroupKindDef>
@@ -9,6 +9,6 @@
   <PawnGroupKindDef>
     <defName>Tunneler_ExtraHives</defName>
     <workerClass>PawnGroupKindWorker_Normal</workerClass>
-  </PawnGroupKindDef>
+  </PawnGroupKindDef-->
   
 </Defs>

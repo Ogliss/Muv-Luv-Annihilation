@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Verb_LaunchProjectileCantMiss.cs" />
     <Compile Include="IncidentDefOf.cs" />
     <Compile Include="GameCondition_BetaHiveEvolution.cs" />
     <Compile Include="DamageWorker_Agro.cs" />
@@ -49,7 +50,7 @@
     <Compile Include="CompCharger.cs" />
     <Compile Include="ChargingThing.cs" />
     <Compile Include="MLB_ThrownObject.cs" />
-    <Compile Include="Harmony\Patches\MLB_JobGiver_Manhunter_TryGiveJob_RangedVerb_Patch.cs" />
+    <None Include="Harmony\Patches\MLB_JobGiver_Manhunter_TryGiveJob_RangedVerb_Patch.cs.bak" />
     <Compile Include="Harmony\Patches\MLB_Pawn_TryGetAttackVerb_VerbCheckNonhumanlike_Patch.cs" />
     <Compile Include="MLB_AttackTargetFinder.cs" />
     <Compile Include="Harmony\Patches\MLB_JobGiver_AIFightEnemy_TryGiveJob_RangedVerb_Patch.cs" />

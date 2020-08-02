@@ -155,7 +155,6 @@ namespace MuvLuvBeta.HarmonyInstance
 
             if (flag1 && flag2 && flag3 || flag4 && flag3)
             {
-                //    Log.Warning("Shooting");
                 __result = new Job(DefDatabase<JobDef>.GetNamed("BETARangeAttack"), enemyTarget, JobGiver_AIFightEnemy.ExpiryInterval_ShooterSucceeded.RandomInRange, true)
                 {
                     verbToUse = rangeVerb
@@ -165,18 +164,6 @@ namespace MuvLuvBeta.HarmonyInstance
             }
             IntVec3 dest;
             bool canShootCondition = false;
-            //    Log.Warning("Try casting");
-
-            //Animals with training seek cover
-            /*
-				if (pawn.training.IsCompleted(TrainableDefOf.Release) && (double)verb.verbProps.range > 7.0)
-					Log.Warning("Attempting cover");
-				Log.Warning("Try get flag radius :" + Traverse.Create(__instance).Method("GetFlagRadius", pawn).GetValue<float>());
-				Log.Warning("Checking cast condition");
-				*/
-
-            //Don't find new position if animal not released.
-
 
             canShootCondition = CastPositionFinder.TryFindCastPosition(new CastPositionRequest
             {

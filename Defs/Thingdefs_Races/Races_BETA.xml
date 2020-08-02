@@ -530,6 +530,7 @@
       <ArmorRating_Blunt>0.24</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.24</ArmorRating_Sharp>
       <ArmorRating_Heat>0.36</ArmorRating_Heat>
+      <ShootingAccuracyPawn>999999</ShootingAccuracyPawn>
     </statBases>
     <race>
       <body>BETALaser</body>
@@ -628,11 +629,16 @@
       <li Class="MuvLuvBETA.HediffCompProperties_VerbGiverBETA">
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<accuracyTouch>1</accuracyTouch>
+				<accuracyShort>1</accuracyShort>
+				<accuracyMedium>1</accuracyMedium>
+				<accuracyLong>1</accuracyLong>
+				<verbClass>MuvLuvBETA.Verb_LaunchProjectileCantMiss</verbClass>
 				<label>Standard</label>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>BETA_LuxLaser</defaultProjectile>
-				<warmupTime>6</warmupTime>
+				<warmupTime>3</warmupTime>
+				<defaultCooldownTime>3</defaultCooldownTime>
 				<range>31</range>
 				<burstShotCount>1</burstShotCount>
 				<ticksBetweenBurstShots>30</ticksBetweenBurstShots>
@@ -640,7 +646,9 @@
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>14</muzzleFlashScale>
 				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
+					<canTargetPawns>false</canTargetPawns>
+					<canTargetBuildings>true</canTargetBuildings>
+					<canTargetLocations>false</canTargetLocations>
 				</targetParams>
 			</li>
 		</verbs>
@@ -678,6 +686,7 @@
       <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
       <ArmorRating_Heat>0.4</ArmorRating_Heat>
+      <ShootingAccuracyPawn>999999</ShootingAccuracyPawn>
     </statBases>
     <race>
       <body>BETAHeavyLaser</body>
@@ -762,11 +771,16 @@
       <li Class="MuvLuvBETA.HediffCompProperties_VerbGiverBETA">
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<accuracyTouch>1</accuracyTouch>
+				<accuracyShort>1</accuracyShort>
+				<accuracyMedium>1</accuracyMedium>
+				<accuracyLong>1</accuracyLong>
+				<verbClass>MuvLuvBETA.Verb_LaunchProjectileCantMiss</verbClass>
 				<label>Standard</label>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>BETA_MagnusLuxLaser</defaultProjectile>
 				<warmupTime>6</warmupTime>
+				<defaultCooldownTime>6</defaultCooldownTime>
 				<range>42</range>
 				<burstShotCount>1</burstShotCount>
 				<ticksBetweenBurstShots>30</ticksBetweenBurstShots>
@@ -774,7 +788,9 @@
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>14</muzzleFlashScale>
 				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
+					<canTargetPawns>false</canTargetPawns>
+					<canTargetBuildings>true</canTargetBuildings>
+					<canTargetLocations>false</canTargetLocations>
 				</targetParams>
 			</li>
 		</verbs>

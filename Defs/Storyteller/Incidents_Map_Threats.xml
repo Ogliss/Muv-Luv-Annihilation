@@ -61,6 +61,30 @@
   </IncidentDef-->
 
   <IncidentDef>
+    <defName>BETAInfestedMeteoriteImpact</defName>
+    <label>meteorite impact</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ExtraHives.IncidentWorker_InfestedMeteoriteImpact</workerClass>
+    <baseChance>0.5</baseChance>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>400</minThreatPoints>
+    <mechClusterBuilding>MLB_BETAHive_Exterior</mechClusterBuilding>
+    <minRefireDays>20</minRefireDays>
+    <letterLabel>Meteorite</letterLabel>
+    <letterText>A large meteorite has struck ground in the area. It has left behind a lump of {0}.</letterText>
+      <tale>MeteoriteImpact</tale>
+    <tags>
+      <li>>BETAMeteorite</li>
+    </tags>
+    <refireCheckTags>
+      <li>>BETAMeteorite</li>
+    </refireCheckTags>
+  </IncidentDef>
+
+  <IncidentDef>
     <defName>BETAShipPartCrash</defName>
     <label>ship part crash (BETA)</label>
     <targetTags>
