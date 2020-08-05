@@ -516,6 +516,19 @@
         <chanceFactor>0.2</chanceFactor>
       </li>
     </tools>
+    <comps>
+      <li Class="CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <li>BETA_GrapplerClass</li>
+        </spawnablePawnKinds>
+        <pawnSpawnIntervalDays>0.1</pawnSpawnIntervalDays>
+        <lordJob>LordJob_AssaultColony</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>0</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>1000</maxSpawnedPawnsPoints>
+        <!--initialPawnsCount>4</initialPawnsCount-->
+      </li>
+    </comps>
   </ThingDef>
 
   <!-- ========================= Laser Class ============================= -->
@@ -589,7 +602,7 @@
       </li>
     </tools>
     <comps>
-      <li Class="CompProperties_ProjectileInterceptor">
+      <li Class="MuvLuvBeta.CompProperties_BETAProjectileInterceptor">
         <radius>12</radius>
         <interceptAirProjectiles>true</interceptAirProjectiles>
         <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
@@ -599,6 +612,7 @@
         <disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
         <chargeIntervalTicks>0</chargeIntervalTicks>
         <chargeDurationTicks>0</chargeDurationTicks>
+        <Hediff>BETA_LaserClass_EyeBeam</Hediff>
       </li>
     </comps>
   </ThingDef>
@@ -745,7 +759,7 @@
       </li>
     </tools>
     <comps>
-      <li Class="CompProperties_ProjectileInterceptor">
+      <li Class="MuvLuvBeta.CompProperties_BETAProjectileInterceptor">
         <radius>18</radius>
         <interceptAirProjectiles>true</interceptAirProjectiles>
         <color>(0.6, 0.6, 0.6)</color>
@@ -754,6 +768,7 @@
         <disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
         <chargeIntervalTicks>0</chargeIntervalTicks>
         <chargeDurationTicks>0</chargeDurationTicks>
+        <Hediff>BETA_HeavyLaserClass_EyeBeam</Hediff>
       </li>
     </comps>
   </ThingDef>

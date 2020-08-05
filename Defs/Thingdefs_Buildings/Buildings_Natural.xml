@@ -54,10 +54,10 @@
         <spawnablePawnKinds>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
-          <BETA_TankClass>150</BETA_TankClass>
+          <BETA_TankClass>300</BETA_TankClass>
           <BETA_LaserClass>100</BETA_LaserClass>
-          <!--BETA_GrapplerClass>150</BETA_GrapplerClass>
-          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_GrapplerClass>100</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
           <BETA_FortClass>1</BETA_FortClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </spawnablePawnKinds>
@@ -71,8 +71,8 @@
         <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <showNextSpawnInInspect>false</showNextSpawnInInspect>
-        <initialPawnsPoints>115</initialPawnsPoints>
-        <maxSpawnedPawnsPoints>287</maxSpawnedPawnsPoints>
+        <initialPawnsPoints>250</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>550</maxSpawnedPawnsPoints>
       </li>
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
@@ -183,20 +183,14 @@
           <BETA_WarriorClass>1000</BETA_WarriorClass>
           <BETA_TankClass>500</BETA_TankClass>
           <BETA_LaserClass>100</BETA_LaserClass>
+          <BETA_GrapplerClass>100</BETA_GrapplerClass>
         </spawnablePawnKinds>
 		<AlwaysSpawnWith>
 		  <li>BETA_GrapplerClass</li>
 		  <li>BETA_LaserClass</li>
 		</AlwaysSpawnWith>
-      <!--li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>BETA_SoldierClass</li>
-          <li>BETA_WarriorClass</li>
-          <li>BETA_TankClass</li>
-          <li>BETA_LaserClass</li>
-        </spawnablePawnKinds-->
-        <initialPawnsPoints>115</initialPawnsPoints>
-        <maxSpawnedPawnsPoints>287</maxSpawnedPawnsPoints>
+        <initialPawnsPoints>250</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>550</maxSpawnedPawnsPoints>
         <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
         <!--lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob-->
         <lordJob>LordJob_AssaultColony</lordJob>

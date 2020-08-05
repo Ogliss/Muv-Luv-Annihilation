@@ -4,7 +4,7 @@
   <!-- ============================== Big threats ==============================-->
   <IncidentDef>
     <defName>BETAInfestationInterior</defName>
-    <label>infestation</label>
+    <label>BETA infestation</label>
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
@@ -23,7 +23,7 @@
 
   <IncidentDef>
     <defName>BETAInfestationExterior</defName>
-    <label>infestation</label>
+    <label>BETA infestation</label>
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
