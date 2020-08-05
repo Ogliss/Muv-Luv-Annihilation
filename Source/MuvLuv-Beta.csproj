@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CompBETAProjectileInterceptor.cs" />
+    <Compile Include="Harmony\Patches\Class1.cs" />
     <Compile Include="Verb_LaunchProjectileCantMiss.cs" />
     <Compile Include="IncidentDefOf.cs" />
     <Compile Include="GameCondition_BetaHiveEvolution.cs" />
