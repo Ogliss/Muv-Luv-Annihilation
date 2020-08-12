@@ -21,11 +21,11 @@
     <comps>
       <li Class="CrashedShipsExtension.CompProperties_SpawnerOnDamaged">
         <allowedKinddefs>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
-          <BETA_TankClass>150</BETA_TankClass>
+          <BETA_SoldierClass>900</BETA_SoldierClass>
+          <BETA_WarriorClass>900</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
           <BETA_LaserClass>100</BETA_LaserClass>
-          <BETA_GrapplerClass>75</BETA_GrapplerClass>
+          <BETA_GrapplerClass>750</BETA_GrapplerClass>
           <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
           <BETA_FortClass>1</BETA_FortClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
@@ -63,7 +63,7 @@
     </graphicData>
     <size>(5,5)</size>
 	<modExtensions>
-		<li Class="ExtraHives.HiveExtension">
+		<li Class="ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
 	</modExtensions>

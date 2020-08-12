@@ -24,6 +24,9 @@ namespace MuvLuvBeta.HarmonyInstance
             Vector3 vector = GenThing.TrueCenter(thingToPush);
             Vector3 result = vector;
             bool flag = false;
+
+
+            /*
             int num = pushDist;
             int num2 = pushDist;
             if (vector.x > GenThing.TrueCenter(Caster).x)
@@ -45,11 +48,21 @@ namespace MuvLuvBeta.HarmonyInstance
             
             num += Rand.RangeInclusive(-pushDist, pushDist) / (num != 0 ? 3 : 2);
             num2 += Rand.RangeInclusive(-pushDist, pushDist) / (num2 != 0 ? 3 : 2);
-            
-            Vector3 vector2 = new Vector3(vector.x + (float)num2, 0f, vector.z + (float)num);
-            if (GenGrid.Standable(IntVec3Utility.ToIntVec3(vector2), Caster.Map))
+            */
+
+            //    Vector3 vector2 = new Vector3(vector.x + (float)num2, 0f, vector.z + (float)num);
+
+            Pawn caster = Caster as Pawn;
+            float num = 0f;
+            if ((thingToPush.DrawPos - caster.DrawPos).MagnitudeHorizontalSquared() > 0.001f)
             {
-                result = vector2;
+                num = (thingToPush.DrawPos - caster.DrawPos).AngleFlat();
+            }
+
+            IntVec3 vector2 = GenerateShrapnelLocation(caster.Position, num, pushDist);
+            if (RCellFinder.TryFindRandomCellNearWith(vector2, x=> GenSight.LineOfSight(caster.Position, x, Caster.Map) && GenGrid.Standable(x, Caster.Map), Caster.Map, out vector2))
+            {
+                result = vector2.ToVector3Shifted();
             }
             else
             {
@@ -60,6 +73,14 @@ namespace MuvLuvBeta.HarmonyInstance
             }
             collision = flag;
             return result;
+        }
+
+        // Token: 0x06004F42 RID: 20290 RVA: 0x001AB178 File Offset: 0x001A9378
+        private static IntVec3 GenerateShrapnelLocation(IntVec3 center, float angleOffset, float distanceFactor)
+        {
+            float num = MainHarmonyInstance.ShrapnelAngleDistribution.Evaluate(Rand.Value);
+            float d = MainHarmonyInstance.ShrapnelDistanceFromAngle.Evaluate(num) * Rand.Value * distanceFactor;
+            return (Vector3Utility.HorizontalVectorFromAngle(num + angleOffset) * d).ToIntVec3() + center;
         }
 
         public static void ThrowEffect(Thing Caster, Thing target, int distance, bool damageOnCollision = false)
@@ -88,6 +109,72 @@ namespace MuvLuvBeta.HarmonyInstance
 
             }
         }
+
+        // Token: 0x04002C7B RID: 11387
+        private static readonly SimpleCurve ShrapnelDistanceFromAngle = new SimpleCurve
+        {
+            {
+                new CurvePoint(0f, 6f),
+                true
+            },
+            {
+                new CurvePoint(90f, 4f),
+                true
+            },
+            {
+                new CurvePoint(135f, 4f),
+                true
+            },
+            {
+                new CurvePoint(180f, 30f),
+                true
+            },
+            {
+                new CurvePoint(225f, 4f),
+                true
+            },
+            {
+                new CurvePoint(270f, 4f),
+                true
+            },
+            {
+                new CurvePoint(360f, 6f),
+                true
+            }
+        };
+
+        // Token: 0x04002C7C RID: 11388
+        private static readonly SimpleCurve ShrapnelAngleDistribution = new SimpleCurve
+        {
+            {
+                new CurvePoint(0f, 0f),
+                true
+            },
+            {
+                new CurvePoint(0.1f, 90f),
+                true
+            },
+            {
+                new CurvePoint(0.25f, 135f),
+                true
+            },
+            {
+                new CurvePoint(0.5f, 180f),
+                true
+            },
+            {
+                new CurvePoint(0.75f, 225f),
+                true
+            },
+            {
+                new CurvePoint(0.9f, 270f),
+                true
+            },
+            {
+                new CurvePoint(1f, 360f),
+                true
+            }
+        };
     }
 
 

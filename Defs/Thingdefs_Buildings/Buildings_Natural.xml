@@ -35,7 +35,7 @@
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
 	<modExtensions>
-		<li Class="ExtraHives.HiveExtension">
+		<li Class="ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 			<TunnelDef>MLB_BETAHiveSpawner_Interior</TunnelDef>
 			<minTemp>-80</minTemp>
@@ -54,9 +54,9 @@
         <spawnablePawnKinds>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
-          <BETA_TankClass>300</BETA_TankClass>
+          <BETA_TankClass>800</BETA_TankClass>
           <BETA_LaserClass>100</BETA_LaserClass>
-          <BETA_GrapplerClass>100</BETA_GrapplerClass>
+          <BETA_GrapplerClass>500</BETA_GrapplerClass>
           <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
           <BETA_FortClass>1</BETA_FortClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
@@ -162,7 +162,7 @@
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
 	<modExtensions>
-		<li Class="ExtraHives.HiveExtension">
+		<li Class="ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 			<TunnelDef>MLB_BETAHiveSpawner_Exterior</TunnelDef>
 		</li>
@@ -173,17 +173,19 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-          <!--BETA_GrapplerClass>150</BETA_GrapplerClass>
+          <!--
+		  <BETA_GrapplerClass>150</BETA_GrapplerClass>
           <BETA_DestroyerClass>20</BETA_DestroyerClass>
           <BETA_FortClass>1</BETA_FortClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+		  -->
       <li Class="ExtraHives.CompProperties_SpawnerPawn">
         <spawnablePawnKinds>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
-          <BETA_TankClass>500</BETA_TankClass>
+          <BETA_SoldierClass>900</BETA_SoldierClass>
+          <BETA_WarriorClass>900</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
           <BETA_LaserClass>100</BETA_LaserClass>
-          <BETA_GrapplerClass>100</BETA_GrapplerClass>
+          <BETA_GrapplerClass>750</BETA_GrapplerClass>
         </spawnablePawnKinds>
 		<AlwaysSpawnWith>
 		  <li>BETA_GrapplerClass</li>
@@ -278,7 +280,7 @@
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
 	<modExtensions>
-		<li Class="ExtraHives.HiveExtension">
+		<li Class="ExtraHives.HiveDefExtension">
 			<TunnelDef>MLB_BETAHiveSpawner_Tunnel</TunnelDef>
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
@@ -325,6 +327,25 @@
     <tickerType>Normal</tickerType>
     <drawerType>RealtimeOnly</drawerType>
     <alwaysFlee>true</alwaysFlee>
+  </ThingDef>
+  
+  <ThingDef ParentName="RockBase">
+    <defName>ExtraHive_Hive_Wall</defName>
+    <label>resin wall</label>
+    <description>Rock and other debries, packed tightly enough and bound in resin strong enough to hold up a roof.</description>
+    <graphicData>
+      <texPath>Things/Special/ExtraHives/Linked/ResinWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+    </statBases>
+		<rotatable>true</rotatable>
+    <building>
+      <isNaturalRock>false</isNaturalRock>
+      <claimable>false</claimable>
+    </building>
   </ThingDef>
   
 </Defs>

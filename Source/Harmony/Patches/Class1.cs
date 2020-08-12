@@ -1,24 +1,34 @@
-﻿using System;
+﻿using RimWorld;
 using Verse;
 using HarmonyLib;
-using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
+using RimWorld.Planet;
 
 namespace MuvLuvBeta.HarmonyInstance
 {
-    [HarmonyPatch(typeof(HediffSet), "get_PainTotal")]
-    public static class MLB_HediffSet_get_PainTotal_BETA_Patch
+    // SettlementDefeatUtility.IsDefeated
+    [HarmonyPatch(typeof(SettlementDefeatUtility), "IsDefeated")]
+    public static class MLB_SettlementDefeatUtility_IsDefeated_Patch
     {
         [HarmonyPostfix]
-        public static void get_PainTotal_ComPainKiller_Postfix(HediffSet __instance, ref float __result)
+        public static void IsDefeatedPostfix(Map map, Faction faction, ref bool __result)
         {
-            if (__instance.pawn != null)
+            if (__result)
             {
-                if (__instance.pawn.RaceProps.FleshType.defName == ("BETAFlesh"))
+                if (faction.def.pawnGroupMakers.Any(x => x.options.Any(y => !y.kind.RaceProps.Humanlike)))
                 {
-                    __result = 0f;
+                    List<Pawn> list = map.mapPawns.SpawnedPawnsInFaction(faction);
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        Pawn pawn = list[i];
+                        if (GenHostility.IsActiveThreatToPlayer(pawn))
+                        {
+                            __result = false;
+                        }
+                    }
                 }
             }
         }
     }
-
 }
