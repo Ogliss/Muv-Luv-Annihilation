@@ -46,7 +46,7 @@ namespace MuvLuvBeta.HarmonyInstance
                         {
                             mult = 2f;
                         }
-                        Log.Message("IncidentWorker_RaidEnemy points: " + parms.points + " Mult: " + mult + " Result: " + parms.points * mult);
+                	//        Log.Message("IncidentWorker_RaidEnemy points: " + parms.points + " Mult: " + mult + " Result: " + parms.points * mult);
                         parms.points = parms.points * mult;
 
                     }

@@ -216,20 +216,20 @@ namespace MuvLuvBeta
         // Token: 0x06000600 RID: 1536 RVA: 0x00057328 File Offset: 0x00055528
         protected virtual void Impact(Thing hitThing)
         {
-            Log.Message(this.Label+" Hit 0");
+    	//        Log.Message(this.Label+" Hit 0");
             if (hitThing == null)
             {
-                Log.Message(this.Label + " hitThing == null");
+        	//        Log.Message(this.Label + " hitThing == null");
                 Pawn pawn;
                 if ((pawn = (base.Position.GetThingList(base.Map).FirstOrDefault((Thing x) => x == this.assignedTarget) as Pawn)) != null)
                 {
-                    Log.Message(this.Label + " hitThing = pawn");
+            	//        Log.Message(this.Label + " hitThing = pawn");
                     hitThing = pawn;
                 }
             }
             if (this.impactDamage != null && hitThing != null)
             {
-                Log.Message(this.Label + " impactDamage != null");
+        	//        Log.Message(this.Label + " impactDamage != null");
                 hitThing.TakeDamage(this.impactDamage.Value);
             }
             try

@@ -23,7 +23,7 @@ namespace MuvLuvBeta.HarmonyInstance
             {
                 float yearsingame = ((float)Find.TickManager.TicksAbs) / ((float)360000);
 
-                Log.Message(yearsingame+" years passed "+__instance.kind.LabelCap + " cost: "+ __result);
+        	//        Log.Message(yearsingame+" years passed "+__instance.kind.LabelCap + " cost: "+ __result);
             }
         }
     }

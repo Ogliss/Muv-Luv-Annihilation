@@ -45,8 +45,8 @@
       </points>
     </maxPawnCostPerTotalPointsCurve>
     <pawnGroupMakers>
-      <li>
         <!-- All types-->
+      <!--li>
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
         <options>
@@ -64,9 +64,9 @@
           <li>ImmediateAttackSmart</li>
           <li>ImmediateAttackSappers</li>
         </disallowedStrategies>
-      </li>
-      <li>
+      </li-->
         <!-- Tunnel raids, No Destoyers/Forts-->
+      <!--li>
         <kindDef>Tunneler_ExtraHives</kindDef>
         <commonality>100</commonality>
         <options>
@@ -95,7 +95,7 @@
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </options>
-      </li>
+      </li-->
     </pawnGroupMakers>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
     <allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
@@ -129,9 +129,9 @@
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>150</BETA_GrapplerClass>
+          <BETA_GrapplerClass>200</BETA_GrapplerClass>
           <BETA_DestroyerClass>20</BETA_DestroyerClass>
-          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_FortClass>2</BETA_FortClass>
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </options>
@@ -152,6 +152,46 @@
           <BETA_GrapplerClass>150</BETA_GrapplerClass>
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Interior Hives, No Destoyers/Forts/Grappler/HeavyLaser-->
+        <kindDef>BETA_InteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>1000</BETA_SoldierClass>
+          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_TankClass>800</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <BETA_GrapplerClass>500</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Exterior Hives, No Destoyers/Forts/HeavyLaser-->
+        <kindDef>BETA_ExteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>800</BETA_SoldierClass>
+          <BETA_WarriorClass>800</BETA_WarriorClass>
+          <BETA_TankClass>600</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <!--BETA_GrapplerClass>400</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -209,14 +249,14 @@
         <kindDef>Combat</kindDef>
         <commonality>200</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_SoldierClass>950</BETA_SoldierClass>
+          <BETA_WarriorClass>950</BETA_WarriorClass>
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>187</BETA_GrapplerClass>
-          <BETA_DestroyerClass>25</BETA_DestroyerClass>
-          <BETA_FortClass>2</BETA_FortClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>250</BETA_GrapplerClass>
+          <BETA_DestroyerClass>27</BETA_DestroyerClass>
+          <BETA_FortClass>4</BETA_FortClass>
+          <BETA_LaserClass>160</BETA_LaserClass>
+          <BETA_HeavyLaserClass>30</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -235,6 +275,46 @@
           <BETA_GrapplerClass>187</BETA_GrapplerClass>
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Interior Hives, No Destoyers/Forts/Grappler/HeavyLaser-->
+        <kindDef>BETA_InteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>980</BETA_SoldierClass>
+          <BETA_WarriorClass>980</BETA_WarriorClass>
+          <BETA_TankClass>810</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <BETA_GrapplerClass>510</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Exterior Hives, No Destoyers/Forts/HeavyLaser-->
+        <kindDef>BETA_ExteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>770</BETA_SoldierClass>
+          <BETA_WarriorClass>770</BETA_WarriorClass>
+          <BETA_TankClass>620</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <!--BETA_GrapplerClass>410</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -292,14 +372,14 @@
         <kindDef>Combat</kindDef>
         <commonality>300</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_SoldierClass>900</BETA_SoldierClass>
+          <BETA_WarriorClass>900</BETA_WarriorClass>
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>225</BETA_GrapplerClass>
-          <BETA_DestroyerClass>30</BETA_DestroyerClass>
-          <BETA_FortClass>3</BETA_FortClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>300</BETA_GrapplerClass>
+          <BETA_DestroyerClass>34</BETA_DestroyerClass>
+          <BETA_FortClass>6</BETA_FortClass>
+          <BETA_LaserClass>170</BETA_LaserClass>
+          <BETA_HeavyLaserClass>35</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -318,6 +398,46 @@
           <BETA_GrapplerClass>225</BETA_GrapplerClass>
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Interior Hives, No Destoyers/Forts/Grappler/HeavyLaser-->
+        <kindDef>BETA_InteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>960</BETA_SoldierClass>
+          <BETA_WarriorClass>960</BETA_WarriorClass>
+          <BETA_TankClass>820</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <BETA_GrapplerClass>520</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Exterior Hives, No Destoyers/Forts/Grappler/HeavyLaser-->
+        <kindDef>BETA_ExteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>740</BETA_SoldierClass>
+          <BETA_WarriorClass>740</BETA_WarriorClass>
+          <BETA_TankClass>640</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <!--BETA_GrapplerClass>420</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -375,14 +495,14 @@
         <kindDef>Combat</kindDef>
         <commonality>400</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_SoldierClass>850</BETA_SoldierClass>
+          <BETA_WarriorClass>850</BETA_WarriorClass>
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>262</BETA_GrapplerClass>
-          <BETA_DestroyerClass>35</BETA_DestroyerClass>
-          <BETA_FortClass>4</BETA_FortClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>350</BETA_GrapplerClass>
+          <BETA_DestroyerClass>41</BETA_DestroyerClass>
+          <BETA_FortClass>8</BETA_FortClass>
+          <BETA_LaserClass>180</BETA_LaserClass>
+          <BETA_HeavyLaserClass>40</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -401,6 +521,46 @@
           <BETA_GrapplerClass>262</BETA_GrapplerClass>
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Interior Hives, No Destoyers/Forts/Grappler/HeavyLaser-->
+        <kindDef>BETA_InteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>940</BETA_SoldierClass>
+          <BETA_WarriorClass>940</BETA_WarriorClass>
+          <BETA_TankClass>830</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <BETA_GrapplerClass>530</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Exterior Hives, No Destoyers/Forts/HeavyLaser-->
+        <kindDef>BETA_ExteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>710</BETA_SoldierClass>
+          <BETA_WarriorClass>710</BETA_WarriorClass>
+          <BETA_TankClass>660</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <!--BETA_GrapplerClass>430</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -458,14 +618,14 @@
         <kindDef>Combat</kindDef>
         <commonality>500</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <!--BETA_SoldierClass>0</BETA_SoldierClass>
+          <BETA_WarriorClass>0</BETA_WarriorClass-->
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>300</BETA_GrapplerClass>
-          <BETA_DestroyerClass>40</BETA_DestroyerClass>
-          <BETA_FortClass>5</BETA_FortClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>400</BETA_GrapplerClass>
+          <BETA_DestroyerClass>48</BETA_DestroyerClass>
+          <BETA_FortClass>10</BETA_FortClass>
+          <!--BETA_LaserClass>0</BETA_LaserClass-->
+          <BETA_HeavyLaserClass>45</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -484,6 +644,46 @@
           <BETA_GrapplerClass>300</BETA_GrapplerClass>
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Interior Hives, No Destoyers/Forts/Grappler/HeavyLaser-->
+        <kindDef>BETA_InteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>920</BETA_SoldierClass>
+          <BETA_WarriorClass>920</BETA_WarriorClass>
+          <BETA_TankClass>840</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <BETA_GrapplerClass>540</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Exterior Hives, No Destoyers/Forts/HeavyLaser-->
+        <kindDef>BETA_ExteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>680</BETA_SoldierClass>
+          <BETA_WarriorClass>680</BETA_WarriorClass>
+          <BETA_TankClass>680</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <!--BETA_GrapplerClass>440</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -541,14 +741,14 @@
         <kindDef>Combat</kindDef>
         <commonality>600</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <!--BETA_SoldierClass>0</BETA_SoldierClass>
+          <BETA_WarriorClass>0</BETA_WarriorClass-->
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>337</BETA_GrapplerClass>
-          <BETA_DestroyerClass>45</BETA_DestroyerClass>
-          <BETA_FortClass>6</BETA_FortClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>500</BETA_GrapplerClass>
+          <BETA_DestroyerClass>60</BETA_DestroyerClass>
+          <BETA_FortClass>14</BETA_FortClass>
+          <!--BETA_LaserClass>0</BETA_LaserClass-->
+          <BETA_HeavyLaserClass>55</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -567,6 +767,46 @@
           <BETA_GrapplerClass>337</BETA_GrapplerClass>
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Interior Hives, No Destoyers/Forts/Grappler/HeavyLaser-->
+        <kindDef>BETA_InteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>850</BETA_SoldierClass>
+          <BETA_WarriorClass>850</BETA_WarriorClass>
+          <BETA_TankClass>900</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <BETA_GrapplerClass>600</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+        </options>
+        <disallowedStrategies>
+          <li>Siege</li>
+          <li>ImmediateAttackSmart</li>
+          <li>ImmediateAttackSappers</li>
+        </disallowedStrategies>
+      </li>
+      <li>
+        <!-- Exterior Hives, No Destoyers/Forts/HeavyLaser-->
+        <kindDef>BETA_ExteriorHive</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <BETA_SoldierClass>600</BETA_SoldierClass>
+          <BETA_WarriorClass>600</BETA_WarriorClass>
+          <BETA_TankClass>750</BETA_TankClass>
+          <BETA_LaserClass>100</BETA_LaserClass>
+          <!--BETA_GrapplerClass>500</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>1</BETA_FortClass>
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
         </options>
         <disallowedStrategies>
           <li>Siege</li>

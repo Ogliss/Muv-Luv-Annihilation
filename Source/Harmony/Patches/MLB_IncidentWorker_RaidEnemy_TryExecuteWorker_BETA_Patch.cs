@@ -46,10 +46,10 @@ namespace MuvLuvBeta.HarmonyInstance
                         {
                             mult = 2f;
                         }
-                        Log.Message("IncidentWorker_RaidEnemy points: " + parms.points + " Mult: " + mult + " Result: " + parms.points * mult);
+                	//        Log.Message("IncidentWorker_RaidEnemy points: " + parms.points + " Mult: " + mult + " Result: " + parms.points * mult);
                         parms.points = parms.points * mult;
 
-                        if (Rand.Chance(1f))
+                        if (Rand.Chance(0.5f))
                         {
                             int strikedelay = Find.TickManager.TicksGame + MLB_IncidentWorker_RaidEnemy_TryExecuteWorker_BETA_Patch.RaidDelay.RandomInRange;
                             parms.points = parms.points / 2;
@@ -57,7 +57,7 @@ namespace MuvLuvBeta.HarmonyInstance
                             if (Rand.Chance(0.5f))
                             {
                                 hivepoints = hivepoints / 2;
-                                Log.Message("Tripple Threat strikes in " + strikedelay + " "+ hivepoints + " points each strikes in " + strikedelay);
+                        	//        Log.Message("Tripple Threat strikes in " + strikedelay + " "+ hivepoints + " points each strikes in " + strikedelay);
                                 int @int = Rand.Int;
                                 IncidentParms raidParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, map);
                                 raidParms.forced = true;
@@ -77,7 +77,7 @@ namespace MuvLuvBeta.HarmonyInstance
                             {
 
                                 IncidentDef incidentDef = Rand.Chance(0.5f) ? IncidentDefOf.BETAInfestationInterior : IncidentDefOf.BETAInfestationExterior;
-                                Log.Message("Double Threat " + incidentDef.defName +" strikes in "+ strikedelay);
+                        	//        Log.Message("Double Threat " + incidentDef.defName +" strikes in "+ strikedelay);
                                 int @int = Rand.Int;
                                 IncidentParms raidParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, map);
                                 raidParms.forced = true;

@@ -51,23 +51,24 @@
       </li>
       <li Class="CompProperties_WakeUpDormant" />
       <li Class="ExtraHives.CompProperties_SpawnerPawn">
+		<!--
         <spawnablePawnKinds>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
           <BETA_TankClass>800</BETA_TankClass>
           <BETA_LaserClass>100</BETA_LaserClass>
           <BETA_GrapplerClass>500</BETA_GrapplerClass>
-          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
           <BETA_FortClass>1</BETA_FortClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </spawnablePawnKinds>
-		<!--AlwaysSpawnWith>
+		<AlwaysSpawnWith>
 		  <li>BETA_GrapplerClass</li>
 		  <li>BETA_LaserClass</li>
-		</AlwaysSpawnWith-->
-		<!--
+		</AlwaysSpawnWith>
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
 		-->
+        <factionGroupKindDef>BETA_InteriorHive</factionGroupKindDef>
         <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <showNextSpawnInInspect>false</showNextSpawnInInspect>
@@ -180,6 +181,7 @@
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
 		  -->
       <li Class="ExtraHives.CompProperties_SpawnerPawn">
+	  <!--
         <spawnablePawnKinds>
           <BETA_SoldierClass>900</BETA_SoldierClass>
           <BETA_WarriorClass>900</BETA_WarriorClass>
@@ -191,10 +193,12 @@
 		  <li>BETA_GrapplerClass</li>
 		  <li>BETA_LaserClass</li>
 		</AlwaysSpawnWith>
+        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+		-->
+        <factionGroupKindDef>BETA_ExteriorHive</factionGroupKindDef>
         <initialPawnsPoints>250</initialPawnsPoints>
         <maxSpawnedPawnsPoints>550</maxSpawnedPawnsPoints>
         <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
-        <!--lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob-->
         <lordJob>LordJob_AssaultColony</lordJob>
         <pawnSpawnIntervalDays>0.1</pawnSpawnIntervalDays>
         <assaultOnSpawn>True</assaultOnSpawn>

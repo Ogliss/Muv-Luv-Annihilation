@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!--PawnGroupKindDef>
-    <defName>Hive_ExtraHives</defName>
+  <PawnGroupKindDef>
+    <defName>BETA_InteriorHive</defName>
     <workerClass>PawnGroupKindWorker_Normal</workerClass>
   </PawnGroupKindDef>
   
   <PawnGroupKindDef>
-    <defName>Tunneler_ExtraHives</defName>
+    <defName>BETA_ExteriorHive</defName>
     <workerClass>PawnGroupKindWorker_Normal</workerClass>
-  </PawnGroupKindDef-->
+  </PawnGroupKindDef>
   
 </Defs>

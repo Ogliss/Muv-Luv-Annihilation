@@ -25,7 +25,7 @@ namespace MuvLuvBeta.HarmonyInstance
                 {
                     if ((parms.target is Map map))
                     {
-                        Log.Message("raidArrivalMode " + parms.raidArrivalMode);
+                	//        Log.Message("raidArrivalMode " + parms.raidArrivalMode);
                         if (parms.raidArrivalMode?.minTechLevel >= TechLevel.Industrial)
                         {
                             bool tunnelchance = Rand.Chance(0.5f);
@@ -49,7 +49,7 @@ namespace MuvLuvBeta.HarmonyInstance
                             {
                                 parms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeWalkIn;
                             }
-                            Log.Message("raidArrivalMode now " + parms.raidArrivalMode);
+                    	//        Log.Message("raidArrivalMode now " + parms.raidArrivalMode);
                         }
                     }
                 }

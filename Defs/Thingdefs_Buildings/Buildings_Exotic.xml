@@ -26,13 +26,20 @@
           <BETA_TankClass>1000</BETA_TankClass>
           <BETA_LaserClass>100</BETA_LaserClass>
           <BETA_GrapplerClass>750</BETA_GrapplerClass>
-          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
-          <BETA_FortClass>1</BETA_FortClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+          <!--BETA_DestroyerClass>50</BETA_DestroyerClass>
+          <BETA_FortClass>25</BETA_FortClass>
+          <BETA_HeavyLaserClass>300</BETA_HeavyLaserClass-->
         </allowedKinddefs>
-        <Faction>MuvLuv_BETA</Faction>
+        <Factions>
+			<li>MuvLuv_BETA</li>
+			<li>MuvLuv_BETA2P</li>
+			<li>MuvLuv_BETA3P</li>
+			<li>MuvLuv_BETA4P</li>
+			<li>MuvLuv_BETA5P</li>
+			<li>MuvLuv_BETA6P</li>
+		</Factions>
       </li>
-      <li Class="CompProperties_PlantHarmRadius">
+      <!--li Class="CompProperties_PlantHarmRadius">
         <radiusPerDayCurve>
           <points>
             <li>0  , 5</li>
@@ -41,7 +48,7 @@
             <li>20 , 100</li>
           </points>
         </radiusPerDayCurve>
-      </li>
+      </li-->
     </comps>
   </ThingDef>
 
@@ -70,27 +77,34 @@
     <comps>
       <li Class="CrashedShipsExtension.CompProperties_SpawnerOnDamaged">
         <allowedKinddefs>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
-          <BETA_TankClass>150</BETA_TankClass>
+          <BETA_SoldierClass>800</BETA_SoldierClass>
+          <BETA_WarriorClass>800</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
           <BETA_LaserClass>100</BETA_LaserClass>
-          <BETA_GrapplerClass>75</BETA_GrapplerClass>
-          <!--BETA_DestroyerClass>20</BETA_DestroyerClass>
-          <BETA_FortClass>1</BETA_FortClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+          <BETA_GrapplerClass>750</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>50</BETA_DestroyerClass>
+          <BETA_FortClass>25</BETA_FortClass>
+          <BETA_HeavyLaserClass>300</BETA_HeavyLaserClass-->
         </allowedKinddefs>
-        <Faction>MuvLuv_BETA</Faction>
+        <Factions>
+			<li>MuvLuv_BETA</li>
+			<li>MuvLuv_BETA2P</li>
+			<li>MuvLuv_BETA3P</li>
+			<li>MuvLuv_BETA4P</li>
+			<li>MuvLuv_BETA5P</li>
+			<li>MuvLuv_BETA6P</li>
+		</Factions>
       </li>
       <li Class="CrashedShipsExtension.CompProperties_SpawnerPawn">
         <spawnablePawnKinds>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
-          <BETA_TankClass>150</BETA_TankClass>
+          <BETA_SoldierClass>800</BETA_SoldierClass>
+          <BETA_WarriorClass>800</BETA_WarriorClass>
+          <BETA_TankClass>1000</BETA_TankClass>
           <BETA_LaserClass>100</BETA_LaserClass>
-          <!--BETA_GrapplerClass>150</BETA_GrapplerClass>
-          <BETA_DestroyerClass>20</BETA_DestroyerClass>
-          <BETA_FortClass>1</BETA_FortClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass-->
+          <BETA_GrapplerClass>750</BETA_GrapplerClass>
+          <!--BETA_DestroyerClass>50</BETA_DestroyerClass>
+          <BETA_FortClass>25</BETA_FortClass>
+          <BETA_HeavyLaserClass>300</BETA_HeavyLaserClass-->
         </spawnablePawnKinds>
 			<AlwaysSpawnWith>
 			  <li>BETA_FortClass</li>
