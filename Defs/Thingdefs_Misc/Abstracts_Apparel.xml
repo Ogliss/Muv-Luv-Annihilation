@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!--========================= MILIT - Apparel Base ==========================-->
+	<ThingDef Name="MLB_MILIT_ApparelBase" Abstract="True">
+		<thingClass>Apparel</thingClass>
+		<category>Item</category>
+		<selectable>True</selectable>
+		<pathCost>10</pathCost>
+		<useHitPoints>True</useHitPoints>
+		<graphicData>
+			<onGroundRandomRotateAngle>25</onGroundRandomRotateAngle>
+		</graphicData>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>2.5</DeteriorationRate>
+			<SellPriceFactor>0.5</SellPriceFactor>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>True</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+    <!--========================= MILIT - Clothes Base - Apparel Makable Base ==========================-->
+	<ThingDef Name="MLB_MILIT_Apparel_MakeableBase" ParentName="MLB_MILIT_ApparelBase" Abstract="True">
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Tailor</effectWorking>
+			<soundWorking>Recipe_Tailor</soundWorking>
+			<recipeUsers>
+				<li>ElectricTailoringBench</li>
+				<li>HandTailoringBench</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+		</recipeMaker>
+		<apparel>
+			<tags>
+				<li>MLB_MILIT_Apparel</li>
+			</tags>
+		</apparel>
+		<thingCategories Inherit="false">
+		  <li>MLB_MILIT_Apparel</li>
+		</thingCategories>
+	</ThingDef>
+
+	<!-- ========================= MILIT - Headgear base ========================== -->
+	<ThingDef Name="MLB_MILIT_HeadgearBase" ParentName="MLB_MILIT_Apparel_MakeableBase" Abstract="true">
+		<description>Standard issue MILIT headgear.</description>
+		<apparel>
+			<tags>
+				<li>MLB_MILIT_Headgear</li>
+			</tags>
+		</apparel>
+		<thingCategories Inherit="false">
+			<li>MLB_MILIT_Headgear</li>
+		</thingCategories>
+	</ThingDef>	
+	
+    <!--========================= MILIT - Apparel Armour Makable Base ==========================-->
+	<ThingDef Name="MLB_MILIT_Armour_MakeableBase" ParentName="MLB_MILIT_ApparelBase" Abstract="True">
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<recipeUsers>
+				<li>TableMachining</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+		</recipeMaker>
+		<apparel>
+			<tags>
+				<li>MLB_MILIT_Armour</li>
+			</tags>
+		</apparel>
+		<thingCategories Inherit="false">
+			<li>MLB_MILIT_Armour</li>
+		</thingCategories>
+	</ThingDef>
+	
+	<!-- ========================= MILIT - Headgear base ========================== -->
+	<ThingDef Name="MLB_MILIT_ArmourHeadgearBase" ParentName="MLB_MILIT_Armour_MakeableBase" Abstract="true">
+		<description>Standard issue MILIT headgear.</description>
+		<apparel>
+			<tags>
+				<li>MLB_MILIT_ArmourHeadgear</li>
+			</tags>
+		</apparel>
+		<thingCategories Inherit="false">
+			<li>MLB_MILIT_ArmourHeadgear</li>
+		</thingCategories>
+	</ThingDef>	
+	
+	<!-- ========================= MILIT - Equipment base ========================== -->
+	<ThingDef Name="MLB_MILIT_EquipmentBase" ParentName="MLB_MILIT_Armour_MakeableBase" Abstract="true">
+		<description>Advanced equipment of the MILIT</description>
+		<apparel>
+			<tags>
+				<li>MLB_MILIT_Equipment</li>
+			</tags>
+		</apparel>
+		<thingCategories Inherit="false">
+			<li>MLB_MILIT_Equipment</li>
+		</thingCategories>
+	</ThingDef>
+	
+</Defs>

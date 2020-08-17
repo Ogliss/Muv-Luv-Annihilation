@@ -102,7 +102,7 @@ namespace MuvLuvBeta
             {
                 Pawn hitPawn = (Pawn)target;
                 Rand.PushState();
-                MainHarmonyInstance.ThrowEffect(CasterPawn, hitPawn, (int)((Rand.Range(2, 8) + CasterPawn.BodySize) - hitPawn.BodySize), true);
+                MainHarmonyInstance.ThrowEffect(CasterPawn, hitPawn, (int)Rand.Range(2, Math.Min(15, CasterPawn.BodySize - hitPawn.BodySize)), true);
                 Rand.PopState();
             }
             yield break;

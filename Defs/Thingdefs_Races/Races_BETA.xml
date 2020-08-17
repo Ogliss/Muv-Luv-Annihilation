@@ -651,8 +651,8 @@
 				<label>Standard</label>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>BETA_LuxLaser</defaultProjectile>
-				<warmupTime>3</warmupTime>
-				<defaultCooldownTime>3</defaultCooldownTime>
+				<warmupTime>0</warmupTime>
+				<defaultCooldownTime>6</defaultCooldownTime>
 				<range>31</range>
 				<burstShotCount>1</burstShotCount>
 				<ticksBetweenBurstShots>30</ticksBetweenBurstShots>
@@ -794,8 +794,8 @@
 				<label>Standard</label>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>BETA_MagnusLuxLaser</defaultProjectile>
-				<warmupTime>6</warmupTime>
-				<defaultCooldownTime>6</defaultCooldownTime>
+				<warmupTime>0</warmupTime>
+				<defaultCooldownTime>12</defaultCooldownTime>
 				<range>42</range>
 				<burstShotCount>1</burstShotCount>
 				<ticksBetweenBurstShots>30</ticksBetweenBurstShots>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--======================================== MILIT Faction and Character namer ================================================-->
+	
+	<RulePackDef>
+		<defName>Namer_MLB_MILIT_Operations</defName>
+		<rulePack>
+		  <rulesStrings>
+			<li>name->[MLB_MILIT_Operations]</li>
+		  </rulesStrings>
+		  <rulesRaw>
+			<li Class="Rule_File">
+				<keyword>MLB_MILIT_Operations</keyword>
+				<path>NameBanks/MLB_MILIT_Operations</path>
+			</li>
+		  </rulesRaw>
+		</rulePack>
+	</RulePackDef>
+	
+	<RulePackDef>
+		<defName>Namer_MLB_MILIT_Squads</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[MLB_MILIT_Squads]</li>
+			</rulesStrings>
+			<rulesRaw>
+				<li Class="Rule_File">
+					<keyword>MLB_MILIT_Squads</keyword>
+					<path>NameBanks/MLB_MILIT_Squads</path>
+				</li>
+			</rulesRaw>
+		</rulePack>
+	</RulePackDef>
+	
+</Defs>

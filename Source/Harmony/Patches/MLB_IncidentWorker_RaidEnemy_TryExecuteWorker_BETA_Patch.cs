@@ -49,12 +49,12 @@ namespace MuvLuvBeta.HarmonyInstance
                 	//        Log.Message("IncidentWorker_RaidEnemy points: " + parms.points + " Mult: " + mult + " Result: " + parms.points * mult);
                         parms.points = parms.points * mult;
 
-                        if (Rand.Chance(0.5f))
+                        if (Rand.Chance(0.25f))
                         {
                             int strikedelay = Find.TickManager.TicksGame + MLB_IncidentWorker_RaidEnemy_TryExecuteWorker_BETA_Patch.RaidDelay.RandomInRange;
                             parms.points = parms.points / 2;
                             float hivepoints = parms.points;
-                            if (Rand.Chance(0.5f))
+                            if (Rand.Chance(0.25f))
                             {
                                 hivepoints = hivepoints / 2;
                         	//        Log.Message("Tripple Threat strikes in " + strikedelay + " "+ hivepoints + " points each strikes in " + strikedelay);

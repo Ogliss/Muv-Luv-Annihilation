@@ -2,12 +2,10 @@
 <Defs>
 
   <FactionDef Name="BETAFactionBase" Abstract="true">
-    <label>BETA hive: Phase 1</label>
     <pawnSingular>BETA</pawnSingular>
     <pawnsPlural>BETA</pawnsPlural>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <settlementGenerationWeight>1</settlementGenerationWeight>
-    <fixedName>BETA</fixedName>
     <settlementNameMaker>NamerSettlementBETA</settlementNameMaker>
     <factionIconPath>World/WorldObjects/Expanding/Sites/MechCluster</factionIconPath>
     <raidCommonalityFromPointsCurve>
@@ -104,6 +102,7 @@
   <FactionDef ParentName="BETAFactionBase">
     <defName>MuvLuv_BETA</defName>
     <label>BETA hive: Phase 1</label>
+    <fixedName>BETA hive: Phase 1</fixedName>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>
@@ -226,6 +225,7 @@
   <FactionDef ParentName="BETAFactionBase">
     <defName>MuvLuv_BETA2P</defName>
     <label>BETA hive: Phase 2</label>
+    <fixedName>BETA hive: Phase 2</fixedName>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>
@@ -349,6 +349,7 @@
   <FactionDef ParentName="BETAFactionBase">
     <defName>MuvLuv_BETA3P</defName>
     <label>BETA hive: Phase 3</label>
+    <fixedName>BETA hive: Phase 3</fixedName>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>
@@ -472,6 +473,7 @@
   <FactionDef ParentName="BETAFactionBase">
     <defName>MuvLuv_BETA4P</defName>
     <label>BETA hive: Phase 4</label>
+    <fixedName>BETA hive: Phase 4</fixedName>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>
@@ -595,6 +597,7 @@
   <FactionDef ParentName="BETAFactionBase">
     <defName>MuvLuv_BETA5P</defName>
     <label>BETA hive: Phase 5</label>
+    <fixedName>BETA hive: Phase 5</fixedName>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>
@@ -718,6 +721,7 @@
   <FactionDef ParentName="BETAFactionBase">
     <defName>MuvLuv_BETA6P</defName>
     <label>BETA hive: Phase 6</label>
+    <fixedName>BETA hive: Phase 6</fixedName>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>

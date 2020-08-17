@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+<!--=============================================== MILIT - Player Faction ===============================================-->
+<!--=============================================== MILIT - Base ===============================================-->
+  <PawnKindDef Abstract="True" Name="MLB_MILIT_Base_Kind">
+    <race>Human</race>
+    <combatPower>50</combatPower>
+    <baseRecruitDifficulty>1.0</baseRecruitDifficulty>
+    <isFighter>true</isFighter>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+	    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <drawSize>0.75</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <drawSize>1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+	<backstoryCategories>
+			<li>MLB_MILIT_Backstories</li>
+  	</backstoryCategories>
+  </PawnKindDef>
+
+<!--=============================================== MILIT - Private ===============================================-->
+
+  <PawnKindDef ParentName="MLB_MILIT_Base_Kind">
+    <defName>MLB_MILIT_PlayerPrivate</defName>
+    <label>marine</label>
+    <defaultFactionType>MLB_MILIT_PlayerColony</defaultFactionType>
+    <apparelTags>
+		<li>MILIT_StandardIssue_Apparel</li>
+	</apparelTags>
+	<apparelMoney>
+		<min>5000</min>
+		<max>10000</max>
+    </apparelMoney>
+	<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
+  </PawnKindDef>
+  
+ 
+</Defs>
