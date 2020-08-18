@@ -237,7 +237,7 @@
         <li>(4000, 2.8)</li>
       </points>
     </raidCommonalityFromPointsCurve>
-    <earliestRaidDays>195</earliestRaidDays>
+    <earliestRaidDays>135</earliestRaidDays>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(400,200)</li>
@@ -363,7 +363,7 @@
         <li>(4000, 2.8)</li>
       </points>
     </raidCommonalityFromPointsCurve>
-    <earliestRaidDays>315</earliestRaidDays>
+    <earliestRaidDays>225</earliestRaidDays>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(400,200)</li>
@@ -489,7 +489,7 @@
         <li>(4000, 2.8)</li>
       </points>
     </raidCommonalityFromPointsCurve>
-    <earliestRaidDays>465</earliestRaidDays>
+    <earliestRaidDays>315</earliestRaidDays>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(400,200)</li>
@@ -615,7 +615,7 @@
         <li>(4000, 2.8)</li>
       </points>
     </raidCommonalityFromPointsCurve>
-    <earliestRaidDays>615</earliestRaidDays>
+    <earliestRaidDays>405</earliestRaidDays>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(400,200)</li>
@@ -741,7 +741,7 @@
         <li>(4000, 2.8)</li>
       </points>
     </raidCommonalityFromPointsCurve>
-    <earliestRaidDays>765</earliestRaidDays>
+    <earliestRaidDays>495</earliestRaidDays>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(400,200)</li>

@@ -67,9 +67,9 @@
       <PainShockThreshold>0.9999</PainShockThreshold>
       <PsychicSensitivity>2</PsychicSensitivity>
       <ToxicSensitivity>1</ToxicSensitivity>
-      <ComfyTemperatureMax>60</ComfyTemperatureMax>
       <MoveSpeed>4.50</MoveSpeed>
       <ComfyTemperatureMin>-250</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
     </statBases>    
     <race>
       <fleshType>BETAFlesh</fleshType>

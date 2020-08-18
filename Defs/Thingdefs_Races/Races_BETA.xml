@@ -385,8 +385,8 @@
 		  <RangeMax>20</RangeMax>
 		  <RangeMin>7</RangeMin>
 		  <explodingRadius>3</explodingRadius>
-		  <ticksBetweenChargeChance>1000</ticksBetweenChargeChance>
-		  <Chance>0.70</Chance>
+		  <ticksBetweenChargeChance>600</ticksBetweenChargeChance>
+		  <Chance>0.75</Chance>
 		  <textMotes>true</textMotes>
 		  <targetPawns>false</targetPawns>
 		  <targetBuildings>true</targetBuildings>
