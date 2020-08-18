@@ -6,19 +6,19 @@
     <ateDirect>AteInsectMeatDirect</ateDirect>
     <ateAsIngredient>AteInsectMeatAsIngredient</ateAsIngredient>
     <corpseCategory>CorpsesBETA</corpseCategory>
-    <damageEffecter>Damage_HitInsect</damageEffecter>
+    <damageEffecter>Damage_HitFlesh</damageEffecter>
     <wounds>
       <li>
         <texture>Things/Pawn/Wounds/WoundA</texture>
-        <color>0.6,0.20,0.17</color>
+        <color>170,24,24</color>
       </li>
       <li>
         <texture>Things/Pawn/Wounds/WoundB</texture>
-        <color>0.6,0.20,0.17</color>
+        <color>170,24,24</color>
       </li>
       <li>
         <texture>Things/Pawn/Wounds/WoundC</texture>
-        <color>0.6,0.20,0.17</color>
+        <color>170,24,24</color>
       </li>
     </wounds>
   </FleshTypeDef>

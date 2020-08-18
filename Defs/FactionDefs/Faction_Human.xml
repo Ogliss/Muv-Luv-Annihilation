@@ -117,7 +117,7 @@
       </li>
     </pawnGroupMakers>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
-    <factionIconPath>Ui/Icons/Icon_MILIT</factionIconPath>
+    <factionIconPath>World/WorldObjects/Expanding/Sites/MechCluster</factionIconPath>
   </FactionDef>
     
 </Defs>

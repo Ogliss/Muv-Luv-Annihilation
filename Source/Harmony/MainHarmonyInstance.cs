@@ -79,7 +79,7 @@ namespace MuvLuvBeta.HarmonyInstance
         private static IntVec3 GenerateShrapnelLocation(IntVec3 center, float angleOffset, float distanceFactor)
         {
             float num = MainHarmonyInstance.ShrapnelAngleDistribution.Evaluate(Rand.Value);
-            float d = MainHarmonyInstance.ShrapnelDistanceFromAngle.Evaluate(num) * Rand.Value * distanceFactor;
+            float d = MainHarmonyInstance.ShrapnelDistanceFromAngle.Evaluate(num) * Rand.Value + distanceFactor;
             return (Vector3Utility.HorizontalVectorFromAngle(num + angleOffset) * d).ToIntVec3() + center;
         }
 

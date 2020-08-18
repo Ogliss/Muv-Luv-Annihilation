@@ -14,6 +14,7 @@ namespace MuvLuvBeta
         // Token: 0x06005F6B RID: 24427 RVA: 0x0020F288 File Offset: 0x0020D488
         private IEnumerable<DamageInfo> DamageInfosToApply(LocalTargetInfo target)
         {
+            /*
             float num = this.verbProps.AdjustedMeleeDamageAmount(this, this.CasterPawn);
             float armorPenetration = this.verbProps.AdjustedArmorPenetration(this, this.CasterPawn);
             DamageDef def = this.verbProps.meleeDamageDef;
@@ -98,11 +99,12 @@ namespace MuvLuvBeta
                 }
                 //    IEnumerator<ExtraDamage> enumerator2 = null;
             }
+            */
             if (target.HasThing && target.Pawn !=null)
             {
                 Pawn hitPawn = (Pawn)target;
                 Rand.PushState();
-                MainHarmonyInstance.ThrowEffect(CasterPawn, hitPawn, (int)Rand.Range(2, Math.Min(15, CasterPawn.BodySize - hitPawn.BodySize)), true);
+                MainHarmonyInstance.ThrowEffect(CasterPawn, hitPawn, (int)Rand.Range(2, Math.Min(10, CasterPawn.BodySize - hitPawn.BodySize)), true);
                 Rand.PopState();
             }
             yield break;
@@ -112,6 +114,7 @@ namespace MuvLuvBeta
         protected override DamageWorker.DamageResult ApplyMeleeDamageToTarget(LocalTargetInfo target)
         {
             DamageWorker.DamageResult result = new DamageWorker.DamageResult();
+            /*
             foreach (DamageInfo dinfo in this.DamageInfosToApply(target))
             {
                 if (target.ThingDestroyed)
@@ -120,13 +123,9 @@ namespace MuvLuvBeta
                 }
                 result = target.Thing.TakeDamage(dinfo);
             }
+            */
             return result;
         }
 
-        // Token: 0x0400253C RID: 9532
-        private const float MeleeDamageRandomFactorMin = 0.8f;
-
-        // Token: 0x0400253D RID: 9533
-        private const float MeleeDamageRandomFactorMax = 1.2f;
     }
 }

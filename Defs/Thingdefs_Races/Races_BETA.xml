@@ -23,16 +23,8 @@
       <lifeExpectancy>6</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>EusocialInsectLarva</def>
-          <minAge>0</minAge>
-        </li>
-        <li>
-          <def>EusocialInsectJuvenile</def>
-          <minAge>0.03</minAge>
-        </li>
-        <li>
           <def>EusocialInsectAdult</def>
-          <minAge>0.2</minAge>
+          <minAge>0</minAge>
           <soundWounded>Pawn_Spelopede_Pain</soundWounded>
           <soundDeath>Pawn_Spelopede_Death</soundDeath>
           <soundCall>Pawn_Spelopede_Call</soundCall>
@@ -109,16 +101,8 @@
       <lifeExpectancy>6</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>EusocialInsectLarva</def>
-          <minAge>0</minAge>
-        </li>
-        <li>
-          <def>EusocialInsectJuvenile</def>
-          <minAge>0.03</minAge>
-        </li>
-        <li>
           <def>EusocialInsectAdult</def>
-          <minAge>0.2</minAge>
+          <minAge>0</minAge>
           <soundWounded>Pawn_Spelopede_Pain</soundWounded>
           <soundDeath>Pawn_Spelopede_Death</soundDeath>
           <soundCall>Pawn_Spelopede_Call</soundCall>
@@ -177,16 +161,8 @@
       <lifeExpectancy>6</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>EusocialInsectLarva</def>
-          <minAge>0</minAge>
-        </li>
-        <li>
-          <def>EusocialInsectJuvenile</def>
-          <minAge>0.03</minAge>
-        </li>
-        <li>
           <def>EusocialInsectAdult</def>
-          <minAge>0.2</minAge>
+          <minAge>0</minAge>
           <soundWounded>Pawn_Spelopede_Pain</soundWounded>
           <soundDeath>Pawn_Spelopede_Death</soundDeath>
           <soundCall>Pawn_Spelopede_Call</soundCall>
@@ -263,16 +239,8 @@
       <lifeExpectancy>6</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>EusocialInsectLarva</def>
-          <minAge>0</minAge>
-        </li>
-        <li>
-          <def>EusocialInsectJuvenile</def>
-          <minAge>0.03</minAge>
-        </li>
-        <li>
           <def>EusocialInsectAdult</def>
-          <minAge>0.2</minAge>
+          <minAge>0</minAge>
           <soundWounded>Pawn_BigInsect_Pain</soundWounded>
           <soundDeath>Pawn_BigInsect_Death</soundDeath>
           <soundCall>Pawn_BigInsect_Call</soundCall>
@@ -302,14 +270,14 @@
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-        <chanceFactor>1</chanceFactor>
+        <chanceFactor>0.25</chanceFactor>
       </li>
       <li>
         <label>left fist</label>
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>6</power>
+        <power>8</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
       </li>
@@ -318,7 +286,7 @@
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>6</power>
+        <power>8</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
       </li>
@@ -378,16 +346,8 @@
       <lifeExpectancy>6</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>EusocialInsectLarva</def>
-          <minAge>0</minAge>
-        </li>
-        <li>
-          <def>EusocialInsectJuvenile</def>
-          <minAge>0.03</minAge>
-        </li>
-        <li>
           <def>EusocialInsectAdult</def>
-          <minAge>0.2</minAge>
+          <minAge>0</minAge>
           <soundWounded>Pawn_BigInsect_Pain</soundWounded>
           <soundDeath>Pawn_BigInsect_Death</soundDeath>
           <soundCall>Pawn_BigInsect_Call</soundCall>
@@ -474,16 +434,8 @@
       <lifeExpectancy>6</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>EusocialInsectLarva</def>
-          <minAge>0</minAge>
-        </li>
-        <li>
-          <def>EusocialInsectJuvenile</def>
-          <minAge>0.03</minAge>
-        </li>
-        <li>
           <def>EusocialInsectAdult</def>
-          <minAge>0.2</minAge>
+          <minAge>0</minAge>
           <soundWounded>Pawn_BigInsect_Pain</soundWounded>
           <soundDeath>Pawn_BigInsect_Death</soundDeath>
           <soundCall>Pawn_BigInsect_Call</soundCall>
@@ -556,16 +508,8 @@
       <lifeExpectancy>6</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>EusocialInsectLarva</def>
-          <minAge>0</minAge>
-        </li>
-        <li>
-          <def>EusocialInsectJuvenile</def>
-          <minAge>0.03</minAge>
-        </li>
-        <li>
           <def>EusocialInsectAdult</def>
-          <minAge>0.2</minAge>
+          <minAge>0</minAge>
           <soundWounded>Pawn_Spelopede_Pain</soundWounded>
           <soundDeath>Pawn_Spelopede_Death</soundDeath>
           <soundCall>Pawn_Spelopede_Call</soundCall>
@@ -713,16 +657,8 @@
       <lifeExpectancy>6</lifeExpectancy>
       <lifeStageAges>
         <li>
-          <def>EusocialInsectLarva</def>
-          <minAge>0</minAge>
-        </li>
-        <li>
-          <def>EusocialInsectJuvenile</def>
-          <minAge>0.03</minAge>
-        </li>
-        <li>
           <def>EusocialInsectAdult</def>
-          <minAge>0.2</minAge>
+          <minAge>0</minAge>
           <soundWounded>Pawn_BigInsect_Pain</soundWounded>
           <soundDeath>Pawn_BigInsect_Death</soundDeath>
           <soundCall>Pawn_BigInsect_Call</soundCall>
