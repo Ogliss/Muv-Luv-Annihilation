@@ -813,7 +813,7 @@
 			</li>
             <li>
               <def>BETAHead</def>
-              <coverage>0.01</coverage>
+              <coverage>0.001</coverage>
               <groups>
                 <li>HeadAttackTool</li>
               </groups>

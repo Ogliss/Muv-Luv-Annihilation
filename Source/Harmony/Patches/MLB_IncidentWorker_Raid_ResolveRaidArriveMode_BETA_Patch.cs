@@ -23,6 +23,10 @@ namespace MuvLuvBeta.HarmonyInstance
             {
                 if (parms.faction != null && (parms.faction.def.defName.Contains("MuvLuv_BETA")))
                 {
+                    Log.Message("beta raid, defaulting to edgewalkin");
+                    parms.raidArrivalMode = RimWorld.PawnsArrivalModeDefOf.EdgeWalkIn;
+                    return;
+                    /*
                     if ((parms.target is Map map))
                     {
                 	//        Log.Message("raidArrivalMode " + parms.raidArrivalMode);
@@ -56,6 +60,7 @@ namespace MuvLuvBeta.HarmonyInstance
                     	//        Log.Message("raidArrivalMode now " + parms.raidArrivalMode);
                         }
                     }
+                    */
                 }
             }
         }
