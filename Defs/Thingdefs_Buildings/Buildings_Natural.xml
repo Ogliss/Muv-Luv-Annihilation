@@ -40,7 +40,7 @@
 			<TunnelDef>MLB_BETAHiveSpawner_Interior</TunnelDef>
 			<minTemp>-80</minTemp>
 			<maxTemp>80</maxTemp>
-			<bonusTempScore>20</bonusTempScore>
+			<bonusTempScore>200</bonusTempScore>
 			<bonusBelowTemp>0</bonusBelowTemp>
 		</li>
 	</modExtensions>
