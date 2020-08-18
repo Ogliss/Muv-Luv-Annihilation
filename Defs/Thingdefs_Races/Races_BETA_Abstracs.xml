@@ -69,7 +69,7 @@
       <ToxicSensitivity>1</ToxicSensitivity>
       <MoveSpeed>4.50</MoveSpeed>
       <ComfyTemperatureMin>-250</ComfyTemperatureMin>
-      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <ComfyTemperatureMax>1700</ComfyTemperatureMax>
     </statBases>    
     <race>
       <fleshType>BETAFlesh</fleshType>
