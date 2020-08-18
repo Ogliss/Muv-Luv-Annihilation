@@ -29,6 +29,10 @@ namespace MuvLuvBeta.HarmonyInstance
                         if (parms.raidArrivalMode?.minTechLevel >= TechLevel.Industrial)
                         {
                             bool tunnelchance = Rand.Chance(0.5f);
+                            if (tunnelchance)
+                            {
+                               
+                            }
                             if (parms.raidArrivalMode == RimWorld.PawnsArrivalModeDefOf.CenterDrop)
                             {
                                 parms.raidArrivalMode = tunnelchance ? ExtraHives.PawnsArrivalModeDefOf.CenterTunnelIn_ExtraHives : RimWorld.PawnsArrivalModeDefOf.EdgeWalkIn;

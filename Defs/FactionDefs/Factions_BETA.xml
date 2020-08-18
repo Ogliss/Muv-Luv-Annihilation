@@ -148,7 +148,9 @@
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>150</BETA_GrapplerClass>
+          <BETA_GrapplerClass>200</BETA_GrapplerClass>
+          <BETA_DestroyerClass>20</BETA_DestroyerClass>
+          <BETA_FortClass>2</BETA_FortClass>
           <BETA_LaserClass>150</BETA_LaserClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
         </options>
@@ -269,12 +271,14 @@
         <kindDef>Tunneler_ExtraHives</kindDef>
         <commonality>100</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_SoldierClass>950</BETA_SoldierClass>
+          <BETA_WarriorClass>950</BETA_WarriorClass>
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>187</BETA_GrapplerClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>250</BETA_GrapplerClass>
+          <BETA_DestroyerClass>27</BETA_DestroyerClass>
+          <BETA_FortClass>4</BETA_FortClass>
+          <BETA_LaserClass>160</BETA_LaserClass>
+          <BETA_HeavyLaserClass>30</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -393,12 +397,14 @@
         <kindDef>Tunneler_ExtraHives</kindDef>
         <commonality>100</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_SoldierClass>900</BETA_SoldierClass>
+          <BETA_WarriorClass>900</BETA_WarriorClass>
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>225</BETA_GrapplerClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>300</BETA_GrapplerClass>
+          <BETA_DestroyerClass>34</BETA_DestroyerClass>
+          <BETA_FortClass>6</BETA_FortClass>
+          <BETA_LaserClass>170</BETA_LaserClass>
+          <BETA_HeavyLaserClass>35</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -517,12 +523,14 @@
         <kindDef>Tunneler_ExtraHives</kindDef>
         <commonality>100</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <BETA_SoldierClass>850</BETA_SoldierClass>
+          <BETA_WarriorClass>850</BETA_WarriorClass>
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>262</BETA_GrapplerClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>350</BETA_GrapplerClass>
+          <BETA_DestroyerClass>41</BETA_DestroyerClass>
+          <BETA_FortClass>8</BETA_FortClass>
+          <BETA_LaserClass>180</BETA_LaserClass>
+          <BETA_HeavyLaserClass>40</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -641,12 +649,14 @@
         <kindDef>Tunneler_ExtraHives</kindDef>
         <commonality>100</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <!--BETA_SoldierClass>0</BETA_SoldierClass>
+          <BETA_WarriorClass>0</BETA_WarriorClass-->
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>300</BETA_GrapplerClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>400</BETA_GrapplerClass>
+          <BETA_DestroyerClass>48</BETA_DestroyerClass>
+          <BETA_FortClass>10</BETA_FortClass>
+          <!--BETA_LaserClass>0</BETA_LaserClass-->
+          <BETA_HeavyLaserClass>45</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
@@ -765,12 +775,14 @@
         <kindDef>Tunneler_ExtraHives</kindDef>
         <commonality>100</commonality>
         <options>
-          <BETA_SoldierClass>1000</BETA_SoldierClass>
-          <BETA_WarriorClass>1000</BETA_WarriorClass>
+          <!--BETA_SoldierClass>0</BETA_SoldierClass>
+          <BETA_WarriorClass>0</BETA_WarriorClass-->
           <BETA_TankClass>1000</BETA_TankClass>
-          <BETA_GrapplerClass>337</BETA_GrapplerClass>
-          <BETA_LaserClass>150</BETA_LaserClass>
-          <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
+          <BETA_GrapplerClass>500</BETA_GrapplerClass>
+          <BETA_DestroyerClass>60</BETA_DestroyerClass>
+          <BETA_FortClass>14</BETA_FortClass>
+          <!--BETA_LaserClass>0</BETA_LaserClass-->
+          <BETA_HeavyLaserClass>55</BETA_HeavyLaserClass>
         </options>
         <disallowedStrategies>
           <li>Siege</li>
