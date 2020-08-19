@@ -89,7 +89,9 @@
         <bodyGraphicData>
           <texPath>Things/Pawn/ToolUser/BETA/Grappler</texPath>
           <drawSize>4.5</drawSize>
+          <shaderType>CutoutComplex</shaderType>
           <color>(154,125,94)</color>
+          <colorTwo>(80,0,80)</colorTwo>
           <shadowData>
             <volume>(0.5, 0.7, 0.43)</volume>
             <offset>(0,0,-0.1)</offset>

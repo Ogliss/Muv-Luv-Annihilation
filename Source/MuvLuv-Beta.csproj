@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BETADefOf.cs" />
+    <Compile Include="LordJob_AssaultColony_CutPower.cs" />
+    <Compile Include="LordToil_AssaultColony_CutPower.cs" />
+    <Compile Include="JobGiver_AICutColonyPowerClose.cs" />
     <Compile Include="CompBETAProjectileInterceptor.cs" />
     <Compile Include="Harmony\Patches\MLB_SettlementDefeatUtility_IsDefeated_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_HediffSet_get_PainTotal_BETA_Patch.cs" />
@@ -56,6 +60,7 @@
     <Compile Include="ChargingThing.cs" />
     <Compile Include="MLB_ThrownObject.cs" />
     <None Include="Harmony\Patches\MLB_JobGiver_Manhunter_TryGiveJob_RangedVerb_Patch.cs.bak" />
+    <Compile Include="Harmony\Patches\MLB_TunnelRaidSpawner_MakeLord_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_Pawn_TryGetAttackVerb_VerbCheckNonhumanlike_Patch.cs" />
     <Compile Include="MLB_AttackTargetFinder.cs" />
     <Compile Include="Harmony\Patches\MLB_JobGiver_AIFightEnemy_TryGiveJob_RangedVerb_Patch.cs" />

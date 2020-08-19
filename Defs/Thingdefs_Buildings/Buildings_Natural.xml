@@ -3,8 +3,8 @@
 
   <ThingDef ParentName="BuildingNaturalBase">
     <defName>MLB_BETAHive_Interior</defName>
-    <label>BETA hive</label>
-    <description>A BETA hive. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
+    <label>BETA tunnel</label>
+    <description>A BETA tunnel. If activated, it will spawn additional BETA and tunnels over time.</description>
     <thingClass>ExtraHives.Hive</thingClass>
     <graphicData>
       <texPath>Things/Special/TunnelExit</texPath>
@@ -38,9 +38,9 @@
 		<li Class="ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 			<TunnelDef>MLB_BETAHiveSpawner_Interior</TunnelDef>
-			<minTemp>-80</minTemp>
-			<maxTemp>80</maxTemp>
-			<bonusTempScore>200</bonusTempScore>
+			<minTemp>-250</minTemp>
+			<maxTemp>250</maxTemp>
+			<bonusTempScore>1000</bonusTempScore>
 			<bonusBelowTemp>0</bonusBelowTemp>
 		</li>
 	</modExtensions>
@@ -69,7 +69,8 @@
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
 		-->
         <factionGroupKindDef>BETA_InteriorHive</factionGroupKindDef>
-        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+        <!--lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob-->
+        <lordJob>MuvLuvBeta.LordJob_AssaultColony_CutPower</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <showNextSpawnInInspect>false</showNextSpawnInInspect>
         <initialPawnsPoints>250</initialPawnsPoints>
@@ -132,7 +133,7 @@
   <ThingDef ParentName="BuildingNaturalBase">
     <defName>MLB_BETAHive_Exterior</defName>
     <label>BETA hive</label>
-    <description>A BETA hive. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
+    <description>A BETA tunnel. If activated, it will spawn additional BETA and tunnels over time.</description>
     <thingClass>ExtraHives.Hive</thingClass>
     <graphicData>
       <texPath>Things/Special/TunnelExit</texPath>
@@ -199,7 +200,8 @@
         <initialPawnsPoints>250</initialPawnsPoints>
         <maxSpawnedPawnsPoints>550</maxSpawnedPawnsPoints>
         <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
-        <lordJob>LordJob_AssaultColony</lordJob>
+        <!--lordJob>LordJob_AssaultColony</lordJob-->
+        <lordJob>MuvLuvBeta.LordJob_AssaultColony_CutPower</lordJob>
         <pawnSpawnIntervalDays>0.1</pawnSpawnIntervalDays>
         <assaultOnSpawn>True</assaultOnSpawn>
         <shouldJoinParentLord>True</shouldJoinParentLord>
