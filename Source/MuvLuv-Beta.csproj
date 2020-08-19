@@ -32,6 +32,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BETADefOf.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Harmony\Patches\MLB_TrashUtility_TrashJob_NewTemp_BETA_Patch.cs" />
     <Compile Include="LordJob_AssaultColony_CutPower.cs" />
     <Compile Include="LordToil_AssaultColony_CutPower.cs" />
     <Compile Include="JobGiver_AICutColonyPowerClose.cs" />

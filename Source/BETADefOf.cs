@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Verse;
 using Verse.AI;
 
 namespace MuvLuvBeta
@@ -20,5 +21,15 @@ namespace MuvLuvBeta
 
 		public static DutyDef MLB_BETA_AssaultColony;
 		public static DutyDef MLB_BETA_AssaultColony_CutPower;
+
+		public static ThingDef BETA_SoldierClass;
+		public static ThingDef BETA_WarriorClass;
+		public static ThingDef BETA_TankClass;
+		public static ThingDef BETA_GrapplerClass;
+		public static ThingDef BETA_DestroyerClass;
+		public static ThingDef BETA_FortClass;
+		public static ThingDef BETA_LaserClass;
+		public static ThingDef BETA_HeavyLaserClass;
+
 	}
 }

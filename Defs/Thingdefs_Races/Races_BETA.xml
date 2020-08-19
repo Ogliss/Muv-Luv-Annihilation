@@ -480,6 +480,14 @@
         <maxSpawnedPawnsPoints>1000</maxSpawnedPawnsPoints>
         <!--initialPawnsCount>4</initialPawnsCount-->
       </li>
+      <li Class="MuvLuvBeta.CompProperties_BETASpawnerOnDamaged">
+        <allowedKinddefs>
+          <li>BETA_SoldierClass</li>
+          <li>BETA_TankClass</li>
+          <li>BETA_GrapplerClass</li>
+          <li>BETA_HeavyLaserClass</li>
+        </allowedKinddefs>
+      </li>
     </comps>
   </ThingDef>
 
