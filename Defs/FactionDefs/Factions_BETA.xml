@@ -217,9 +217,10 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
+			<sizeRange>20~30</sizeRange>
 			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
-			<largeCaveHive>MLB_BETAHive_Exterior</largeCaveHive>
-			<smallCaveHive>MLB_BETAHive_Interior</smallCaveHive>
+			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
+			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
 	</modExtensions>
   </FactionDef>
@@ -343,9 +344,10 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
+			<sizeRange>30~40</sizeRange>
 			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
-			<largeCaveHive>MLB_BETAHive_Exterior</largeCaveHive>
-			<smallCaveHive>MLB_BETAHive_Interior</smallCaveHive>
+			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
+			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
 	</modExtensions>
   </FactionDef>
@@ -469,9 +471,10 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
+			<sizeRange>40~50</sizeRange>
 			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
-			<largeCaveHive>MLB_BETAHive_Exterior</largeCaveHive>
-			<smallCaveHive>MLB_BETAHive_Interior</smallCaveHive>
+			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
+			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
 	</modExtensions>
   </FactionDef>
@@ -595,9 +598,10 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
+			<sizeRange>50~60</sizeRange>
 			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
-			<largeCaveHive>MLB_BETAHive_Exterior</largeCaveHive>
-			<smallCaveHive>MLB_BETAHive_Interior</smallCaveHive>
+			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
+			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
 	</modExtensions>
   </FactionDef>
@@ -722,8 +726,8 @@
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
 			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
-			<largeCaveHive>MLB_BETAHive_Exterior</largeCaveHive>
-			<smallCaveHive>MLB_BETAHive_Interior</smallCaveHive>
+			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
+			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
 	</modExtensions>
   </FactionDef>
@@ -847,9 +851,10 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
+			<sizeRange>60~70</sizeRange>
 			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
-			<largeCaveHive>MLB_BETAHive_Exterior</largeCaveHive>
-			<smallCaveHive>MLB_BETAHive_Interior</smallCaveHive>
+			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
+			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
 	</modExtensions>
   </FactionDef>
