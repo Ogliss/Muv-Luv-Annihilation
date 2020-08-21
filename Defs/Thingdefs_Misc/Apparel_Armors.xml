@@ -92,7 +92,32 @@
         <hotKey>Misc4</hotKey>
         <chargeNoun>jump</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-      </li>
+      </li> 
+	  <li Class="MuvLuvBETA.CompProperties_EquippableTurret"> 
+		<TurretDef>MLB_TSF_MinigunTurret</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
+	  </li>
+	  <li Class="MuvLuvBETA.CompProperties_EquippableTurret"> 
+		<TurretDef>MLB_TSF_MissileTurret</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
+	  </li>
+	  
+	  <!--li Class="AvP.CompProperties_ApparelDrawExtras"> 
+		<compClass>MuvLuvBETA.CompApparelDrawExtras</compClass>
+		<ExtrasEntries>
+			<li>
+				<UseBodytypeOffsets>false</UseBodytypeOffsets>
+				<shaderType>CutoutComplex</shaderType>
+				<extraTexPath>Things/Equipment/Yautja_ShoulderCannon</extraTexPath>
+				<commonality>10</commonality>
+			</li>
+		</ExtrasEntries>
+		<NorthOffset>0.0</NorthOffset>
+		<SouthOffset>-0.035</SouthOffset>
+		<EastOffset>0.10</EastOffset>
+		<WestOffset>0.0</WestOffset>
+	  </li-->
+	  
     </comps>
     <verbs>
       <li>

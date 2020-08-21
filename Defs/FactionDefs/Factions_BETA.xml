@@ -101,8 +101,8 @@
 
   <FactionDef ParentName="BETAFactionBase">
     <defName>MuvLuv_BETA</defName>
-    <label>BETA hive: Phase 1</label>
-    <fixedName>BETA hive: Phase 1</fixedName>
+    <label>BETA hive: Phase</label>
+    <fixedName>BETA hive</fixedName>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>

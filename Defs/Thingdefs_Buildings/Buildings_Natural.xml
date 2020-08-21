@@ -407,7 +407,7 @@
         <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <showNextSpawnInInspect>true</showNextSpawnInInspect>
-        <initialPawnsPoints>550</initialPawnsPoints>
+        <initialPawnsPoints>750</initialPawnsPoints>
         <maxSpawnedPawnsPoints>1550</maxSpawnedPawnsPoints>
         <pawnSpawnIntervalDays>0.1</pawnSpawnIntervalDays>
       </li>
@@ -476,7 +476,7 @@
       </li>
       <li Class="ExtraHives.CompProperties_SpawnerPawn">
         <factionGroupKindDef>BETA_ExteriorHive</factionGroupKindDef>
-        <initialPawnsPoints>550</initialPawnsPoints>
+        <initialPawnsPoints>750</initialPawnsPoints>
         <maxSpawnedPawnsPoints>1550</maxSpawnedPawnsPoints>
         <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
         <showNextSpawnInInspect>true</showNextSpawnInInspect>
@@ -526,7 +526,7 @@
       </li>
       <li Class="ExtraHives.CompProperties_SpawnerPawn">
         <factionGroupKindDef>Settlement</factionGroupKindDef>
-        <initialPawnsPoints>550</initialPawnsPoints>
+        <initialPawnsPoints>1550</initialPawnsPoints>
         <maxSpawnedPawnsPoints>1550</maxSpawnedPawnsPoints>
         <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
         <showNextSpawnInInspect>true</showNextSpawnInInspect>

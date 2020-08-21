@@ -33,7 +33,14 @@
   <ItemGroup>
     <Compile Include="BETADefOf.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Harmony\Patches\MLB_PawnGenOption_get_Cost_BETA_Patch - Copy.cs" />
+    <Compile Include="Building_Turret_Shoulder.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="CompEquippableTurret.cs" />
+    <Compile Include="CompBETASpawnerOnDamaged.cs" />
+    <Compile Include="Harmony\Patches\Class1.cs" />
+    <Compile Include="Harmony\Patches\MLB_Apparel_GetWornGizmos_ApparelTurret_Patch.cs" />
+    <Compile Include="Harmony\Patches\MLB_GetOrGenerateMapUtility_GetOrGenerateMap_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\MLB_SymbolResolver_PawnHiveGroup_Resolve_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_SymbolResolver_Hivebase_Resolve_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_Hediff_CauseDeathNow_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_TrashUtility_TrashJob_NewTemp_BETA_Patch.cs" />

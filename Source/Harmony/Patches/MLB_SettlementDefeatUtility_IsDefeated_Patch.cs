@@ -28,10 +28,12 @@ namespace MuvLuvBeta.HarmonyInstance
                         }
                     }
                 }
+                /*
                 if (faction.def.HasModExtension<ExtraHives.HiveFactionExtension>())
                 {
                     __result = map.listerBuildings.allBuildingsNonColonist.Any(x => x.def.HasModExtension<ExtraHives.HiveDefExtension>());
                 }
+                */
             }
         }
     }

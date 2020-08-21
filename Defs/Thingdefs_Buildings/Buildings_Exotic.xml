@@ -116,8 +116,8 @@
         <lordJob>CrashedShipsExtension.LordJob_PawnsDefendShip</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <initialSpawnDelay>60</initialSpawnDelay>
-        <initialPawnsPoints>200</initialPawnsPoints>
-        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+        <initialPawnsPoints>500</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>1500</maxSpawnedPawnsPoints>
       </li>
       <li Class="ExtraHives.CompProperties_SpawnerHives">
 		<hiveDef>MLB_BETAHive_Tunnel</hiveDef>

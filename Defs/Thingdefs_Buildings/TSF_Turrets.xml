@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef Name="MLB_TSF_TurretBase" Abstract="True">
+    <tickerType>Normal</tickerType>
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+    <useHitPoints>false</useHitPoints>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <selectable>false</selectable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<statBases>
+			<SellPriceFactor>0.00</SellPriceFactor>
+		</statBases>
+  </ThingDef>
+
+    <ThingDef ParentName="MLB_TSF_TurretBase">
+    <defName>MLB_TSF_MinigunTurret</defName>
+    <label>TSF Minigun</label>
+    <description>.</description>
+	
+	<thingClass>MuvLuvBeta.Building_Turret_Shoulder</thingClass>
+    <graphicData>
+      <texPath>DummyTexture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <selectable>false</selectable>
+    <statBases>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+	
+    </comps>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+	  <ai_combatDangerous>false</ai_combatDangerous>
+      <turretGunDef>MLB_TurretGun_TSF_Minigun</turretGunDef>
+      <turretBurstCooldownTime>2.3</turretBurstCooldownTime>
+	  
+	  <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <deconstructible>false</deconstructible>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>MLB_TurretGun_TSF_Minigun</defName>
+    <label>minigun</label>
+    <description>A multi-barrel machine gun. It's unwieldy, but once it starts firing it fires very fast. Where most self-loading guns are powered by the energy from the gunpowder, the minigun uses an electric motor to rapidly cycle cartridges through the weapon.</description>
+    <graphicData>
+      <texPath>DummyTexture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <menuHidden>true</menuHidden>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <statBases>
+      <Mass>10</Mass>
+      <AccuracyTouch>0.15</AccuracyTouch>
+      <AccuracyShort>0.25</AccuracyShort>
+      <AccuracyMedium>0.25</AccuracyMedium>
+      <AccuracyLong>0.18</AccuracyLong>
+      <RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <weaponTags Inherit="false">
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Minigun</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>30.9</range>
+        <burstShotCount>25</burstShotCount>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+    <ThingDef ParentName="MLB_TSF_TurretBase">
+    <defName>MLB_TSF_MissileTurret</defName>
+    <label>TSF Missile</label>
+    <description>.</description>
+	
+	<thingClass>MuvLuvBeta.Building_Turret_Shoulder</thingClass>
+    <graphicData>
+      <texPath>DummyTexture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <selectable>false</selectable>
+    <statBases>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+	
+    </comps>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+	  <ai_combatDangerous>false</ai_combatDangerous>
+      <turretGunDef>MLB_TurretGun_TSF_Minigun</turretGunDef>
+      <turretBurstCooldownTime>4.5</turretBurstCooldownTime>
+	  
+	  <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <deconstructible>false</deconstructible>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>MLB_TurretGun_TSF_Missile</defName>
+    <label>missile</label>
+    <description>A multi-barrel machine gun. It's unwieldy, but once it starts firing it fires very fast. Where most self-loading guns are powered by the energy from the gunpowder, the minigun uses an electric motor to rapidly cycle cartridges through the weapon.</description>
+    <graphicData>
+      <texPath>DummyTexture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <menuHidden>true</menuHidden>
+    <destroyOnDrop>true</destroyOnDrop>
+    <tradeability>None</tradeability>
+    <statBases>
+      <Mass>10</Mass>
+      <AccuracyTouch>0.15</AccuracyTouch>
+      <AccuracyShort>0.25</AccuracyShort>
+      <AccuracyMedium>0.25</AccuracyMedium>
+      <AccuracyLong>0.18</AccuracyLong>
+      <RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <weaponTags Inherit="false">
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Rocket</defaultProjectile>
+        <forcedMissRadius>2.9</forcedMissRadius>
+        <warmupTime>4.5</warmupTime>
+        <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+        <range>35.9</range>
+        <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+</Defs>
