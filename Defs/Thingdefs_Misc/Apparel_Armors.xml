@@ -27,7 +27,7 @@
       <EquipDelay>1.5</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-      <MoveSpeed>7.0</MoveSpeed>
+      <MoveSpeed>0.70</MoveSpeed>
     </equippedStatOffsets>
     <apparel>
       <bodyPartGroups>
@@ -62,7 +62,7 @@
       <JumpRange>23.9</JumpRange>
     </statBases>
     <equippedStatOffsets>
-      <MoveSpeed>7.0</MoveSpeed>
+      <MoveSpeed>0.70</MoveSpeed>
     </equippedStatOffsets>
     <recipeMaker>
       <researchPrerequisites>
