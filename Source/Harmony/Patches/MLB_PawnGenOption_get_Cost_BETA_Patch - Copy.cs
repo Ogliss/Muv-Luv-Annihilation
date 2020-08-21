@@ -1,0 +1,58 @@
+﻿using RimWorld;
+using Verse;
+using HarmonyLib;
+using System.Reflection;
+using System.Collections.Generic;
+using System;
+using Verse.AI;
+using System.Text;
+using System.Linq;
+using Verse.AI.Group;
+using RimWorld.Planet;
+using UnityEngine;
+using RimWorld.BaseGen;
+
+namespace MuvLuvBeta.HarmonyInstance
+{
+    
+    [HarmonyPatch(typeof(ExtraHives.GenStuff.SymbolResolver_PawnHiveGroup), "Resolve")]
+    public static class MLB_SymbolResolver_PawnHiveGroup_Resolve_BETA_Patch
+    {
+        public static void Prefix(ResolveParams rp)
+        {
+            if (rp.faction!=null)
+            {
+                Faction faction = rp.faction;
+                if (faction.def.defName.Contains("MuvLuv_BETA"))
+                {
+                    float mult = 1f;
+                    if (faction.def.defName.Contains("2P"))
+                    {
+                        mult = 1.2f;
+                    }
+                    if (faction.def.defName.Contains("3P"))
+                    {
+                        mult = 1.4f;
+                    }
+                    if (faction.def.defName.Contains("4P"))
+                    {
+                        mult = 1.6f;
+                    }
+                    if (faction.def.defName.Contains("5P"))
+                    {
+                        mult = 1.8f;
+                    }
+                    if (faction.def.defName.Contains("6P"))
+                    {
+                        mult = 2f;
+                    }
+                    if (rp.pawnGroupMakerParams!=null)
+                    {
+                        rp.pawnGroupMakerParams.points *= mult;
+                    }
+                }
+            }
+        }
+    }
+    
+}

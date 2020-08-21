@@ -217,8 +217,8 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
-			<sizeRange>20~30</sizeRange>
-			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
+			<sizeRange>40~50</sizeRange>
+			<centerCaveHive>MLB_BETAMonument_CaveCenter</centerCaveHive>
 			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
 			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
@@ -344,8 +344,8 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
-			<sizeRange>30~40</sizeRange>
-			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
+			<sizeRange>50~60</sizeRange>
+			<centerCaveHive>MLB_BETAMonument_CaveCenter</centerCaveHive>
 			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
 			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
@@ -471,8 +471,8 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
-			<sizeRange>40~50</sizeRange>
-			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
+			<sizeRange>60~70</sizeRange>
+			<centerCaveHive>MLB_BETAMonument_CaveCenter</centerCaveHive>
 			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
 			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
@@ -598,8 +598,8 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
-			<sizeRange>50~60</sizeRange>
-			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
+			<sizeRange>70~80</sizeRange>
+			<centerCaveHive>MLB_BETAMonument_CaveCenter</centerCaveHive>
 			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
 			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
@@ -725,7 +725,8 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
-			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
+			<sizeRange>80~90</sizeRange>
+			<centerCaveHive>MLB_BETAMonument_CaveCenter</centerCaveHive>
 			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
 			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>
@@ -851,8 +852,8 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
-			<sizeRange>60~70</sizeRange>
-			<centerCaveHive>MLB_BETAMonument</centerCaveHive>
+			<sizeRange>90~100</sizeRange>
+			<centerCaveHive>MLB_BETAMonument_CaveCenter</centerCaveHive>
 			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
 			<smallCaveHive>MLB_BETAHive_SmallCave</smallCaveHive>
 		</li>

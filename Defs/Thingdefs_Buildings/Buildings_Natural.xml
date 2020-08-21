@@ -407,7 +407,7 @@
         <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <showNextSpawnInInspect>true</showNextSpawnInInspect>
-        <initialPawnsPoints>250</initialPawnsPoints>
+        <initialPawnsPoints>550</initialPawnsPoints>
         <maxSpawnedPawnsPoints>1550</maxSpawnedPawnsPoints>
         <pawnSpawnIntervalDays>0.1</pawnSpawnIntervalDays>
       </li>
@@ -476,7 +476,7 @@
       </li>
       <li Class="ExtraHives.CompProperties_SpawnerPawn">
         <factionGroupKindDef>BETA_ExteriorHive</factionGroupKindDef>
-        <initialPawnsPoints>250</initialPawnsPoints>
+        <initialPawnsPoints>550</initialPawnsPoints>
         <maxSpawnedPawnsPoints>1550</maxSpawnedPawnsPoints>
         <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
         <showNextSpawnInInspect>true</showNextSpawnInInspect>
@@ -500,4 +500,46 @@
       </li>
     </comps>
   </ThingDef>
+  
+  <ThingDef ParentName="CrashedShipPartBase">
+    <defName>MLB_BETAMonument_CaveCenter</defName>
+    <label>BETA Monument</label>
+    <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one contains a device which annihilates plant life near itself without directly affecting flesh creatures. These kinds of weapons are sometimes scattered across farmlands or forests during land, to remove the enemy's food supply and hiding places without permanently ruining the territory. They're usually associated with orbital-drop mechanoid armies.</description>
+    <thingClass>ExtraHives.Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Special/BETA/Monument</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData><volume>(0.9, 1.0, 0.9)</volume></shadowData>
+      <damageData><rect>(0.1, 0.1, 5, 5)</rect></damageData>
+    </graphicData>
+    <size>(5,5)</size>
+	<modExtensions>
+		<li Class="ExtraHives.HiveDefExtension">
+			<Faction>MuvLuv_BETA</Faction>
+		</li>
+	</modExtensions>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>false</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+        <factionGroupKindDef>Settlement</factionGroupKindDef>
+        <initialPawnsPoints>550</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>1550</maxSpawnedPawnsPoints>
+        <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
+        <showNextSpawnInInspect>true</showNextSpawnInInspect>
+        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+        <pawnSpawnIntervalDays>0.01</pawnSpawnIntervalDays>
+        <assaultOnSpawn>True</assaultOnSpawn>
+        <shouldJoinParentLord>True</shouldJoinParentLord>
+        <spawnSound>Hive_Spawn</spawnSound>
+      </li>
+      <li Class="ExtraHives.CompProperties_SpawnerOnDamaged">
+        <factionGroupKindDef>Settlement</factionGroupKindDef>
+      </li>
+    </comps>
+  </ThingDef>
+
 </Defs>

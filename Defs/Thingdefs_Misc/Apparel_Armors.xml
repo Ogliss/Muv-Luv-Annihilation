@@ -1,6 +1,134 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Apparel_TSFPilotSuit</defName>
+    <label>TSF pilot suit</label>
+    <description>A TSF pilot suit.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>40</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>1600</WorkToMake>
+      <Mass>0.25</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.22</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.10</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>7.0</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</wornGraphicPath>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <tags>
+        <li>IndustrialBasic</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelArmorReconBase">
+    <defName>Apparel_TSFSuit</defName>
+    <label>prototype TSF armor</label>
+    <description>A variant of recon armor with an integrated burst rocket for short-ranged flight. Locust armor is slightly less protective than standard recon armor. Each jump consumes a burst of fuel, so the armor must be reloaded after several uses.\n\nUnlike most ultratech military units, locusts train primarily with melee weapons. They usually avoid static shootouts, preferring to jump straight into enemy fortifications and fight hand-to-hand. They do poorly in static defense or confined quarters, but excel in mixed cover or shipcracking operations.</description>
+    <statBases>
+      <ArmorRating_Sharp>0.87</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.41</ArmorRating_Heat>
+      <JumpRange>23.9</JumpRange>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>7.0</MoveSpeed>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>JumpPack</li>
+        <li>ReconArmor</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Reloadable">
+        <maxCharges>20</maxCharges>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>20</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>jump</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_Jump</verbClass>
+        <label>jump</label>
+        <commandIcon>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</commandIcon>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>True</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.5</warmupTime>
+        <warmupEffecter>JumpWarmupEffect</warmupEffecter>
+        <requireLineOfSight>true</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelArmorHelmetReconBase">
+    <defName>Apparel_TSFHelmet</defName>
+    <label>prototype TSF helmet</label>
+    <description>A high-tech armored helmet with a built-in status computer and a protective plasteel-weave plate.\n\nArmor like this is often used by imperial scout troops or glitterworld police forces.</description>
+    <apparel>
+      <tags>
+        <li>SpacerMilitary</li>
+      </tags>
+    </apparel>
+    <equippedStatOffsets>
+		<AimingDelayFactor>-0.1</AimingDelayFactor>
+    </equippedStatOffsets>
+  </ThingDef>
+
 	<!-- ========================= MILIT - M10 Pattern Ballistic Helmet ========================== -->
 	<!--
 	<ThingDef ParentName="MLB_MILIT_ArmourHeadgearBase">

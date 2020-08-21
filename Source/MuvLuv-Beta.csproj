@@ -33,6 +33,7 @@
   <ItemGroup>
     <Compile Include="BETADefOf.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Harmony\Patches\MLB_PawnGenOption_get_Cost_BETA_Patch - Copy.cs" />
     <Compile Include="Harmony\Patches\MLB_SymbolResolver_Hivebase_Resolve_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_Hediff_CauseDeathNow_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_TrashUtility_TrashJob_NewTemp_BETA_Patch.cs" />
