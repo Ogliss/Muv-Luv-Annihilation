@@ -92,17 +92,21 @@
         <hotKey>Misc4</hotKey>
         <chargeNoun>jump</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-      </li> 
-	  <li Class="MuvLuvBETA.CompProperties_EquippableTurret"> 
+      </li>
+	  
+	  <li Class="MuvLuvBETA.CompProperties_Apparel_Turret"> 
 		<TurretDef>MLB_TSF_MinigunTurret</TurretDef>
+		<gizmoID>1</gizmoID>
 		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
 	  </li>
-	  <li Class="MuvLuvBETA.CompProperties_EquippableTurret"> 
+	  
+	  <li Class="MuvLuvBETA.CompProperties_Apparel_Turret"> 
 		<TurretDef>MLB_TSF_MissileTurret</TurretDef>
+		<gizmoID>2</gizmoID>
 		<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
 	  </li>
 	  
-	  <!--li Class="AvP.CompProperties_ApparelDrawExtras"> 
+	  <!--li Class="MuvLuvBETA.CompProperties_ApparelDrawExtras"> 
 		<compClass>MuvLuvBETA.CompApparelDrawExtras</compClass>
 		<ExtrasEntries>
 			<li>

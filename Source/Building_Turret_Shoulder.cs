@@ -15,20 +15,33 @@ namespace MuvLuvBeta
 
         public bool turretIsOn;
 
-        public CompEquippableTurret comp
+        private CompEquippableTurret tc;
+        public CompEquippableTurret turretComp
         {
             get
             {
-                if (Parental.apparel.WornApparel.Any(x => x.TryGetComp<CompEquippableTurret>() != null))
+                if (tc == null)
                 {
-                    CompEquippableTurret comp = Parental.apparel.WornApparel.Find(x => x.TryGetComp<CompEquippableTurret>() != null).TryGetComp<CompEquippableTurret>();
-                    if (comp != null)
+
+                    if (Parental.apparel.WornApparel.Any(x => x.TryGetComp<CompEquippableTurret>() != null && x.TryGetComp<CompEquippableTurret>().Props.TurretDef == this.def))
                     {
-                        return comp;
+                        CompEquippableTurret comp = Parental.apparel.WornApparel.Find(x => x.TryGetComp<CompEquippableTurret>() != null && x.TryGetComp<CompEquippableTurret>().Props.TurretDef == this.def).TryGetComp<CompEquippableTurret>();
+                        if (comp != null)
+                        {
+                            tc = comp;
+                        }
                     }
                 }
-                this.Destroy(DestroyMode.Vanish);
+                if (tc != null)
+                {
+                    return tc;
+                }
+            //    this.Destroy(DestroyMode.Vanish);
                 return null;
+            }
+            set
+            {
+                tc = value;
             }
         }
 
@@ -62,11 +75,17 @@ namespace MuvLuvBeta
             base.Tick();
             if (Find.TickManager.TicksGame % 30 == 0)
             {
-                if (comp.turret != this || Parental.Dead || Parental.Downed || Parental.InBed())
+                if (turretComp?.turret != this || Parental.Dead || Parental.Downed || Parental.InBed() || Parental.Map == null)
                 {
                     this.Destroy(DestroyMode.Vanish);
                 }
             }
+            /*
+            if (comp!=null)
+            {
+                comp.CompTick();
+            }
+            */
             /*
             if (this.Position != Parental.Position)
             {
@@ -159,7 +178,7 @@ namespace MuvLuvBeta
             CompQuality Weapon_Quality = gun.TryGetComp<CompQuality>();
             if (Weapon_Quality != null)
             {
-                this.comp.parent.TryGetQuality(out QualityCategory Q);
+                this.turretComp.parent.TryGetQuality(out QualityCategory Q);
                 Weapon_Quality.SetQuality(Q, ArtGenerationContext.Outsider);
             }
             this.UpdateGunVerbs();

@@ -3,7 +3,11 @@
   <ThingDef Name="MLB_TSF_TurretBase" Abstract="True">
     <tickerType>Normal</tickerType>
     <category>Building</category>
-    <thingClass>Building</thingClass>
+	<thingClass>MuvLuvBeta.Building_Turret_Shoulder</thingClass>
+    <graphicData>
+      <texPath>DummyTexture2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <useHitPoints>false</useHitPoints>
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <selectable>false</selectable>
@@ -21,12 +25,6 @@
     <defName>MLB_TSF_MinigunTurret</defName>
     <label>TSF Minigun</label>
     <description>.</description>
-	
-	<thingClass>MuvLuvBeta.Building_Turret_Shoulder</thingClass>
-    <graphicData>
-      <texPath>DummyTexture</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
     <selectable>false</selectable>
@@ -43,6 +41,7 @@
 	  <ai_combatDangerous>false</ai_combatDangerous>
       <turretGunDef>MLB_TurretGun_TSF_Minigun</turretGunDef>
       <turretBurstCooldownTime>2.3</turretBurstCooldownTime>
+      <turretBurstWarmupTime>2.0</turretBurstWarmupTime>
 	  
 	  <isInert>true</isInert>
       <isEdifice>false</isEdifice>
@@ -67,11 +66,11 @@
     <tradeability>None</tradeability>
     <statBases>
       <Mass>10</Mass>
-      <AccuracyTouch>0.15</AccuracyTouch>
-      <AccuracyShort>0.25</AccuracyShort>
+      <AccuracyTouch>0.66</AccuracyTouch>
+      <AccuracyShort>0.48</AccuracyShort>
       <AccuracyMedium>0.25</AccuracyMedium>
-      <AccuracyLong>0.18</AccuracyLong>
-      <RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
+      <AccuracyLong>0.09</AccuracyLong>
+      <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
     </statBases>
     <techLevel>Industrial</techLevel>
     <weaponTags Inherit="false">
@@ -79,13 +78,14 @@
     </weaponTags>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>MuvLuvBeta.Verb_ShootTFSMounted</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_Minigun</defaultProjectile>
-        <warmupTime>2.5</warmupTime>
-        <range>30.9</range>
-        <burstShotCount>25</burstShotCount>
+        <warmupTime>2.0</warmupTime>
+        <range>37</range>
+        <burstShotCount>12</burstShotCount>
         <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
         <soundCast>Shot_Minigun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -98,12 +98,6 @@
     <defName>MLB_TSF_MissileTurret</defName>
     <label>TSF Missile</label>
     <description>.</description>
-	
-	<thingClass>MuvLuvBeta.Building_Turret_Shoulder</thingClass>
-    <graphicData>
-      <texPath>DummyTexture</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
     <selectable>false</selectable>
@@ -118,8 +112,9 @@
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <building>
 	  <ai_combatDangerous>false</ai_combatDangerous>
-      <turretGunDef>MLB_TurretGun_TSF_Minigun</turretGunDef>
+      <turretGunDef>MLB_TurretGun_TSF_Missile</turretGunDef>
       <turretBurstCooldownTime>4.5</turretBurstCooldownTime>
+      <turretBurstWarmupTime>4.5</turretBurstWarmupTime>
 	  
 	  <isInert>true</isInert>
       <isEdifice>false</isEdifice>
@@ -156,7 +151,7 @@
     </weaponTags>
     <verbs>
       <li>
-        <verbClass>Verb_ShootOneUse</verbClass>
+        <verbClass>MuvLuvBeta.Verb_ShootTFSMounted</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_Rocket</defaultProjectile>
         <forcedMissRadius>2.9</forcedMissRadius>
@@ -164,10 +159,11 @@
         <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
         <range>35.9</range>
         <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
-        <burstShotCount>3</burstShotCount>
+        <burstShotCount>1</burstShotCount>
         <soundCast>InfernoCannon_Fire</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <onlyManualCast>true</onlyManualCast>
+        <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
         <stopBurstWithoutLos>false</stopBurstWithoutLos>
         <targetParams>
           <canTargetLocations>true</canTargetLocations>

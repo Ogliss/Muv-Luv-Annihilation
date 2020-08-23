@@ -7,6 +7,7 @@ using Verse.Sound;
 
 namespace MuvLuvBeta
 {
+
     public class CompProperties_EquippableTurret : CompProperties
     {
         public CompProperties_EquippableTurret()
@@ -17,6 +18,7 @@ namespace MuvLuvBeta
         public bool DisableInMelee = true;
         public ThingDef TurretDef = null;
         public string iconPath;
+        public int gizmoID = 0;
     }
 
     // Token: 0x02000E58 RID: 3672
@@ -146,7 +148,6 @@ namespace MuvLuvBeta
 
             Scribe_Values.Look(ref Toggled, "ToggledMode", onDefault, true);
             Scribe_Values.Look(ref DisableInMelee, "DisableInMelee", MeleeDisable, true);
-            Scribe_Values.Look(ref id, "id", 0, true);
             //    Scribe_Values.Look<bool>(ref this.turretIsOn, "TurretIsOn", IsTurnedOn);
         }
 
@@ -155,8 +156,10 @@ namespace MuvLuvBeta
             base.CompTick();
             if (IsWorn && GetWearer.Map != null)
             {
+                Log.Message("worn");
                 if (this.turretIsOn || Find.TickManager.TicksGame >= this.nextUpdateTick)
                 {
+                    Log.Message("On");
                     this.nextUpdateTick = Find.TickManager.TicksGame + 60;
                     this.RefreshTurretState();
                 }
@@ -169,7 +172,6 @@ namespace MuvLuvBeta
             parent.SpawnSetup(map, respawningAfterLoad);
             if (!respawningAfterLoad)
             {
-                id = Rand.RangeInclusive(0, 99999);
                 Rand.PushState();
                 this.nextUpdateTick = Find.TickManager.TicksGame + Rand.Range(0, 60);
                 Rand.PopState();
@@ -250,12 +252,19 @@ namespace MuvLuvBeta
                         this.SwitchTurretMode();
                     },
                     activateSound = SoundDef.Named("Click"),
-                    groupKey = num + id,
+                    groupKey = num + Props.gizmoID,
                     /*
                     disabled = GetWearer.stances.curStance.StanceBusy,
                     disabledReason = "Busy"
                     */
                 };
+            }
+            if (turret!=null )
+            {
+                foreach (var item in turret.GetGizmos())
+                {
+                    yield return item;
+                }
             }
             yield break;
         }
@@ -286,7 +295,6 @@ namespace MuvLuvBeta
         public Thing turret;
         public Building_Turret_Shoulder turret_Shoulder;
 
-        private int id;
         // Token: 0x04000004 RID: 4
 
     }

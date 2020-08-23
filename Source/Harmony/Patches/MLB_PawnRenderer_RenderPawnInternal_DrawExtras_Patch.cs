@@ -10,7 +10,7 @@ using System.Globalization;
 namespace MuvLuvBeta.HarmonyInstance
 {
     [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal", new Type[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) })]
-    public static class AvP_PawnRenderer_RenderPawnInternal_DrawExtras_Patch
+    public static class MLB_PawnRenderer_RenderPawnInternal_DrawExtras_Patch
     {
         [HarmonyPostfix]
         public static void PawnRenderer_RenderPawnInternal_Postfix(ref PawnRenderer __instance, Pawn ___pawn, Vector3 rootLoc, float angle, bool renderBody, Rot4 bodyFacing, Rot4 headFacing, RotDrawMode bodyDrawType, bool portrait, bool headStump, bool invisible)
