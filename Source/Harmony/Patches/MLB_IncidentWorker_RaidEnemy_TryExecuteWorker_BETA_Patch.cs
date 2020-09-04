@@ -16,7 +16,7 @@ namespace MuvLuvBeta.HarmonyInstance
     [HarmonyPatch(typeof(IncidentWorker_RaidEnemy), "TryExecuteWorker")]
     public static class MLB_IncidentWorker_RaidEnemy_TryExecuteWorker_BETA_Patch
     {
-        [HarmonyPrefix]
+        [HarmonyPrefix,HarmonyPriority(Priority.Last)]
         public static void Prefix(ref IncidentParms parms)
         {
             if (parms.target is Map && (parms.target as Map).IsPlayerHome)
@@ -25,30 +25,6 @@ namespace MuvLuvBeta.HarmonyInstance
                 {
                     if ((parms.target is Map map))
                     {
-                        float mult = 1f;
-                        if (parms.faction.def.defName.Contains("2P"))
-                        {
-                            mult = 1.2f;
-                        }
-                        if (parms.faction.def.defName.Contains("3P"))
-                        {
-                            mult = 1.4f;
-                        }
-                        if (parms.faction.def.defName.Contains("4P"))
-                        {
-                            mult = 1.6f;
-                        }
-                        if (parms.faction.def.defName.Contains("5P"))
-                        {
-                            mult = 1.8f;
-                        }
-                        if (parms.faction.def.defName.Contains("6P"))
-                        {
-                            mult = 2f;
-                        }
-                	//        Log.Message("IncidentWorker_RaidEnemy points: " + parms.points + " Mult: " + mult + " Result: " + parms.points * mult);
-                        parms.points = parms.points * mult;
-
                         if (Rand.Chance(0.25f))
                         {
                             int strikedelay = Find.TickManager.TicksGame + MLB_IncidentWorker_RaidEnemy_TryExecuteWorker_BETA_Patch.RaidDelay.RandomInRange;

@@ -1,15 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace MuvLuvBeta
 {
-	// Token: 0x02000490 RID: 1168 MuvLuvBeta.Verb_ShootTFSMounted
+	// 1168 MuvLuvBeta.Verb_ShootTFSMounted
 	public class Verb_ShootTFSMounted : Verb_LaunchProjectile
 	{
-		// Token: 0x170006E1 RID: 1761
-		// (get) Token: 0x060022F5 RID: 8949 RVA: 0x000D54D3 File Offset: 0x000D36D3
 		protected override int ShotsPerBurst
 		{
 			get
@@ -18,40 +18,86 @@ namespace MuvLuvBeta
 			}
 		}
 
-		// Token: 0x060022F6 RID: 8950 RVA: 0x000D54E0 File Offset: 0x000D36E0
+		public override Thing Caster
+		{
+			get
+			{
+				Apparel a = this.caster as Apparel;
+				if (a != null)
+				{
+					if (a.Wearer != null)
+					{
+						if (this.caster != a.Wearer)
+						{
+							Log.Message("New Wearer "+ a.Wearer);
+							this.caster = a.Wearer;
+						}
+					}
+					else
+					{
+						Log.Message("caster is Apparel Not worn");
+					}
+				}
+				else
+				{
+					Log.Message("caster is not Apparel "+caster);
+				}
+				return this.caster;
+			}
+		}
+
+		public override bool CasterIsPawn
+		{
+			get
+			{
+				Log.Message("Caster is Pawn ? " + (Caster is Pawn));
+				return Caster is Pawn;
+			}
+		}
+		public override Pawn CasterPawn => Caster as Pawn;
+
+		public override void DrawHighlight(LocalTargetInfo target)
+		{
+			this.verbProps.DrawRadiusRing(this.Caster.Position);
+			if (target.IsValid)
+			{
+				GenDraw.DrawTargetHighlight(target);
+				this.DrawHighlightFieldRadiusAroundTarget(target);
+			}
+		}
+
 		public override void WarmupComplete()
 		{
-			Log.Message("WarmupComplete");
+		//	Log.Message("WarmupComplete");
 			base.WarmupComplete();
 			Pawn pawn = this.currentTarget.Thing as Pawn;
 			if (pawn != null && !pawn.Downed && this.CasterIsPawn && this.CasterPawn.skills != null)
 			{
-				float num = pawn.HostileTo(this.caster) ? 170f : 20f;
+				float num = pawn.HostileTo(this.Caster) ? 170f : 20f;
 				float num2 = this.verbProps.AdjustedFullCycleTime(this, this.CasterPawn);
 				this.CasterPawn.skills.Learn(SkillDefOf.Shooting, num * num2, false);
 			}
 		}
 
-		// Token: 0x060022F7 RID: 8951 RVA: 0x000D556B File Offset: 0x000D376B
 		protected override bool TryCastShot()
 		{
-			Log.Message("TryCastShot");
-			if (this.currentTarget.HasThing && this.currentTarget.Thing.Map != this.caster.Map)
+		//	Log.Message("TryCastShot");
+			if (this.currentTarget.HasThing && this.currentTarget.Thing.Map != this.Caster.Map)
 			{
-				Log.Message("TGT Wrong Map");
+			//	Log.Message("TGT Wrong Map");
 				return false;
 			}
 			ThingDef projectile = this.Projectile;
 			if (projectile == null)
 			{
-				Log.Message("projectile == null");
+			//	Log.Message("projectile == null");
 				return false;
 			}
 			ShootLine shootLine;
-			bool flag = base.TryFindShootLineFromTo(this.caster.Position, this.currentTarget, out shootLine);
+			bool flag = base.TryFindShootLineFromTo(this.Caster.Position, this.currentTarget, out shootLine);
 			if (this.verbProps.stopBurstWithoutLos && !flag)
 			{
-				Log.Message("stopBurstWithoutLos");
+			//	Log.Message("stopBurstWithoutLos");
 				return false;
 			}
 			if (base.EquipmentSource != null)
@@ -67,19 +113,19 @@ namespace MuvLuvBeta
 					comp2.UsedOnce();
 				}
 			}
-			Thing launcher = this.caster;
+			Thing launcher = this.Caster;
 			Thing equipment = base.EquipmentSource;
-			CompMannable compMannable = this.caster.TryGetComp<CompMannable>();
+			CompMannable compMannable = this.Caster.TryGetComp<CompMannable>();
 			if (compMannable != null && compMannable.ManningPawn != null)
 			{
 				launcher = compMannable.ManningPawn;
-				equipment = this.caster;
+				equipment = this.Caster;
 			}
-			Vector3 drawPos = this.caster.DrawPos;
-			Projectile projectile2 = (Projectile)GenSpawn.Spawn(projectile, shootLine.Source, this.caster.Map, WipeMode.Vanish);
+			Vector3 drawPos = this.Caster.DrawPos;
+			Projectile projectile2 = (Projectile)GenSpawn.Spawn(projectile, shootLine.Source, this.Caster.Map, WipeMode.Vanish);
 			if (this.verbProps.forcedMissRadius > 0.5f)
 			{
-				float num = VerbUtility.CalculateAdjustedForcedMiss(this.verbProps.forcedMissRadius, this.currentTarget.Cell - this.caster.Position);
+				float num = VerbUtility.CalculateAdjustedForcedMiss(this.verbProps.forcedMissRadius, this.currentTarget.Cell - this.Caster.Position);
 				if (num > 0.5f)
 				{
 					int max = GenRadial.NumCellsInRadius(num);
@@ -103,12 +149,12 @@ namespace MuvLuvBeta
 						{
 							this.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
 						}
-						Log.Message("TryCastShot 1");
+					//	Log.Message("TryCastShot 1");
 						return true;
 					}
 				}
 			}
-			ShotReport shotReport = ShotReport.HitReportFor(this.caster, this, this.currentTarget);
+			ShotReport shotReport = ShotReport.HitReportFor(this.Caster, this, this.currentTarget);
 			Thing randomCoverToMissInto = shotReport.GetRandomCoverToMissInto();
 			ThingDef targetCoverDef = (randomCoverToMissInto != null) ? randomCoverToMissInto.def : null;
 			if (!Rand.Chance(shotReport.AimOnTargetChance_IgnoringPosture))
@@ -126,7 +172,7 @@ namespace MuvLuvBeta
 				{
 					this.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
 				}
-				Log.Message("TryCastShot 2");
+			//	Log.Message("TryCastShot 2");
 				return true;
 			}
 			if (this.currentTarget.Thing != null && this.currentTarget.Thing.def.category == ThingCategory.Pawn && !Rand.Chance(shotReport.PassCoverChance))
@@ -143,7 +189,7 @@ namespace MuvLuvBeta
 				{
 					this.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
 				}
-				Log.Message("TryCastShot 3");
+			//	Log.Message("TryCastShot 3");
 				return true;
 			}
 			ProjectileHitFlags projectileHitFlags4 = ProjectileHitFlags.IntendedTarget;
@@ -171,55 +217,34 @@ namespace MuvLuvBeta
 			{
 				this.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
 			}
-			Log.Message("TryCastShot 4");
+		//	Log.Message("TryCastShot 4");
 			return true;
 		}
 
-		// Token: 0x060022CF RID: 8911 RVA: 0x000D40B8 File Offset: 0x000D22B8
 		public override bool TryStartCastOn(LocalTargetInfo castTarg, LocalTargetInfo destTarg, bool surpriseAttack = false, bool canHitNonTargetPawns = true)
 		{
-			Log.Message("TryStartCastOn 0");
-			if (this.caster == null)
+		//	Log.Message("TryStartCastOn 0");
+			if (this.Caster == null)
 			{
-				Log.Error("Verb " + this.GetUniqueLoadID() + " needs caster to work (possibly lost during saving/loading).", false);
+				Log.Error("Verb " + this.GetUniqueLoadID() + " needs Caster to work (possibly lost during saving/loading).", false);
 				return false;
 			}
-			Log.Message("TryStartCastOn 1 caster "+ this.caster);
-			if (!this.caster.Spawned)
-			{
-				if (this.caster is Apparel app)
-				{
-					if (app.Wearer==null)
-					{
-						return false;
-					}
-					else
-					{
-						this.caster = app.Wearer;
-					}
-
-				}
-				else
-				{
-					return false;
-				}
-			}
-			Log.Message("TryStartCastOn Bursting: "+ (this.state == VerbState.Bursting) + " Can Hit tgt: "+ (this.CanHitTarget(castTarg)));
+		//	Log.Message("TryStartCastOn Bursting: "+ (this.state == VerbState.Bursting) + " Can Hit tgt: "+ (this.CanHitTarget(castTarg)));
 			if (this.state == VerbState.Bursting || !this.CanHitTarget(castTarg))
 			{
 				return false;
 			}
-			Log.Message("TryStartCastOn 3");
+		//	Log.Message("TryStartCastOn 3");
 			if (this.CausesTimeSlowdown(castTarg))
 			{
 				Find.TickManager.slower.SignalForceNormalSpeed();
 			}
-			Log.Message("TryStartCastOn 4");
+		//	Log.Message("TryStartCastOn 4");
 			this.surpriseAttack = surpriseAttack;
 			this.canHitNonTargetPawnsNow = canHitNonTargetPawns;
 			this.currentTarget = castTarg;
 			this.currentDestination = destTarg;
-			Log.Message("TryStartCastOn 5");
+		//	Log.Message("TryStartCastOn 5");
 			/*
 			if (this.CasterIsPawn && this.verbProps.warmupTime > 0f)
 			{
@@ -242,46 +267,69 @@ namespace MuvLuvBeta
 			}
 			*/
 
-			Log.Message("TryStartCastOn WarmupComplete");
+		//	Log.Message("TryStartCastOn WarmupComplete");
 			this.WarmupComplete();
-			Log.Message("TryStartCastOn 6");
+		//	Log.Message("TryStartCastOn 6");
 			return true;
+		}
+		
+		public new void VerbTick()
+		{
+			if (this.state == VerbState.Bursting)
+			{
+				if (!this.Caster.Spawned)
+				{
+					this.Reset();
+					return;
+				}
+				this.ticksToNextBurstShot--;
+				if (this.ticksToNextBurstShot <= 0)
+				{
+					this.TryCastNextBurstShot();
+				}
+			}
+		}
+
+		public override bool ValidateTarget(LocalTargetInfo target)
+		{
+			Pawn p;
+			return !this.CasterIsPawn || (p = (target.Thing as Pawn)) == null || (!p.InSameExtraFaction(this.Caster as Pawn, ExtraFactionType.HomeFaction, null) && !p.InSameExtraFaction(this.Caster as Pawn, ExtraFactionType.MiniFaction, null));
 		}
 
 		public override bool CanHitTarget(LocalTargetInfo targ)
 		{
-			Log.Message("CanHitTarget ");
-			if (this.caster is Apparel app)
+		//	Log.Message("CanHitTarget ");
+			if (this.Caster is Apparel app)
 			{
-				Log.Message("CanHitTarget app");
+			//	Log.Message("CanHitTarget app");
 				if (app.Wearer != null)
 				{
-					Log.Message("CanHitTarget Wearer spawned: "+ app.Wearer.Spawned+" Selftarget: " + (targ == app.Wearer)+ " CanHitFrom: "+(this.CanHitTargetFrom(app.Wearer.Position, targ)));
+				//	Log.Message("CanHitTarget Wearer spawned: "+ app.Wearer.Spawned+" Selftarget: " + (targ == app.Wearer)+ " CanHitFrom: "+(this.CanHitTargetFrom(app.Wearer.Position, targ)));
 					return app.Wearer.Spawned && (targ == app.Wearer || this.CanHitTargetFrom(app.Wearer.Position, targ));
 				}
 
 			}
-			return this.caster != null && this.caster.Spawned && (targ == this.caster || this.CanHitTargetFrom(this.caster.Position, targ));
+			return this.Caster != null && this.Caster.Spawned && (targ == this.Caster || this.CanHitTargetFrom(this.Caster.Position, targ));
 		}
 
 		public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
 		{
 			ShootLine shootLine;
-			if (this.caster is Apparel app)
+			if (this.Caster is Apparel app)
 			{
-				Log.Message("CanHitTargetFrom app");
+			//	Log.Message("CanHitTargetFrom app");
 				if (app.Wearer != null)
 				{
 					if (targ.Thing != null && targ.Thing == app.Wearer)
 					{
 						return this.targetParams.canTargetSelf;
 					}
-					Log.Message("CanHitTargetFrom ApparelPreventsShooting: "+(this.ApparelPreventsShooting(root, targ)) + " TryFindShootLineFromTo: " + (this.TryFindShootLineFromTo(root, targ, out shootLine)));
+				//	Log.Message("CanHitTargetFrom ApparelPreventsShooting: "+(this.ApparelPreventsShooting(root, targ)) + " TryFindShootLineFromTo: " + (this.TryFindShootLineFromTo(root, targ, out shootLine)));
 					return !this.ApparelPreventsShooting(root, targ) && this.TryFindShootLineFromTo(root, targ, out shootLine);
 				}
 
 			}
-			if (targ.Thing != null && targ.Thing == this.caster)
+			if (targ.Thing != null && targ.Thing == this.Caster)
 			{
 				return this.targetParams.canTargetSelf;
 			}
@@ -305,23 +353,147 @@ namespace MuvLuvBeta
 			}
 			Pawn pawn = thing as Pawn;
 			bool flag = pawn != null && pawn.Downed;
-			return (thing.Faction == Faction.OfPlayer && this.caster.HostileTo(Faction.OfPlayer)) || (this.caster.Faction == Faction.OfPlayer && thing.HostileTo(Faction.OfPlayer) && !flag);
+			return (thing.Faction == Faction.OfPlayer && this.Caster.HostileTo(Faction.OfPlayer)) || (this.Caster.Faction == Faction.OfPlayer && thing.HostileTo(Faction.OfPlayer) && !flag);
+		}
+
+		// Verse.Verb
+		// Token: 0x060022E2 RID: 8930 RVA: 0x000D4A4C File Offset: 0x000D2C4C
+		public new bool TryFindShootLineFromTo(IntVec3 root, LocalTargetInfo targ, out ShootLine resultingLine)
+		{
+			if (targ.HasThing && targ.Thing.Map != this.Caster.Map)
+			{
+				resultingLine = default(ShootLine);
+				return false;
+			}
+			if (this.verbProps.IsMeleeAttack || this.EffectiveRange <= 1.42f)
+			{
+				resultingLine = new ShootLine(root, targ.Cell);
+				return ReachabilityImmediate.CanReachImmediate(root, targ, this.Caster.Map, PathEndMode.Touch, null);
+			}
+			CellRect cellRect = targ.HasThing ? targ.Thing.OccupiedRect() : CellRect.SingleCell(targ.Cell);
+			float num = this.verbProps.EffectiveMinRange(targ, this.Caster);
+			float num2 = cellRect.ClosestDistSquaredTo(root);
+			if (num2 > this.EffectiveRange * this.EffectiveRange || num2 < num * num)
+			{
+				resultingLine = new ShootLine(root, targ.Cell);
+				return false;
+			}
+			if (!this.verbProps.requireLineOfSight)
+			{
+				resultingLine = new ShootLine(root, targ.Cell);
+				return true;
+			}
+			if (this.CasterIsPawn)
+			{
+				IntVec3 dest;
+				if (this.CanHitFromCellIgnoringRange(root, targ, out dest))
+				{
+					resultingLine = new ShootLine(root, dest);
+					return true;
+				}
+				ShootLeanUtility.LeanShootingSourcesFromTo(root, cellRect.ClosestCellTo(root), this.Caster.Map, Verb_ShootTFSMounted.tempLeanShootSources);
+				for (int i = 0; i < Verb_ShootTFSMounted.tempLeanShootSources.Count; i++)
+				{
+					IntVec3 intVec = Verb_ShootTFSMounted.tempLeanShootSources[i];
+					if (this.CanHitFromCellIgnoringRange(intVec, targ, out dest))
+					{
+						resultingLine = new ShootLine(intVec, dest);
+						return true;
+					}
+				}
+			}
+			else
+			{
+				foreach (IntVec3 intVec2 in this.Caster.OccupiedRect())
+				{
+					IntVec3 dest;
+					if (this.CanHitFromCellIgnoringRange(intVec2, targ, out dest))
+					{
+						resultingLine = new ShootLine(intVec2, dest);
+						return true;
+					}
+				}
+			}
+			resultingLine = new ShootLine(root, targ.Cell);
+			return false;
+		}
+
+
+		// Token: 0x060022E3 RID: 8931 RVA: 0x000D4C5C File Offset: 0x000D2E5C
+		private bool CanHitFromCellIgnoringRange(IntVec3 sourceCell, LocalTargetInfo targ, out IntVec3 goodDest)
+		{
+			if (targ.Thing != null)
+			{
+				if (targ.Thing.Map != this.Caster.Map)
+				{
+					goodDest = IntVec3.Invalid;
+					return false;
+				}
+				ShootLeanUtility.CalcShootableCellsOf(Verb_ShootTFSMounted.tempDestList, targ.Thing);
+				for (int i = 0; i < Verb_ShootTFSMounted.tempDestList.Count; i++)
+				{
+					if (this.CanHitCellFromCellIgnoringRange(sourceCell, Verb_ShootTFSMounted.tempDestList[i], targ.Thing.def.Fillage == FillCategory.Full))
+					{
+						goodDest = Verb_ShootTFSMounted.tempDestList[i];
+						return true;
+					}
+				}
+			}
+			else if (this.CanHitCellFromCellIgnoringRange(sourceCell, targ.Cell, false))
+			{
+				goodDest = targ.Cell;
+				return true;
+			}
+			goodDest = IntVec3.Invalid;
+			return false;
+		}
+
+		// Token: 0x060022E4 RID: 8932 RVA: 0x000D4D2C File Offset: 0x000D2F2C
+		private bool CanHitCellFromCellIgnoringRange(IntVec3 sourceSq, IntVec3 targetLoc, bool includeCorners = false)
+		{
+			if (this.verbProps.mustCastOnOpenGround && (!targetLoc.Standable(this.Caster.Map) || this.Caster.Map.thingGrid.CellContains(targetLoc, ThingCategory.Pawn)))
+			{
+				return false;
+			}
+			if (this.verbProps.requireLineOfSight)
+			{
+				if (!includeCorners)
+				{
+					if (!GenSight.LineOfSight(sourceSq, targetLoc, this.Caster.Map, true, null, 0, 0))
+					{
+						return false;
+					}
+				}
+				else if (!GenSight.LineOfSightToEdges(sourceSq, targetLoc, this.Caster.Map, true, null))
+				{
+					return false;
+				}
+			}
+			return true;
 		}
 		private void ThrowDebugText(string text)
 		{
 			if (DebugViewSettings.drawShooting)
 			{
-				MoteMaker.ThrowText(this.caster.DrawPos, this.caster.Map, text, -1f);
+				MoteMaker.ThrowText(this.Caster.DrawPos, this.Caster.Map, text, -1f);
 			}
 		}
 
-		// Token: 0x060022EC RID: 8940 RVA: 0x000D53A9 File Offset: 0x000D35A9
 		private void ThrowDebugText(string text, IntVec3 c)
 		{
 			if (DebugViewSettings.drawShooting)
 			{
-				MoteMaker.ThrowText(c.ToVector3Shifted(), this.caster.Map, text, -1f);
+				MoteMaker.ThrowText(c.ToVector3Shifted(), this.Caster.Map, text, -1f);
 			}
 		}
+
+		// Token: 0x04001569 RID: 5481
+		private Texture2D commandIconCached;
+
+		// Token: 0x0400156A RID: 5482
+		private static List<IntVec3> tempLeanShootSources = new List<IntVec3>();
+
+		// Token: 0x0400156B RID: 5483
+		private static List<IntVec3> tempDestList = new List<IntVec3>();
 	}
 }

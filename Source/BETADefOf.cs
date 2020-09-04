@@ -31,5 +31,7 @@ namespace MuvLuvBeta
 		public static ThingDef BETA_LaserClass;
 		public static ThingDef BETA_HeavyLaserClass;
 
+		public static FactionDef MuvLuv_BETA;
+
 	}
 }

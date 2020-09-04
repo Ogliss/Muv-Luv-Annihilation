@@ -32,11 +32,6 @@
         </allowedKinddefs>
         <Factions>
 			<li>MuvLuv_BETA</li>
-			<li>MuvLuv_BETA2P</li>
-			<li>MuvLuv_BETA3P</li>
-			<li>MuvLuv_BETA4P</li>
-			<li>MuvLuv_BETA5P</li>
-			<li>MuvLuv_BETA6P</li>
 		</Factions>
       </li>
       <!--li Class="CompProperties_PlantHarmRadius">
@@ -88,11 +83,6 @@
         </allowedKinddefs>
         <Factions>
 			<li>MuvLuv_BETA</li>
-			<li>MuvLuv_BETA2P</li>
-			<li>MuvLuv_BETA3P</li>
-			<li>MuvLuv_BETA4P</li>
-			<li>MuvLuv_BETA5P</li>
-			<li>MuvLuv_BETA6P</li>
 		</Factions>
       </li>
       <li Class="CrashedShipsExtension.CompProperties_SpawnerPawn">

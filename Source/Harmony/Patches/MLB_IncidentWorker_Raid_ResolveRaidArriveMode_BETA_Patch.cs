@@ -23,7 +23,6 @@ namespace MuvLuvBeta.HarmonyInstance
             {
                 if (parms.faction != null && (parms.faction.def.defName.Contains("MuvLuv_BETA")))
                 {
-                    Log.Message("beta raid, defaulting to edgewalkin");
                     parms.raidArrivalMode = RimWorld.PawnsArrivalModeDefOf.EdgeWalkIn;
                     return;
                     /*

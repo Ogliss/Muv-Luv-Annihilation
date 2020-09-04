@@ -8,7 +8,7 @@ using Verse.Sound;
 namespace MuvLuvBeta
 {
 	// Token: 0x02000399 RID: 921
-	public class Command_VerbTarget : Command
+	public class Command_ApparelTurretVerbTarget : Command
 	{
 		// Token: 0x17000538 RID: 1336
 		// (get) Token: 0x06001B6B RID: 7019 RVA: 0x000A8B12 File Offset: 0x000A6D12
@@ -45,7 +45,7 @@ namespace MuvLuvBeta
 		public override void MergeWith(Gizmo other)
 		{
 			base.MergeWith(other);
-			Command_VerbTarget command_VerbTarget = other as Command_VerbTarget;
+			Command_ApparelTurretVerbTarget command_VerbTarget = other as Command_ApparelTurretVerbTarget;
 			if (command_VerbTarget == null)
 			{
 				Log.ErrorOnce("Tried to merge Command_VerbTarget with unexpected type", 73406263, false);
@@ -76,16 +76,19 @@ namespace MuvLuvBeta
 				Pawn casterPawn = this.verb.CasterPawn;
 				if (!targeter.IsPawnTargeting(casterPawn))
 				{
+					Log.Message("targetingSourceAdditionalPawns: ");
 					targeter.targetingSourceAdditionalPawns.Add(casterPawn);
 					return;
 				}
 			}
 			else
 			{
+				Log.Message("BeginTargeting: ");
 				Find.Targeter.BeginTargeting(this.verb, null);
 			}
 		}
 
+		public CompApparel_TurretGun gunTurret;
 		// Token: 0x0400103D RID: 4157
 		public Verb verb;
 

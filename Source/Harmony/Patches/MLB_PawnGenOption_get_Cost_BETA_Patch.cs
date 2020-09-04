@@ -14,17 +14,12 @@ using UnityEngine;
 namespace MuvLuvBeta.HarmonyInstance
 {
     /* 
-    [HarmonyPatch(typeof(PawnGenOption), "get_Cost")]
+    [HarmonyPatch(typeof(DarkIntentionsWoohoo.PawnHelper), "is_human")]
     public static class MLB_PawnGenOption_get_Cost_BETA_Patch
     {
-        public static void Postfix(PawnGenOption __instance, ref float __result)
-        {
-            if (__instance.kind.RaceProps.FleshType.defName == "BETAFlesh")
-            {
-                float yearsingame = ((float)Find.TickManager.TicksAbs) / ((float)360000);
-
-        	//        Log.Message(yearsingame+" years passed "+__instance.kind.LabelCap + " cost: "+ __result);
-            }
+        public static void Postfix(Pawn pawn, ref bool __result)
+		{
+			__result = pawn.RaceProps.Humanlike;
         }
     }
     */

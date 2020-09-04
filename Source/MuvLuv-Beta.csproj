@@ -32,21 +32,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BETADefOf.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="Building_Turret_Shoulder.cs" />
-    <Compile Include="Command_VerbTarget.cs" />
+    <Compile Include="Command_ApparelTurretVerbTarget.cs" />
+    <Compile Include="Harmony\Patches\MLB_Apparel_Tick_ApparelTurret_Patch.cs" />
     <Compile Include="Verb_ShootTFSMounted.cs" />
     <Compile Include="CompApparelDrawExtras.cs" />
     <Compile Include="Apparel_Turret.cs" />
     <Compile Include="CompApparel_TurretGun.cs" />
-    <Compile Include="CompEquippableTurret.cs" />
     <Compile Include="CompBETASpawnerOnDamaged.cs" />
     <Compile Include="Harmony\Patches\MLB_PawnRenderer_RenderPawnInternal_DrawExtras_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_Apparel_GetWornGizmos_ApparelTurret_Patch - Copy.cs" />
     <Compile Include="Harmony\Patches\MLB_Apparel_GetWornGizmos_ApparelTurret_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_GetOrGenerateMapUtility_GetOrGenerateMap_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_SymbolResolver_PawnHiveGroup_Resolve_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_SymbolResolver_Hivebase_Resolve_BETA_Patch.cs" />
+    <None Include="Harmony\Patches\MLB_SymbolResolver_PawnHiveGroup_Resolve_BETA_Patch.cs.bak" />
+    <None Include="Harmony\Patches\MLB_SymbolResolver_Hivebase_Resolve_BETA_Patch.cs.bak" />
     <Compile Include="Harmony\Patches\MLB_Hediff_CauseDeathNow_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_TrashUtility_TrashJob_NewTemp_BETA_Patch.cs" />
     <Compile Include="LordJob_AssaultColony_CutPower.cs" />
@@ -56,7 +53,7 @@
     <Compile Include="Harmony\Patches\MLB_SettlementDefeatUtility_IsDefeated_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_HediffSet_get_PainTotal_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_HediffComp_Infecter_CheckMakeInfection_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_IncidentWorker_Infestation_TryExecuteWorker_BETA_Patch.cs" />
+    <None Include="Harmony\Patches\MLB_IncidentWorker_Infestation_TryExecuteWorker_BETA_Patch.cs.bak" />
     <Compile Include="Verb_LaunchProjectileCantMiss.cs" />
     <Compile Include="IncidentDefOf.cs" />
     <Compile Include="GameCondition_BetaHiveEvolution.cs" />

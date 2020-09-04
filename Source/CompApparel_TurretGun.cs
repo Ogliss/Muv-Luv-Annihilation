@@ -221,7 +221,15 @@ namespace MuvLuvBeta
 			base.CompTick();
 			if (Wearer == null)
 			{
+				this.AttackVerb.caster = parent;
 				return;
+			}
+			else
+			{
+				if (this.AttackVerb.caster == null)
+				{
+					this.AttackVerb.caster = Wearer;
+				}
 			}
 			if (Wearer.Downed || !Wearer.Awake())
 			{
@@ -601,14 +609,16 @@ namespace MuvLuvBeta
                     */
 				};
 			}
-			if (this.CanSetForcedTarget)
+
+			if (this.CanSetForcedTarget && active)
 			{
 				num+=100;
-				Command_VerbTarget command_VerbTarget = new Command_VerbTarget();
+				Command_ApparelTurretVerbTarget command_VerbTarget = new Command_ApparelTurretVerbTarget();
 				command_VerbTarget.defaultLabel = Props.TurretDef.building.turretGunDef.LabelCap + " " +"CommandSetForceAttackTarget".Translate();
 				command_VerbTarget.defaultDesc = "CommandSetForceAttackTargetDesc".Translate();
 				command_VerbTarget.icon = ContentFinder<Texture2D>.Get("UI/Commands/Attack", true);
 				command_VerbTarget.verb = this.AttackVerb;
+				command_VerbTarget.gunTurret = this;
 				command_VerbTarget.hotKey = KeyBindingDefOf.Misc4;
 				command_VerbTarget.drawRadius = false;
 				command_VerbTarget.groupKey = num + Props.gizmoID;
@@ -686,7 +696,6 @@ namespace MuvLuvBeta
 		public void MakeGun()
 		{
 			this.gun = ThingMaker.MakeThing(this.Props.TurretDef.building.turretGunDef, null);
-			this.UpdateGunVerbs();
 		}
 
 		private void UpdateGunVerbs()
@@ -709,7 +718,7 @@ namespace MuvLuvBeta
 			for (int i = 0; i < allVerbs.Count; i++)
 			{
 				Verb verb = allVerbs[i];
-				verb.caster = this.apparel;
+				verb.caster = (Thing)this.apparel.Wearer ?? this.apparel;
 				verb.castCompleteCallback = new Action(this.BurstComplete);
 			}
 		}

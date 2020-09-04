@@ -3,7 +3,7 @@
   <ThingDef Name="MLB_TSF_TurretBase" Abstract="True">
     <tickerType>Normal</tickerType>
     <category>Building</category>
-	<thingClass>MuvLuvBeta.Building_Turret_Shoulder</thingClass>
+	<thingClass>Building_Turret</thingClass>
     <graphicData>
       <texPath>DummyTexture2</texPath>
       <graphicClass>Graphic_Single</graphicClass>

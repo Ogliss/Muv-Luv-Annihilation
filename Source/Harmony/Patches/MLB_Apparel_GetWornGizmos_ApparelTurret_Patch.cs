@@ -13,6 +13,7 @@ using UnityEngine;
 
 namespace MuvLuvBeta.HarmonyInstance
 {
+    /*
     // Gets Gizmos from Apparel's Comps
     [HarmonyPatch(typeof(Apparel), "GetWornGizmos")]
     public static class MLB_Apparel_GetWornGizmos_ApparelTurret_Patch
@@ -43,4 +44,5 @@ namespace MuvLuvBeta.HarmonyInstance
             __result = l;
         }
     }
+    */
 }

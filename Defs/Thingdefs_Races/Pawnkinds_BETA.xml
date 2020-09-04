@@ -66,7 +66,6 @@
         <bodyGraphicData>
           <texPath>Things/Pawn/ToolUser/BETA/Tank</texPath>
           <drawSize>2.5</drawSize>
-          <color>(156,148,125)</color>
           <shadowData>
             <volume>(0.4, 0.5, 0.37)</volume>
             <offset>(0,0,-0.15)</offset>
@@ -90,8 +89,8 @@
           <texPath>Things/Pawn/ToolUser/BETA/Grappler</texPath>
           <drawSize>4.5</drawSize>
           <shaderType>CutoutComplex</shaderType>
-          <color>(154,125,94)</color>
-          <colorTwo>(80,0,80)</colorTwo>
+          <!--color>(154,125,94)</color>
+          <colorTwo>(80,0,80)</colorTwo-->
           <shadowData>
             <volume>(0.5, 0.7, 0.43)</volume>
             <offset>(0,0,-0.1)</offset>
@@ -162,7 +161,9 @@
         <bodyGraphicData>
           <texPath>Things/Pawn/ToolUser/BETA/Laser</texPath>
           <drawSize>2.65</drawSize>
-          <color>(156,148,125)</color>
+          <shaderType>CutoutComplex</shaderType>
+          <color>(186,223,186)</color>
+          <colorTwo>(118,54,94)</colorTwo>
           <shadowData>
             <volume>(0.4, 0.5, 0.37)</volume>
             <offset>(0,0,-0.15)</offset>
