@@ -19,18 +19,18 @@ namespace MuvLuvBeta.HarmonyInstance
     {
         public static void Postfix(Pawn pawn, Thing t, Job __result, bool allowPunchingInert = false, bool killIncappedTarget = false)
         {
-            if (pawn.def == BETADefOf.BETA_SoldierClass && __result.def != JobDefOf.Ignite)
+            if (pawn.def == BETADefOf.BETA_SoldierClass && __result.def != RimWorld.JobDefOf.Ignite)
             {
 				if (Rand.Value < 0.60f && pawn.natives.IgniteVerb != null && pawn.natives.IgniteVerb.IsStillUsableBy(pawn) && t.FlammableNow && !t.IsBurning() && !(t is Building_Door))
 				{
-					__result = JobMaker.MakeJob(JobDefOf.Ignite, t);
+					__result = JobMaker.MakeJob(RimWorld.JobDefOf.Ignite, t);
 				}
 				else
 				{
 					Building building = t as Building;
 					if (!(building != null && building.def.building.isInert && !allowPunchingInert))
 					{
-						__result = JobMaker.MakeJob(JobDefOf.AttackMelee, t);
+						__result = JobMaker.MakeJob(RimWorld.JobDefOf.AttackMelee, t);
 					}
 				}
 				__result.killIncappedTarget = killIncappedTarget;

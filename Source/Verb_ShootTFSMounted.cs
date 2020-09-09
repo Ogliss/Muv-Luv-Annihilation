@@ -4,6 +4,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.Sound;
 
 namespace MuvLuvBeta
 {
@@ -17,7 +18,7 @@ namespace MuvLuvBeta
 				return this.verbProps.burstShotCount;
 			}
 		}
-
+		public CompApparel_Turret turret;
 		public override Thing Caster
 		{
 			get
@@ -29,28 +30,39 @@ namespace MuvLuvBeta
 					{
 						if (this.caster != a.Wearer)
 						{
-							Log.Message("New Wearer "+ a.Wearer);
+						//	Log.Message("New Wearer "+ a.Wearer);
 							this.caster = a.Wearer;
 						}
 					}
 					else
 					{
-						Log.Message("caster is Apparel Not worn");
+					//	Log.Message("caster is Apparel Not worn");
 					}
 				}
 				else
 				{
-					Log.Message("caster is not Apparel "+caster);
+				//	Log.Message("caster is not Apparel "+caster);
 				}
 				return this.caster;
 			}
 		}
 
+		public new CompApparel_Turret ReloadableCompSource
+		{
+			get
+			{
+				if (turret != null)
+				{
+					return turret;
+				}
+				return this.DirectOwner as CompApparel_Turret;
+			}
+		}
 		public override bool CasterIsPawn
 		{
 			get
 			{
-				Log.Message("Caster is Pawn ? " + (Caster is Pawn));
+			//	Log.Message("Caster is Pawn ? " + (Caster is Pawn));
 				return Caster is Pawn;
 			}
 		}
@@ -78,10 +90,11 @@ namespace MuvLuvBeta
 				this.CasterPawn.skills.Learn(SkillDefOf.Shooting, num * num2, false);
 			}
 		}
+		public int warningticks = 0;
 
 		protected override bool TryCastShot()
 		{
-		//	Log.Message("TryCastShot");
+		//	Log.Message("TryCastShot ");
 			if (this.currentTarget.HasThing && this.currentTarget.Thing.Map != this.Caster.Map)
 			{
 			//	Log.Message("TGT Wrong Map");
@@ -100,6 +113,9 @@ namespace MuvLuvBeta
 			//	Log.Message("stopBurstWithoutLos");
 				return false;
 			}
+			float offset = 0f;
+			Vector3 muzzlePos;
+		//	Log.Message("TryCastShot 1");
 			if (base.EquipmentSource != null)
 			{
 				CompChangeableProjectile comp = base.EquipmentSource.GetComp<CompChangeableProjectile>();
@@ -113,6 +129,63 @@ namespace MuvLuvBeta
 					comp2.UsedOnce();
 				}
 			}
+		//	Log.Message("TryCastShot 2");
+			if (turret!=null)
+			{
+				if (turret.UseAmmo)
+				{
+					bool playerpawn = this.CasterIsPawn && this.Caster.Faction == Faction.OfPlayer;
+					if (turret.RemainingCharges>0)
+					{
+						turret.UsedOnce();
+					}
+					else
+					{
+						return false;
+					}
+					if (turret.RemainingCharges == 0)
+					{
+						if (turret.Props.soundEmptyWarning != null && playerpawn)
+						{
+							turret.Props.soundEmptyWarning.PlayOneShot(new TargetInfo(this.Caster.Position, this.Caster.Map, false));
+						}
+						if (!turret.Props.messageEmptyWarning.NullOrEmpty() && playerpawn)
+						{
+							MoteMaker.ThrowText(Caster.Position.ToVector3(), Caster.Map, turret.Props.messageEmptyWarning.Translate(EquipmentSource.LabelCap, Caster.LabelShortCap), 3f);
+						}
+					}
+					float a = turret.RemainingCharges;
+					float b = turret.MaxCharges;
+					int remaining = (int)(a / b * 100f);
+					if (remaining == 50 && warningticks == 0)
+					{
+						warningticks = this.verbProps.ticksBetweenBurstShots+1;
+						if (turret.Props.soundHalfRemaningWarning != null && playerpawn)
+						{
+							turret.Props.soundHalfRemaningWarning.PlayOneShot(new TargetInfo(this.Caster.Position, this.Caster.Map, false));
+						}
+						if (!turret.Props.messageHalfRemaningWarning.NullOrEmpty() && playerpawn)
+						{
+							MoteMaker.ThrowText(Caster.Position.ToVector3(), Caster.Map, turret.Props.messageHalfRemaningWarning.Translate(EquipmentSource.LabelCap, Caster.LabelShortCap, remaining), 3f);
+						}
+					}
+					if (remaining == 25 && warningticks == 0)
+					{
+						warningticks = this.verbProps.ticksBetweenBurstShots + 1;
+						if (turret.Props.soundQuaterRemaningWarning != null && playerpawn)
+						{
+							turret.Props.soundQuaterRemaningWarning.PlayOneShot(new TargetInfo(this.Caster.Position, this.Caster.Map, false));
+						}
+						if (!turret.Props.messageQuaterRemaningWarning.NullOrEmpty() && playerpawn)
+						{
+							MoteMaker.ThrowText(Caster.Position.ToVector3(), Caster.Map, turret.Props.messageQuaterRemaningWarning.Translate(EquipmentSource.LabelCap, Caster.LabelShortCap, remaining), 3f);
+						}
+					}
+					offset = turret.Props.projectileOffset;
+					muzzlePos = MuzzlePosition(this.Caster, this.currentTarget, offset);
+				}
+			}
+		//	Log.Message("TryCastShot 3");
 			Thing launcher = this.Caster;
 			Thing equipment = base.EquipmentSource;
 			CompMannable compMannable = this.Caster.TryGetComp<CompMannable>();
@@ -121,6 +194,7 @@ namespace MuvLuvBeta
 				launcher = compMannable.ManningPawn;
 				equipment = this.Caster;
 			}
+		//	Log.Message("TryCastShot 4");
 			Vector3 drawPos = this.Caster.DrawPos;
 			Projectile projectile2 = (Projectile)GenSpawn.Spawn(projectile, shootLine.Source, this.Caster.Map, WipeMode.Vanish);
 			if (this.verbProps.forcedMissRadius > 0.5f)
@@ -144,7 +218,8 @@ namespace MuvLuvBeta
 						{
 							projectileHitFlags &= ~ProjectileHitFlags.NonTargetPawns;
 						}
-						projectile2.Launch(launcher, drawPos, c, this.currentTarget, projectileHitFlags, equipment, null);
+						muzzlePos = MuzzlePosition(this.Caster, this.currentTarget, offset);
+						projectile2.Launch(launcher, muzzlePos, c, this.currentTarget, projectileHitFlags, equipment, null);
 						if (this.CasterIsPawn)
 						{
 							this.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
@@ -154,9 +229,13 @@ namespace MuvLuvBeta
 					}
 				}
 			}
+		//	Log.Message("TryCastShot 5");
 			ShotReport shotReport = ShotReport.HitReportFor(this.Caster, this, this.currentTarget);
+		//	Log.Message("TryCastShot 5 1");
 			Thing randomCoverToMissInto = shotReport.GetRandomCoverToMissInto();
+		//	Log.Message("TryCastShot 5 2");
 			ThingDef targetCoverDef = (randomCoverToMissInto != null) ? randomCoverToMissInto.def : null;
+		//	Log.Message("TryCastShot 5 3");
 			if (!Rand.Chance(shotReport.AimOnTargetChance_IgnoringPosture))
 			{
 				shootLine.ChangeDestToMissWild(shotReport.AimOnTargetChance_StandardTarget);
@@ -167,14 +246,22 @@ namespace MuvLuvBeta
 				{
 					projectileHitFlags2 |= ProjectileHitFlags.NonTargetPawns;
 				}
-				projectile2.Launch(launcher, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags2, equipment, targetCoverDef);
+			//	Log.Message("TryCastShot 5 3 6 launcher " + launcher);
+			//	Log.Message("TryCastShot 5 3 6 Caster " + this.Caster);
+			//	Log.Message("TryCastShot 5 3 6 currentTarget " + this.currentTarget);
+			//	Log.Message("TryCastShot 5 3 6 shootLine.Dest " + shootLine.Dest);
+				muzzlePos = MuzzlePosition(this.Caster, this.currentTarget, offset);
+				projectile2.Launch(launcher, muzzlePos, shootLine.Dest, this.currentTarget, projectileHitFlags2, equipment, targetCoverDef);
+
 				if (this.CasterIsPawn)
 				{
 					this.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
 				}
-			//	Log.Message("TryCastShot 2");
+				Log.Message("TryCastShot 5 3 8");
+				//	Log.Message("TryCastShot 2");
 				return true;
 			}
+		//	Log.Message("TryCastShot 6");
 			if (this.currentTarget.Thing != null && this.currentTarget.Thing.def.category == ThingCategory.Pawn && !Rand.Chance(shotReport.PassCoverChance))
 			{
 				this.ThrowDebugText("ToCover" + (this.canHitNonTargetPawnsNow ? "\nchntp" : ""));
@@ -184,40 +271,46 @@ namespace MuvLuvBeta
 				{
 					projectileHitFlags3 |= ProjectileHitFlags.NonTargetPawns;
 				}
-				projectile2.Launch(launcher, drawPos, randomCoverToMissInto, this.currentTarget, projectileHitFlags3, equipment, targetCoverDef);
+				muzzlePos = MuzzlePosition(this.Caster, this.currentTarget, offset);
+				projectile2.Launch(launcher, muzzlePos, randomCoverToMissInto, this.currentTarget, projectileHitFlags3, equipment, targetCoverDef);
 				if (this.CasterIsPawn)
 				{
 					this.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
 				}
-			//	Log.Message("TryCastShot 3");
 				return true;
 			}
+		//	Log.Message("TryCastShot 7");
 			ProjectileHitFlags projectileHitFlags4 = ProjectileHitFlags.IntendedTarget;
 			if (this.canHitNonTargetPawnsNow)
 			{
 				projectileHitFlags4 |= ProjectileHitFlags.NonTargetPawns;
 			}
+		//	Log.Message("TryCastShot 8");
 			if (!this.currentTarget.HasThing || this.currentTarget.Thing.def.Fillage == FillCategory.Full)
 			{
 				projectileHitFlags4 |= ProjectileHitFlags.NonTargetWorld;
 			}
+		//	Log.Message("TryCastShot 9");
 			this.ThrowDebugText("ToHit" + (this.canHitNonTargetPawnsNow ? "\nchntp" : ""));
+		//	Log.Message("TryCastShot 10");
+			muzzlePos = MuzzlePosition(this.Caster, this.currentTarget, offset);
 			if (this.currentTarget.Thing != null)
 			{
-				projectile2.Launch(launcher, drawPos, this.currentTarget, this.currentTarget, projectileHitFlags4, equipment, targetCoverDef);
+				projectile2.Launch(launcher, muzzlePos, this.currentTarget, this.currentTarget, projectileHitFlags4, equipment, targetCoverDef);
 				this.ThrowDebugText("Hit\nDest", this.currentTarget.Cell);
 			}
 			else
 			{
-				projectile2.Launch(launcher, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags4, equipment, targetCoverDef);
+				projectile2.Launch(launcher, muzzlePos, shootLine.Dest, this.currentTarget, projectileHitFlags4, equipment, targetCoverDef);
 				this.ThrowDebugText("Hit\nDest", shootLine.Dest);
 			}
 
+		//	Log.Message("TryCastShot 11");
 			if (this.CasterIsPawn)
 			{
 				this.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
 			}
-		//	Log.Message("TryCastShot 4");
+		//	Log.Message("TryCastShot 12");
 			return true;
 		}
 
@@ -233,6 +326,16 @@ namespace MuvLuvBeta
 			if (this.state == VerbState.Bursting || !this.CanHitTarget(castTarg))
 			{
 				return false;
+			}
+			if (turret!=null)
+			{
+				if (turret.UseAmmo)
+				{
+					if (turret.RemainingCharges<=0)
+					{
+						return false;
+					}
+				}
 			}
 		//	Log.Message("TryStartCastOn 3");
 			if (this.CausesTimeSlowdown(castTarg))
@@ -272,7 +375,31 @@ namespace MuvLuvBeta
 		//	Log.Message("TryStartCastOn 6");
 			return true;
 		}
-		
+
+		// Token: 0x06002133 RID: 8499 RVA: 0x000CB158 File Offset: 0x000C9358
+		public static Vector3 MuzzlePosition(Thing shooter, LocalTargetInfo target, float offsetDist)
+		{
+			float facing = 0f;
+			if (target.Cell != shooter.Position)
+			{
+				if (target.Thing != null)
+				{
+					facing = (target.Thing.DrawPos - shooter.Position.ToVector3Shifted()).AngleFlat();
+				}
+				else
+				{
+					facing = (target.Cell - shooter.Position).AngleFlat;
+				}
+			}
+			return MuzzlePositionRaw(shooter.DrawPos + new Vector3(0f, offsetDist, 0f), facing);
+		}
+
+		// Token: 0x06002134 RID: 8500 RVA: 0x000CB1EC File Offset: 0x000C93EC
+		public static Vector3 MuzzlePositionRaw(Vector3 center, float facing)
+		{
+			center += Quaternion.AngleAxis(facing, Vector3.up) * Vector3.forward * 0.8f;
+			return center;
+		}
 		public new void VerbTick()
 		{
 			if (this.state == VerbState.Bursting)
@@ -287,6 +414,10 @@ namespace MuvLuvBeta
 				{
 					this.TryCastNextBurstShot();
 				}
+			}
+			if (warningticks > 0)
+			{
+				warningticks--;
 			}
 		}
 

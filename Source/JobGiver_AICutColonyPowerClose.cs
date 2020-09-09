@@ -46,7 +46,7 @@ namespace MuvLuvBeta
                                 return null;
                             }
                          //   job = TrashUtility.TrashJob(pawn, building, true);
-                            job = new Job(JobDefOf.AttackMelee, edifice);
+                            job = new Job(RimWorld.JobDefOf.AttackMelee, edifice);
                             if (job != null)
                             {
                                 return job;

@@ -75,7 +75,9 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <apparel>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</wornGraphicPath>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</wornGraphicPath-->
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
     </apparel>
     <costList>
       <Plasteel>120</Plasteel>
@@ -95,34 +97,59 @@
       </li>
 	  
 	  <li Class="MuvLuvBETA.CompProperties_Apparel_Turret"> 
+        <projectileOffset>1.5</projectileOffset>
+        <maxCharges>2000</maxCharges>
+        <ammoDef>Steel</ammoDef>
+        <ammoCountPerCharge>0.1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>chaingun</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		<TurretDef>MLB_TSF_MinigunTurret</TurretDef>
 		<gizmoID>1</gizmoID>
 		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
 	  </li>
 	  
 	  <li Class="MuvLuvBETA.CompProperties_Apparel_Turret"> 
+        <projectileOffset>1</projectileOffset>
+        <maxCharges>60</maxCharges>
+        <ammoDef>Plasteel</ammoDef>
+        <ammoCountPerCharge>10</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>missiles</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		<TurretDef>MLB_TSF_MissileTurret</TurretDef>
 		<gizmoID>2</gizmoID>
 		<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
 	  </li>
-	  
-	  <!--li Class="MuvLuvBETA.CompProperties_ApparelDrawExtras"> 
-		<compClass>MuvLuvBETA.CompApparelDrawExtras</compClass>
-		<ExtrasEntries>
-			<li>
-				<UseBodytypeOffsets>false</UseBodytypeOffsets>
-				<shaderType>CutoutComplex</shaderType>
-				<extraTexPath>Things/Equipment/Yautja_ShoulderCannon</extraTexPath>
-				<commonality>10</commonality>
-			</li>
-		</ExtrasEntries>
-		<NorthOffset>0.0</NorthOffset>
-		<SouthOffset>-0.035</SouthOffset>
-		<EastOffset>0.10</EastOffset>
-		<WestOffset>0.0</WestOffset>
-	  </li-->
-	  
-    </comps>
+		  <li Class="MuvLuvBETA.CompProperties_ExosuitDrawer">
+				<ExtrasEntries>
+					<li>
+						<UseBodytypeOffsets>True</UseBodytypeOffsets>
+						<shaderType>CutoutComplex</shaderType>
+						<extraTexPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</extraTexPath>
+						<commonality>10</commonality>
+						<drawSize>3,3</drawSize>
+						<hidesHair>True</hidesHair>
+						<hidesHead>True</hidesHead>
+						<hidesBody>True</hidesBody>
+					</li>
+				</ExtrasEntries>
+				<NorthOffset>0,-0.0,0</NorthOffset>
+				<SouthOffset>0,0.0,0</SouthOffset>
+				<EastOffset>0,-0.0,0</EastOffset>
+				<WestOffset>0,0.0,0</WestOffset>
+		  </li>
+	</comps>
     <verbs>
       <li>
         <verbClass>Verb_Jump</verbClass>

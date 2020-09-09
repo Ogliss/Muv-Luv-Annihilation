@@ -308,7 +308,31 @@
 			<damageAmountBase>6</damageAmountBase>
 			<speed>250</speed>
 	   </projectile>
-	</ThingDef> <!-- DamageWorker_Agro -->
+	</ThingDef> 
+	
+  	<ThingDef ParentName="PawnFlyerBase">
+	   <defName>PawnThrown</defName>
+	   <thingClass>MuvLuvBETA.PawnThrower</thingClass>
+	   <label>charge</label>
+	   <graphicData>
+			<texPath>DummyTexture</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<explosionRadius>4</explosionRadius>
+			<damageDef>DrawAgro</damageDef>
+			<damageAmountBase>6</damageAmountBase>
+			<speed>250</speed>
+	   </projectile>
+		<pawnFlyer>
+		  <flightDurationMin>0.5</flightDurationMin>
+		  <flightSpeed>12</flightSpeed>
+		  <!--flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+		  <soundLanding>JumpPackLand</soundLanding-->
+		</pawnFlyer>
+	</ThingDef> 
+	
+	<!-- DamageWorker_Agro -->
 
   <DamageDef ParentName="StunBase">
     <defName>DrawAgro</defName>

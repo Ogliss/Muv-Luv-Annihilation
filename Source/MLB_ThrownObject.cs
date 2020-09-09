@@ -66,21 +66,6 @@ namespace MuvLuvBeta
             }
         }
 
-        // Token: 0x06000060 RID: 96 RVA: 0x00003FC4 File Offset: 0x000021C4
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
-            Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
-            Scribe_Values.Look<int>(ref this.ticksToImpact, "ticksToImpact", 0, false);
-            Scribe_Values.Look<int>(ref this.timesToDamage, "timesToDamage", 0, false);
-            Scribe_Values.Look<bool>(ref this.damageLaunched, "damageLaunched", true, false);
-            Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
-            Scribe_References.Look<Thing>(ref this.usedTarget, "usedTarget", false);
-            Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
-            Scribe_References.Look<Thing>(ref this.flyingThing, "flyingThing", false);
-        }
-
         // Token: 0x06000061 RID: 97 RVA: 0x00004094 File Offset: 0x00002294
         public void Launch(Thing launcher, LocalTargetInfo targ, Thing flyingThing, DamageInfo? impactDamage)
         {
@@ -245,6 +230,21 @@ namespace MuvLuvBeta
                 p.drafter.Drafted = true;
             }
             this.Destroy(0);
+        }
+
+        // Token: 0x06000060 RID: 96 RVA: 0x00003FC4 File Offset: 0x000021C4
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look<Vector3>(ref this.origin, "origin", default(Vector3), false);
+            Scribe_Values.Look<Vector3>(ref this.destination, "destination", default(Vector3), false);
+            Scribe_Values.Look<int>(ref this.ticksToImpact, "ticksToImpact", 0, false);
+            Scribe_Values.Look<int>(ref this.timesToDamage, "timesToDamage", 0, false);
+            Scribe_Values.Look<bool>(ref this.damageLaunched, "damageLaunched", true, false);
+            Scribe_Values.Look<bool>(ref this.explosion, "explosion", false, false);
+            Scribe_References.Look<Thing>(ref this.usedTarget, "usedTarget", false);
+            Scribe_References.Look<Thing>(ref this.launcher, "launcher", false);
+            Scribe_References.Look<Thing>(ref this.flyingThing, "flyingThing", false);
         }
 
         // Token: 0x04000035 RID: 53

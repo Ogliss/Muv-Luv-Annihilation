@@ -134,14 +134,14 @@ namespace MuvLuvBeta
 
 			}
 			*/
-		//	this.top = new TurretTop(this);
+			this.top = new ApparelTurretTop(this);
 		}
 		public override void PostSpawnSetup(bool respawningAfterLoad)
 		{
 			base.PostSpawnSetup(respawningAfterLoad);
 			if (!respawningAfterLoad)
 			{
-				if (this.top !=null)
+				if (this.top !=null && Wearer != null)
 				{
 					this.top.SetRotationFromOrientation();
 				}
@@ -235,6 +235,14 @@ namespace MuvLuvBeta
 			{
 				return;
 			}
+			if (UseAmmo && remainingCharges == 0)
+			{
+				if (this.forcedTarget.IsValid)
+				{
+					this.ResetForcedTarget();
+				}
+				return;
+			}
 			if (this.CanExtractShell && this.MannedByColonist)
 			{
 				CompChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<CompChangeableProjectile>();
@@ -268,7 +276,7 @@ namespace MuvLuvBeta
 						this.burstWarmupTicksLeft--;
 						if (this.burstWarmupTicksLeft == 0)
 						{
-							Log.Message("WarmingUp complete, BeginBurst");
+						//	Log.Message("WarmingUp complete, BeginBurst");
 							this.BeginBurst();
 						}
 					}
@@ -290,13 +298,13 @@ namespace MuvLuvBeta
 								mote.offsetZ = -0.8f;
 							}
 						}
-						if (Wearer.IsHashIntervalTick(10)) Log.Message("tick 2 1 b2 interval: "+ Wearer.IsHashIntervalTick(10));
+					//	if (Wearer.IsHashIntervalTick(10)) Log.Message("tick 2 1 b2 interval: "+ Wearer.IsHashIntervalTick(10));
 						if (this.burstCooldownTicksLeft <= 0 && Wearer.IsHashIntervalTick(10))
 						{
 							this.TryStartShootSomething(true);
 						}
 					}
-					if (this.top != null)
+					if (this.top != null && Wearer!=null )
 					{
 						this.top.TurretTopTick();
 					}
@@ -313,52 +321,42 @@ namespace MuvLuvBeta
 		{
 			if (this.progressBarEffecter != null)
 			{
-				Log.Message("progressBarEffecter");
 				this.progressBarEffecter.Cleanup();
 				this.progressBarEffecter = null;
 			}
 			if (!Wearer.Spawned || (this.holdFire && this.CanToggleHoldFire) || (this.AttackVerb.ProjectileFliesOverhead() && Wearer.Map.roofGrid.Roofed(Wearer.Position)) || !this.AttackVerb.Available())
 			{
-				Log.Message("ResetCurrentTarget");
 				this.ResetCurrentTarget();
 				return;
 			}
 			bool isValid = this.currentTargetInt.IsValid;
 			if (this.forcedTarget.IsValid)
 			{
-				Log.Message("forcedTarget");
 				this.currentTargetInt = this.forcedTarget;
 			}
 			else
 			{
-				Log.Message("TryFindNewTarget");
 				this.currentTargetInt = this.TryFindNewTarget();
-				Log.Message("currentTargetInt now "+ (currentTargetInt != null));
 			}
 			if (!isValid && this.currentTargetInt.IsValid)
 			{
-				Log.Message("currentTargetInt");
 				SoundDefOf.TurretAcquireTarget.PlayOneShot(new TargetInfo(Wearer.Position, Wearer.Map, false));
 			}
 			if (!this.currentTargetInt.IsValid)
 			{
-				Log.Message("ResetCurrentTarget");
 				this.ResetCurrentTarget();
 				return;
 			}
 			if (this.Props.TurretDef.building.turretBurstWarmupTime > 0f)
 			{
-				Log.Message("turretBurstWarmupTime");
 				this.burstWarmupTicksLeft = this.Props.TurretDef.building.turretBurstWarmupTime.SecondsToTicks();
 				return;
 			}
 			if (canBeginBurstImmediately)
 			{
-				Log.Message("canBeginBurstImmediately, BeginBurst");
 				this.BeginBurst();
 				return;
 			}
-			Log.Message("burstWarmupTicksLeft");
 			this.burstWarmupTicksLeft = 1;
 		}
 
@@ -370,33 +368,27 @@ namespace MuvLuvBeta
 			Building t;
 			if (Rand.Value < 0.5f && this.AttackVerb.ProjectileFliesOverhead() && faction.HostileTo(Faction.OfPlayer) && Wearer.Map.listerBuildings.allBuildingsColonist.Where(delegate (Building x)
 			{
-				Log.Message("TryFindNewTarget 5");
 				float num = this.AttackVerb.verbProps.EffectiveMinRange(x, Wearer);
 				float num2 = (float)x.Position.DistanceToSquared(Wearer.Position);
 				return num2 > num * num && num2 < range * range;
 			}).TryRandomElement(out t))
 			{
-				Log.Message("TryFindNewTarget 6");
 				return t;
 			}
 			TargetScanFlags targetScanFlags = TargetScanFlags.NeedThreat | TargetScanFlags.NeedAutoTargetable;
 			if (!this.AttackVerb.ProjectileFliesOverhead())
 			{
-				Log.Message("TryFindNewTarget 7");
 				targetScanFlags |= TargetScanFlags.NeedLOSToAll;
 				targetScanFlags |= TargetScanFlags.LOSBlockableByGas;
 			}
 			if (this.AttackVerb.IsIncendiary())
 			{
-				Log.Message("TryFindNewTarget 8");
 				targetScanFlags |= TargetScanFlags.NeedNonBurning;
 			}
 			if (this.IsMortar)
 			{
-				Log.Message("TryFindNewTarget 9");
 				targetScanFlags |= TargetScanFlags.NeedNotUnderThickRoof;
 			}
-			Log.Message("TryFindNewTarget 10");
 			Thing tgt = (Thing)BestShootTargetFromCurrentPosition(attackTargetSearcher, AttackVerb, targetScanFlags, new Predicate<Thing>(this.IsValidTarget), 0f, 9999f);
 			if (tgt == null && Wearer.TargetCurrentlyAimingAt!=null)
 			{
@@ -445,13 +437,13 @@ namespace MuvLuvBeta
 					return false;
 				}
 			}
-			Log.Message(t + " IsValidTarget");
+		//	Log.Message(t + " IsValidTarget");
 			return true;
 		}
 
 		protected void BeginBurst()
 		{
-			Log.Message(AttackVerb+" BeginBurst " + CurrentTarget);
+		//	Log.Message(AttackVerb+" BeginBurst " + CurrentTarget);
 			this.AttackVerb.TryStartCastOn(this.CurrentTarget, false, true);
 			base.OnAttackedTarget(this.CurrentTarget);
 		}
@@ -506,13 +498,29 @@ namespace MuvLuvBeta
 
 		public override void PostDraw()
 		{
-			if (this.top != null)
+			if (Wearer != null)
 			{
-				this.top.DrawTurret();
+				if (this.top == null)
+				{
+					top = new ApparelTurretTop(this);
+				}
+				if (this.top != null)
+				{
+					this.top.DrawTurret();
+				}
+				else
+				{
+					Log.Message("top is null");
+				}
+				if (this.TargetCurrentlyAimingAt!=null)
+				{
+					GenDraw.DrawLineBetween(Wearer.DrawPos, this.CurrentTarget.CenterVector3, LineMatRed);
+				}
 			}
 			base.PostDraw();
 		}
 
+		private static readonly Material LineMatRed = MaterialPool.MatFrom("Other/TSFTargetingLaser", ShaderDatabase.Transparent, Color.red);
 		public override void PostDrawExtraSelectionOverlays()
 		{
 			float range = this.AttackVerb.verbProps.range;
@@ -527,6 +535,7 @@ namespace MuvLuvBeta
 			}
 			if (this.WarmingUp)
 			{
+
 				int degreesWide = (int)((float)this.burstWarmupTicksLeft * 0.5f);
 				GenDraw.DrawAimPie(Wearer, this.CurrentTarget, degreesWide, (float)Props.TurretDef.size.x * 0.5f);
 			}
@@ -594,7 +603,7 @@ namespace MuvLuvBeta
 				{
 
 					icon = CommandTex,
-					defaultLabel = Props.TurretDef.building.turretGunDef.LabelCap + (active ? " turret: on." : " turret: off."),
+					defaultLabel = Props.TurretDef.building.turretGunDef.LabelCap + (active ? " turret: on." : " turret: off.")+(UseAmmo ? "\n" + LabelRemaining :""),
 					defaultDesc = "Switch mode.",
 					isActive = (() => active),
 					toggleAction = delegate ()
@@ -620,19 +629,23 @@ namespace MuvLuvBeta
 				command_VerbTarget.verb = this.AttackVerb;
 				command_VerbTarget.gunTurret = this;
 				command_VerbTarget.hotKey = KeyBindingDefOf.Misc4;
-				command_VerbTarget.drawRadius = false;
+				command_VerbTarget.drawRadius = true;
 				command_VerbTarget.groupKey = num + Props.gizmoID;
 				if (Wearer.Spawned && this.IsMortarOrProjectileFliesOverhead && Wearer.Position.Roofed(Wearer.Map))
 				{
 					command_VerbTarget.Disable("CannotFire".Translate() + ": " + "Roofed".Translate().CapitalizeFirst());
 				}
+				command_VerbTarget.action = delegate (LocalTargetInfo target)
+				{
+					this.OrderAttack(target);
+				};
 				yield return command_VerbTarget;
 			}
 			if (this.forcedTarget.IsValid)
 			{
 				num += 100;
 				Command_Action command_Action = new Command_Action();
-				command_Action.defaultLabel = "CommandStopForceAttack".Translate();
+				command_Action.defaultLabel = Props.TurretDef.building.turretGunDef.LabelCap + " " + "CommandStopForceAttack".Translate();
 				command_Action.defaultDesc = "CommandStopForceAttackDesc".Translate();
 				command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/Halt", true);
 				command_Action.groupKey = num + Props.gizmoID;
@@ -668,6 +681,36 @@ namespace MuvLuvBeta
 					},
 					isActive = (() => this.holdFire)
 				};
+			}
+			if (this.UseAmmo)
+			{
+				
+			bool drafted = this.Wearer.Drafted;
+			if ((drafted && !this.Props.displayGizmoWhileDrafted) || (!drafted && !this.Props.displayGizmoWhileUndrafted))
+			{
+				yield break;
+			}
+			/*
+			ThingWithComps gear = this.parent;
+			foreach (Verb verb in this.GunCompEq.VerbTracker.AllVerbs)
+			{
+				if (verb.verbProps.hasStandardCommand)
+				{
+					yield return this.CreateVerbTargetCommand(gear, verb);
+				}
+			}
+			*/
+			if (Prefs.DevMode)
+			{
+				yield return new Command_Action
+				{
+					defaultLabel = Props.TurretDef.building.turretGunDef.LabelCap + " " + "Debug: Reload to full",
+					action = delegate ()
+					{
+						this.remainingCharges = this.MaxCharges;
+					}
+				};
+			}
 			}
 		//	yield break;
 		}
@@ -719,6 +762,11 @@ namespace MuvLuvBeta
 			{
 				Verb verb = allVerbs[i];
 				verb.caster = (Thing)this.apparel.Wearer ?? this.apparel;
+				Verb_ShootTFSMounted verb_ = verb as Verb_ShootTFSMounted;
+				if (verb_!=null)
+				{
+					verb_.turret = this;
+				}
 				verb.castCompleteCallback = new Action(this.BurstComplete);
 			}
 		}
@@ -729,7 +777,7 @@ namespace MuvLuvBeta
 		protected LocalTargetInfo currentTargetInt = LocalTargetInfo.Invalid;
 		private bool holdFire;
 		public Thing gun;
-		protected TurretTop top;
+		protected ApparelTurretTop top;
 		protected Effecter progressBarEffecter;
 		private const int TryStartShootSomethingIntervalTicks = 10;
 		public static Material ForcedTargetLineMat = MaterialPool.MatFrom(GenDraw.LineTexPath, ShaderDatabase.Transparent, new Color(1f, 0.5f, 0.5f));

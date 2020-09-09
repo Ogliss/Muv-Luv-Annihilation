@@ -83,15 +83,19 @@ namespace MuvLuvBeta
 			}
 			else
 			{
+
 				Log.Message("BeginTargeting: ");
-				Find.Targeter.BeginTargeting(this.verb, null);
+				Find.Targeter.BeginTargeting(this.verb.targetParams, delegate (LocalTargetInfo target)
+				{
+					this.action(target);
+				}, null, null, this.verb.CasterPawn);
 			}
 		}
 
 		public CompApparel_TurretGun gunTurret;
 		// Token: 0x0400103D RID: 4157
 		public Verb verb;
-
+		public Action<LocalTargetInfo> action;
 		// Token: 0x0400103E RID: 4158
 		private List<Verb> groupedVerbs;
 

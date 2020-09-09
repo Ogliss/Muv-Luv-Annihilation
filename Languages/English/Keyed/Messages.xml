@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <!-- Muv Luv Keys -->
   <MLB_ModName>Muv Luv</MLB_ModName>
-  <BETA_PhaseProgression>The {0} infestation on this world has moved into Phase {1}.\n\nThey are appearing in ever greater numbers.....</BETA_PhaseProgression>
+  
+  <!-- BETA Keys -->
+  <BETA_PhaseKey>: Phase {0}</BETA_PhaseKey>
+  <BETA_StartMessage>PLANETARY ALERT!!!\n\nThere are reports that recent asteroid impact sites show signs of hostile alien life</BETA_StartMessage>
+  <BETA_ActiveMessage>PLANETARY ALERT!!!\n\nPresence of hostile alien lifeforms designated {0} confirmed.\n\nReports of settlements and caravans being attacked are starting to come through.\n\nPrevious encounters indicate the {0} infestation is currently in Phase {1}, this stage is estimated to last for {2} more days</BETA_ActiveMessage>
+  <BETA_PhaseProgression>PLANETARY ALERT!!!\n\nThe {0} infestation on this world has moved into Phase {1}.\n\nThey are appearing in ever greater numbers.....</BETA_PhaseProgression>
+  
+  <!-- TSF Keys -->
+  <TSF_LowAmmoMsg>{1}'s {0} is at {2}% ammunition</TSF_LowAmmoMsg>
+  <TSF_NoAmmoMsg>{1}'s {0} is out of ammunition</TSF_NoAmmoMsg>
 </LanguageData>

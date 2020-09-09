@@ -9,30 +9,30 @@ using Verse;
 namespace MuvLuvBeta
 {
     [StaticConstructorOnStartup]
-    public class CompProperties_ApparelDrawExtras : CompProperties
+    public class CompProperties_ExosuitDrawer : CompProperties
     {
         public List<ExtraPartEntry> ExtrasEntries;
         public float ExtraPartEntryChance = 0.5f;
         public int order = 0;
-        public float NorthOffset = 0f;
-        public float SouthOffset = 0f;
-        public float EastOffset = 0f;
-        public float WestOffset = 0f;
+        public Vector3 NorthOffset = new Vector3();
+        public Vector3 SouthOffset = new Vector3();
+        public Vector3 EastOffset = new Vector3();
+        public Vector3 WestOffset = new Vector3();
         public ApparelLayerDef ApparelLayer = null;
-        public CompProperties_ApparelDrawExtras()
+        public CompProperties_ExosuitDrawer()
         {
-            this.compClass = typeof(CompApparelDrawExtras);
+            this.compClass = typeof(CompExosuitDrawer);
         }
 
     }
     [StaticConstructorOnStartup]
-    public class CompApparelDrawExtras : ThingComp
+    public class CompExosuitDrawer : ThingComp
     {
-        public CompProperties_ApparelDrawExtras pprops
+        public CompProperties_ExosuitDrawer Props
         {
             get
             {
-                return this.props as CompProperties_ApparelDrawExtras;
+                return this.props as CompProperties_ExosuitDrawer;
             }
         }
 
@@ -45,7 +45,12 @@ namespace MuvLuvBeta
         static readonly Dictionary<string, bool> _OnHeadCache = new Dictionary<string, bool>();
         public Shader shader = ShaderDatabase.Cutout;
         public bool ExtraUseBodyOffset;
+        public bool ExtraUseHeadOffset;
         private bool useSecondaryColor;
+        public bool hidesHair => Props.ExtrasEntries.Any(x => x.hidesHair);
+        public bool hidesHead => Props.ExtrasEntries.Any(x => x.hidesHead);
+        public bool hidesBody => Props.ExtrasEntries.Any(x => x.hidesBody);
+        public BodyTypeDef forcedBodyType => Props.ExtrasEntries.First(x => x.forcedBodyType != null)?.forcedBodyType;
         //    private bool useFactionTextures = false;
 #pragma warning disable IDE0052 // Remove unread private members
         private bool pauldronInitialized = false;
@@ -56,11 +61,11 @@ namespace MuvLuvBeta
         {
             get
             {
-                if (!pprops.ExtrasEntries.NullOrEmpty())
+                if (!Props.ExtrasEntries.NullOrEmpty())
                 {
                     if (extraPartEntry == null)
                     {
-                        extraPartEntry = this.pprops.ExtrasEntries.RandomElementByWeight((ExtraPartEntry x) => x.commonality);
+                        extraPartEntry = this.Props.ExtrasEntries.RandomElementByWeight((ExtraPartEntry x) => x.commonality);
 
 
                         this.shader = ShaderDatabase.LoadShader(extraPartEntry.shaderType.shaderPath);
@@ -77,28 +82,31 @@ namespace MuvLuvBeta
             }
         }
 
-        private Graphic _extraGraphic;
-        public Graphic ExtraGraphic
+        private Graphic _Graphic;
+        public Graphic Graphic
         {
             get
             {
-                string path = ExtraGraphicPath;
-                if (ExtraUseBodyOffset && !onHead)
+                if (_Graphic == null)
                 {
-                    path += "_" + pawn.story.bodyType.ToString();
+                    string path = GraphicPath;
+                    if (ExtraUseBodyOffset && !onHead)
+                    {
+                        path += "_" + pawn.story.bodyType.ToString();
+                    }
+                    this._Graphic = GraphicDatabase.Get<Graphic_Multi>(path, shader, pawn.Graphic.drawSize, this.mainColor, this.secondaryColor);
                 }
-                this._extraGraphic = GraphicDatabase.Get<Graphic_Multi>(path, shader, pawn.Graphic.drawSize, this.mainColor, this.secondaryColor);
-                return _extraGraphic;
+                return _Graphic;
             }
         }
 
-        public string extraGraphicPath;
-        public string ExtraGraphicPath
+        public string graphicPath;
+        public string GraphicPath
         {
             get
             {
-                this.extraGraphicPath = ExtraPartEntry.extraTexPath;
-                return extraGraphicPath;
+                this.graphicPath = ExtraPartEntry.extraTexPath;
+                return graphicPath;
             }
         }
 
@@ -123,19 +131,25 @@ namespace MuvLuvBeta
         {
             get
             {
-                if (MainColor == Color.white)
+                if (ExtraPartEntry != null)
                 {
-                    MainColor = this.parent.DrawColor;
-                    //    Log.Message(string.Format("CompApparelExtaDrawer return {1}'s DrawColor {0}", MainColor, this.parent.def.label));
-                    return MainColor;
-                }
-                if (MainColor != Color.white)
-                {
-                    return MainColor;
-                }
-                if (this.useSecondaryColor)
-                {
-                    return this.parent.DrawColorTwo;
+                    if (ExtraPartEntry.PrimaryColor != Color.white)
+                    {
+                        return ExtraPartEntry.PrimaryColor;
+                    }
+                    if (ExtraPartEntry.UsePrimaryColor)
+                    {
+                        return this.parent.DrawColor;
+                    }
+                    else
+                    if (ExtraPartEntry.UseSecondaryColor)
+                    {
+                        if (ExtraPartEntry.SecondaryColor != Color.white)
+                        {
+                            return ExtraPartEntry.SecondaryColor;
+                        }
+                        return this.parent.DrawColorTwo;
+                    }
                 }
                 return this.parent.DrawColor;
             }
@@ -168,52 +182,57 @@ namespace MuvLuvBeta
         {
             base.PostExposeData();
             Scribe_Values.Look<bool>(ref this.useSecondaryColor, "useSecondaryColor", false, false);
-            Scribe_Values.Look<string>(ref this.extraGraphicPath, "extragraphicPath", null, false);
+            Scribe_Values.Look<string>(ref this.graphicPath, "extragraphicPath", null, false);
             Scribe_Values.Look<bool>(ref this.ExtraUseBodyOffset, "UseBodyOffset", false);
             //    Scribe_Values.Look<ExtraPartEntry>(ref this.extraPartEntry, "ExtraPartEntry", null);
         }
 
-        public float GetAltitudeOffset(Rot4 rotation, ExtraPartEntry partEntry)
+        public Vector3 GetAltitudeOffset(Rot4 rotation, ExtraPartEntry partEntry)
         {
-            float offset = _OffsetFactor;
-            offset = offset + (_SubOffsetFactor);
+            Vector3 offset = new Vector3();
+            if (!partEntry.hidesBody)
+            {
+                offset.y = _OffsetFactor * partEntry.order;
+                offset.y = offset.y + (_SubOffsetFactor * partEntry.sublayer);
+            }
 
             bool flag = Find.Selector.SingleSelectedThing == pawn && Prefs.DevMode && DebugSettings.godMode;
             if (!onHead)
             {
+                offset.y += _BodyOffset;
                 if (rotation == Rot4.North)
                 {
-                    offset += _BodyOffset;
-                    offset += NorthOffset(partEntry);
+                    if (partEntry.northtop)
+                    {
+                        offset.y += _HairOffset;
+                        offset += NorthOffset(partEntry);
+                    }
+                    else
+                    {
+                        offset += NorthOffset(partEntry);
+                    }
                 }
                 else if (rotation == Rot4.West)
                 {
-                    offset += _BodyOffset;
                     offset += WestOffset(partEntry);
                 }
                 else if (rotation == Rot4.East)
                 {
-                    offset += _BodyOffset;
                     offset += EastOffset(partEntry);
                 }
                 else if (rotation == Rot4.South)
                 {
-                    offset += _BodyOffset;
                     offset += SouthOffset(partEntry);
-                }
-                else
-                {
-                    offset += _BodyOffset;
                 }
             }
             else
             {
                 if (rotation == Rot4.North)
                 {
-                    offset += _BodyOffset;
+                    offset.y += _BodyOffset;
                 }
                 else
-                    offset += _HeadOffset;
+                    offset.y += _HeadOffset;
             }
             if (flag)
             {
@@ -223,79 +242,66 @@ namespace MuvLuvBeta
             return offset;
         }
 
-        public float NorthOffset(ExtraPartEntry Entry)
+        public Vector3 NorthOffset(ExtraPartEntry Entry)
         {
-            float result = 0;
-            if (Entry.NorthOffset != 0)
+            if (Entry.NorthOffset != Vector3.zero)
             {
-                result += Entry.NorthOffset;
-                return result;
+                return Entry.NorthOffset;
             }
-            result += this.pprops.NorthOffset;
-            return this.pprops.NorthOffset;
+            return this.Props.NorthOffset;
         }
 
-        public float SouthOffset(ExtraPartEntry Entry)
+        public Vector3 SouthOffset(ExtraPartEntry Entry)
         {
-            if (Entry.SouthOffset != 0)
+            if (Entry.SouthOffset != Vector3.zero)
             {
                 return Entry.SouthOffset;
             }
-            return this.pprops.SouthOffset;
+            return this.Props.SouthOffset;
         }
 
-        public float EastOffset(ExtraPartEntry Entry)
+        public Vector3 EastOffset(ExtraPartEntry Entry)
         {
-            if (Entry.EastOffset != 0)
+            if (Entry.EastOffset != Vector3.zero)
             {
                 return Entry.EastOffset;
             }
-            return this.pprops.EastOffset;
+            return this.Props.EastOffset;
         }
 
-        public float WestOffset(ExtraPartEntry Entry)
+        public Vector3 WestOffset(ExtraPartEntry Entry)
         {
-            if (Entry.WestOffset != 0)
+            if (Entry.WestOffset != Vector3.zero)
             {
                 return Entry.WestOffset;
             }
-            return this.pprops.WestOffset;
+            return this.Props.WestOffset;
         }
+
 
         public bool ShouldDrawExtra(Pawn pawn, Apparel curr, Rot4 bodyFacing, out Material extraMaterial)
         {
             extraMaterial = null;
-            try
+            if (pawn.needs != null && pawn.story != null)
             {
-                if (pawn.needs != null && pawn.story != null)
+                if (this.Graphic != null)
                 {
-                    CompApparelDrawExtras drawer;
-                    if ((drawer = curr.TryGetComp<CompApparelDrawExtras>()) != null)
-                    {
-                        if (drawer.ExtraGraphic != null)
-                        {
-                            extraMaterial = drawer.ExtraGraphic.GetColoredVersion(ShaderDatabase.CutoutComplex, this.mainColor, this.secondaryColor).MatAt(bodyFacing);
-                            return true;
-                        }
-                    }
+                    extraMaterial = this.Graphic.GetColoredVersion(shader, this.mainColor, this.secondaryColor).MatAt(bodyFacing);
+
+                    return true;
                 }
-                return false;
             }
-            catch
-            {
-                Log.Error("SDE Error CAN NOT Draw Extra");
-                return false;
-            }
+            return false;
 
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (!this.pprops.ExtrasEntries.NullOrEmpty())
+            if (!this.Props.ExtrasEntries.NullOrEmpty())
             {
-                extraPartEntry = this.pprops.ExtrasEntries.RandomElementByWeight((ExtraPartEntry x) => x.commonality);
-                this.extraGraphicPath = extraPartEntry.extraTexPath;
+                extraPartEntry = this.Props.ExtrasEntries.RandomElementByWeight((ExtraPartEntry x) => x.commonality);
+                this.graphicPath = extraPartEntry.extraTexPath;
                 this.shader = ShaderDatabase.LoadShader(extraPartEntry.shaderType.shaderPath);
                 this.useSecondaryColor = extraPartEntry.UseSecondaryColor;
                 this.ExtraUseBodyOffset = extraPartEntry.UseBodytypeOffsets;
@@ -352,17 +358,31 @@ namespace MuvLuvBeta
     [StaticConstructorOnStartup]
     public class ExtraPartEntry
     {
+        public bool hidesHair = false;
+        public bool hidesHead = false;
+        public bool hidesBody = false;
+        public BodyTypeDef forcedBodyType = null;
         public bool OnHead;
         public bool UseBodytypeOffsets;
+        public bool UseHeadOffsets;
         public ShaderTypeDef shaderType;
         public string extraTexPath;
         public int commonality;
+        public bool UsePrimaryColor;
+        public Color PrimaryColor = Color.white;
         public bool UseSecondaryColor;
+        public Color SecondaryColor = Color.white;
         public bool UseFactionTextures;
-        public float NorthOffset = 0f;
-        public float SouthOffset = 0f;
-        public float EastOffset = 0f;
-        public float WestOffset = 0f;
+        public int order = 1;
+        public int sublayer = 0;
+        public bool northtop = false;
+        public Vector2 drawSize = new Vector2(1, 1);
+        public Vector3 NorthOffset = new Vector3();
+        public Vector3 SouthOffset = new Vector3();
+        public Vector3 EastOffset = new Vector3();
+        public Vector3 WestOffset = new Vector3();
+        // Token: 0x0400006D RID: 109
+        private bool validated = false;
     }
 
 }

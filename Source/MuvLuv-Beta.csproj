@@ -32,14 +32,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BETADefOf.cs" />
+    <Compile Include="PawnThrower.cs" />
+    <Compile Include="PawnThrown.cs" />
+    <Compile Include="JobDriver_ReloadCompTurret.cs" />
+    <Compile Include="CompTurretReloadableUtility.cs" />
+    <Compile Include="Command_TSFReloadable.cs" />
+    <Compile Include="ApparelTurretTop.cs" />
+    <Compile Include="CompExosuitDrawer.cs" />
+    <Compile Include="JobDefOf.cs" />
+    <Compile Include="JobGiver_ReloadCompTurret.cs" />
+    <Compile Include="Harmony\Patches\MLB_Pawn_DrawAt_Patch.cs" />
+    <Compile Include="Harmony\Patches\MLB_Pawn_DrawExtraSelectionOverlays_Patch.cs" />
+    <Compile Include="Harmony\Patches\FloatMenuMakerMap_AddHumanlikeOrders_Test_Patch.cs" />
+    <Compile Include="Harmony\Patches\PawnGraphicSet_HairMatAt_NewTemp_Test_Patch.cs" />
+    <Compile Include="Harmony\Patches\PawnGraphicSet_HeadMatAt_NewTemp_Test_Patch.cs" />
+    <Compile Include="Harmony\Patches\PawnGraphicSet_MatsBodyBaseAt_Test_Patch.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="PawnGraphicSet_Invisible.cs" />
+    <Compile Include="Graphic_Invisible.cs" />
+    <Compile Include="Harmony\Patches\PawnRenderer_RenderPawnInternal_DrawExosuit_Transpiler.cs" />
     <Compile Include="Command_ApparelTurretVerbTarget.cs" />
     <Compile Include="Harmony\Patches\MLB_Apparel_Tick_ApparelTurret_Patch.cs" />
     <Compile Include="Verb_ShootTFSMounted.cs" />
-    <Compile Include="CompApparelDrawExtras.cs" />
-    <Compile Include="Apparel_Turret.cs" />
+    <Compile Include="CompApparel_Turret.cs" />
     <Compile Include="CompApparel_TurretGun.cs" />
     <Compile Include="CompBETASpawnerOnDamaged.cs" />
-    <Compile Include="Harmony\Patches\MLB_PawnRenderer_RenderPawnInternal_DrawExtras_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_Apparel_GetWornGizmos_ApparelTurret_Patch.cs" />
     <Compile Include="Harmony\Patches\MLB_GetOrGenerateMapUtility_GetOrGenerateMap_BETA_Patch.cs" />
     <None Include="Harmony\Patches\MLB_SymbolResolver_PawnHiveGroup_Resolve_BETA_Patch.cs.bak" />

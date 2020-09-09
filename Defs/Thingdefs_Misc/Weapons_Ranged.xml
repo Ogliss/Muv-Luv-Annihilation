@@ -166,7 +166,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_SMGLWRC</defName>
     <label>LWRC SMG-45</label>
-    <description>The LWRC SMG-45 is a unique Submachine Gun that fires a larger .45 caliber cartridge, similar to its predecessor, the UMP, in conjunction with good effective range, excellent accuracy and extremely low recoil makes it a suitable choice for almost any situation. </description>
+    <description>The LWRC SMG-45 is a unique Submachine Gun that fires a larger .45 caliber cartridge, similar to its predecessor, the UMP, in conjunction with good effective range, excellent accuracy and extremely low recoil makes it a suitable choice for almost any situation.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/HeavySMG</texPath>
       <graphicClass>Graphic_Single</graphicClass>

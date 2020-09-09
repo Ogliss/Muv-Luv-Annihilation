@@ -57,7 +57,7 @@
     <label>minigun</label>
     <description>A multi-barrel machine gun. It's unwieldy, but once it starts firing it fires very fast. Where most self-loading guns are powered by the energy from the gunpowder, the minigun uses an electric motor to rapidly cycle cartridges through the weapon.</description>
     <graphicData>
-      <texPath>DummyTexture</texPath>
+      <texPath>Things/Item/Equipment/WeaponRanged/Minigun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
@@ -115,7 +115,6 @@
       <turretGunDef>MLB_TurretGun_TSF_Missile</turretGunDef>
       <turretBurstCooldownTime>4.5</turretBurstCooldownTime>
       <turretBurstWarmupTime>4.5</turretBurstWarmupTime>
-	  
 	  <isInert>true</isInert>
       <isEdifice>false</isEdifice>
       <deconstructible>false</deconstructible>
@@ -130,7 +129,7 @@
     <label>missile</label>
     <description>A multi-barrel machine gun. It's unwieldy, but once it starts firing it fires very fast. Where most self-loading guns are powered by the energy from the gunpowder, the minigun uses an electric motor to rapidly cycle cartridges through the weapon.</description>
     <graphicData>
-      <texPath>DummyTexture</texPath>
+      <texPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
@@ -153,13 +152,13 @@
       <li>
         <verbClass>MuvLuvBeta.Verb_ShootTFSMounted</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_Rocket</defaultProjectile>
+        <defaultProjectile>Bullet_TSF_Missile</defaultProjectile>
         <forcedMissRadius>2.9</forcedMissRadius>
         <warmupTime>4.5</warmupTime>
         <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
         <range>35.9</range>
-        <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
-        <burstShotCount>1</burstShotCount>
+		  <burstShotCount>6</burstShotCount>
+		  <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
         <soundCast>InfernoCannon_Fire</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <onlyManualCast>true</onlyManualCast>
@@ -171,6 +170,24 @@
         <muzzleFlashScale>14</muzzleFlashScale>
       </li>
     </verbs>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_TSF_Missile</defName>
+    <label>rocket</label>
+    <graphicData>
+      <texPath>Things/Projectile/Rocket_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1</drawSize>
+	  
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>2.9</explosionRadius>
+      <speed>50</speed>
+    </projectile>
   </ThingDef>
   
 </Defs>

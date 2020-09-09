@@ -117,7 +117,7 @@ namespace MuvLuvBeta.HarmonyInstance
                 //If adjacent melee attack
                 if (enemyTarget.Position.AdjacentTo8Way(pawn.Position))
                 {
-                    __result = new Job(JobDefOf.AttackMelee, enemyTarget)
+                    __result = new Job(RimWorld.JobDefOf.AttackMelee, enemyTarget)
                     {
                         maxNumMeleeAttacks = 1,
                         expiryInterval = Rand.Range(420, 900),
@@ -129,7 +129,7 @@ namespace MuvLuvBeta.HarmonyInstance
                 if (pawn.CanReach(enemyTarget, PathEndMode.Touch, Danger.Deadly, false))
                 {
                     //    Log.Warning("Melee Attack");
-                    __result = new Job(JobDefOf.AttackMelee, enemyTarget)
+                    __result = new Job(RimWorld.JobDefOf.AttackMelee, enemyTarget)
                     {
                         maxNumMeleeAttacks = 1,
                         expiryInterval = Rand.Range(420, 900),
@@ -195,7 +195,7 @@ namespace MuvLuvBeta.HarmonyInstance
                 return false;
             }
             //   Log.Warning("Going to new place");
-            __result = new Job(JobDefOf.Goto, (LocalTargetInfo)dest)
+            __result = new Job(RimWorld.JobDefOf.Goto, (LocalTargetInfo)dest)
             {
                 expiryInterval = JobGiver_AIFightEnemy.ExpiryInterval_ShooterSucceeded.RandomInRange,
                 checkOverrideOnExpire = true

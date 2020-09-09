@@ -94,19 +94,35 @@ namespace MuvLuvBeta.HarmonyInstance
             {
                 bool drafted = pawn.Drafted;
                 Vector3 vector = MainHarmonyInstance.ThrowResult(Caster, target, distance, out bool flag2);
-                MLB_ThrownObject flyingObject = (MLB_ThrownObject)GenSpawn.Spawn(ThingDef.Named("BETA_GrapplerClassThrown"), pawn.PositionHeld, pawn.MapHeld, 0);
-                bool flag3 = flag2 & damageOnCollision;
-                if (flag3)
+
+                IntVec3 cell = pawn.Position;
+                IntVec3 tcell = IntVec3Utility.ToIntVec3(vector);
+
+                if (ModLister.RoyaltyInstalled)
                 {
-                    Rand.PushState();
-                    flyingObject.Launch(Caster, new LocalTargetInfo(IntVec3Utility.ToIntVec3(vector)), target, new DamageInfo?(new DamageInfo(DamageDefOf.Blunt, (float)Rand.Range(8, 10), 0f, -1f, null, null, null, 0, null)));
-                    Rand.PopState();
+                    PawnThrown pawnFlyer = PawnThrown.MakeThrown(ThingDef.Named("PawnThrown"), pawn, tcell, new DamageInfo?(new DamageInfo(DamageDefOf.Blunt, (float)Rand.Range(8, 10), 0f, -1f, null, null, null, 0, null)));
+                    if (pawnFlyer != null)
+                    {
+                        GenSpawn.Spawn(pawnFlyer, tcell, Caster.Map, WipeMode.Vanish);
+                    }
+
                 }
                 else
                 {
-                    flyingObject.Launch(Caster, new LocalTargetInfo(IntVec3Utility.ToIntVec3(vector)), target);
+                    MLB_ThrownObject flyingObject = (MLB_ThrownObject)GenSpawn.Spawn(ThingDef.Named("BETA_GrapplerClassThrown"), pawn.PositionHeld, pawn.MapHeld, 0);
+                    bool flag3 = flag2 & damageOnCollision;
+                    if (flag3)
+                    {
+                        Rand.PushState();
+                        flyingObject.Launch(Caster, new LocalTargetInfo(IntVec3Utility.ToIntVec3(vector)), target, new DamageInfo?(new DamageInfo(DamageDefOf.Blunt, (float)Rand.Range(8, 10), 0f, -1f, null, null, null, 0, null)));
+                        Rand.PopState();
+                    }
+                    else
+                    {
+                        flyingObject.Launch(Caster, new LocalTargetInfo(IntVec3Utility.ToIntVec3(vector)), target);
+                    }
+                    
                 }
-
             }
         }
 
