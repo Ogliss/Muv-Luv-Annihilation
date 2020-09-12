@@ -1,0 +1,40 @@
+﻿using Verse;
+using HarmonyLib;
+using System;
+using UnityEngine;
+using System.Reflection;
+
+namespace MuvLuvBeta.HarmonyInstance
+{
+    [HarmonyPatch(typeof(Projectile), "Launch", new Type[] { typeof(Thing), typeof(Vector3), typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(ProjectileHitFlags), typeof(Thing), typeof(ThingDef) })]
+    public static class Projectile_Launch_MuzzlePosition_Patch
+    {
+        static PropertyInfo StartingTicksToImpactProp = typeof(Projectile).GetProperty("StartingTicksToImpact", BindingFlags.NonPublic | BindingFlags.Instance);
+        static void Postfix(Projectile __instance, Vector3 ___destination, Thing launcher, ref Vector3 ___origin, LocalTargetInfo intendedTarget, Thing equipment, ref int ___ticksToImpact)
+        {
+            if (equipment != null)
+            {
+                CompEquippable equippable = equipment.TryGetComp<CompEquippable>();
+                Verb verb = equippable.PrimaryVerb;
+                Verb_ShootTFSMounted verb_ = verb as Verb_ShootTFSMounted;
+                if (verb_!=null)
+                {
+                    CompApparel_TurretGun ext = verb_.turretGun;
+                    if (launcher as Pawn != null)
+                    {
+                        ___origin += (___destination - ___origin).normalized * (equipment?.def.graphic.drawSize.magnitude * (ext.Props.barrellength + (0.2f * __instance.Graphic.drawSize.magnitude)) ?? 1f);
+                        ___ticksToImpact = Mathf.CeilToInt((float)StartingTicksToImpactProp.GetValue(__instance));
+                        if (___ticksToImpact < 1) ___ticksToImpact = 1;
+                    }
+                    else
+                    {
+                    //    Log.Message("non pawn launcher");
+                    }
+                    //    origin = MuzzlePosition(launcher, usedTarget, equipment?.def.graphic.drawSize.magnitude * 5f ?? 5f);
+                }
+
+            }
+        }
+
+    }
+}

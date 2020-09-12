@@ -11,7 +11,7 @@ using Verse.Sound;
 namespace MuvLuvBeta
 {
 	[StaticConstructorOnStartup]
-	public class CompApparel_TurretGun : CompApparel_Turret
+	public class Comp_TurretGun : Comp_Turret
 	{
 		public bool Active
 		{
@@ -48,7 +48,13 @@ namespace MuvLuvBeta
 				return this.burstWarmupTicksLeft > 0;
 			}
 		}
-
+		public Vector3 TurretPos
+		{
+			get
+			{
+				return this.top?.DrawPos ?? this.Wearer.DrawPos;
+			}
+		}
 		public override Verb AttackVerb
 		{
 			get
@@ -126,7 +132,7 @@ namespace MuvLuvBeta
 			}
 		}
 
-		public CompApparel_TurretGun()
+		public Comp_TurretGun()
 		{
 			/*
 			if (this.Props)
@@ -231,6 +237,15 @@ namespace MuvLuvBeta
 					this.AttackVerb.caster = Wearer;
 				}
 			}
+			if (this.Stunned)
+			{
+				this.stunTicksLeft--;
+				if (this.top != null && Wearer != null)
+				{
+					this.top.TurretTopTick();
+				}
+				return;
+			}
 			if (Wearer.Downed || !Wearer.Awake())
 			{
 				return;
@@ -268,7 +283,7 @@ namespace MuvLuvBeta
 			if (this.Active && (this.Wearer != null) && Wearer.Spawned)
 			{
 				this.GunCompEq.verbTracker.VerbsTick();
-				bool stunflag = this.stunner == null || (this.stunner != null && !this.stunner.Stunned);
+				bool stunflag = this.stunner == null || (this.stunner != null && !this.stunner.Stunned) || this.Stunned;
 				if (stunflag && this.AttackVerb.state != VerbState.Bursting)
 				{
 					if (this.WarmingUp)
@@ -508,19 +523,11 @@ namespace MuvLuvBeta
 				{
 					this.top.DrawTurret();
 				}
-				else
-				{
-					Log.Message("top is null");
-				}
-				if (this.TargetCurrentlyAimingAt!=null)
-				{
-					GenDraw.DrawLineBetween(Wearer.DrawPos, this.CurrentTarget.CenterVector3, LineMatRed);
-				}
 			}
 			base.PostDraw();
 		}
 
-		private static readonly Material LineMatRed = MaterialPool.MatFrom("Other/TSFTargetingLaser", ShaderDatabase.Transparent, Color.red);
+		public static readonly Material LineMatRed = MaterialPool.MatFrom("Other/TSFTargetingLaser", ShaderDatabase.Transparent, Color.red);
 		public override void PostDrawExtraSelectionOverlays()
 		{
 			float range = this.AttackVerb.verbProps.range;
@@ -535,9 +542,12 @@ namespace MuvLuvBeta
 			}
 			if (this.WarmingUp)
 			{
-
 				int degreesWide = (int)((float)this.burstWarmupTicksLeft * 0.5f);
-				GenDraw.DrawAimPie(Wearer, this.CurrentTarget, degreesWide, (float)Props.TurretDef.size.x * 0.5f);
+				DrawAimPie(Wearer, this.CurrentTarget, degreesWide, (float)Props.TurretDef.size.x * 0.5f);
+			}
+			if (this.burstCooldownTicksLeft>0)
+			{
+				GenDraw.DrawCooldownCircle(TurretPos, Mathf.Min(0.5f, (float)this.burstCooldownTicksLeft * 0.002f));
 			}
 			if (this.forcedTarget.IsValid && (!this.forcedTarget.HasThing || this.forcedTarget.Thing.Spawned))
 			{
@@ -550,11 +560,29 @@ namespace MuvLuvBeta
 				{
 					vector = this.forcedTarget.Cell.ToVector3Shifted();
 				}
-				Vector3 a = Wearer.TrueCenter();
+				Vector3 a = TurretPos;
 				vector.y = AltitudeLayer.MetaOverlays.AltitudeFor();
 				a.y = vector.y;
-				GenDraw.DrawLineBetween(a, vector, CompApparel_TurretGun.ForcedTargetLineMat);
+				GenDraw.DrawLineBetween(a, vector, Comp_TurretGun.ForcedTargetLineMat);
 			}
+		}
+
+		// Token: 0x06002133 RID: 8499 RVA: 0x000CB158 File Offset: 0x000C9358
+		public void DrawAimPie(Thing shooter, LocalTargetInfo target, int degreesWide, float offsetDist)
+		{
+			float facing = 0f;
+			if (target.Cell != shooter.Position)
+			{
+				if (target.Thing != null)
+				{
+					facing = (target.Thing.DrawPos - TurretPos).AngleFlat();
+				}
+				else
+				{
+					facing = (target.Cell.ToVector3() - TurretPos).AngleFlat();
+				}
+			}
+			GenDraw.DrawAimPieRaw(TurretPos + new Vector3(0f, offsetDist, 0f), facing, degreesWide);
 		}
 
 		public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
@@ -599,11 +627,11 @@ namespace MuvLuvBeta
 			{
 				Texture2D CommandTex;
 				CommandTex = ContentFinder<Texture2D>.Get(Props.iconPath, true);
-				yield return new Command_Toggle
+				yield return new Command_ToggleCompTurret(this)
 				{
 
 					icon = CommandTex,
-					defaultLabel = Props.TurretDef.building.turretGunDef.LabelCap + (active ? " turret: on." : " turret: off.")+(UseAmmo ? "\n" + LabelRemaining :""),
+					defaultLabel = Props.TurretDef.building.turretGunDef.LabelCap + (active ? " turret: on." : " turret: off."),
 					defaultDesc = "Switch mode.",
 					isActive = (() => active),
 					toggleAction = delegate ()
@@ -634,6 +662,10 @@ namespace MuvLuvBeta
 				if (Wearer.Spawned && this.IsMortarOrProjectileFliesOverhead && Wearer.Position.Roofed(Wearer.Map))
 				{
 					command_VerbTarget.Disable("CannotFire".Translate() + ": " + "Roofed".Translate().CapitalizeFirst());
+				}
+				if (Wearer.Spawned && Stunned)
+				{
+					command_VerbTarget.Disable("CannotFire".Translate() + ": " + "EMPDisabled".Translate().CapitalizeFirst());
 				}
 				command_VerbTarget.action = delegate (LocalTargetInfo target)
 				{
@@ -684,33 +716,32 @@ namespace MuvLuvBeta
 			}
 			if (this.UseAmmo)
 			{
-				
-			bool drafted = this.Wearer.Drafted;
-			if ((drafted && !this.Props.displayGizmoWhileDrafted) || (!drafted && !this.Props.displayGizmoWhileUndrafted))
-			{
-				yield break;
-			}
-			/*
-			ThingWithComps gear = this.parent;
-			foreach (Verb verb in this.GunCompEq.VerbTracker.AllVerbs)
-			{
-				if (verb.verbProps.hasStandardCommand)
+				bool drafted = this.Wearer.Drafted;
+				if ((drafted && !this.Props.displayGizmoWhileDrafted) || (!drafted && !this.Props.displayGizmoWhileUndrafted))
 				{
-					yield return this.CreateVerbTargetCommand(gear, verb);
+					yield break;
 				}
-			}
-			*/
-			if (Prefs.DevMode)
-			{
-				yield return new Command_Action
+				/*
+				ThingWithComps gear = this.parent;
+				foreach (Verb verb in this.GunCompEq.VerbTracker.AllVerbs)
 				{
-					defaultLabel = Props.TurretDef.building.turretGunDef.LabelCap + " " + "Debug: Reload to full",
-					action = delegate ()
+					if (verb.verbProps.hasStandardCommand)
 					{
-						this.remainingCharges = this.MaxCharges;
+						yield return this.CreateVerbTargetCommand(gear, verb);
 					}
-				};
-			}
+				}
+				*/
+				if (Prefs.DevMode)
+				{
+					yield return new Command_Action
+					{
+						defaultLabel = Props.TurretDef.building.turretGunDef.LabelCap + " " + "Debug: Reload to full",
+						action = delegate ()
+						{
+							this.remainingCharges = this.MaxCharges;
+						}
+					};
+				}
 			}
 		//	yield break;
 		}
@@ -748,21 +779,19 @@ namespace MuvLuvBeta
 				this.MakeGun();
 				if (this.gun == null)
 				{
-					Log.Message("gun is null");
 					return;
 				}
 			}
 			List<Verb> allVerbs = this.gun.TryGetComp<CompEquippable>().AllVerbs;
 			if (allVerbs.NullOrEmpty())
 			{
-				Log.Message("allVerbs is NullOrEmpty");
 				return;
 			}
 			for (int i = 0; i < allVerbs.Count; i++)
 			{
 				Verb verb = allVerbs[i];
 				verb.caster = (Thing)this.apparel.Wearer ?? this.apparel;
-				Verb_ShootTFSMounted verb_ = verb as Verb_ShootTFSMounted;
+				Verb_ShootCompMounted verb_ = verb as Verb_ShootCompMounted;
 				if (verb_!=null)
 				{
 					verb_.turret = this;

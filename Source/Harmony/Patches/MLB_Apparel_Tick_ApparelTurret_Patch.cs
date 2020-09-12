@@ -36,7 +36,7 @@ namespace MuvLuvBeta.HarmonyInstance
             for (int i = 0; i < __instance.apparel.WornApparel.Count; i++)
             {
                 Apparel apparel = __instance.apparel.WornApparel[i];
-                foreach (CompApparel_TurretGun comp in apparel.GetComps<CompApparel_TurretGun>())
+                foreach (Comp_TurretGun comp in apparel.GetComps<Comp_TurretGun>())
                 {
                     comp.CompTick();
                 }

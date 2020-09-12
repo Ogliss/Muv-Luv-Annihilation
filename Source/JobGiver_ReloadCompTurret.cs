@@ -20,7 +20,7 @@ namespace MuvLuvBeta
 		protected override Job TryGiveJob(Pawn pawn)
 		{
 
-			foreach (CompApparel_Turret compReloadable in CompTurretReloadableUtility.FindSomeReloadableComponents(pawn, false))
+			foreach (Comp_Turret compReloadable in CompTurretReloadableUtility.FindSomeReloadableComponents(pawn, false))
 			{
 				if (compReloadable == null)
 				{
@@ -37,7 +37,7 @@ namespace MuvLuvBeta
 		}
 
 		// Token: 0x0600313C RID: 12604 RVA: 0x00114148 File Offset: 0x00112348
-		public static Job MakeReloadJob(CompApparel_Turret comp, List<Thing> chosenAmmo)
+		public static Job MakeReloadJob(Comp_Turret comp, List<Thing> chosenAmmo)
 		{
 			Job job = JobMaker.MakeJob(JobDefOf.TSFReload, comp.parent);
 			job.targetQueueB = (from t in chosenAmmo

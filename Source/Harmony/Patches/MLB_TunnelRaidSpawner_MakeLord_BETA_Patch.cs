@@ -17,7 +17,7 @@ namespace MuvLuvBeta.HarmonyInstance
             {
                 if (__instance.SpawnedFaction.def.defName.Contains("MuvLuv_BETA"))
                 {
-                    Log.Message("BETA from " + __instance.SpawnedFaction.Name + " spawning with "+ lordJobType.Name+" Lord");
+                //    Log.Message("BETA from " + __instance.SpawnedFaction.Name + " spawning with "+ lordJobType.Name+" Lord");
                 }
             }
         }

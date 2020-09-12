@@ -37,14 +37,14 @@ namespace MuvLuvBeta
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			this.FailOn(() => AmmoDef == null);
-			CompApparel_Turret comp = null;
+			Comp_Turret comp = null;
 			if (true)
 			{
 
 			}
 			foreach (var item in Gear?.AllComps)
 			{
-				if (item is CompApparel_Turret c)
+				if (item is Comp_Turret c)
 				{
 					if (c.Props.ammoDef == AmmoDef)
 					{
@@ -86,7 +86,7 @@ namespace MuvLuvBeta
 			yield return toil;
 		}
 
-		private IEnumerable<Toil> ReloadAsMuchAsPossible(CompApparel_Turret comp)
+		private IEnumerable<Toil> ReloadAsMuchAsPossible(Comp_Turret comp)
 		{
 			Toil done = Toils_General.Label();
 			yield return Toils_Jump.JumpIf(done, () => pawn.carryTracker.CarriedThing == null || pawn.carryTracker.CarriedThing.stackCount < comp.MinAmmoNeeded(allowForcedReload: true));

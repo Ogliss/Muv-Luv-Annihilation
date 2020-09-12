@@ -68,15 +68,15 @@ namespace MuvLuvBeta
 			base.ProcessInput(ev);
 			SoundDefOf.Tick_Tiny.PlayOneShotOnCamera(null);
 			Targeter targeter = Find.Targeter;
-			Log.Message("CasterIsPawn: " + this.verb.CasterIsPawn);
-			if (targeter.targetingSource != null) Log.Message("targetingSource: " + targeter.targetingSource);
-			if (targeter.targetingSource?.GetVerb?.verbProps != null) Log.Message("verbProps: " + targeter.targetingSource.GetVerb.verbProps);
+		//	Log.Message("CasterIsPawn: " + this.verb.CasterIsPawn);
+		//	if (targeter.targetingSource != null) Log.Message("targetingSource: " + targeter.targetingSource);
+		//	if (targeter.targetingSource?.GetVerb?.verbProps != null) Log.Message("verbProps: " + targeter.targetingSource.GetVerb.verbProps);
 			if (this.verb.CasterIsPawn && targeter.targetingSource != null && targeter.targetingSource.GetVerb.verbProps == this.verb.verbProps)
 			{
 				Pawn casterPawn = this.verb.CasterPawn;
 				if (!targeter.IsPawnTargeting(casterPawn))
 				{
-					Log.Message("targetingSourceAdditionalPawns: ");
+				//	Log.Message("targetingSourceAdditionalPawns: ");
 					targeter.targetingSourceAdditionalPawns.Add(casterPawn);
 					return;
 				}
@@ -84,7 +84,7 @@ namespace MuvLuvBeta
 			else
 			{
 
-				Log.Message("BeginTargeting: ");
+			//	Log.Message("BeginTargeting: ");
 				Find.Targeter.BeginTargeting(this.verb.targetParams, delegate (LocalTargetInfo target)
 				{
 					this.action(target);
@@ -92,7 +92,7 @@ namespace MuvLuvBeta
 			}
 		}
 
-		public CompApparel_TurretGun gunTurret;
+		public Comp_TurretGun gunTurret;
 		// Token: 0x0400103D RID: 4157
 		public Verb verb;
 		public Action<LocalTargetInfo> action;

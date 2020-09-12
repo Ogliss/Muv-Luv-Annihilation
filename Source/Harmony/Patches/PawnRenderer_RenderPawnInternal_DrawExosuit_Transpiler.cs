@@ -69,13 +69,23 @@ namespace MuvLuvBeta.HarmonyInstance
                                     }
                                     drawAt += quat * Extas.GetAltitudeOffset(bodyFacing, Extas.ExtraPartEntry);
                                     Matrix4x4 matrix = default(Matrix4x4);
-                                        matrix.SetTRS(drawAt, quat, new Vector3(Extas.ExtraPartEntry.drawSize.x, 0, Extas.ExtraPartEntry.drawSize.y));
+                                    matrix.SetTRS(drawAt, quat, new Vector3(Extas.ExtraPartEntry.drawSize.x, 0, Extas.ExtraPartEntry.drawSize.y));
                                     Graphics.DrawMesh(mesh, matrix, extraMat, 1);
                                     //    vector.y += CompApparelExtaDrawer.MinClippingDistance;
                                 }
                             }
                         }
                     }
+                    /*
+                    Comp_TurretGun compTurret = apparel.TryGetComp<Comp_TurretGun>();
+                    if (compTurret != null)
+                    {
+                        foreach (Comp_TurretGun Extas in apparel.AllComps.Where(x => x.GetType() == typeof(Comp_TurretGun)))
+                        {
+                            Extas.PostDraw();
+                        }
+                    }
+                    */
                 }
             }
 

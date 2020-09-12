@@ -25,12 +25,11 @@ namespace MuvLuvBeta.HarmonyInstance
                 {
                     if ((parms.target is Map map))
                     {
-                	    Log.Message("groupKind " + groupKind+" for "+parms.faction);
+                	 //   Log.Message("groupKind " + groupKind+" for "+parms.faction);
                         if (parms.raidArrivalMode.defName.Contains("TunnelIn"))
                         {
-                    	       Log.Message("TunnelIn");
                             groupKind = ExtraHives.PawnGroupKindDefOf.Tunneler_ExtraHives;
-                            Log.Message("groupKind now " + groupKind);
+                        //    Log.Message("groupKind now " + groupKind);
                         }
                     }
                 }

@@ -19,10 +19,10 @@ namespace MuvLuvBeta.HarmonyInstance
 
                     foreach (var item in __instance.apparel.WornApparel)
                     {
-                        CompApparel_Turret turret = item.TryGetComp<CompApparel_Turret>();
+                        Comp_Turret turret = item.TryGetComp<Comp_Turret>();
                         if (turret!=null)
                         {
-                            foreach (CompApparel_Turret comp in item.GetComps<CompApparel_Turret>())
+                            foreach (Comp_Turret comp in item.GetComps<Comp_Turret>())
                             {
                                 comp.PostDraw();
                             }

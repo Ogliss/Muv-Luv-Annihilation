@@ -5,10 +5,10 @@ using Verse;
 namespace MuvLuvBeta
 {
 	// Token: 0x02000DC8 RID: 3528
-	public class Command_CompTurretReloadable : Command_VerbTarget
+	public class Command_ReloadableDual : Command_VerbTarget
 	{
 		// Token: 0x06005671 RID: 22129 RVA: 0x001CE6CF File Offset: 0x001CC8CF
-		public Command_CompTurretReloadable(Comp_Turret comp)
+		public Command_ReloadableDual(CompReloadableDual comp)
 		{
 			this.comp = comp;
 		}
@@ -19,7 +19,7 @@ namespace MuvLuvBeta
 		{
 			get
 			{
-				return this.comp.LabelRemaining;
+				return this.comp.LabelRemainingSecondry;
 			}
 		}
 
@@ -51,12 +51,12 @@ namespace MuvLuvBeta
 			{
 				return false;
 			}
-			Command_CompTurretReloadable command_Reloadable = other as Command_CompTurretReloadable;
+			Command_ReloadableDual command_Reloadable = other as Command_ReloadableDual;
 			return command_Reloadable != null && this.comp.parent.def == command_Reloadable.comp.parent.def;
 		}
 
 		// Token: 0x04003007 RID: 12295
-		private readonly Comp_Turret comp;
+		private readonly CompReloadableDual comp;
 
 		// Token: 0x04003008 RID: 12296
 		public Color? overrideColor;

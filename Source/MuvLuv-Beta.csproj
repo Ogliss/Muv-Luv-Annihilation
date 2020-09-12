@@ -32,6 +32,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BETADefOf.cs" />
+    <None Include="Harmony\Patches\Projectile_Launch_MuzzlePosition_Patch.cs.bak" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="ReloadableDualUtility.cs" />
+    <Compile Include="Command_ToggleCompTurret.cs" />
+    <Compile Include="Command_ReloadableDual.cs" />
+    <Compile Include="Harmony\Patches\FloatMenuMakerMap_AddHumanlikeOrders_Test_Patch - Copy.cs" />
+    <Compile Include="SubEffecterComp_Sustainer.cs" />
+    <Compile Include="SubEffecterComp_SprayerTriggered.cs" />
+    <Compile Include="SubEffecterComp_SprayerContinuous.cs" />
+    <Compile Include="SubEffecter_CompSprayer.cs" />
+    <Compile Include="EffecterComp.cs" />
+    <Compile Include="SubEffecterComp.cs" />
+    <Compile Include="SubEffecterComp_SprayerChance.cs" />
+    <Compile Include="MoteCompTurretAttached.cs" />
+    <Compile Include="Harmony\Patches\MLB_Apparel_GetWornGizmos_ApparelTurret_Patch - Copy.cs" />
     <Compile Include="PawnThrower.cs" />
     <Compile Include="PawnThrown.cs" />
     <Compile Include="JobDriver_ReloadCompTurret.cs" />
@@ -53,7 +69,7 @@
     <Compile Include="Harmony\Patches\PawnRenderer_RenderPawnInternal_DrawExosuit_Transpiler.cs" />
     <Compile Include="Command_ApparelTurretVerbTarget.cs" />
     <Compile Include="Harmony\Patches\MLB_Apparel_Tick_ApparelTurret_Patch.cs" />
-    <Compile Include="Verb_ShootTFSMounted.cs" />
+    <Compile Include="Verb_ShootCompMounted.cs" />
     <Compile Include="CompApparel_Turret.cs" />
     <Compile Include="CompApparel_TurretGun.cs" />
     <Compile Include="CompBETASpawnerOnDamaged.cs" />

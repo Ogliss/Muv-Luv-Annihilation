@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using UnityEngine;
 using Verse;
 
@@ -37,22 +38,106 @@ namespace MuvLuvBeta
 		}
 
 		// Token: 0x06004F1C RID: 20252 RVA: 0x001AAD4A File Offset: 0x001A8F4A
-		public ApparelTurretTop(CompApparel_Turret ParentTurret)
+		public ApparelTurretTop(Comp_Turret ParentTurret)
 		{
 			this.parentTurret = ParentTurret;
 		}
+		public Vector3 DrawPos
+		{
+			get
+			{
+				Vector3 b = new Vector3(this.parentTurret.Props.TurretDef.building.turretTopOffset.x, 1f, this.parentTurret.Props.TurretDef.building.turretTopOffset.y).RotatedBy(this.CurRotation);
+				Vector3 vector = this.parentTurret.Wearer.DrawPos;
+				if (this.parentTurret.Wearer.ParentHolder as PawnFlyer is PawnFlyer flyer)
+				{
+					vector = flyer.DrawPos;
+				}
+				Vector3 drawPos = vector + Altitudes.AltIncVect + b; 
 
+				Rot4 rot = this.parentTurret.Wearer.Rotation;
+				if (rot == Rot4.North)
+				{
+					drawPos += this.parentTurret.Props.offsetNorth;
+				}
+				if (rot == Rot4.South)
+				{
+					drawPos += this.parentTurret.Props.offsetSouth;
+				}
+				if (rot == Rot4.East)
+				{
+					drawPos += this.parentTurret.Props.offsetEast;
+				}
+				if (rot == Rot4.West)
+				{
+					drawPos += this.parentTurret.Props.offsetWest;
+				}
+				return drawPos;
+			}
+		}
 		// Token: 0x06004F1D RID: 20253 RVA: 0x001AAD5C File Offset: 0x001A8F5C
 		public void TurretTopTick()
 		{
 			LocalTargetInfo currentTarget = this.parentTurret.CurrentTarget;
+			if (this.parentTurret.stunTicksLeft > 0)
+			{
+				/*
+				if (this.parentTurret.showStunMote && (this.parentTurret.moteStun == null || this.parentTurret.moteStun.Destroyed))
+				{
+					this.parentTurret.moteStun = MakeStunOverlay(this.parentTurret.Wearer);
+				}
+				*/
+				Pawn pawn = this.parentTurret.Wearer as Pawn;
+				if (pawn != null && pawn.Downed)
+				{
+					this.parentTurret.stunTicksLeft = 0;
+				}
+
+				if (this.parentTurret.moteStun != null)
+				{
+					this.parentTurret.moteStun.Maintain();
+				}
+
+				if (this.parentTurret.AffectedByEMP && this.parentTurret.stunFromEMP)
+				{
+					if (this.parentTurret.empEffecter == null)
+					{
+						this.parentTurret.empEffecter = new EffecterComp(DefDatabase<EffecterDef>.GetNamed("CompTurretDisabledByEMP"));
+					}
+					EffecterComp empEffecter = this.parentTurret.empEffecter as EffecterComp;
+					if (empEffecter != null)
+					{
+					//	Log.Message("empEffecter EffecterComp");
+						empEffecter.EffectTick(this.parentTurretGun, this.parentTurret.Wearer);
+					}
+					else
+					{
+					//	Log.Message("empEffecter Effecter");
+						this.parentTurret.empEffecter.EffectTick(this.parentTurret.Wearer, this.parentTurret.Wearer);
+					}
+					return;
+				}
+			}
+			else if (this.parentTurret.empEffecter != null)
+			{
+				this.parentTurret.empEffecter.Cleanup();
+				this.parentTurret.empEffecter = null;
+				this.parentTurret.stunFromEMP = false;
+			}
 			if (currentTarget.IsValid)
 			{
-				float curRotation = (currentTarget.Cell.ToVector3Shifted() - this.parentTurret.Wearer.DrawPos).AngleFlat();
+				float curRotation = (currentTarget.Cell.ToVector3Shifted() - DrawPos).AngleFlat();
 				this.CurRotation = curRotation;
 				this.ticksUntilIdleTurn = Rand.RangeInclusive(150, 350);
 				return;
 			}
+			/*
+			else
+			{
+				SetRotationFromOrientation();
+			}
+			*/
+
+			float rot = this.parentTurret.Wearer.Rotation.AsAngle;
 			if (this.ticksUntilIdleTurn > 0)
 			{
 				this.ticksUntilIdleTurn--;
@@ -86,26 +171,33 @@ namespace MuvLuvBeta
 					this.ticksUntilIdleTurn = Rand.RangeInclusive(150, 350);
 				}
 			}
+		
+		}
+		public Mote MakeStunOverlay(Thing stunnedThing)
+		{
+			MoteCompTurretAttached mote = (MoteCompTurretAttached)ThingMaker.MakeThing(ThingDef.Named("Mote_CompTurretStun"), null);
+			mote.Attach(stunnedThing, parentTurretGun);
+			GenSpawn.Spawn(mote, stunnedThing.Position, stunnedThing.Map, WipeMode.Vanish);
+			return mote;
 		}
 
 		// Token: 0x06004F1E RID: 20254 RVA: 0x001AAE64 File Offset: 0x001A9064
 		public void DrawTurret()
 		{
-			Vector3 b = new Vector3(this.parentTurret.Props.TurretDef.building.turretTopOffset.x, 1f, this.parentTurret.Props.TurretDef.building.turretTopOffset.y).RotatedBy(this.CurRotation);
-		//	Log.Message("b = " + b);
 			float turretTopDrawSize = this.parentTurret.Props.TurretDef.building.turretTopDrawSize;
-		//	Log.Message("turretTopDrawSize = " + turretTopDrawSize);
 			Matrix4x4 matrix = default(Matrix4x4);
-			Vector3 drawPos = this.parentTurret.Wearer.DrawPos + Altitudes.AltIncVect + b;
-		//	Log.Message("drawPos = " + drawPos);
 			Quaternion quart = (this.CurRotation + (float)ApparelTurretTop.ArtworkRotation).ToQuat();
-		//	Log.Message("quart = " + quart);
-			matrix.SetTRS(drawPos, quart, new Vector3(turretTopDrawSize, 1f, turretTopDrawSize));
+			matrix.SetTRS(DrawPos, quart, new Vector3(turretTopDrawSize, 1f, turretTopDrawSize));
 			Graphics.DrawMesh(MeshPool.plane10, matrix, this.parentTurret.Props.TurretDef.building.turretTopMat, 0);
-		}
+			if (this.parentTurret.TargetCurrentlyAimingAt != null && !this.parentTurret.Stunned && parentTurretGun !=null)
+			{
+				GenDraw.DrawLineBetween(DrawPos, this.parentTurret.CurrentTarget.CenterVector3, Comp_TurretGun.LineMatRed);
+			}
 
+		}
 		// Token: 0x04002CE1 RID: 11489
-		private CompApparel_Turret parentTurret;
+		private Comp_Turret parentTurret;
+		private Comp_TurretGun parentTurretGun => parentTurret as Comp_TurretGun;
 
 		// Token: 0x04002CE2 RID: 11490
 		private float curRotationInt;

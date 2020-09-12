@@ -9,11 +9,11 @@ using Verse.Sound;
 
 namespace MuvLuvBeta
 {
-	public class CompProperties_Apparel_Turret : CompProperties
+	public class CompProperties_Turret : CompProperties
 	{
-		public CompProperties_Apparel_Turret()
+		public CompProperties_Turret()
 		{
-			this.compClass = typeof(CompApparel_TurretGun);
+			this.compClass = typeof(Comp_TurretGun);
 		}
 
 		public NamedArgument ChargeNounArgument
@@ -108,18 +108,45 @@ namespace MuvLuvBeta
 		public string iconPath;
 		public int gizmoID = 0;
 
+		public float barrellength = 0.75f;
+
+		public bool showStunMote = true;
+		public bool AffectedByEMP = true;
+		public bool stunFromEMP = true;
+
+		public Vector3 offsetNorth = new Vector3();
+		public Vector3 offsetSouth = new Vector3();
+		public Vector3 offsetEast = new Vector3();
+		public Vector3 offsetWest = new Vector3();
+
 		[MustTranslate]
 		public string chargeNoun = "charge";
 	}
 	// Token: 0x02000CD3 RID: 3283
-	public abstract class CompApparel_Turret : ThingComp, IAttackTargetSearcher, IThingHolder
+	public abstract class Comp_Turret : ThingComp, IAttackTargetSearcher, IThingHolder
 	{
-		public CompProperties_Apparel_Turret Props => this.props as CompProperties_Apparel_Turret;
+		public CompProperties_Turret Props => this.props as CompProperties_Turret;
 		public bool UseAmmo => Props.ammoDef != null;
 		public ThingDef AmmoDef => Props.ammoDef;
 		public int MaxCharges => Props.maxCharges;
-		public float ChargesPerUnit => 1 / Props.ammoCountPerCharge; 
+		public float ChargesPerUnit => 1 / Props.ammoCountPerCharge;
 
+
+		// Token: 0x04002E23 RID: 11811
+		public Mote moteStun;
+
+		// Token: 0x04002E24 RID: 11812
+		public bool showStunMote => Props.showStunMote;
+		public bool AffectedByEMP => Props.AffectedByEMP;
+		public bool stunFromEMP;
+
+		// Token: 0x04002E25 RID: 11813
+		public int EMPAdaptedTicksLeft;
+
+		// Token: 0x04002E26 RID: 11814
+		public Effecter empEffecter;
+
+		// Token: 0x04002E27 RID: 11815
 		public string LabelRemaining
 		{
 			get
@@ -205,6 +232,25 @@ namespace MuvLuvBeta
 			}
 		}
 
+		public int stunTicksLeft
+		{
+			get
+			{
+				return this.stunedticks;
+			}
+			set
+			{
+				this.stunedticks = value;
+			}
+		}
+		public bool Stunned
+		{
+			get
+			{
+				return this.stunTicksLeft > 0;
+			}
+		}
+
 		public float TargetPriorityFactor
 		{
 			get
@@ -213,7 +259,7 @@ namespace MuvLuvBeta
 			}
 		}
 
-		public CompApparel_Turret()
+		public Comp_Turret()
 		{
 			this.stunner = new StunHandler(Wearer);
 			this.innerContainer = new ThingOwner<Thing>(this);
@@ -337,9 +383,9 @@ namespace MuvLuvBeta
 		}
 
 		// Token: 0x06005665 RID: 22117 RVA: 0x001CE210 File Offset: 0x001CC410
-		public Command_TSFReloadable CreateVerbTargetCommand(Thing gear, Verb verb)
+		public Command_CompTurretReloadable CreateVerbTargetCommand(Thing gear, Verb verb)
 		{
-			Command_TSFReloadable command_Reloadable = new Command_TSFReloadable(this);
+			Command_CompTurretReloadable command_Reloadable = new Command_CompTurretReloadable(this);
 			command_Reloadable.defaultDesc = gear.def.description;
 			command_Reloadable.hotKey = this.Props.hotKey;
 			command_Reloadable.defaultLabel = verb.verbProps.label;
@@ -526,6 +572,7 @@ namespace MuvLuvBeta
 				this
 			});
 			Scribe_Values.Look<int>(ref this.lastAttackTargetTick, "lastAttackTargetTick" + Props.gizmoID, 0, false);
+			Scribe_Values.Look<int>(ref this.stunedticks, "stunedticks" + Props.gizmoID, 0, false);
 			Scribe_Values.Look<int>(ref this.remainingCharges, "remainingCharges" + Props.gizmoID, -999, false);
 			Scribe_Deep.Look<VerbTracker>(ref this.verbTracker, "verbTracker" + Props.gizmoID, new object[]
 			{
@@ -541,6 +588,7 @@ namespace MuvLuvBeta
 		protected LocalTargetInfo forcedTarget = LocalTargetInfo.Invalid;
 		private LocalTargetInfo lastAttackedTarget;
 		private int lastAttackTargetTick;
+		private int stunedticks;
 		private const float SightRadiusTurret = 13.4f;
 	}
 }

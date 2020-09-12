@@ -8,8 +8,8 @@ using Verse.Sound;
 
 namespace MuvLuvBeta
 {
-	// 1168 MuvLuvBeta.Verb_ShootTFSMounted
-	public class Verb_ShootTFSMounted : Verb_LaunchProjectile
+	// 1168 MuvLuvBeta.Verb_ShootCompMounted
+	public class Verb_ShootCompMounted : Verb_LaunchProjectile
 	{
 		protected override int ShotsPerBurst
 		{
@@ -18,7 +18,11 @@ namespace MuvLuvBeta
 				return this.verbProps.burstShotCount;
 			}
 		}
-		public CompApparel_Turret turret;
+		public Comp_Turret turret;
+		public Comp_TurretGun turretGun => turret as Comp_TurretGun;
+
+		public float barrellength => turretGun.Props.barrellength;
+		public float offset => turretGun.Props.projectileOffset;
 		public override Thing Caster
 		{
 			get
@@ -47,7 +51,7 @@ namespace MuvLuvBeta
 			}
 		}
 
-		public new CompApparel_Turret ReloadableCompSource
+		public new Comp_Turret ReloadableCompSource
 		{
 			get
 			{
@@ -55,7 +59,7 @@ namespace MuvLuvBeta
 				{
 					return turret;
 				}
-				return this.DirectOwner as CompApparel_Turret;
+				return this.DirectOwner as Comp_Turret;
 			}
 		}
 		public override bool CasterIsPawn
@@ -113,9 +117,9 @@ namespace MuvLuvBeta
 			//	Log.Message("stopBurstWithoutLos");
 				return false;
 			}
-			float offset = 0f;
 			Vector3 muzzlePos;
 		//	Log.Message("TryCastShot 1");
+		/*
 			if (base.EquipmentSource != null)
 			{
 				CompChangeableProjectile comp = base.EquipmentSource.GetComp<CompChangeableProjectile>();
@@ -129,6 +133,7 @@ namespace MuvLuvBeta
 					comp2.UsedOnce();
 				}
 			}
+			*/
 		//	Log.Message("TryCastShot 2");
 			if (turret!=null)
 			{
@@ -181,19 +186,12 @@ namespace MuvLuvBeta
 							MoteMaker.ThrowText(Caster.Position.ToVector3(), Caster.Map, turret.Props.messageQuaterRemaningWarning.Translate(EquipmentSource.LabelCap, Caster.LabelShortCap, remaining), 3f);
 						}
 					}
-					offset = turret.Props.projectileOffset;
 					muzzlePos = MuzzlePosition(this.Caster, this.currentTarget, offset);
 				}
 			}
 		//	Log.Message("TryCastShot 3");
 			Thing launcher = this.Caster;
 			Thing equipment = base.EquipmentSource;
-			CompMannable compMannable = this.Caster.TryGetComp<CompMannable>();
-			if (compMannable != null && compMannable.ManningPawn != null)
-			{
-				launcher = compMannable.ManningPawn;
-				equipment = this.Caster;
-			}
 		//	Log.Message("TryCastShot 4");
 			Vector3 drawPos = this.Caster.DrawPos;
 			Projectile projectile2 = (Projectile)GenSpawn.Spawn(projectile, shootLine.Source, this.Caster.Map, WipeMode.Vanish);
@@ -257,7 +255,7 @@ namespace MuvLuvBeta
 				{
 					this.CasterPawn.records.Increment(RecordDefOf.ShotsFired);
 				}
-				Log.Message("TryCastShot 5 3 8");
+			//	Log.Message("TryCastShot 5 3 8");
 				//	Log.Message("TryCastShot 2");
 				return true;
 			}
@@ -376,22 +374,120 @@ namespace MuvLuvBeta
 			return true;
 		}
 
+		protected new void TryCastNextBurstShot()
+		{
+			LocalTargetInfo localTargetInfo = this.currentTarget;
+			if (this.Available() && this.TryCastShot())
+			{
+				if (this.verbProps.muzzleFlashScale > 0.01f)
+				{
+					MoteMaker.MakeStaticMote(MuzzlePosition(this.Caster, this.currentTarget, this.turret.Props.projectileOffset), this.caster.Map, ThingDefOf.Mote_ShotFlash, this.verbProps.muzzleFlashScale);
+				}
+				if (this.verbProps.soundCast != null)
+				{
+					this.verbProps.soundCast.PlayOneShot(new TargetInfo(this.caster.Position, this.caster.Map, false));
+				}
+				if (this.verbProps.soundCastTail != null)
+				{
+					this.verbProps.soundCastTail.PlayOneShotOnCamera(this.caster.Map);
+				}
+				if (this.CasterIsPawn)
+				{
+					if (this.CasterPawn.thinker != null)
+					{
+						Notify_EngagedTarget();
+					}
+					if (this.CasterPawn.mindState != null)
+					{
+						Notify_AttackedTarget(localTargetInfo);
+					}
+					if (this.CasterPawn.MentalState != null)
+					{
+						this.CasterPawn.MentalState.Notify_AttackedTarget(localTargetInfo);
+					}
+					if (this.TerrainDefSource != null)
+					{
+						this.CasterPawn.meleeVerbs.Notify_UsedTerrainBasedVerb();
+					}
+					if (this.CasterPawn.health != null)
+					{
+						this.CasterPawn.health.Notify_UsedVerb(this, localTargetInfo);
+					}
+					if (this.EquipmentSource != null)
+					{
+						this.EquipmentSource.Notify_UsedWeapon(this.CasterPawn);
+					}
+					if (!this.CasterPawn.Spawned)
+					{
+						this.Reset();
+						return;
+					}
+				}
+				if (this.verbProps.consumeFuelPerShot > 0f)
+				{
+					CompRefuelable compRefuelable = this.caster.TryGetComp<CompRefuelable>();
+					if (compRefuelable != null)
+					{
+						compRefuelable.ConsumeFuel(this.verbProps.consumeFuelPerShot);
+					}
+				}
+				this.burstShotsLeft--;
+			}
+			else
+			{
+				this.burstShotsLeft = 0;
+			}
+			if (this.burstShotsLeft > 0)
+			{
+				this.ticksToNextBurstShot = this.verbProps.ticksBetweenBurstShots;
+				if (this.CasterIsPawn && !this.verbProps.nonInterruptingSelfCast)
+				{
+					this.CasterPawn.stances.SetStance(new Stance_Cooldown(this.verbProps.ticksBetweenBurstShots + 1, this.currentTarget, this));
+					return;
+				}
+			}
+			else
+			{
+				this.state = VerbState.Idle;
+				if (this.CasterIsPawn && !this.verbProps.nonInterruptingSelfCast)
+				{
+					this.CasterPawn.stances.SetStance(new Stance_Cooldown(this.verbProps.AdjustedCooldownTicks(this, this.CasterPawn), this.currentTarget, this));
+				}
+				if (this.castCompleteCallback != null)
+				{
+					this.castCompleteCallback();
+				}
+			}
+		}
+
+		// Token: 0x060028BD RID: 10429 RVA: 0x000F09F4 File Offset: 0x000EEBF4
+		internal void Notify_EngagedTarget()
+		{
+			this.CasterPawn.mindState.lastEngageTargetTick = Find.TickManager.TicksGame;
+		}
+
+		// Token: 0x060028BE RID: 10430 RVA: 0x000F0A06 File Offset: 0x000EEC06
+		internal void Notify_AttackedTarget(LocalTargetInfo target)
+		{
+			this.CasterPawn.mindState.lastAttackTargetTick = Find.TickManager.TicksGame;
+			this.CasterPawn.mindState.lastAttackedTarget = target;
+		}
 		// Token: 0x06002133 RID: 8499 RVA: 0x000CB158 File Offset: 0x000C9358
-		public static Vector3 MuzzlePosition(Thing shooter, LocalTargetInfo target, float offsetDist)
+		public Vector3 MuzzlePosition(Thing shooter, LocalTargetInfo target, float offsetDist)
 		{
 			float facing = 0f;
 			if (target.Cell != shooter.Position)
 			{
 				if (target.Thing != null)
 				{
-					facing = (target.Thing.DrawPos - shooter.Position.ToVector3Shifted()).AngleFlat();
+					facing = (target.Thing.DrawPos - this.turretGun.TurretPos).AngleFlat();
 				}
 				else
 				{
-					facing = (target.Cell - shooter.Position).AngleFlat;
+					facing = (target.Cell.ToVector3() - this.turretGun.TurretPos).AngleFlat();
 				}
 			}
-			return MuzzlePositionRaw(shooter.DrawPos + new Vector3(0f, offsetDist, 0f), facing);
+			return MuzzlePositionRaw(this.turretGun.TurretPos + new Vector3(0f, offsetDist, 0f), facing);
 		}
 
 		// Token: 0x06002134 RID: 8500 RVA: 0x000CB1EC File Offset: 0x000C93EC
@@ -522,10 +618,10 @@ namespace MuvLuvBeta
 					resultingLine = new ShootLine(root, dest);
 					return true;
 				}
-				ShootLeanUtility.LeanShootingSourcesFromTo(root, cellRect.ClosestCellTo(root), this.Caster.Map, Verb_ShootTFSMounted.tempLeanShootSources);
-				for (int i = 0; i < Verb_ShootTFSMounted.tempLeanShootSources.Count; i++)
+				ShootLeanUtility.LeanShootingSourcesFromTo(root, cellRect.ClosestCellTo(root), this.Caster.Map, Verb_ShootCompMounted.tempLeanShootSources);
+				for (int i = 0; i < Verb_ShootCompMounted.tempLeanShootSources.Count; i++)
 				{
-					IntVec3 intVec = Verb_ShootTFSMounted.tempLeanShootSources[i];
+					IntVec3 intVec = Verb_ShootCompMounted.tempLeanShootSources[i];
 					if (this.CanHitFromCellIgnoringRange(intVec, targ, out dest))
 					{
 						resultingLine = new ShootLine(intVec, dest);
@@ -560,12 +656,12 @@ namespace MuvLuvBeta
 					goodDest = IntVec3.Invalid;
 					return false;
 				}
-				ShootLeanUtility.CalcShootableCellsOf(Verb_ShootTFSMounted.tempDestList, targ.Thing);
-				for (int i = 0; i < Verb_ShootTFSMounted.tempDestList.Count; i++)
+				ShootLeanUtility.CalcShootableCellsOf(Verb_ShootCompMounted.tempDestList, targ.Thing);
+				for (int i = 0; i < Verb_ShootCompMounted.tempDestList.Count; i++)
 				{
-					if (this.CanHitCellFromCellIgnoringRange(sourceCell, Verb_ShootTFSMounted.tempDestList[i], targ.Thing.def.Fillage == FillCategory.Full))
+					if (this.CanHitCellFromCellIgnoringRange(sourceCell, Verb_ShootCompMounted.tempDestList[i], targ.Thing.def.Fillage == FillCategory.Full))
 					{
-						goodDest = Verb_ShootTFSMounted.tempDestList[i];
+						goodDest = Verb_ShootCompMounted.tempDestList[i];
 						return true;
 					}
 				}
