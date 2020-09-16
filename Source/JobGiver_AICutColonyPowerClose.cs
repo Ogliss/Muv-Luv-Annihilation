@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     // Token: 0x020000C1 RID: 193
     public class JobGiver_AICutColonyPowerClose : ThinkNode_JobGiver

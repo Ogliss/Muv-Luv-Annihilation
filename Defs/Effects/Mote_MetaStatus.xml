@@ -6,7 +6,7 @@
 
   <ThingDef ParentName="MoteBase">
     <defName>Mote_CompTurretStun</defName>
-    <thingClass>MuvLuvBeta.MoteCompTurretAttached</thingClass>
+    <thingClass>CompTurret.MoteCompTurretAttached</thingClass>
     <altitudeLayer>MetaOverlays</altitudeLayer>
     <mote>
       <solidTime>9999</solidTime>

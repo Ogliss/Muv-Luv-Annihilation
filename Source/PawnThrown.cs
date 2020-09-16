@@ -6,7 +6,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
 	// Token: 0x02000D23 RID: 3363
 	public class PawnThrown : Thing, IThingHolder

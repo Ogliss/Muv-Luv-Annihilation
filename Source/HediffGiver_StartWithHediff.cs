@@ -2,7 +2,7 @@
 using System.Linq;
 using Verse;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     /// <summary>
     /// Adds a hediff to a character after it is generated/spawned.

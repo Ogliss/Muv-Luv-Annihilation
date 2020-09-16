@@ -6,7 +6,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     [StaticConstructorOnStartup]
     public class CompProperties_ExosuitDrawer : CompProperties

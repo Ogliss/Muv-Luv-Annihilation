@@ -5,7 +5,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
 	// Token: 0x02000DC9 RID: 3529
 	public static class ReloadableDualUtility

@@ -9,7 +9,7 @@ using Verse.AI;
 using Verse.AI.Group;
 using Verse.Sound;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     // Token: 0x0200025A RID: 602 MuvLuvBeta.CompProperties_BETASpawnerOnDamaged
     public class CompProperties_BETASpawnerOnDamaged : CompProperties

@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     // Token: 0x02000D75 RID: 3445
     public class HediffCompProperties_VerbGiverBETA : HediffCompProperties_VerbGiver

@@ -3,7 +3,7 @@ using System;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     // Token: 0x0200018B RID: 395
     public class LordToil_AssaultColony_CutPower : LordToil

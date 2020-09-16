@@ -12,7 +12,7 @@ using System.Reflection.Emit;
 using UnityEngine;
 using System.Reflection;
 
-namespace MuvLuvBeta.HarmonyInstance
+namespace MuvLuvAnnihilation.HarmonyInstance
 {
     [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal", new Type[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) }), HarmonyPriority(Priority.Last)]
     public static class PawnRenderer_RenderPawnInternal_DrawExosuit_Transpiler

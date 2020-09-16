@@ -2,7 +2,7 @@
 using Verse;
 using Verse.AI;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     class JobDriver_AnimalRangeAttack : JobDriver
     {

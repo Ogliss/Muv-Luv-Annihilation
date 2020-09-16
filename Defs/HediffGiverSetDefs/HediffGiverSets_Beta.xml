@@ -4,7 +4,7 @@
   <HediffGiverSetDef>
     <defName>Lux_Laser</defName>
     <hediffGivers>
-      <li Class="MuvLuvBeta.HediffGiver_StartWithHediff">
+      <li Class="MuvLuvAnnihilation.HediffGiver_StartWithHediff">
         <hediff>BETA_LaserClass_EyeBeam</hediff>
 		<partsToAffect>
 		<li>BETASightSensor</li>
@@ -19,7 +19,7 @@
   <HediffGiverSetDef>
     <defName>MagnusLux_Laser</defName>
     <hediffGivers>
-      <li Class="MuvLuvBeta.HediffGiver_StartWithHediff">
+      <li Class="MuvLuvAnnihilation.HediffGiver_StartWithHediff">
         <hediff>BETA_HeavyLaserClass_EyeBeam</hediff>
 		<partsToAffect>
 		<li>BETASightSensor</li>

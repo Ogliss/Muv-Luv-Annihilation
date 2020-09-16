@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     public class Graphic_Invisible : Graphic
     {

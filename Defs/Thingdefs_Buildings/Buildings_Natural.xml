@@ -70,7 +70,7 @@
 		-->
         <factionGroupKindDef>BETA_InteriorHive</factionGroupKindDef>
         <!--lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob-->
-        <lordJob>MuvLuvBeta.LordJob_AssaultColony_CutPower</lordJob>
+        <lordJob>MuvLuvAnnihilation.LordJob_AssaultColony_CutPower</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <showNextSpawnInInspect>false</showNextSpawnInInspect>
         <initialPawnsPoints>250</initialPawnsPoints>
@@ -201,7 +201,7 @@
         <maxSpawnedPawnsPoints>550</maxSpawnedPawnsPoints>
         <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
         <!--lordJob>LordJob_AssaultColony</lordJob-->
-        <lordJob>MuvLuvBeta.LordJob_AssaultColony_CutPower</lordJob>
+        <lordJob>MuvLuvAnnihilation.LordJob_AssaultColony_CutPower</lordJob>
         <pawnSpawnIntervalDays>0.1</pawnSpawnIntervalDays>
         <assaultOnSpawn>True</assaultOnSpawn>
         <shouldJoinParentLord>True</shouldJoinParentLord>

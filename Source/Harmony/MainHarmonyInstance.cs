@@ -7,7 +7,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-namespace MuvLuvBeta.HarmonyInstance
+namespace MuvLuvAnnihilation.HarmonyInstance
 {
     [StaticConstructorOnStartup]
     class MainHarmonyInstance

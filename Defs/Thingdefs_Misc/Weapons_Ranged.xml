@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+<!-- ====================== Infantry Weapons ===================== -->
+<!-- ====================== Nambu M57 ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_M57Nambu</defName>
-    <label>Nambu M57</label>
+    <label>nambu M57</label>
     <description>The New Nambu M57 (ニューナンブM57) is a series of semi-automatic pistols designed by Shin-Chuō Industries, later merged with Minebea. "New Nambu" was named after Kijirō Nambu, a notable firearm designer and the founder of Shin-Chuō Industries. It lacks stopping power and range, but is quick to fire.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/Autopistol</texPath>
@@ -23,11 +25,11 @@
     <statBases>
       <WorkToMake>5000</WorkToMake>
       <Mass>1.2</Mass>
-      <AccuracyTouch>0.80</AccuracyTouch>
-      <AccuracyShort>0.70</AccuracyShort>
-      <AccuracyMedium>0.40</AccuracyMedium>
-      <AccuracyLong>0.30</AccuracyLong>
-      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		<AccuracyTouch>0.94</AccuracyTouch>
+		<AccuracyShort>0.88</AccuracyShort>
+		<AccuracyMedium>0.77</AccuracyMedium>
+		<AccuracyLong>0.66</AccuracyLong>
+		<RangedWeapon_Cooldown>0.58</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>30</Steel>
@@ -38,8 +40,8 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_M57Nambu</defaultProjectile>
-        <warmupTime>0.3</warmupTime>
-        <range>25.9</range>
+				<warmupTime>0.3</warmupTime>
+				<range>26</range>
         <soundCast>Shot_Autopistol</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -72,14 +74,15 @@
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>10</damageAmountBase>
-      <speed>55</speed>
-    </projectile>
+	<projectile>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>12</damageAmountBase>
+		<speed>75</speed>
+	</projectile>
   </ThingDef>
   
-
+<!-- ====================== Saiga-12 ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_Saiga</defName>
     <label>saiga-12</label>
@@ -99,12 +102,16 @@
     <statBases>
       <WorkToMake>31000</WorkToMake>
       <Mass>4.5</Mass>
-      <AccuracyTouch>0.57</AccuracyTouch>
-      <AccuracyShort>0.64</AccuracyShort>
-      <AccuracyMedium>0.55</AccuracyMedium>
-      <AccuracyLong>0.45</AccuracyLong>
-      <RangedWeapon_Cooldown>1.35</RangedWeapon_Cooldown>
+		<AccuracyTouch>0.94</AccuracyTouch>
+		<AccuracyShort>0.71</AccuracyShort>
+		<AccuracyMedium>0.44</AccuracyMedium>
+		<AccuracyLong>0.21</AccuracyLong>
+		<RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
     </statBases>
+	<equippedStatOffsets>
+		<MoveSpeed>-0.10</MoveSpeed>
+		<WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+	</equippedStatOffsets>
     <costList>
       <Steel>70</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -114,9 +121,9 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_Saiga</defaultProjectile>
-        <warmupTime>1.2</warmupTime>
-        <range>12.9</range>
-        <burstShotCount>3</burstShotCount>
+        <warmupTime>0.45</warmupTime>
+        <range>15</range>
+        <burstShotCount>1</burstShotCount>
         <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
         <soundCast>Shot_Shotgun</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
@@ -149,20 +156,24 @@
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_Saiga</defName>
     <label>shotgun blast</label>
-    <graphicData>
-      <texPath>Things/Projectile/Bullet_Shotgun</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>18</damageAmountBase>
-      <stoppingPower>3</stoppingPower>
-      <armorPenetrationBase>0.14</armorPenetrationBase>
-      <speed>55</speed>
-    </projectile>
+	<graphicData>
+		<texPath>Things/Projectile/Bullet_Small</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<modExtensions>
+	  <li Class="MuvLuvAnnihilation.ProjectileDefExtension">
+		<extraProjectiles>5</extraProjectiles>
+	  </li>
+	</modExtensions>
+	<projectile>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>6</damageAmountBase>
+		<speed>120</speed>
+	</projectile>
   </ThingDef>
 
-
+<!-- ====================== LWRC SMG-45 ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_SMGLWRC</defName>
     <label>LWRC SMG-45</label>
@@ -181,26 +192,27 @@
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
       <WorkToMake>24000</WorkToMake>
-      <Mass>3.5</Mass>
-      <AccuracyTouch>0.85</AccuracyTouch>
-      <AccuracyShort>0.65</AccuracyShort>
-      <AccuracyMedium>0.35</AccuracyMedium>
-      <AccuracyLong>0.20</AccuracyLong>
-      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+		<Mass>3.6</Mass>
+		<AccuracyTouch>0.85</AccuracyTouch>
+		<AccuracyShort>0.65</AccuracyShort>
+		<AccuracyMedium>0.35</AccuracyMedium>
+		<AccuracyLong>0.20</AccuracyLong>
+		<RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>75</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
+      <Plasteel>5</Plasteel>
     </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_SMGLWRC</defaultProjectile>
-        <warmupTime>0.9</warmupTime>
-        <range>22.9</range>
-        <burstShotCount>3</burstShotCount>
-        <ticksBetweenBurstShots>11</ticksBetweenBurstShots>
+		<warmupTime>1</warmupTime>
+		<range>24</range>
+		<burstShotCount>3</burstShotCount>
+		<ticksBetweenBurstShots>9</ticksBetweenBurstShots>
         <soundCast>Shot_HeavySMG</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -237,13 +249,16 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>12</damageAmountBase>
-      <speed>48</speed>
-    </projectile>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>13</damageAmountBase>
+		<armorPenetrationBase>0.35</armorPenetrationBase>
+		<stoppingPower>1.3</stoppingPower>
+		<speed>80</speed>
+	</projectile>
   </ThingDef>
   
-  
+<!-- ====================== Type 92 HMG ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_Type92HMG</defName>
     <label>Type 92 HMG</label>
@@ -262,15 +277,16 @@
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
       <WorkToMake>34000</WorkToMake>
-      <Mass>8.5</Mass>
-      <AccuracyTouch>0.40</AccuracyTouch>
-      <AccuracyShort>0.48</AccuracyShort>
-      <AccuracyMedium>0.35</AccuracyMedium>
-      <AccuracyLong>0.26</AccuracyLong>
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+		<Mass>8.2</Mass>
+		<AccuracyTouch>0.32</AccuracyTouch>
+		<AccuracyShort>0.42</AccuracyShort>
+		<AccuracyMedium>0.50</AccuracyMedium>
+		<AccuracyLong>0.26</AccuracyLong>
+		<RangedWeapon_Cooldown>3.1</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>75</Steel>
+      <Plasteel>15</Plasteel>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
     <verbs>
@@ -278,10 +294,10 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_Type92HMG</defaultProjectile>
-        <warmupTime>1.8</warmupTime>
-        <range>25.9</range>
-        <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
-        <burstShotCount>6</burstShotCount>
+		<warmupTime>1.0</warmupTime>
+		<range>31</range>
+		<burstShotCount>25</burstShotCount>
+		<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
         <soundCast>Shot_Minigun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -318,95 +334,105 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>11</damageAmountBase>
-      <stoppingPower>1</stoppingPower>
-      <speed>46</speed>
-    </projectile>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>15</damageAmountBase>
+		<armorPenetrationBase>0.40</armorPenetrationBase>
+		<stoppingPower>1.0</stoppingPower>
+		<speed>90</speed>
+	</projectile>
   </ThingDef>
 
-
+<!-- ====================== Howa type 20 ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_AssaultRifleHowa</defName>
     <label>howa type 20</label>
     <description>The Howa Type 20 Assault Rifle is an assault rifle developed for the Japan Ground Self-Defense Force by Howa. It is expected to be the successor to the Howa Type 89.</description>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/AssaultRifle</texPath>
+      <texPath>Things/Item/Equipment/WeaponRanged/Howa_type_20</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <soundInteract>Interact_Rifle</soundInteract>
-    <recipeMaker>
-      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
-      <skillRequirements>
-        <Crafting>6</Crafting>
-      </skillRequirements>
-    </recipeMaker>
-    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
-    <statBases>
-      <WorkToMake>40000</WorkToMake>
-      <Mass>3.5</Mass>
-      <AccuracyTouch>0.60</AccuracyTouch>
-      <AccuracyShort>0.70</AccuracyShort>
-      <AccuracyMedium>0.65</AccuracyMedium>
-      <AccuracyLong>0.55</AccuracyLong>
-      <RangedWeapon_Cooldown>1.70</RangedWeapon_Cooldown>
-    </statBases>
-    <costList>
-      <Steel>60</Steel>
-      <ComponentIndustrial>7</ComponentIndustrial>
-    </costList>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_AssaultRifleHowa</defaultProjectile>
-        <warmupTime>1.0</warmupTime>
-        <range>30.9</range>
-        <burstShotCount>3</burstShotCount>
-        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-        <soundCast>Shot_AssaultRifle</soundCast>
-        <soundCastTail>GunTail_Medium</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-      </li>
-    </verbs>
-    <weaponTags>
-      <li>IndustrialGunAdvanced</li>
-    </weaponTags>
-    <tools>
-      <li>
-        <label>stock</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-      <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-    </tools>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<MarketValue>500</MarketValue>
+			<Mass>5.2</Mass>
+			<AccuracyTouch>0.55</AccuracyTouch>
+			<AccuracyShort>0.55</AccuracyShort>
+			<AccuracyMedium>0.68</AccuracyMedium>
+			<AccuracyLong>0.48</AccuracyLong>
+			<RangedWeapon_Cooldown>1.85</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>GasOperation</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</recipeMaker>		
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_AssaultRifleHowa</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>31</range>
+				<burstShotCount>4</burstShotCount>
+				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+				<soundCast>Shot_AssaultRifle</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>6</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+		  <li>
+			<label>grip</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>12</power>
+			<cooldownTime>1.6</cooldownTime>
+		  </li>
+		  <li>
+			<label>barrel</label>
+			<capacities>
+			  <li>Blunt</li>
+			  <li>Poke</li>
+			</capacities>
+			<power>12</power>
+			<cooldownTime>1.6</cooldownTime>
+		  </li>
+		</tools>
+		<techLevel>Spacer</techLevel>
+		<weaponTags>
+			<li>ML_Weapons</li>
+		</weaponTags>
+		<tradeTags>
+			<li>WeaponsRanged</li>
+		</tradeTags>
+		<costList>				
+			<Steel>30</Steel>
+			<Plasteel>5</Plasteel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
   </ThingDef>
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_AssaultRifleHowa</defName>
     <label>assault rifle bullet</label>
     <graphicData>
-      <texPath>Things/Projectile/Bullet_Small</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+		<texPath>Things/Projectile/Charge_Small</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>11</damageAmountBase>
-      <speed>70</speed>
-    </projectile>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>13</damageAmountBase>
+		<armorPenetrationBase>0.35</armorPenetrationBase>
+		<stoppingPower>1.3</stoppingPower>
+		<speed>80</speed>
+	</projectile>
   </ThingDef>
 
-
+<!-- ====================== Barret 50 cal ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_Barret50cal</defName>
     <label>Barret 50 cal</label>
@@ -424,13 +450,13 @@
     </recipeMaker>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
-      <WorkToMake>45000</WorkToMake>
-      <Mass>4</Mass>
-      <AccuracyTouch>0.50</AccuracyTouch>
-      <AccuracyShort>0.70</AccuracyShort>
-      <AccuracyMedium>0.86</AccuracyMedium>
-      <AccuracyLong>0.88</AccuracyLong>
-      <RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
+		<WorkToMake>45000</WorkToMake>
+		<Mass>4.2</Mass>
+		<AccuracyTouch>0.52</AccuracyTouch>
+		<AccuracyShort>0.64</AccuracyShort>
+		<AccuracyMedium>0.92</AccuracyMedium>
+		<AccuracyLong>0.83</AccuracyLong>
+		<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>60</Steel>
@@ -441,8 +467,8 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_Barret50cal</defaultProjectile>
-        <warmupTime>3.5</warmupTime>
-        <range>44.9</range>
+		<warmupTime>2.5</warmupTime>
+		<range>50</range>
         <soundCast>Shot_SniperRifle</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -479,14 +505,218 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>25</damageAmountBase>
-      <stoppingPower>1.5</stoppingPower>
-      <speed>100</speed>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>35</damageAmountBase>
+		<speed>150</speed>
     </projectile>
   </ThingDef>
 
-
+<!-- ====================== Type 100 Incinerator ===================== -->
+ <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_Type100Incinerator</defName>
+    <label>type 100 incinerator</label>
+    <description>The Type 100 Incinerator Unit, also known as the Type 100 Flamethrower and colloquially as the Bake-a-Flake, is a carbine-style flamethrower.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/IncendiaryLauncher</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+		<WorkToMake>12000</WorkToMake>
+		<MarketValue>375</MarketValue>
+		<Mass>3.2</Mass>
+		<AccuracyTouch>0.90</AccuracyTouch>
+		<AccuracyShort>0.60</AccuracyShort>
+		<AccuracyMedium>0.55</AccuracyMedium>
+		<AccuracyLong>0.50</AccuracyLong>
+		<RangedWeapon_Cooldown>4.00</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+		<researchPrerequisite>GasOperation</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	</recipeMaker>
+    <costList>
+		<Steel>75</Steel>
+		<ComponentIndustrial>4</ComponentIndustrial>
+		<Chemfuel>25</Chemfuel>
+    </costList>
+	<techLevel>Spacer</techLevel>
+    <weaponTags>
+		<li>USCM_Weapons</li>
+		<li>USCM_M240Incinerator</li>
+		<li>USCM_StandardIssue_Ranged</li>
+	</weaponTags>
+	<tradeTags>
+		<li>WeaponsRanged</li>
+		<li>AvP_USCM_RangedWeapons</li>
+	</tradeTags>
+    <verbs>
+		<li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Bullet_T100F</defaultProjectile>
+			<warmupTime>0.5</warmupTime>
+			<range>16</range>
+			<burstShotCount>24</burstShotCount>
+			<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+			<ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+			<soundCast>AvP_M240_Shot</soundCast>
+			<soundCastTail>GunTail_Light</soundCastTail>
+			<muzzleFlashScale>28</muzzleFlashScale>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+ </ThingDef>
+ <ThingDef ParentName="BaseBullet">
+	<defName>Bullet_T100F</defName>
+    <label>flames</label>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Projectile/Flamer</texPath>
+      <graphicClass>Graphic_Flicker</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>AnimatedProjectile.Projectile_Fire</thingClass>
+	<modExtensions>
+	  <li Class="MuvLuvAnnihilation.ProjectileDefExtension">
+		<extraProjectiles>2</extraProjectiles>
+	  </li>
+	</modExtensions>
+    <projectile Class="AnimatedProjectile.AnimatedProjectileProperties">
+        <ticksPerFrame>15</ticksPerFrame>
+        <growerDistance>true</growerDistance>
+        <setsFire>true</setsFire>
+        <ignites>true</ignites>
+        <drawGlow>true</drawGlow>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Flame</damageDef>
+		<damageAmountBase>1</damageAmountBase>
+		<armorPenetrationBase>0.08</armorPenetrationBase>
+		<explosionRadius>0.75</explosionRadius>
+		<explosionChanceToStartFire>1.0</explosionChanceToStartFire>
+		<postExplosionSpawnThingDef>Filth_Fuel</postExplosionSpawnThingDef>
+		<preExplosionSpawnChance>0.5</preExplosionSpawnChance>
+		<stoppingPower>0.75</stoppingPower>
+		<speed>20</speed>
+    </projectile>
+  </ThingDef>
+ 
+	<!-- =================== Panzerfaust 3 ================== -->	
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>Gun_3Panzerfaust</defName>
+		<label>Panzerfaust 3</label>
+		<description>The Panzerfaust 3 is a portable, shoulder-fired, reloadable, semi-automatic unguided anti-armour rocket-propelled grenade launcher.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_ChargeLance</soundInteract>
+		<statBases>
+			<MarketValue>8000</MarketValue>
+		<WorkToMake>50000</WorkToMake>
+			<Mass>13</Mass>
+			<AccuracyTouch>0.62</AccuracyTouch>
+			<AccuracyShort>0.79</AccuracyShort>
+			<AccuracyMedium>0.72</AccuracyMedium>
+			<AccuracyLong>0.68</AccuracyLong>
+			<RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>USCM_Weapons</li>
+			<li>USCM_M5</li>
+		</weaponTags>
+		<tradeTags>
+			<li>USCM</li>
+		</tradeTags>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.30</MoveSpeed>
+			<WorkSpeedGlobal>-0.7</WorkSpeedGlobal>
+		</equippedStatOffsets>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_3Panzerfaust</defaultProjectile>
+				<forcedMissRadius>2.0</forcedMissRadius>
+				<warmupTime>3.0</warmupTime>
+				<range>40</range>
+				<ticksBetweenBurstShots>50</ticksBetweenBurstShots>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>InfernoCannon_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<onlyManualCast>false</onlyManualCast>
+				<stopBurstWithoutLos>true</stopBurstWithoutLos>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<muzzleFlashScale>14</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.9</cooldownTime>
+			</li>
+		</tools>	
+		<costList>
+		  <Plasteel>40</Plasteel>
+		  <Chemfuel>40</Chemfuel>
+		  <ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+		  <skillRequirements>
+			<Crafting>12</Crafting>
+		  </skillRequirements>
+		</recipeMaker>	
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_3Panzerfaust</defName>
+		<label>Panzerfaust</label>
+		<graphicData>
+			<texPath>Things/Projectile/Rocket_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>40</damageAmountBase>
+			<explosionRadius>3.0</explosionRadius>
+			<speed>60</speed>
+		</projectile>
+	</ThingDef>
+	
+<!-- ====================== TSF Weapons ===================== -->
+<!-- ====================== Type-87 Assault Cannon ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_TSF_Type87AssaultCannon</defName>
     <label>Type-87 Assault Cannon</label>
@@ -500,18 +730,18 @@
     <statBases>
       <WorkToMake>60000</WorkToMake>
       <Mass>10</Mass>
-      <AccuracyTouch>0.15</AccuracyTouch>
-      <AccuracyShort>0.25</AccuracyShort>
-      <AccuracyMedium>0.25</AccuracyMedium>
-      <AccuracyLong>0.18</AccuracyLong>
-      <RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
+		<AccuracyTouch>0.55</AccuracyTouch>
+		<AccuracyShort>0.55</AccuracyShort>
+		<AccuracyMedium>0.68</AccuracyMedium>
+		<AccuracyLong>0.48</AccuracyLong>
+		<RangedWeapon_Cooldown>1.85</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>160</Steel>
       <ComponentIndustrial>20</ComponentIndustrial>
     </costList>
     <recipeMaker>
-      <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
       <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
@@ -528,10 +758,10 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_TSF_Type87AssaultCannon</defaultProjectile>
-        <warmupTime>2.5</warmupTime>
-        <range>30.9</range>
-        <burstShotCount>25</burstShotCount>
-        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <warmupTime>0.5</warmupTime>
+		<range>31</range>
+		<burstShotCount>4</burstShotCount>
+		<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
         <soundCast>Shot_Minigun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -556,14 +786,18 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>10</damageAmountBase>
-      <speed>70</speed>
-    </projectile>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>15</damageAmountBase>
+		<armorPenetrationBase>0.41</armorPenetrationBase>
+		<stoppingPower>1.4</stoppingPower>
+		<speed>80</speed>
+	</projectile>
   </ThingDef>
   
+<!-- ====================== GWS-9 Assault Cannon ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>Gun_TSF_AssaultCannon</defName>
+    <defName>Gun_TSF_9GWS</defName>
     <label>GWS-9 Assault Cannon</label>
     <description>he main armament of the European Union forces as well as UN forces stationed in Europe, the GWS-9 replaces the older WS-16C used by European forces. The weapon boasts a 20% reduction in weight and size, and its internal systems are more reliable against wear-and-tear than the WS-16C.</description>
     <graphicData>
@@ -575,18 +809,18 @@
     <statBases>
       <WorkToMake>60000</WorkToMake>
       <Mass>10</Mass>
-      <AccuracyTouch>0.15</AccuracyTouch>
-      <AccuracyShort>0.25</AccuracyShort>
-      <AccuracyMedium>0.25</AccuracyMedium>
-      <AccuracyLong>0.18</AccuracyLong>
-      <RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
+		<AccuracyTouch>0.94</AccuracyTouch>
+		<AccuracyShort>0.71</AccuracyShort>
+		<AccuracyMedium>0.44</AccuracyMedium>
+		<AccuracyLong>0.21</AccuracyLong>
+		<RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>160</Steel>
       <ComponentIndustrial>20</ComponentIndustrial>
     </costList>
     <recipeMaker>
-      <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
       <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
@@ -603,12 +837,12 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_TSF_AssaultCannon</defaultProjectile>
-        <warmupTime>2.5</warmupTime>
-        <range>30.9</range>
-        <burstShotCount>25</burstShotCount>
-        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
-        <soundCast>Shot_Minigun</soundCast>
-        <soundCastTail>GunTail_Medium</soundCastTail>
+        <warmupTime>0.45</warmupTime>
+        <range>15</range>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <soundCast>Shot_Shotgun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
@@ -630,15 +864,21 @@
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+	<modExtensions>
+	  <li Class="MuvLuvAnnihilation.ProjectileDefExtension">
+		<extraProjectiles>7</extraProjectiles>
+	  </li>
+	</modExtensions>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>10</damageAmountBase>
+      <damageAmountBase>7</damageAmountBase>
       <speed>70</speed>
     </projectile>
   </ThingDef>
   
+<!-- ====================== Mk.57 Squad Support Gun ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>Gun_TSF_SupportGun</defName>
+    <defName>Gun_TSF_Mk57SquadSupportGun</defName>
     <label>Mk.57 Squad Support Gun</label>
     <description>First entering service with European Union forces in 1996, the Mk. 57, manufactured by Rheinmetall, is the strongest, and the most versatile support fire armament, for TSFs fielded by the European nations yet. It was developed as a need for a platform for highly-mobile support fire.</description>
     <graphicData>
@@ -650,18 +890,18 @@
     <statBases>
       <WorkToMake>60000</WorkToMake>
       <Mass>10</Mass>
-      <AccuracyTouch>0.15</AccuracyTouch>
-      <AccuracyShort>0.25</AccuracyShort>
-      <AccuracyMedium>0.25</AccuracyMedium>
-      <AccuracyLong>0.18</AccuracyLong>
-      <RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
+		<AccuracyTouch>0.32</AccuracyTouch>
+		<AccuracyShort>0.42</AccuracyShort>
+		<AccuracyMedium>0.50</AccuracyMedium>
+		<AccuracyLong>0.26</AccuracyLong>
+		<RangedWeapon_Cooldown>3.1</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>160</Steel>
       <ComponentIndustrial>20</ComponentIndustrial>
     </costList>
     <recipeMaker>
-      <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
       <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
@@ -678,7 +918,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_TSF_SupportGun</defaultProjectile>
-        <warmupTime>2.5</warmupTime>
+        <warmupTime>1.5</warmupTime>
         <range>30.9</range>
         <burstShotCount>25</burstShotCount>
         <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
@@ -707,22 +947,24 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>10</damageAmountBase>
+		<damageAmountBase>17</damageAmountBase>
+		<armorPenetrationBase>0.48</armorPenetrationBase>
       <speed>70</speed>
     </projectile>
   </ThingDef>
   
+<!-- ====================== 120mm OTH Cannon ===================== -->
   <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>Gun_TSF_Sniper</defName>
+    <defName>Gun_TSF_1200MMOTH</defName>
     <label>120mm OTH Cannon</label>
-    <description>The 120mm OTH (Over-the-Horizon) Cannon is a prototype weapons system built upon the combat doctrine of assaulting BETA Hives from extreme ranges, keeping artillery support out of the reach of the BETA. Essentially a massive, TSF-portable artillery piece, the 1200mm OTH Cannon has no tracking systems beyond line-of-sight or a pilot's intuition, and relies on an additional sighting device, forward observation equipment, orbital satellite data, or other similar equipment to provide reliable firing data.</description>
+    <description>The 1200mm OTH (Over-the-Horizon) Cannon is a prototype weapons system built upon the combat doctrine of assaulting BETA Hives from extreme ranges, keeping artillery support out of the reach of the BETA. Essentially a massive, TSF-portable artillery piece, the 1200mm OTH Cannon has no tracking systems beyond line-of-sight or a pilot's intuition, and relies on an additional sighting device, forward observation equipment, orbital satellite data, or other similar equipment to provide reliable firing data.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/SniperRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
     <recipeMaker>
-      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
       <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
@@ -746,8 +988,8 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_TSF_Sniper</defaultProjectile>
-        <warmupTime>3.5</warmupTime>
-        <range>44.9</range>
+        <warmupTime>12</warmupTime>
+        <range>90</range>
         <soundCast>Shot_SniperRifle</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -785,17 +1027,130 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>25</damageAmountBase>
+      <damageAmountBase>70</damageAmountBase>
       <stoppingPower>1.5</stoppingPower>
       <speed>100</speed>
     </projectile>
   </ThingDef>
 
-
+<!-- ====================== Type 1000 Incinerator ===================== -->
+ <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_TSF_Type1000Incinerator</defName>
+    <label>type 1000 incinerator</label>
+    <description>The Type 1000 Incinerator Unit, also known as the Type 100 Flamethrower and colloquially as the Bake-a-Flake, is a carbine-style flamethrower.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/IncendiaryLauncher</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+		<WorkToMake>12000</WorkToMake>
+		<MarketValue>375</MarketValue>
+		<Mass>3.2</Mass>
+		<AccuracyTouch>0.90</AccuracyTouch>
+		<AccuracyShort>0.60</AccuracyShort>
+		<AccuracyMedium>0.55</AccuracyMedium>
+		<AccuracyLong>0.50</AccuracyLong>
+		<RangedWeapon_Cooldown>4.00</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+		<researchPrerequisite>ChargedShot</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	</recipeMaker>
+    <costList>
+		<Steel>75</Steel>
+		<ComponentIndustrial>4</ComponentIndustrial>
+		<Chemfuel>25</Chemfuel>
+    </costList>
+	<techLevel>Spacer</techLevel>
+    <weaponTags>
+		<li>USCM_Weapons</li>
+		<li>USCM_M240Incinerator</li>
+		<li>USCM_StandardIssue_Ranged</li>
+	</weaponTags>
+	<tradeTags>
+		<li>WeaponsRanged</li>
+		<li>AvP_USCM_RangedWeapons</li>
+	</tradeTags>
+    <verbs>
+		<li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Bullet_T1000F</defaultProjectile>
+			<warmupTime>0.5</warmupTime>
+			<range>16</range>
+			<burstShotCount>24</burstShotCount>
+			<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+			<ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+			<soundCast>AvP_M240_Shot</soundCast>
+			<soundCastTail>GunTail_Light</soundCastTail>
+			<muzzleFlashScale>28</muzzleFlashScale>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+ </ThingDef>
+ <ThingDef ParentName="BaseBullet">
+	<defName>Bullet_T1000F</defName>
+    <label>flames</label>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Projectile/Flamer</texPath>
+      <graphicClass>Graphic_Flicker</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>AnimatedProjectile.Projectile_Fire</thingClass>
+	<modExtensions>
+	  <li Class="MuvLuvAnnihilation.ProjectileDefExtension">
+		<extraProjectiles>4</extraProjectiles>
+	  </li>
+	</modExtensions>
+    <projectile Class="AnimatedProjectile.AnimatedProjectileProperties">
+        <ticksPerFrame>15</ticksPerFrame>
+        <growerDistance>true</growerDistance>
+        <setsFire>true</setsFire>
+        <ignites>true</ignites>
+        <drawGlow>true</drawGlow>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Flame</damageDef>
+		<damageAmountBase>5</damageAmountBase>
+		<armorPenetrationBase>0.08</armorPenetrationBase>
+		<explosionRadius>0.75</explosionRadius>
+		<explosionChanceToStartFire>1.0</explosionChanceToStartFire>
+		<postExplosionSpawnThingDef>Filth_Fuel</postExplosionSpawnThingDef>
+		<preExplosionSpawnChance>0.5</preExplosionSpawnChance>
+		<stoppingPower>0.75</stoppingPower>
+		<speed>20</speed>
+    </projectile>
+  </ThingDef>
+ 
+<!-- ====================== XAMWS-24 ===================== -->
   <ThingDef ParentName="BaseGun">
-    <defName>Gun_TSF_RocketLauncher</defName>
-    <label>rocket launcher</label>
-    <description>A single-use rocket launcher that fires three large-bore explosive rockets. Good against small groups of tough targets.\n\nBecause of its unwieldiness, single-use limitation, and the massive destruction it causes, it's said that one must be slightly crazy to use this weapon.</description>
+    <defName>Gun_TSF_24XAMWS</defName>
+    <label>XAMWS-24</label>
+    <description>A launcher that fires two large-bore explosive rockets. Good against small groups of tough targets.\n\nBecause of its unwieldiness, and the massive destruction it causes, it's said that one must be slightly crazy to use this weapon.</description>
     <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</texPath>
@@ -807,6 +1162,17 @@
       <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
     </statBases>
     <techLevel>Spacer</techLevel>
+	<recipeMaker>
+		<researchPrerequisite>ChargedShot</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	</recipeMaker>
+    <costList>
+		<Steel>100</Steel>
+		<ComponentIndustrial>4</ComponentIndustrial>
+		<Chemfuel>25</Chemfuel>
+    </costList>
     <weaponTags>
       <li>Gun</li>
       <li>GunSingleUse</li>
@@ -822,9 +1188,9 @@
       <li>
         <verbClass>Verb_ShootOneUse</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_TSF_RocketLauncherRocket</defaultProjectile>
+        <defaultProjectile>Bullet_TSF_24XAMWS</defaultProjectile>
         <forcedMissRadius>2.9</forcedMissRadius>
-        <warmupTime>4.5</warmupTime>
+        <warmupTime>3.0</warmupTime>
         <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
         <range>35.9</range>
         <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
@@ -858,7 +1224,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BaseBullet">
-    <defName>Bullet_TSF_RocketLauncherRocket</defName>
+    <defName>Bullet_TSF_24XAMWS</defName>
     <label>rocket</label>
     <graphicData>
       <texPath>Things/Projectile/Rocket_Big</texPath>
@@ -866,13 +1232,17 @@
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
     <thingClass>Projectile_Explosive</thingClass>
+	<modExtensions>
+	  <li Class="MuvLuvAnnihilation.ProjectileDefExtension">
+		<extraProjectiles>4</extraProjectiles>
+	  </li>
+	</modExtensions>
     <projectile>
       <damageDef>Bomb</damageDef>
-      <!-- Use default damage from explosion def -->
+		<damageAmountBase>36</damageAmountBase>
       <explosionRadius>3.9</explosionRadius>
       <speed>50</speed>
     </projectile>
   </ThingDef>
-
 
 </Defs>

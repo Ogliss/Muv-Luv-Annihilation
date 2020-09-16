@@ -1,4 +1,4 @@
-﻿using MuvLuvBeta.HarmonyInstance;
+﻿using MuvLuvAnnihilation.HarmonyInstance;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     // Token: 0x02000A0D RID: 2573
     public class Verb_MeleeAttackThrow : Verb_MeleeAttack

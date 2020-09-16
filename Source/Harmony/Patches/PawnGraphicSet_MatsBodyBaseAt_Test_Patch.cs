@@ -4,7 +4,7 @@ using UnityEngine;
 using HarmonyLib;
 using System.Collections.Generic;
 
-namespace MuvLuvBeta.HarmonyInstance
+namespace MuvLuvAnnihilation.HarmonyInstance
 {
     [HarmonyPatch(typeof(PawnGraphicSet), "MatsBodyBaseAt")]
     public static class PawnGraphicSet_MatsBodyBaseAt_Test_Patch

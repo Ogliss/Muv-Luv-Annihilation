@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ApparelArmorCataphractBase" Name="MLB_ApparelTSFBase" Abstract="true">
+    <defName>Apparel_TSFSuit</defName>
+    <label>prototype TSF armor</label>
+    <description>A variant of recon armor with an integrated burst rocket for short-ranged flight. Locust armor is slightly less protective than standard recon armor. Each jump consumes a burst of fuel, so the armor must be reloaded after several uses.\n\nUnlike most ultratech military units, locusts train primarily with melee weapons. They usually avoid static shootouts, preferring to jump straight into enemy fortifications and fight hand-to-hand. They do poorly in static defense or confined quarters, but excel in mixed cover or shipcracking operations.</description>
+    <statBases>
+      <JumpRange>27</JumpRange>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>0.70</MoveSpeed>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>MLA_TSFFabrication</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+      <li Class="MuvLuvAnnihilation.CompProperties_ReloadableDual">
+	  
+        <maxCharges>20</maxCharges>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>20</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>jump</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		
+        <maxChargesSecondry>5</maxChargesSecondry>
+        <ammoDefSecondry>Chemfuel</ammoDefSecondry>
+        <ammoCountPerChargeSecondry>20</ammoCountPerChargeSecondry>
+        <baseReloadTicksSecondry>60</baseReloadTicksSecondry>
+        <hotKeySecondry>Misc5</hotKeySecondry>
+        <chargeNounSecondry>dash</chargeNounSecondry>
+        <displayGizmoWhileUndraftedSecondry>false</displayGizmoWhileUndraftedSecondry>
+      </li>
+	</comps>
+    <verbs>
+      <li>
+        <verbClass>MuvLuvAnnihilation.Verb_Jump</verbClass>
+        <label>jump</label>
+        <violent>false</violent>
+        <commandIcon>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</commandIcon>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>True</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.5</warmupTime>
+        <warmupEffecter>JumpWarmupEffect</warmupEffecter>
+        <requireLineOfSight>true</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+      </li>
+      <li>
+        <verbClass>MuvLuvAnnihilation.Verb_Dash</verbClass>
+        <defaultProjectile>PawnDasher</defaultProjectile>
+        <label>dash</label>
+        <commandIcon>UI/Icons/HostilityResponse/Flee</commandIcon>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>True</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.1</warmupTime>
+        <warmupEffecter>JumpWarmupEffect</warmupEffecter>
+        <requireLineOfSight>true</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="MLB_ApparelTSFBase">
+    <defName>Apparel_A10ThunderboltII</defName>
+    <label>A-10 Thunderbolt II</label>
+    <description>A variant of TSF armor with an integrated Daul Miniguns.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1.5</projectileOffset>
+        <maxCharges>750</maxCharges>
+        <ammoDef>Ammo_TSF_Minigun</ammoDef>
+        <ammoCountPerCharge>0.04</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>left minigun</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
+		<gizmoID>1</gizmoID>
+        <hotKey>Misc4</hotKey>
+		<offsetNorth>-1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-2.0,0.35</offsetEast>
+		<offsetWest>0,0.0,0.65</offsetWest>
+	  </li>
+	  
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1.5</projectileOffset>
+        <maxCharges>750</maxCharges>
+        <ammoDef>Ammo_TSF_Minigun</ammoDef>
+        <ammoCountPerCharge>0.04</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>right minigun</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
+		<gizmoID>2</gizmoID>
+        <hotKey>Misc4</hotKey>
+		<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-0.0,0.65</offsetEast>
+		<offsetWest>0,-2.0,0.35</offsetWest>
+	  </li>
+		  <li Class="MuvLuvAnnihilation.CompProperties_ExosuitDrawer">
+				<ExtrasEntries>
+					<li>
+						<UseBodytypeOffsets>True</UseBodytypeOffsets>
+						<shaderType>CutoutComplex</shaderType>
+						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<commonality>10</commonality>
+						<drawSize>4,4</drawSize>
+						<hidesHair>True</hidesHair>
+						<hidesHead>True</hidesHead>
+						<hidesBody>True</hidesBody>
+					</li>
+				</ExtrasEntries>
+				<NorthOffset>0,-0.0,0</NorthOffset>
+				<SouthOffset>0,0.0,0</SouthOffset>
+				<EastOffset>0,-0.0,0</EastOffset>
+				<WestOffset>0,0.0,0</WestOffset>
+		  </li>
+	</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MLB_ApparelTSFBase">
+    <defName>Apparel_EF2000Typhoon</defName>
+    <label>EF-2000 Typhoon</label>
+    <description>A variant of TSF armor with an integrated Minigun and Missile Launcher.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1.5</projectileOffset>
+        <maxCharges>750</maxCharges>
+        <ammoDef>Ammo_TSF_Minigun</ammoDef>
+        <ammoCountPerCharge>0.04</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>minigun</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
+		<gizmoID>1</gizmoID>
+        <hotKey>Misc4</hotKey>
+		<offsetNorth>-1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-2.0,0.35</offsetEast>
+		<offsetWest>0,0.0,0.65</offsetWest>
+	  </li>
+	  
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1</projectileOffset>
+        <maxCharges>90</maxCharges>
+        <ammoDef>Ammo_TSF_Missile</ammoDef>
+        <ammoCountPerCharge>0.16</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>missiles</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMultiMissileLauncher</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
+		<gizmoID>2</gizmoID>
+        <hotKey>Misc5</hotKey>
+		<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-0.0,0.65</offsetEast>
+		<offsetWest>0,-2.0,0.35</offsetWest>
+	  </li>
+		  <li Class="MuvLuvAnnihilation.CompProperties_ExosuitDrawer">
+				<ExtrasEntries>
+					<li>
+						<UseBodytypeOffsets>True</UseBodytypeOffsets>
+						<shaderType>CutoutComplex</shaderType>
+						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<commonality>10</commonality>
+						<drawSize>4,4</drawSize>
+						<hidesHair>True</hidesHair>
+						<hidesHead>True</hidesHead>
+						<hidesBody>True</hidesBody>
+					</li>
+				</ExtrasEntries>
+				<NorthOffset>0,-0.0,0</NorthOffset>
+				<SouthOffset>0,0.0,0</SouthOffset>
+				<EastOffset>0,-0.0,0</EastOffset>
+				<WestOffset>0,0.0,0</WestOffset>
+		  </li>
+	</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MLB_ApparelTSFBase">
+    <defName>Apparel_F18EFSuperHornet</defName>
+    <label>F-18E/F Super Hornet</label>
+    <description>A variant of TSF armor with integrated Dual Missile Launchers.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1</projectileOffset>
+        <maxCharges>90</maxCharges>
+        <ammoDef>Ammo_TSF_Missile</ammoDef>
+        <ammoCountPerCharge>0.16</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>missiles</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMultiMissileLauncher</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
+		<gizmoID>1</gizmoID>
+        <hotKey>Misc4</hotKey>
+		<offsetNorth>-1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-2.0,0.35</offsetEast>
+		<offsetWest>0,0.0,0.65</offsetWest>
+	  </li>
+	  
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1</projectileOffset>
+        <maxCharges>90</maxCharges>
+        <ammoDef>Ammo_TSF_Missile</ammoDef>
+        <ammoCountPerCharge>0.16</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>missiles</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMultiMissileLauncher</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
+		<gizmoID>2</gizmoID>
+        <hotKey>Misc5</hotKey>
+		<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-0.0,0.65</offsetEast>
+		<offsetWest>0,-2.0,0.35</offsetWest>
+	  </li>
+		  <li Class="MuvLuvAnnihilation.CompProperties_ExosuitDrawer">
+				<ExtrasEntries>
+					<li>
+						<UseBodytypeOffsets>True</UseBodytypeOffsets>
+						<shaderType>CutoutComplex</shaderType>
+						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<commonality>10</commonality>
+						<drawSize>4,4</drawSize>
+						<hidesHair>True</hidesHair>
+						<hidesHead>True</hidesHead>
+						<hidesBody>True</hidesBody>
+					</li>
+				</ExtrasEntries>
+				<NorthOffset>0,-0.0,0</NorthOffset>
+				<SouthOffset>0,0.0,0</SouthOffset>
+				<EastOffset>0,-0.0,0</EastOffset>
+				<WestOffset>0,0.0,0</WestOffset>
+		  </li>
+	</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MLB_ApparelTSFBase">
+    <defName>Apparel_XFJ01Shiranui</defName>
+    <label>XFJ-01 Shiranui</label>
+    <description>A variant of TSF armor with an integrated Minigun and Missile Launcher.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1.5</projectileOffset>
+        <maxCharges>750</maxCharges>
+        <ammoDef>Ammo_TSF_Minigun</ammoDef>
+        <ammoCountPerCharge>0.04</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>minigun</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
+		<gizmoID>1</gizmoID>
+        <hotKey>Misc4</hotKey>
+		<offsetNorth>-1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-2.0,0.35</offsetEast>
+		<offsetWest>0,0.0,0.65</offsetWest>
+	  </li>
+	  
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1</projectileOffset>
+        <maxCharges>15</maxCharges>
+        <ammoDef>Ammo_TSF_Cannon120mm</ammoDef>
+        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>shells</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretCannon120mm</TurretDef>
+		<iconPath>Things/Building/Security/TurretAutocannon_Top</iconPath>
+		<gizmoID>2</gizmoID>
+        <hotKey>Misc5</hotKey>
+		<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-0.0,0.65</offsetEast>
+		<offsetWest>0,-2.0,0.35</offsetWest>
+	  </li>
+		  <li Class="MuvLuvAnnihilation.CompProperties_ExosuitDrawer">
+				<ExtrasEntries>
+					<li>
+						<UseBodytypeOffsets>True</UseBodytypeOffsets>
+						<shaderType>CutoutComplex</shaderType>
+						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<commonality>10</commonality>
+						<drawSize>4,4</drawSize>
+						<hidesHair>True</hidesHair>
+						<hidesHead>True</hidesHead>
+						<hidesBody>True</hidesBody>
+					</li>
+				</ExtrasEntries>
+				<NorthOffset>0,-0.0,0</NorthOffset>
+				<SouthOffset>0,0.0,0</SouthOffset>
+				<EastOffset>0,-0.0,0</EastOffset>
+				<WestOffset>0,0.0,0</WestOffset>
+		  </li>
+	</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MLB_ApparelTSFBase">
+    <defName>Apparel_SU37Terminator</defName>
+    <label>SU-37 Terminator</label>
+    <description>A variant of TSF armor with an integrated Minigun and Mortar.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1.5</projectileOffset>
+        <maxCharges>750</maxCharges>
+        <ammoDef>Ammo_TSF_Minigun</ammoDef>
+        <ammoCountPerCharge>0.04</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>minigun</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
+		<gizmoID>1</gizmoID>
+        <hotKey>Misc4</hotKey>
+		<offsetNorth>-1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-2.0,0.35</offsetEast>
+		<offsetWest>0,0.0,0.65</offsetWest>
+	  </li>
+	  
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1</projectileOffset>
+        <maxCharges>15</maxCharges>
+        <ammoDef>Ammo_TSF_Mortar</ammoDef>
+        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>shells</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMortar</TurretDef>
+		<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
+		<gizmoID>2</gizmoID>
+        <hotKey>Misc5</hotKey>
+		<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-0.0,0.65</offsetEast>
+		<offsetWest>0,-2.0,0.35</offsetWest>
+	  </li>
+		  <li Class="MuvLuvAnnihilation.CompProperties_ExosuitDrawer">
+				<ExtrasEntries>
+					<li>
+						<UseBodytypeOffsets>True</UseBodytypeOffsets>
+						<shaderType>CutoutComplex</shaderType>
+						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<commonality>10</commonality>
+						<drawSize>4,4</drawSize>
+						<hidesHair>True</hidesHair>
+						<hidesHead>True</hidesHead>
+						<hidesBody>True</hidesBody>
+					</li>
+				</ExtrasEntries>
+				<NorthOffset>0,-0.0,0</NorthOffset>
+				<SouthOffset>0,0.0,0</SouthOffset>
+				<EastOffset>0,-0.0,0</EastOffset>
+				<WestOffset>0,0.0,0</WestOffset>
+		  </li>
+	</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MLB_ApparelTSFBase">
+    <defName>Apparel_JAS39Gripen</defName>
+    <label>JAS-39 Gripen</label>
+    <description>A variant of TSF armor with an integrated Dual Mortars.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1</projectileOffset>
+        <maxCharges>15</maxCharges>
+        <ammoDef>Ammo_TSF_Mortar</ammoDef>
+        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>shells</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMortar</TurretDef>
+		<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
+		<gizmoID>1</gizmoID>
+        <hotKey>Misc4</hotKey>
+		<offsetNorth>-1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-2.0,0.35</offsetEast>
+		<offsetWest>0,0.0,0.65</offsetWest>
+	  </li>
+	  
+	  <li Class="CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1</projectileOffset>
+        <maxCharges>15</maxCharges>
+        <ammoDef>Ammo_TSF_Mortar</ammoDef>
+        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>shells</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMortar</TurretDef>
+		<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
+		<gizmoID>2</gizmoID>
+        <hotKey>Misc5</hotKey>
+		<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+		<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+		<offsetEast>0,-0.0,0.65</offsetEast>
+		<offsetWest>0,-2.0,0.35</offsetWest>
+	  </li>
+		  <li Class="MuvLuvAnnihilation.CompProperties_ExosuitDrawer">
+				<ExtrasEntries>
+					<li>
+						<UseBodytypeOffsets>True</UseBodytypeOffsets>
+						<shaderType>CutoutComplex</shaderType>
+						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<commonality>10</commonality>
+						<drawSize>4,4</drawSize>
+						<hidesHair>True</hidesHair>
+						<hidesHead>True</hidesHead>
+						<hidesBody>True</hidesBody>
+					</li>
+				</ExtrasEntries>
+				<NorthOffset>0,-0.0,0</NorthOffset>
+				<SouthOffset>0,0.0,0</SouthOffset>
+				<EastOffset>0,-0.0,0</EastOffset>
+				<WestOffset>0,0.0,0</WestOffset>
+		  </li>
+	</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MLB_ApparelTSFBase">
+    <defName>Apparel_Type00RTakemikazuchi</defName>
+    <label>Type-00R Takemikazuchi</label>
+    <description>A Melee focused variant of TSF armor.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <ArmorRating_Sharp>1.32</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.66</ArmorRating_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeDodgeChance>0.15</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+		  <li Class="MuvLuvAnnihilation.CompProperties_ExosuitDrawer">
+				<ExtrasEntries>
+					<li>
+						<UseBodytypeOffsets>True</UseBodytypeOffsets>
+						<shaderType>CutoutComplex</shaderType>
+						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<commonality>10</commonality>
+						<drawSize>4,4</drawSize>
+						<hidesHair>True</hidesHair>
+						<hidesHead>True</hidesHead>
+						<hidesBody>True</hidesBody>
+					</li>
+				</ExtrasEntries>
+				<NorthOffset>0,-0.0,0</NorthOffset>
+				<SouthOffset>0,0.0,0</SouthOffset>
+				<EastOffset>0,-0.0,0</EastOffset>
+				<WestOffset>0,0.0,0</WestOffset>
+		  </li>
+	</comps>
+  </ThingDef>
+
+
+</Defs>

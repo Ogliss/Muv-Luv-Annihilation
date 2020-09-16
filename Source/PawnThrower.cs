@@ -4,7 +4,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
 	// Token: 0x02000D25 RID: 3365
 	public class PawnThrower : PawnThrown

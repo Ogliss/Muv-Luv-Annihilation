@@ -4,18 +4,18 @@
     <defName>CompTurretDisabledByEMP</defName>
     <children>
       <li>
-        <subEffecterClass>MuvLuvBeta.SubEffecterComp_Sustainer</subEffecterClass>
+        <subEffecterClass>CompTurret.SubEffecterComp_Sustainer</subEffecterClass>
         <soundDef>EmpDisabled</soundDef>
       </li>
       <li>
-        <subEffecterClass>MuvLuvBeta.SubEffecterComp_SprayerTriggered</subEffecterClass>
+        <subEffecterClass>CompTurret.SubEffecterComp_SprayerTriggered</subEffecterClass>
         <moteDef>Mote_GrowingFlash</moteDef>
         <burstCount>1~1</burstCount>
         <scale>5~5</scale>
         <spawnLocType>OnSource</spawnLocType>
       </li>
       <li>
-        <subEffecterClass>MuvLuvBeta.SubEffecterComp_SprayerChance</subEffecterClass>
+        <subEffecterClass>CompTurret.SubEffecterComp_SprayerChance</subEffecterClass>
         <moteDef>Mote_BlastEMP</moteDef>
         <scale>0.6~1</scale>
         <spawnLocType>OnSource</spawnLocType>
@@ -24,7 +24,7 @@
         <positionRadius>0.25</positionRadius>
       </li>
       <li>
-        <subEffecterClass>MuvLuvBeta.SubEffecterComp_SprayerContinuous</subEffecterClass>
+        <subEffecterClass>CompTurret.SubEffecterComp_SprayerContinuous</subEffecterClass>
         <moteDef>Mote_Smoke</moteDef>
         <ticksBetweenMotes>30</ticksBetweenMotes>
         <scale>0.6~1.1</scale>

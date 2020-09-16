@@ -10,7 +10,7 @@ using HarmonyLib;
 using Verse.Sound;
 using UnityEngine;
 
-namespace MuvLuvBeta.HarmonyInstance
+namespace MuvLuvAnnihilation.HarmonyInstance
 {
     [HarmonyPatch(typeof(PawnGraphicSet), "HeadMatAt_NewTemp")]
     public static class PawnGraphicSet_HeadMatAt_NewTemp_Test_Patch

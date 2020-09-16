@@ -8,7 +8,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     public static class MLB_AttackTargetFinder
     {

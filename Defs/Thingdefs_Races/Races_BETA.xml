@@ -9,14 +9,15 @@
     <statBases>
       <MarketValue>200</MarketValue>
       <LeatherAmount>0</LeatherAmount>
-      <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.22</ArmorRating_Heat>
     </statBases>
     <race>
       <body>BETASoldier</body>
       <baseHungerRate>0.25</baseHungerRate>
       <baseBodySize>1.3</baseBodySize>
-      <baseHealthScale>1.5</baseHealthScale>
+      <baseHealthScale>1.65</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <useMeatFrom>Megaspider</useMeatFrom>
       <wildness>0.95</wildness>
@@ -86,15 +87,16 @@
     <statBases>
       <MarketValue>200</MarketValue>
       <LeatherAmount>0</LeatherAmount>
-      <ArmorRating_Blunt>0.11</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.11</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.121</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.121</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.121</ArmorRating_Heat>
       <MeleeDodgeChance>1.75</MeleeDodgeChance>
     </statBases>
     <race>
       <body>BETAWarrior</body>
       <baseHungerRate>0.25</baseHungerRate>
       <baseBodySize>1.5</baseBodySize>
-      <baseHealthScale>1.5</baseHealthScale>
+      <baseHealthScale>1.65</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <useMeatFrom>Megaspider</useMeatFrom>
       <wildness>0.95</wildness>
@@ -146,15 +148,15 @@
     <statBases>
       <MarketValue>200</MarketValue>
       <LeatherAmount>0</LeatherAmount>
-      <ArmorRating_Blunt>0.27</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.27</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.6</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.297</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.297</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.297</ArmorRating_Heat>
     </statBases>
     <race>
       <body>BETATank</body>
       <baseHungerRate>0.25</baseHungerRate>
       <baseBodySize>1.8</baseBodySize>
-      <baseHealthScale>2.80</baseHealthScale>
+      <baseHealthScale>3.08</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <useMeatFrom>Megaspider</useMeatFrom>
       <wildness>0.95</wildness>
@@ -224,9 +226,9 @@
       <MoveSpeed>4.75</MoveSpeed>
       <MarketValue>500</MarketValue>
       <LeatherAmount>0</LeatherAmount>
-      <ArmorRating_Blunt>0.42</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.42</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.42</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.462</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.462</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.462</ArmorRating_Heat>
     </statBases>
     <race>
       <body>BETAGrappler</body>
@@ -295,7 +297,7 @@
 
   	<ThingDef ParentName="BaseBullet">
 	   <defName>BETA_GrapplerClassThrown</defName>
-	   <thingClass>MuvLuvBETA.MLB_ThrownObject</thingClass>
+	   <thingClass>MuvLuvAnnihilation.MLB_ThrownObject</thingClass>
 	   <label>charge</label>
 	   <graphicData>
 			<texPath>DummyTexture</texPath>
@@ -312,7 +314,7 @@
 	
   	<ThingDef ParentName="PawnFlyerBase">
 	   <defName>PawnThrown</defName>
-	   <thingClass>MuvLuvBETA.PawnThrower</thingClass>
+	   <thingClass>MuvLuvAnnihilation.PawnThrower</thingClass>
 	   <label>charge</label>
 	   <graphicData>
 			<texPath>DummyTexture</texPath>
@@ -355,15 +357,15 @@
       <MoveSpeed>5</MoveSpeed>
       <MarketValue>500</MarketValue>
       <LeatherAmount>0</LeatherAmount>
-      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.6</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.66</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.66</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.66</ArmorRating_Heat>
     </statBases>
     <race>
       <body>BETADestroyer</body>
       <baseHungerRate>0.35</baseHungerRate>
       <baseBodySize>6</baseBodySize>
-      <baseHealthScale>10.500</baseHealthScale>
+      <baseHealthScale>11.550</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <meatLabel>BETA meat</meatLabel>
       <wildness>0.95</wildness>
@@ -405,7 +407,7 @@
       </li>
     </tools>
     <comps> 
-		<li Class = "MuvLuvBETA.CompProperties_Charger">
+		<li Class = "MuvLuvAnnihilation.CompProperties_Charger">
 		  <RangeMax>20</RangeMax>
 		  <RangeMin>7</RangeMin>
 		  <explodingRadius>3</explodingRadius>
@@ -420,7 +422,7 @@
  
   	<ThingDef ParentName="BaseBullet">
 	   <defName>BETA_DestroyerClassCharge</defName>
-	   <thingClass>MuvLuvBETA.ChargingThing</thingClass>
+	   <thingClass>MuvLuvAnnihilation.ChargingThing</thingClass>
 	   <label>charge</label>
 	   <graphicData>
 			<texPath>DummyTexture</texPath>
@@ -443,15 +445,15 @@
     <statBases>
       <MarketValue>250</MarketValue>
       <LeatherAmount>0</LeatherAmount>
-      <ArmorRating_Blunt>1.1</ArmorRating_Blunt>
-      <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
-      <ArmorRating_Heat>1.1</ArmorRating_Heat>
+      <ArmorRating_Blunt>1.21</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.21</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.21</ArmorRating_Heat>
     </statBases>
     <race>
       <body>BETAFort</body>
       <baseHungerRate>0.35</baseHungerRate>
       <baseBodySize>20</baseBodySize>
-      <baseHealthScale>20</baseHealthScale>
+      <baseHealthScale>22</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <meatLabel>BETA meat</meatLabel>
       <wildness>0.95</wildness>
@@ -504,7 +506,7 @@
         <maxSpawnedPawnsPoints>1000</maxSpawnedPawnsPoints>
         <!--initialPawnsCount>4</initialPawnsCount-->
       </li>
-      <li Class="MuvLuvBeta.CompProperties_BETASpawnerOnDamaged">
+      <li Class="MuvLuvAnnihilation.CompProperties_BETASpawnerOnDamaged">
         <allowedKinddefs>
           <li>BETA_SoldierClass</li>
           <li>BETA_TankClass</li>
@@ -524,16 +526,16 @@
     <statBases>
       <MarketValue>200</MarketValue>
       <LeatherAmount>0</LeatherAmount>
-      <ArmorRating_Blunt>0.24</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.24</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.36</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.264</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.264</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.264</ArmorRating_Heat>
       <ShootingAccuracyPawn>999999</ShootingAccuracyPawn>
     </statBases>
     <race>
       <body>BETALaser</body>
       <baseHungerRate>0.25</baseHungerRate>
       <baseBodySize>1.8</baseBodySize>
-      <baseHealthScale>2</baseHealthScale>
+      <baseHealthScale>2.2</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <useMeatFrom>Megaspider</useMeatFrom>
       <wildness>0.95</wildness>
@@ -578,7 +580,7 @@
       </li>
     </tools>
     <comps>
-      <li Class="MuvLuvBeta.CompProperties_BETAProjectileInterceptor">
+      <li Class="MuvLuvAnnihilation.CompProperties_BETAProjectileInterceptor">
         <radius>12</radius>
         <interceptAirProjectiles>true</interceptAirProjectiles>
         <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
@@ -616,14 +618,14 @@
       </li>
     </stages>
     <comps>
-      <li Class="MuvLuvBETA.HediffCompProperties_VerbGiverBETA">
+      <li Class="MuvLuvAnnihilation.HediffCompProperties_VerbGiverBETA">
 		<verbs>
 			<li>
 				<accuracyTouch>1</accuracyTouch>
 				<accuracyShort>1</accuracyShort>
 				<accuracyMedium>1</accuracyMedium>
 				<accuracyLong>1</accuracyLong>
-				<verbClass>MuvLuvBETA.Verb_LaunchProjectileCantMiss</verbClass>
+				<verbClass>MuvLuvAnnihilation.Verb_LaunchProjectileCantMiss</verbClass>
 				<label>Standard</label>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>BETA_LuxLaser</defaultProjectile>
@@ -673,16 +675,16 @@
       <ComfyTemperatureMin>-40</ComfyTemperatureMin>
       <MarketValue>500</MarketValue>
       <LeatherAmount>0</LeatherAmount>
-      <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.4</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.33</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.33</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.33</ArmorRating_Heat>
       <ShootingAccuracyPawn>999999</ShootingAccuracyPawn>
     </statBases>
     <race>
       <body>BETAHeavyLaser</body>
       <baseHungerRate>0.35</baseHungerRate>
       <baseBodySize>2.6</baseBodySize>
-      <baseHealthScale>3</baseHealthScale>
+      <baseHealthScale>3.3</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <meatLabel>BETA meat</meatLabel>
       <wildness>0.95</wildness>
@@ -727,7 +729,7 @@
       </li>
     </tools>
     <comps>
-      <li Class="MuvLuvBeta.CompProperties_BETAProjectileInterceptor">
+      <li Class="MuvLuvAnnihilation.CompProperties_BETAProjectileInterceptor">
         <radius>18</radius>
         <interceptAirProjectiles>true</interceptAirProjectiles>
         <color>(0.6, 0.6, 0.6)</color>
@@ -751,14 +753,14 @@
       </li>
     </stages>
     <comps>
-      <li Class="MuvLuvBETA.HediffCompProperties_VerbGiverBETA">
+      <li Class="MuvLuvAnnihilation.HediffCompProperties_VerbGiverBETA">
 		<verbs>
 			<li>
 				<accuracyTouch>1</accuracyTouch>
 				<accuracyShort>1</accuracyShort>
 				<accuracyMedium>1</accuracyMedium>
 				<accuracyLong>1</accuracyLong>
-				<verbClass>MuvLuvBETA.Verb_LaunchProjectileCantMiss</verbClass>
+				<verbClass>MuvLuvAnnihilation.Verb_LaunchProjectileCantMiss</verbClass>
 				<label>Standard</label>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>BETA_MagnusLuxLaser</defaultProjectile>

@@ -29,7 +29,7 @@
           <targetAcquireRadius>10</targetAcquireRadius>
           <targetKeepRadius>15</targetKeepRadius>
         </li>
-        <li Class="MuvLuvBeta.JobGiver_AICutColonyPowerClose" />
+        <li Class="MuvLuvAnnihilation.JobGiver_AICutColonyPowerClose" />
         <li Class="JobGiver_AIFightEnemies">
           <targetAcquireRadius>65</targetAcquireRadius>
           <targetKeepRadius>72</targetKeepRadius>

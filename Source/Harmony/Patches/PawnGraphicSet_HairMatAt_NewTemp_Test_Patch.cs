@@ -3,7 +3,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace MuvLuvBeta.HarmonyInstance
+namespace MuvLuvAnnihilation.HarmonyInstance
 {
     [HarmonyPatch(typeof(PawnGraphicSet), "HairMatAt_NewTemp")]
     public static class PawnGraphicSet_HairMatAt_NewTemp_Test_Patch

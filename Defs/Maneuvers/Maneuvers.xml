@@ -4,7 +4,7 @@
     <defName>BETA_GrapplerClass_Throw</defName>
     <requiredCapacity>BETA_GrapplerClass_Throw</requiredCapacity>
     <verb>
-      <verbClass>MuvLuvBETA.Verb_MeleeAttackThrow</verbClass>
+      <verbClass>MuvLuvAnnihilation.Verb_MeleeAttackThrow</verbClass>
       <meleeDamageDef>Blunt</meleeDamageDef>
     </verb>
     <logEntryDef>MeleeAttack</logEntryDef>

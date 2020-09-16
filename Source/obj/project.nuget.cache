@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "CJnQVh4pldrNcyzNjN3amlE4pW0QoiTIkYFdgqoopel6mBWS/FXWWsicEoaik2NgPegfM5tc0paavmGHXf6X+A==",
+  "success": true,
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-BETA\\Source\\MuvLuv-Beta.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\krafs.rimworld.ref\\1.2.2753\\krafs.rimworld.ref.1.2.2753.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\lib.harmony\\2.0.2\\lib.harmony.2.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

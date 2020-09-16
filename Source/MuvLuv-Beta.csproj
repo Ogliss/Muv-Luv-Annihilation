@@ -7,8 +7,8 @@
     <ProjectGuid>{2F6FA017-C6D2-4A13-BEF6-42964EA04B6D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MuvLuvBeta</RootNamespace>
-    <AssemblyName>MuvLuv-Beta</AssemblyName>
+    <RootNamespace>MuvLuvAnnihilation</RootNamespace>
+    <AssemblyName>MuvLuv-Annihilation</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,33 +33,19 @@
   <ItemGroup>
     <Compile Include="BETADefOf.cs" />
     <None Include="Harmony\Patches\Projectile_Launch_MuzzlePosition_Patch.cs.bak" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
+    <Compile Include="ProjectileDefExtension.cs" />
+    <Compile Include="Harmony\Patches\Verb_Shoot_TryCastShot_Scattershot_Patch.cs" />
+    <Compile Include="Harmony\Patches\JobGiver_AIFightEnemy_TryGiveJob_BETAKillDowned_Patch.cs" />
+    <Compile Include="PawnDasher.cs" />
+    <Compile Include="Verb_Dash.cs" />
+    <Compile Include="Verb_Jump.cs" />
+    <Compile Include="CompReloadableDual.cs" />
     <Compile Include="ReloadableDualUtility.cs" />
-    <Compile Include="Command_ToggleCompTurret.cs" />
     <Compile Include="Command_ReloadableDual.cs" />
-    <Compile Include="Harmony\Patches\FloatMenuMakerMap_AddHumanlikeOrders_Test_Patch - Copy.cs" />
-    <Compile Include="SubEffecterComp_Sustainer.cs" />
-    <Compile Include="SubEffecterComp_SprayerTriggered.cs" />
-    <Compile Include="SubEffecterComp_SprayerContinuous.cs" />
-    <Compile Include="SubEffecter_CompSprayer.cs" />
-    <Compile Include="EffecterComp.cs" />
-    <Compile Include="SubEffecterComp.cs" />
-    <Compile Include="SubEffecterComp_SprayerChance.cs" />
-    <Compile Include="MoteCompTurretAttached.cs" />
-    <Compile Include="Harmony\Patches\MLB_Apparel_GetWornGizmos_ApparelTurret_Patch - Copy.cs" />
+    <Compile Include="Harmony\Patches\FloatMenuMakerMap_AddHumanlikeOrders_CompReloadableDual_Patch.cs" />
     <Compile Include="PawnThrower.cs" />
     <Compile Include="PawnThrown.cs" />
-    <Compile Include="JobDriver_ReloadCompTurret.cs" />
-    <Compile Include="CompTurretReloadableUtility.cs" />
-    <Compile Include="Command_TSFReloadable.cs" />
-    <Compile Include="ApparelTurretTop.cs" />
     <Compile Include="CompExosuitDrawer.cs" />
-    <Compile Include="JobDefOf.cs" />
-    <Compile Include="JobGiver_ReloadCompTurret.cs" />
-    <Compile Include="Harmony\Patches\MLB_Pawn_DrawAt_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_Pawn_DrawExtraSelectionOverlays_Patch.cs" />
-    <Compile Include="Harmony\Patches\FloatMenuMakerMap_AddHumanlikeOrders_Test_Patch.cs" />
     <Compile Include="Harmony\Patches\PawnGraphicSet_HairMatAt_NewTemp_Test_Patch.cs" />
     <Compile Include="Harmony\Patches\PawnGraphicSet_HeadMatAt_NewTemp_Test_Patch.cs" />
     <Compile Include="Harmony\Patches\PawnGraphicSet_MatsBodyBaseAt_Test_Patch.cs" />
@@ -67,63 +53,64 @@
     <Compile Include="PawnGraphicSet_Invisible.cs" />
     <Compile Include="Graphic_Invisible.cs" />
     <Compile Include="Harmony\Patches\PawnRenderer_RenderPawnInternal_DrawExosuit_Transpiler.cs" />
-    <Compile Include="Command_ApparelTurretVerbTarget.cs" />
-    <Compile Include="Harmony\Patches\MLB_Apparel_Tick_ApparelTurret_Patch.cs" />
-    <Compile Include="Verb_ShootCompMounted.cs" />
-    <Compile Include="CompApparel_Turret.cs" />
-    <Compile Include="CompApparel_TurretGun.cs" />
     <Compile Include="CompBETASpawnerOnDamaged.cs" />
-    <Compile Include="Harmony\Patches\MLB_Apparel_GetWornGizmos_ApparelTurret_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_GetOrGenerateMapUtility_GetOrGenerateMap_BETA_Patch.cs" />
-    <None Include="Harmony\Patches\MLB_SymbolResolver_PawnHiveGroup_Resolve_BETA_Patch.cs.bak" />
-    <None Include="Harmony\Patches\MLB_SymbolResolver_Hivebase_Resolve_BETA_Patch.cs.bak" />
-    <Compile Include="Harmony\Patches\MLB_Hediff_CauseDeathNow_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_TrashUtility_TrashJob_NewTemp_BETA_Patch.cs" />
+    <None Include="Harmony\Patches\SymbolResolver_PawnHiveGroup_Resolve_BETA_Patch.cs.bak" />
+    <None Include="Harmony\Patches\SymbolResolver_Hivebase_Resolve_BETA_Patch.cs.bak" />
+    <Compile Include="Harmony\Patches\Hediff_CauseDeathNow_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\TrashUtility_TrashJob_NewTemp_BETA_Patch.cs" />
     <Compile Include="LordJob_AssaultColony_CutPower.cs" />
     <Compile Include="LordToil_AssaultColony_CutPower.cs" />
     <Compile Include="JobGiver_AICutColonyPowerClose.cs" />
     <Compile Include="CompBETAProjectileInterceptor.cs" />
-    <Compile Include="Harmony\Patches\MLB_SettlementDefeatUtility_IsDefeated_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_HediffSet_get_PainTotal_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_HediffComp_Infecter_CheckMakeInfection_Patch.cs" />
-    <None Include="Harmony\Patches\MLB_IncidentWorker_Infestation_TryExecuteWorker_BETA_Patch.cs.bak" />
+    <Compile Include="Harmony\Patches\SettlementDefeatUtility_IsDefeated_Patch.cs" />
+    <Compile Include="Harmony\Patches\HediffSet_get_PainTotal_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\HediffComp_Infecter_CheckMakeInfection_Patch.cs" />
+    <None Include="Harmony\Patches\IncidentWorker_Infestation_TryExecuteWorker_BETA_Patch.cs.bak" />
     <Compile Include="Verb_LaunchProjectileCantMiss.cs" />
     <Compile Include="IncidentDefOf.cs" />
     <Compile Include="GameCondition_BetaHiveEvolution.cs" />
     <Compile Include="DamageWorker_Agro.cs" />
-    <Compile Include="Harmony\Patches\MLB_IncidentParmsUtility_GetDefaultPawnGroupMakerParms_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_IncidentWorker_Raid_ResolveRaidArriveMode_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_IncidentWorker_RaidEnemy_TryExecuteWorker_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_PawnGenOption_get_Cost_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_HediffWithComps_BleedRate_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_Hediff_Injury_get_BleedingStoppedDueToAge_Patch.cs" />
+    <Compile Include="Harmony\Patches\IncidentParmsUtility_GetDefaultPawnGroupMakerParms_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\IncidentWorker_Raid_ResolveRaidArriveMode_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\IncidentWorker_RaidEnemy_TryExecuteWorker_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\PawnGenOption_get_Cost_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\HediffWithComps_BleedRate_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\Hediff_Injury_get_BleedingStoppedDueToAge_Patch.cs" />
     <Compile Include="JobDriver_AnimalRangeAttack.cs" />
     <Compile Include="HediffComp_VerbGiverExtra.cs" />
     <Compile Include="HediffGiver_StartWithHediff.cs" />
-    <Compile Include="Harmony\Patches\MLB_PawnGenerator_GenerateInitialHediffs_StartWithHediff_Patch.cs" />
+    <Compile Include="Harmony\Patches\PawnGenerator_GenerateInitialHediffs_StartWithHediff_Patch.cs" />
     <Compile Include="Comp_Regeneration.cs" />
     <Compile Include="Verb_MeleeAttackThrow.cs" />
     <Compile Include="CompCharger.cs" />
     <Compile Include="ChargingThing.cs" />
     <Compile Include="MLB_ThrownObject.cs" />
-    <None Include="Harmony\Patches\MLB_JobGiver_Manhunter_TryGiveJob_RangedVerb_Patch.cs.bak" />
-    <Compile Include="Harmony\Patches\MLB_TunnelRaidSpawner_MakeLord_BETA_Patch.cs" />
-    <Compile Include="Harmony\Patches\MLB_Pawn_TryGetAttackVerb_VerbCheckNonhumanlike_Patch.cs" />
+    <Compile Include="Harmony\Patches\TunnelRaidSpawner_MakeLord_BETA_Patch.cs" />
+    <Compile Include="Harmony\Patches\Pawn_TryGetAttackVerb_VerbCheckNonhumanlike_Patch.cs" />
     <Compile Include="MLB_AttackTargetFinder.cs" />
-    <Compile Include="Harmony\Patches\MLB_JobGiver_AIFightEnemy_TryGiveJob_RangedVerb_Patch.cs" />
+    <Compile Include="Harmony\Patches\JobGiver_AIFightEnemy_TryGiveJob_RangedVerb_Patch.cs" />
     <Compile Include="Harmony\MainHarmonyInstance.cs" />
-    <Compile Include="Harmony\Patches\MLB_Pawn_VerbProperties_Patch.cs" />
+    <Compile Include="Harmony\Patches\Pawn_VerbProperties_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.2.2719</Version>
+      <Version>1.2.2753</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <Version>2.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="1AnimatedProjectile">
+      <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\AnimatedProjectile\bin\Debug\1AnimatedProjectile.dll</HintPath>
+    </Reference>
+    <Reference Include="1CompOversizedWeapon">
+      <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\CompOversizedWeapon\bin\Debug\1CompOversizedWeapon.dll</HintPath>
+    </Reference>
+    <Reference Include="CompTurret">
+      <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\CompTurret\bin\Debug\CompTurret.dll</HintPath>
+    </Reference>
     <Reference Include="CrashedShipsExtension">
       <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\ExpandedCrashedShips\bin\Debug\CrashedShipsExtension.dll</HintPath>
     </Reference>

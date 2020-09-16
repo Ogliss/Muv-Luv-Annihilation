@@ -2,4 +2,45 @@
 <Defs>
 	
 	
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>MeleeWeapon_TSF_Type74PBBlade</defName>
+    <label>Type-74 PB Blade</label>
+    <description>A crystal-metallic longsword infused with mechanites that maintain a mono-molecular cutting edge. It cuts through even thick armor with ease, and its light weight permits fast attacks.</description>
+    <soundInteract>Interact_MonoSword</soundInteract>
+    <meleeHitSound>MeleeHit_MonoSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Monosword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>200</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+			<Mass>20.5</Mass>
+		</statBases>
+    <tools>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>1.25</cooldownTime>
+        <armorPenetration>0.7</armorPenetration>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1</cooldownTime>
+        <armorPenetration>0.7</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+  
 </Defs>

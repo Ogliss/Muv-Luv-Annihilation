@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
 	// Token: 0x02001012 RID: 4114
 	[DefOf]

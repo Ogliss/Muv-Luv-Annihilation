@@ -4,7 +4,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     // Token: 0x0200016C RID: 364 MuvLuvBeta.LordJob_AssaultColony_CutPower
     public class LordJob_AssaultColony_CutPower : LordJob_AssaultColony

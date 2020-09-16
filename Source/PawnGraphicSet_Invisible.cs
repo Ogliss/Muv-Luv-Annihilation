@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
     public class PawnGraphicSet_Invisible : PawnGraphicSet
     {

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Verse;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
 	// Token: 0x02000DC8 RID: 3528
 	public class Command_ReloadableDual : Command_VerbTarget

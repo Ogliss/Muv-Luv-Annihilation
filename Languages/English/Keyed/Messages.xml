@@ -13,4 +13,8 @@
   <!-- TSF Keys -->
   <TSF_LowAmmoMsg>{1}'s {0} is at {2}% ammunition</TSF_LowAmmoMsg>
   <TSF_NoAmmoMsg>{1}'s {0} is out of ammunition</TSF_NoAmmoMsg>
+  <TSF_ChargesRemaining>Remaining {0}</TSF_ChargesRemaining>
+  <TSF_AmmunitionRemaining>{0} ammunition </TSF_AmmunitionRemaining>
+  
+  <!-- reloading ammo -->
 </LanguageData>

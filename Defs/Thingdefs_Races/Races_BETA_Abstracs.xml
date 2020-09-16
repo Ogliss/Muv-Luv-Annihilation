@@ -84,7 +84,7 @@
       <li>BETA</li>
     </tradeTags>
     <comps>
-      <li Class="MuvLuvBETA.CompProperties_Regeneration">
+      <li Class="MuvLuvAnnihilation.CompProperties_Regeneration">
 		<healFreshWounds>true</healFreshWounds>
 		<healFreshChance>0.5</healFreshChance>
 		<allowSealWounds>false</allowSealWounds>

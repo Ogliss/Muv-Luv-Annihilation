@@ -6,7 +6,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace MuvLuvBeta
+namespace MuvLuvAnnihilation
 {
 	// MuvLuvBeta.CompProperties_BETAProjectileInterceptor
 

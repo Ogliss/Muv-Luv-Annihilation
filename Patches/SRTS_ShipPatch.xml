@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>SRTS Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+					
+					  <ThingDef ParentName="NECShipBase">
+						<defName>MLA_XG70Susanoo</defName>
+						<label>XG-70 Susanoo</label>
+						<description>
+							The last of the XG-70 line, the Susanoo IV was operated by the 00 Unit, Yashiro Kasumi, and Shirogane Takeru. Unlike the Susanoo II, the Susanoo IV  was extremely large at 180 meters tall, and was to be very heavily armed in anticipation for close-range combat in Hive conditions. The newest change to its operation doctrine was to use three pilots for its operation; this allowed for more flexibility, one of which was the manipulate the Susanoo IV's Rutherford Field around nearby allied units, affording them incredible protection against all forms of attack without the risk of killing them with gravitational fluctuations.
+
+							Weapons : NOT YET IMPLEMENTED
+							Miniguns X 2
+							Multi Missile Launcher X 1
+							Mortar X 2
+							120mm Cannon X 1
+							----------------------------
+							Passenger cap: 1 - 28
+							Space flight: Yes
+							----------------------------
+							Speed: Normal
+							Fuel cap: 2,600L
+							Fuel efficiency: Good
+							----------------------------
+							Cargo cap: 10,000kg
+							Internal power plant: 1,700w
+						</description>
+						<graphicData>
+						  <texPath>TEK7</texPath>
+						  <graphicClass>Graphic_Multi</graphicClass>
+						  <drawSize>(15,15)</drawSize>
+						</graphicData>
+						<size>(5,9)</size>
+						<statBases>
+						  <MaxHitPoints>1300</MaxHitPoints>
+						  <WorkToBuild>24000</WorkToBuild>
+						  <Flammability>0.3</Flammability>
+						  <Mass>20</Mass>
+						  <Beauty>50</Beauty>
+						</statBases>
+						<costList>
+						  <Steel>4500</Steel>
+						  <Gold>350</Gold>
+						  <Silver>6000</Silver>
+						  <ComponentIndustrial>20</ComponentIndustrial>
+						</costList>
+						<comps>
+						<!--
+						  <li Class="CompTurret.CompProperties_Turret"> 
+							<projectileOffset>1.5</projectileOffset>
+							<maxCharges>750</maxCharges>
+							<ammoDef>Ammo_TSF_Minigun</ammoDef>
+							<ammoCountPerCharge>0.04</ammoCountPerCharge>
+							<baseReloadTicks>60</baseReloadTicks>
+							<soundReload>Standard_Reload</soundReload>
+							<messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+							<messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+							<messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+							<chargeNoun>left minigun</chargeNoun>
+							<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+							<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
+							<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
+							<gizmoID>1</gizmoID>
+							<hotKey>Misc4</hotKey>
+							<offsetNorth>-1.3,-2.0,0.65</offsetNorth>
+							<offsetSouth>1.3,-0.0,0.65</offsetSouth>
+							<offsetEast>0,-2.0,0.35</offsetEast>
+							<offsetWest>0,0.0,0.65</offsetWest>
+						  </li>
+						  <li Class="CompTurret.CompProperties_Turret"> 
+							<projectileOffset>1.5</projectileOffset>
+							<maxCharges>750</maxCharges>
+							<ammoDef>Ammo_TSF_Minigun</ammoDef>
+							<ammoCountPerCharge>0.04</ammoCountPerCharge>
+							<baseReloadTicks>60</baseReloadTicks>
+							<soundReload>Standard_Reload</soundReload>
+							<messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+							<messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+							<messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+							<chargeNoun>right minigun</chargeNoun>
+							<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+							<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
+							<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
+							<gizmoID>2</gizmoID>
+							<hotKey>Misc4</hotKey>
+							<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+							<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+							<offsetEast>0,-0.0,0.65</offsetEast>
+							<offsetWest>0,-2.0,0.35</offsetWest>
+						  </li>
+						  <li Class="CompTurret.CompProperties_Turret"> 
+							<projectileOffset>1</projectileOffset>
+							<maxCharges>90</maxCharges>
+							<ammoDef>Ammo_TSF_Missile</ammoDef>
+							<ammoCountPerCharge>0.16</ammoCountPerCharge>
+							<baseReloadTicks>60</baseReloadTicks>
+							<soundReload>Standard_Reload</soundReload>
+							<messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+							<messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+							<messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+							<chargeNoun>missiles</chargeNoun>
+							<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+							<TurretDef>MLB_TSF_TurretMultiMissileLauncher</TurretDef>
+							<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
+							<gizmoID>3</gizmoID>
+							<hotKey>Misc6</hotKey>
+							<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+							<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+							<offsetEast>0,-0.0,0.65</offsetEast>
+							<offsetWest>0,-2.0,0.35</offsetWest>
+						  </li>
+						  <li Class="CompTurret.CompProperties_Turret"> 
+							<projectileOffset>1</projectileOffset>
+							<maxCharges>15</maxCharges>
+							<ammoDef>Ammo_TSF_Cannon120mm</ammoDef>
+							<ammoCountPerCharge>1</ammoCountPerCharge>
+							<baseReloadTicks>60</baseReloadTicks>
+							<soundReload>Standard_Reload</soundReload>
+							<messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+							<messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+							<messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+							<chargeNoun>shells</chargeNoun>
+							<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+							<TurretDef>MLB_TSF_TurretCannon120mm</TurretDef>
+							<iconPath>Things/Building/Security/TurretAutocannon_Top</iconPath>
+							<gizmoID>4</gizmoID>
+							<hotKey>Misc7</hotKey>
+							<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+							<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+							<offsetEast>0,-0.0,0.65</offsetEast>
+							<offsetWest>0,-2.0,0.35</offsetWest>
+						  </li>
+						  <li Class="CompTurret.CompProperties_Turret"> 
+							<projectileOffset>1</projectileOffset>
+							<maxCharges>15</maxCharges>
+							<ammoDef>Ammo_TSF_Mortar</ammoDef>
+							<ammoCountPerCharge>1</ammoCountPerCharge>
+							<baseReloadTicks>60</baseReloadTicks>
+							<soundReload>Standard_Reload</soundReload>
+							<messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+							<messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+							<messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+							<chargeNoun>shells</chargeNoun>
+							<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+							<TurretDef>MLB_TSF_TurretMortar</TurretDef>
+							<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
+							<gizmoID>5</gizmoID>
+							<hotKey>Misc8</hotKey>
+							<offsetNorth>-1.3,-2.0,0.65</offsetNorth>
+							<offsetSouth>1.3,-0.0,0.65</offsetSouth>
+							<offsetEast>0,-2.0,0.35</offsetEast>
+							<offsetWest>0,0.0,0.65</offsetWest>
+						  </li>
+						  <li Class="CompTurret.CompProperties_Turret"> 
+							<projectileOffset>1</projectileOffset>
+							<maxCharges>15</maxCharges>
+							<ammoDef>Ammo_TSF_Mortar</ammoDef>
+							<ammoCountPerCharge>1</ammoCountPerCharge>
+							<baseReloadTicks>60</baseReloadTicks>
+							<soundReload>Standard_Reload</soundReload>
+							<messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+							<messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+							<messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+							<chargeNoun>shells</chargeNoun>
+							<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+							<TurretDef>MLB_TSF_TurretMortar</TurretDef>
+							<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
+							<gizmoID>6</gizmoID>
+							<hotKey>Misc9</hotKey>
+							<offsetNorth>1.3,-2.0,0.65</offsetNorth>
+							<offsetSouth>-1.3,-0.0,0.65</offsetSouth>
+							<offsetEast>0,-0.0,0.65</offsetEast>
+							<offsetWest>0,-2.0,0.35</offsetWest>
+						  </li>
+						  -->
+						  <li Class="CompProperties_Transporter">
+							<restEffectiveness>1.5</restEffectiveness>
+							<massCapacity>10000</massCapacity>
+						  </li>
+						  <li Class="SRTS.CompProperties_LaunchableSRTS">
+							<travelSpeed>8</travelSpeed>
+							<fuelPerTile>2.25</fuelPerTile>
+							<minPassengers>1</minPassengers>
+							<maxPassengers>28</maxPassengers>
+							<spaceFaring>true</spaceFaring>
+							<shuttleBayLanding>false</shuttleBayLanding>
+						  </li>
+						  <li Class="CompProperties_Refuelable">
+							<fuelCapacity>2600</fuelCapacity>
+							<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+							<initialConfigurableTargetFuelLevel>2600</initialConfigurableTargetFuelLevel>
+							<fuelFilter>
+							  <thingDefs>
+								<li>Chemfuel</li>
+							  </thingDefs>
+							</fuelFilter>
+							<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+							<initialFuelPercent>0.25</initialFuelPercent>
+							<autoRefuelPercent>1</autoRefuelPercent>
+							<showFuelGizmo>true</showFuelGizmo>
+							<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+							<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+						  </li>
+						  <li Class="CompProperties_Power">
+							<compClass>CompPowerPlant</compClass>
+							<basePowerConsumption>-1700</basePowerConsumption>
+							<transmitsPower>true</transmitsPower>
+						  </li>
+						  <li Class="CompProperties_Flickable" />
+						  <li Class="CompProperties_Glower">
+							<glowRadius>18</glowRadius>
+							<glowColor>(217,217,217,0)</glowColor>
+						  </li>
+						</comps>
+						<researchPrerequisites>
+						  <li>Research_SRAFTek</li>
+						</researchPrerequisites>
+						<constructionSkillPrerequisite>14</constructionSkillPrerequisite>
+						<uiIconScale>0.50</uiIconScale>
+						<killedLeavings>
+						  <ChunkSlagSteel>8</ChunkSlagSteel>
+						</killedLeavings>
+					  </ThingDef>
+					  
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
