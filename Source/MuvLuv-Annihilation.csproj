@@ -33,6 +33,7 @@
   <ItemGroup>
     <Compile Include="BETADefOf.cs" />
     <None Include="Harmony\Patches\Projectile_Launch_MuzzlePosition_Patch.cs.bak" />
+    <Compile Include="Harmony\Patches\ThingListGroupHelper_Includes_CompBETAProjectileInterceptor_Patch.cs" />
     <Compile Include="ProjectileDefExtension.cs" />
     <Compile Include="Harmony\Patches\Verb_Shoot_TryCastShot_Scattershot_Patch.cs" />
     <Compile Include="Harmony\Patches\JobGiver_AIFightEnemy_TryGiveJob_BETAKillDowned_Patch.cs" />

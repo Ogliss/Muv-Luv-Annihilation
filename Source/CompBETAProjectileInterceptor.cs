@@ -72,9 +72,9 @@ namespace MuvLuvAnnihilation
 			}
 		}
 
-		public bool OnCooldown => Find.TickManager.TicksGame < lastInterceptTicks + Props.cooldownTicks;
+		public new bool OnCooldown => Find.TickManager.TicksGame < lastInterceptTicks + Props.cooldownTicks;
 
-		public bool Charging
+		public new bool Charging
 		{
 			get
 			{
@@ -86,7 +86,7 @@ namespace MuvLuvAnnihilation
 			}
 		}
 
-		public int ChargeCycleStartTick
+		public new int ChargeCycleStartTick
 		{
 			get
 			{
@@ -98,7 +98,7 @@ namespace MuvLuvAnnihilation
 			}
 		}
 
-		public int ChargingTicksLeft
+		public new int ChargingTicksLeft
 		{
 			get
 			{
@@ -110,7 +110,7 @@ namespace MuvLuvAnnihilation
 			}
 		}
 
-		public int CooldownTicksLeft
+		public new int CooldownTicksLeft
 		{
 			get
 			{
@@ -122,7 +122,7 @@ namespace MuvLuvAnnihilation
 			}
 		}
 
-		public bool ReactivatedThisTick => Find.TickManager.TicksGame - lastInterceptTicks == Props.cooldownTicks;
+		public new bool ReactivatedThisTick => Find.TickManager.TicksGame - lastInterceptTicks == Props.cooldownTicks;
 
 		public override void PostPostMake()
 		{
@@ -134,8 +134,9 @@ namespace MuvLuvAnnihilation
 			stunner = new StunHandler(parent);
 		}
 
-		public bool CheckIntercept(Projectile projectile, Vector3 lastExactPos, Vector3 newExactPos)
+		public new bool CheckIntercept(Projectile projectile, Vector3 lastExactPos, Vector3 newExactPos)
 		{
+		//	Log.Message("CheckIntercept");
 			if (!ModLister.RoyaltyInstalled)
 			{
 				Log.ErrorOnce("Shields are a Royalty-specific game system. If you want to use this code please check ModLister.RoyaltyInstalled before calling it.", 657212);
@@ -155,7 +156,7 @@ namespace MuvLuvAnnihilation
 			{
 				return false;
 			}
-			if ((projectile.Launcher == null || !projectile.Launcher.HostileTo(parent)) && !debugInterceptNonHostileProjectiles && !Props.interceptNonHostileProjectiles)
+			if ((projectile.Launcher == null || (projectile.Launcher.Faction !=null && projectile.Launcher.Faction == parent.Faction)) && !debugInterceptNonHostileProjectiles && !Props.interceptNonHostileProjectiles)
 			{
 				return false;
 			}

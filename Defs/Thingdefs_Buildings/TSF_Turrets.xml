@@ -41,7 +41,7 @@
     <building>
 	  <ai_combatDangerous>false</ai_combatDangerous>
       <turretGunDef>MLB_TurretGun_TSF_Minigun</turretGunDef>
-      <turretBurstCooldownTime>2.3</turretBurstCooldownTime>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
       <turretBurstWarmupTime>4</turretBurstWarmupTime>
 	  
 	  <isInert>true</isInert>
@@ -106,7 +106,7 @@
     <!--thingClass>Projectile_Explosive</thingClass-->
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>3</damageAmountBase>
+      <damageAmountBase>13</damageAmountBase>
       <speed>88</speed>
     </projectile>
   </ThingDef>
@@ -131,8 +131,8 @@
     <building>
 	  <ai_combatDangerous>false</ai_combatDangerous>
       <turretGunDef>MLB_TSF_TurretGun_Cannon120mm</turretGunDef>
-      <turretBurstCooldownTime>10</turretBurstCooldownTime>
-      <turretBurstWarmupTime>6</turretBurstWarmupTime>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
+      <turretBurstWarmupTime>4</turretBurstWarmupTime>
 	  <isInert>true</isInert>
       <isEdifice>false</isEdifice>
       <deconstructible>false</deconstructible>
@@ -197,7 +197,7 @@
     <!--thingClass>Projectile_Explosive</thingClass-->
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>60</damageAmountBase>
+      <damageAmountBase>70</damageAmountBase>
       <speed>88</speed>
     </projectile>
   </ThingDef>
@@ -222,8 +222,8 @@
     <building>
 	  <ai_combatDangerous>false</ai_combatDangerous>
       <turretGunDef>MLB_TSF_TurretGun_MultiMissileLauncher</turretGunDef>
-      <turretBurstCooldownTime>4.5</turretBurstCooldownTime>
-      <turretBurstWarmupTime>6</turretBurstWarmupTime>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
+      <turretBurstWarmupTime>4</turretBurstWarmupTime>
 	  <isInert>true</isInert>
       <isEdifice>false</isEdifice>
       <deconstructible>false</deconstructible>
@@ -293,7 +293,7 @@
     <thingClass>Projectile_Explosive</thingClass>
     <projectile>
       <damageDef>Bomb</damageDef>
-      <damageAmountBase>10</damageAmountBase>
+      <damageAmountBase>25</damageAmountBase>
       <explosionRadius>2.0</explosionRadius>
       <speed>50</speed>
     </projectile>
@@ -319,8 +319,8 @@
     <building>
 	  <ai_combatDangerous>false</ai_combatDangerous>
       <turretGunDef>MLB_TSF_TurretGun_Mortar</turretGunDef>
-      <turretBurstCooldownTime>5.5</turretBurstCooldownTime>
-      <turretBurstWarmupTime>8</turretBurstWarmupTime>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
+      <turretBurstWarmupTime>4</turretBurstWarmupTime>
 	  <isInert>true</isInert>
       <isEdifice>false</isEdifice>
       <deconstructible>false</deconstructible>
@@ -358,7 +358,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_TSF_Mortar</defaultProjectile>
         <forcedMissRadius>13</forcedMissRadius>
-        <range>50</range>
+        <range>500</range>
         <minRange>29.9</minRange>
         <burstShotCount>1</burstShotCount>
         <soundCast>Mortar_LaunchA</soundCast>

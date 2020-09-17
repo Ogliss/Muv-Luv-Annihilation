@@ -74,7 +74,7 @@
     <projectile>
 		<flyOverhead>false</flyOverhead>
 		<damageDef>Bullet</damageDef>
-		<damageAmountBase>17</damageAmountBase>
+		<damageAmountBase>25</damageAmountBase>
 		<armorPenetrationBase>0.41</armorPenetrationBase>
 		<stoppingPower>1.4</stoppingPower>
 		<speed>80</speed>
@@ -157,7 +157,7 @@
 	</modExtensions>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>8</damageAmountBase>
+      <damageAmountBase>12</damageAmountBase>
       <speed>70</speed>
     </projectile>
   </ThingDef>
@@ -233,7 +233,7 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-		<damageAmountBase>19</damageAmountBase>
+		<damageAmountBase>30</damageAmountBase>
 		<armorPenetrationBase>0.48</armorPenetrationBase>
       <speed>70</speed>
     </projectile>
@@ -313,7 +313,7 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>77</damageAmountBase>
+      <damageAmountBase>125</damageAmountBase>
       <stoppingPower>1.5</stoppingPower>
       <speed>100</speed>
     </projectile>
@@ -421,7 +421,7 @@
         <drawGlow>true</drawGlow>
 		<flyOverhead>false</flyOverhead>
 		<damageDef>Flame</damageDef>
-		<damageAmountBase>6</damageAmountBase>
+		<damageAmountBase>9</damageAmountBase>
 		<armorPenetrationBase>0.08</armorPenetrationBase>
 		<explosionRadius>0.75</explosionRadius>
 		<explosionChanceToStartFire>1.0</explosionChanceToStartFire>
@@ -525,7 +525,7 @@
 	</modExtensions>
     <projectile>
       <damageDef>Bomb</damageDef>
-		<damageAmountBase>40</damageAmountBase>
+		<damageAmountBase>60</damageAmountBase>
       <explosionRadius>3.9</explosionRadius>
       <speed>50</speed>
     </projectile>
