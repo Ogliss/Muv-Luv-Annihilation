@@ -119,6 +119,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>left minigun</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
 		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
 		<gizmoID>1</gizmoID>
@@ -141,6 +143,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>right minigun</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
 		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
 		<gizmoID>2</gizmoID>
@@ -201,6 +205,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>minigun</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
 		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
 		<gizmoID>1</gizmoID>
@@ -223,6 +229,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>missiles</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMultiMissileLauncher</TurretDef>
 		<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
 		<gizmoID>2</gizmoID>
@@ -283,6 +291,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>missiles</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMultiMissileLauncher</TurretDef>
 		<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
 		<gizmoID>1</gizmoID>
@@ -305,6 +315,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>missiles</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMultiMissileLauncher</TurretDef>
 		<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
 		<gizmoID>2</gizmoID>
@@ -365,6 +377,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>minigun</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
 		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
 		<gizmoID>1</gizmoID>
@@ -387,6 +401,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>shells</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretCannon120mm</TurretDef>
 		<iconPath>Things/Building/Security/TurretAutocannon_Top</iconPath>
 		<gizmoID>2</gizmoID>
@@ -447,6 +463,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>minigun</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
 		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
 		<gizmoID>1</gizmoID>
@@ -469,6 +487,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>shells</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMortar</TurretDef>
 		<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
 		<gizmoID>2</gizmoID>
@@ -529,6 +549,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>shells</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMortar</TurretDef>
 		<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
 		<gizmoID>1</gizmoID>
@@ -551,6 +573,8 @@
         <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
         <chargeNoun>shells</chargeNoun>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<targetingLaserTexPath>Other/TSFTargetingLaser</targetingLaserTexPath>
+		<targetingLaserColor>1,0.25,0.25</targetingLaserColor>
 		<TurretDef>MLB_TSF_TurretMortar</TurretDef>
 		<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
 		<gizmoID>2</gizmoID>

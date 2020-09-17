@@ -9,15 +9,15 @@
     <statBases>
       <MarketValue>200</MarketValue>
       <LeatherAmount>0</LeatherAmount>
-      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
-      <ArmorRating_Heat>0.22</ArmorRating_Heat>
+      <ArmorRating_Blunt>0.21</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.21</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.21</ArmorRating_Heat>
     </statBases>
     <race>
       <body>BETASoldier</body>
       <baseHungerRate>0.25</baseHungerRate>
       <baseBodySize>1.3</baseBodySize>
-      <baseHealthScale>1.65</baseHealthScale>
+      <baseHealthScale>1.52625</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <useMeatFrom>Megaspider</useMeatFrom>
       <wildness>0.95</wildness>
@@ -94,9 +94,9 @@
     </statBases>
     <race>
       <body>BETAWarrior</body>
-      <baseHungerRate>0.25</baseHungerRate>
+      <baseHungerRate>0.0</baseHungerRate>
       <baseBodySize>1.5</baseBodySize>
-      <baseHealthScale>1.65</baseHealthScale>
+      <baseHealthScale>1.52625</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <useMeatFrom>Megaspider</useMeatFrom>
       <wildness>0.95</wildness>
@@ -156,7 +156,7 @@
       <body>BETATank</body>
       <baseHungerRate>0.25</baseHungerRate>
       <baseBodySize>1.8</baseBodySize>
-      <baseHealthScale>3.08</baseHealthScale>
+      <baseHealthScale>2.849</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <useMeatFrom>Megaspider</useMeatFrom>
       <wildness>0.95</wildness>
@@ -234,7 +234,7 @@
       <body>BETAGrappler</body>
       <baseHungerRate>0.35</baseHungerRate>
       <baseBodySize>4.95</baseBodySize>
-      <baseHealthScale>10.125</baseHealthScale>
+      <baseHealthScale>9.365625</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <meatLabel>BETA meat</meatLabel>
       <wildness>0.95</wildness>
@@ -365,7 +365,7 @@
       <body>BETADestroyer</body>
       <baseHungerRate>0.35</baseHungerRate>
       <baseBodySize>6</baseBodySize>
-      <baseHealthScale>11.550</baseHealthScale>
+      <baseHealthScale>10.68375</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <meatLabel>BETA meat</meatLabel>
       <wildness>0.95</wildness>
@@ -453,7 +453,7 @@
       <body>BETAFort</body>
       <baseHungerRate>0.35</baseHungerRate>
       <baseBodySize>20</baseBodySize>
-      <baseHealthScale>22</baseHealthScale>
+      <baseHealthScale>20.35</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <meatLabel>BETA meat</meatLabel>
       <wildness>0.95</wildness>
@@ -535,7 +535,7 @@
       <body>BETALaser</body>
       <baseHungerRate>0.25</baseHungerRate>
       <baseBodySize>1.8</baseBodySize>
-      <baseHealthScale>2.2</baseHealthScale>
+      <baseHealthScale>2.035</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <useMeatFrom>Megaspider</useMeatFrom>
       <wildness>0.95</wildness>
@@ -684,7 +684,7 @@
       <body>BETAHeavyLaser</body>
       <baseHungerRate>0.35</baseHungerRate>
       <baseBodySize>2.6</baseBodySize>
-      <baseHealthScale>3.3</baseHealthScale>
+      <baseHealthScale>3.0525</baseHealthScale>
       <gestationPeriodDays>12</gestationPeriodDays>
       <meatLabel>BETA meat</meatLabel>
       <wildness>0.95</wildness>

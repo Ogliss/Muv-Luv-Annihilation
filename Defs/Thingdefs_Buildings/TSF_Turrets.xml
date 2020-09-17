@@ -197,7 +197,7 @@
     <!--thingClass>Projectile_Explosive</thingClass-->
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>55</damageAmountBase>
+      <damageAmountBase>60</damageAmountBase>
       <speed>88</speed>
     </projectile>
   </ThingDef>

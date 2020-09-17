@@ -31,15 +31,13 @@ namespace MuvLuvAnnihilation
 				Log.ErrorOnce("Items with jump capability are a Royalty-specific game system. If you want to use this code please check ModLister.RoyaltyInstalled before calling it. See rules on the Ludeon forum for more info.", 550187797);
 				return false;
 			}
-#pragma warning disable CS0436 // Type conflicts with imported type
+
 			CompReloadable reloadableCompSource = base.ReloadableCompSource;
-#pragma warning restore CS0436 // Type conflicts with imported type
 			Pawn casterPawn = CasterPawn;
 			if (casterPawn == null || reloadableCompSource == null || !reloadableCompSource.CanBeUsed)
 			{
 				return false;
 			}
-		//	Log.Message("reloadableCompSource " + reloadableCompSource.Props.chargeNoun);
 			IntVec3 cell = currentTarget.Cell;
 			Map map = casterPawn.Map;
 			CompReloadableDual reloadableDual = reloadableCompSource as CompReloadableDual;
@@ -48,13 +46,11 @@ namespace MuvLuvAnnihilation
 				if (this.verbProps.label == reloadableDual.Props.chargeNoun)
 				{
 					reloadableDual.UsedOnce();
-				//	Log.Message("reloadableDual UsedOnce " + reloadableDual.RemainingCharges);
 				}
 				else
 				if (this.verbProps.label == reloadableDual.Props.chargeNounSecondry)
 				{
 					reloadableDual.UsedOnceSecondry();
-				//	Log.Message("reloadableDual UsedOnceSecondry " + reloadableDual.RemainingChargesSecondry);
 				}
 			}
 			else
