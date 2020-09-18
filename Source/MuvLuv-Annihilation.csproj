@@ -31,8 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Harmony\Patches\IncidentWorker_Raid_ResolveRaidArriveMode_BETA_Patch - Copy.cs" />
+    <Compile Include="MechOwnership\MechOwnership.cs" />
     <Compile Include="BETADefOf.cs" />
     <None Include="Harmony\Patches\Projectile_Launch_MuzzlePosition_Patch.cs.bak" />
+    <Compile Include="Apparels\MechSuit.cs" />
+    <Compile Include="Extensions\ClaimExtensions.cs" />
+    <Compile Include="Comps\CompAssignableToPawn_Mech.cs" />
     <Compile Include="Harmony\Patches\ThingListGroupHelper_Includes_CompBETAProjectileInterceptor_Patch.cs" />
     <Compile Include="ProjectileDefExtension.cs" />
     <Compile Include="Harmony\Patches\Verb_Shoot_TryCastShot_Scattershot_Patch.cs" />
@@ -103,23 +108,37 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\Harmony\Current\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="1AnimatedProjectile">
       <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\AnimatedProjectile\bin\Debug\1AnimatedProjectile.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="1CompOversizedWeapon">
       <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\CompOversizedWeapon\bin\Debug\1CompOversizedWeapon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="CompTurret">
       <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\CompTurret\bin\Debug\CompTurret.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="CrashedShipsExtension">
       <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\ExpandedCrashedShips\bin\Debug\CrashedShipsExtension.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ExtraHives">
       <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\FactionHives\bin\Debug\ExtraHives.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="OgsLasers">
       <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\OgsLasers\bin\Debug\OgsLasers.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
