@@ -30,11 +30,13 @@
         <li>(4000, 2.8)</li>
       </points>
     </raidCommonalityFromPointsCurve>
-    <maxPawnCostPerTotalPointsCurve>
-      <points>
-        <li>(1,1)</li>
-      </points>
-    </maxPawnCostPerTotalPointsCurve>
+	<maxPawnCostPerTotalPointsCurve>
+	  <points>
+		<li>(400,200)</li>
+		<li>(900,300)</li>
+		<li>(100000,10000)</li>
+	  </points>
+	</maxPawnCostPerTotalPointsCurve>
 	<pawnGroupMakers>
 	  <li>
 		<!-- All types-->
@@ -46,7 +48,7 @@
 		  <BETA_TankClass>1000</BETA_TankClass>
 		  <BETA_GrapplerClass>200</BETA_GrapplerClass>
 		  <BETA_DestroyerClass>20</BETA_DestroyerClass>
-		  <BETA_FortClass>2</BETA_FortClass>
+		  <!--BETA_FortClass>2</BETA_FortClass-->
 		  <BETA_LaserClass>150</BETA_LaserClass>
 		  <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
 		</options>
@@ -133,6 +135,7 @@
 	<modExtensions>
 		<li Class="ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
+			<noPawnPointsCurve>True</noPawnPointsCurve>
 			<sizeRange>40~50</sizeRange>
 			<centerCaveHive>MLB_BETAMonument_CaveCenter</centerCaveHive>
 			<largeCaveHive>MLB_BETAHive_BigCave</largeCaveHive>
@@ -147,13 +150,6 @@
 					<sizeRange>40~50</sizeRange>
 				</li>
 				<li>
-					<maxPawnCostPerTotalPointsCurve>
-					  <points>
-						<li>(164,82)</li>
-						<li>(369,122)</li>
-						<li>(40960,40960)</li>
-					  </points>
-					</maxPawnCostPerTotalPointsCurve>
 					<DaysPassed>140</DaysPassed>
 					<!--DaysPassed>140</DaysPassed-->
 					<pointMultipler>1.2</pointMultipler>
@@ -255,13 +251,6 @@
 					</pawnGroupMakers>
 				</li>
 				<li>
-					<maxPawnCostPerTotalPointsCurve>
-					  <points>
-						<li>(205,102)</li>
-						<li>(461,153)</li>
-						<li>(51200,51200)</li>
-					  </points>
-					</maxPawnCostPerTotalPointsCurve>
 					<DaysPassed>210</DaysPassed>
 					<pointMultipler>1.4</pointMultipler>
 					<sizeRange>60~70</sizeRange>
@@ -362,13 +351,6 @@
 					</pawnGroupMakers>
 				</li>
 				<li>
-					<maxPawnCostPerTotalPointsCurve>
-					  <points>
-						<li>(256,128)</li>
-						<li>(576,192)</li>
-						<li>(64000,64000)</li>
-					  </points>
-					</maxPawnCostPerTotalPointsCurve>
 					<DaysPassed>280</DaysPassed>
 					<pointMultipler>1.6</pointMultipler>
 					<sizeRange>70~80</sizeRange>
@@ -469,13 +451,6 @@
 					</pawnGroupMakers>
 				</li>
 				<li>
-					<maxPawnCostPerTotalPointsCurve>
-					  <points>
-						<li>(320,160)</li>
-						<li>(720,240)</li>
-						<li>(80000,80000)</li>
-					  </points>
-					</maxPawnCostPerTotalPointsCurve>
 					<DaysPassed>350</DaysPassed>
 					<pointMultipler>1.8</pointMultipler>
 					<sizeRange>80~90</sizeRange>
@@ -576,13 +551,6 @@
 					</pawnGroupMakers>
 				</li>
 				<li>
-					<maxPawnCostPerTotalPointsCurve>
-					  <points>
-						<li>(400,200)</li>
-						<li>(900,300)</li>
-						<li>(100000,10000)</li>
-					  </points>
-					</maxPawnCostPerTotalPointsCurve>
 					<DaysPassed>450</DaysPassed>
 					<pointMultipler>2</pointMultipler>
 					<sizeRange>90~100</sizeRange>

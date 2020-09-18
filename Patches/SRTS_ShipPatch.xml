@@ -55,7 +55,8 @@
 						
 						  <li Class="CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
-							<drawTurret>false</drawTurret>
+							<!--drawTurret>false</drawTurret-->
+							<allowForcedTarget>false</allowForcedTarget>
 							<maxCharges>750</maxCharges>
 							<ammoDef>Ammo_TSF_Minigun</ammoDef>
 							<ammoCountPerCharge>0.04</ammoCountPerCharge>
@@ -70,14 +71,15 @@
 							<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
 							<gizmoID>1</gizmoID>
 							<hotKey>Misc4</hotKey>
-							<offsetNorth>0.0,0.0,0.0</offsetNorth>
-							<offsetSouth>0.0,0.0,0.0</offsetSouth>
+							<offsetNorth>-2.0,0.0,4.0</offsetNorth>
+							<offsetSouth>2.0,0.0,-4.0</offsetSouth>
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
 						  <li Class="CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
-							<drawTurret>false</drawTurret>
+							<!--drawTurret>false</drawTurret-->
+							<allowForcedTarget>false</allowForcedTarget>
 							<maxCharges>750</maxCharges>
 							<ammoDef>Ammo_TSF_Minigun</ammoDef>
 							<ammoCountPerCharge>0.04</ammoCountPerCharge>
@@ -92,14 +94,15 @@
 							<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
 							<gizmoID>2</gizmoID>
 							<hotKey>Misc4</hotKey>
-							<offsetNorth>0.0,0.0,0.0</offsetNorth>
-							<offsetSouth>0.0,0.0,0.0</offsetSouth>
+							<offsetNorth>2.0,0.0,4.0</offsetNorth>
+							<offsetSouth>-2.0,0.0,-4.0</offsetSouth>
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
 						  <li Class="CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
-							<drawTurret>false</drawTurret>
+							<!--drawTurret>false</drawTurret-->
+							<allowForcedTarget>false</allowForcedTarget>
 							<maxCharges>90</maxCharges>
 							<ammoDef>Ammo_TSF_Missile</ammoDef>
 							<ammoCountPerCharge>0.16</ammoCountPerCharge>
@@ -114,14 +117,15 @@
 							<iconPath>Things/Item/Equipment/WeaponRanged/RocketLauncher</iconPath>
 							<gizmoID>3</gizmoID>
 							<hotKey>Misc6</hotKey>
-							<offsetNorth>0.0,0.0,0.0</offsetNorth>
-							<offsetSouth>0.0,0.0,0.0</offsetSouth>
+							<offsetNorth>0.0,0.0,3.0</offsetNorth>
+							<offsetSouth>0.0,0.0,-3.0</offsetSouth>
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
 						  <li Class="CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
-							<drawTurret>false</drawTurret>
+							<!--drawTurret>false</drawTurret-->
+							<allowForcedTarget>false</allowForcedTarget>
 							<maxCharges>15</maxCharges>
 							<ammoDef>Ammo_TSF_Cannon120mm</ammoDef>
 							<ammoCountPerCharge>1</ammoCountPerCharge>
@@ -137,13 +141,14 @@
 							<gizmoID>4</gizmoID>
 							<hotKey>Misc7</hotKey>
 							<offsetNorth>0.0,0.0,0.0</offsetNorth>
-							<offsetSouth>0.0,0.0,0.0</offsetSouth>
+							<offsetSouth>0.0,0.0,-0.0</offsetSouth>
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
 						  <li Class="CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
-							<drawTurret>false</drawTurret>
+							<!--drawTurret>false</drawTurret-->
+							<allowForcedTarget>false</allowForcedTarget>
 							<maxCharges>15</maxCharges>
 							<ammoDef>Ammo_TSF_Mortar</ammoDef>
 							<ammoCountPerCharge>1</ammoCountPerCharge>
@@ -158,14 +163,15 @@
 							<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
 							<gizmoID>5</gizmoID>
 							<hotKey>Misc8</hotKey>
-							<offsetNorth>0.0,0.0,0.0</offsetNorth>
-							<offsetSouth>0.0,0.0,0.0</offsetSouth>
+							<offsetNorth>-1.0,0.0,-1.0</offsetNorth>
+							<offsetSouth>1.0,0.0,1.0</offsetSouth>
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
 						  <li Class="CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
-							<drawTurret>false</drawTurret>
+							<!--drawTurret>false</drawTurret-->
+							<allowForcedTarget>false</allowForcedTarget>
 							<maxCharges>15</maxCharges>
 							<ammoDef>Ammo_TSF_Mortar</ammoDef>
 							<ammoCountPerCharge>1</ammoCountPerCharge>
@@ -180,8 +186,8 @@
 							<iconPath>Things/Building/Security/TurretMortar_Top</iconPath>
 							<gizmoID>6</gizmoID>
 							<hotKey>Misc9</hotKey>
-							<offsetNorth>0.0,0.0,0.0</offsetNorth>
-							<offsetSouth>0.0,0.0,0.0</offsetSouth>
+							<offsetNorth>1.0,0.0,-1.0</offsetNorth>
+							<offsetSouth>-1.0,0.0,1.0</offsetSouth>
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
