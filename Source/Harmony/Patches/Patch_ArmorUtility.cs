@@ -8,6 +8,7 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 using HarmonyLib;
+using CompTurret;
 
 namespace MuvLuvAnnihilation.HarmonyInstance
 {
@@ -29,10 +30,10 @@ namespace MuvLuvAnnihilation.HarmonyInstance
 					var armorDamage = GetPostArmorDamage(pawn, mechSuit, amount, armorPenetration, part, ref damageDef, out deflectedByMetalArmor, out diminishedByMetalArmor);
 					if (part.IsInGroup(DefDatabase<BodyPartGroupDef>.GetNamed("Shoulders")))
                     {
-						var comp = mechSuit.TryGetComp<CompReloadableDual>();
+						var comp = mechSuit.AllComps.Where(x => x is CompTurretDamagable).RandomElement() as CompTurretDamagable;
 						if (comp != null)
                         {
-							comp.hitPoints -= (int)armorDamage;
+							comp.TakeDamage((int)armorDamage);
                         }
                     }
 					mechSuit.TakeArmorDamage(armorDamage);

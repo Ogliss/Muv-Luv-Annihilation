@@ -24,17 +24,21 @@ namespace MuvLuvAnnihilation
 			{
 				if (refuelableComp == null)
 				{
-					if (Refuelable.TryGetComp<CompRefuelableSteel>().Props.fuelFilter.Allows(Fuel))
+					if (Refuelable.TryGetComp<CompRefuelableSteel>().FuelFilter.Allows(Fuel))
 					{
 						refuelableComp = Refuelable.TryGetComp<CompRefuelableSteel>();
 					}
-					if (Refuelable.TryGetComp<CompRefuelableChemfuel>().Props.fuelFilter.Allows(Fuel))
+					else if (Refuelable.TryGetComp<CompRefuelableChemfuel>().FuelFilter.Allows(Fuel))
 					{
 						refuelableComp = Refuelable.TryGetComp<CompRefuelableChemfuel>();
 					}
-					if (Refuelable.TryGetComp<CompRefuelableAmmo>().Props.fuelFilter.Allows(Fuel))
+					else if (Refuelable.TryGetComp<CompRefuelableAmmoFirst>().FuelFilter.Allows(Fuel))
 					{
-						refuelableComp = Refuelable.TryGetComp<CompRefuelableAmmo>();
+						refuelableComp = Refuelable.TryGetComp<CompRefuelableAmmoFirst>();
+					}
+					else if (Refuelable.TryGetComp<CompRefuelableAmmoSecond>().FuelFilter.Allows(Fuel))
+					{
+						refuelableComp = Refuelable.TryGetComp<CompRefuelableAmmoSecond>();
 					}
 				}
 				return refuelableComp;

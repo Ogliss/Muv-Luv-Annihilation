@@ -36,7 +36,7 @@
 			<Flammability>0</Flammability>
 			<Mass>15</Mass>
 		</statBases>
-		<thingClass>MuvLuvAnnihilation.ChargingStation</thingClass>
+		<thingClass>MuvLuvAnnihilation.MechStation</thingClass>
 		<tickerType>Normal</tickerType>
 		<size>(5, 5)</size>
 		<costList>
@@ -51,7 +51,6 @@
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<compClass>MuvLuvAnnihilation.CompRefuelableSteel</compClass>
-				<fuelConsumptionRate>22.0</fuelConsumptionRate>
 				<fuelCapacity>75.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
@@ -62,7 +61,6 @@
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<compClass>MuvLuvAnnihilation.CompRefuelableChemfuel</compClass>
-				<fuelConsumptionRate>22.0</fuelConsumptionRate>
 				<fuelCapacity>40.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
@@ -72,14 +70,23 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<compClass>MuvLuvAnnihilation.CompRefuelableAmmo</compClass>
-				<fuelConsumptionRate>22.0</fuelConsumptionRate>
-				<fuelCapacity>20.0</fuelCapacity>
+				<compClass>MuvLuvAnnihilation.CompRefuelableAmmoFirst</compClass>
 				<fuelFilter>
 					<thingDefs>
 						<li>WoodLog</li>
 					</thingDefs>
 				</fuelFilter>
+				<fuelCapacity>500.0</fuelCapacity>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<compClass>MuvLuvAnnihilation.CompRefuelableAmmoSecond</compClass>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>500.0</fuelCapacity>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 		</comps>

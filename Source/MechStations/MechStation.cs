@@ -4,7 +4,7 @@ using Verse;
 
 namespace MuvLuvAnnihilation
 {
-	public class ChargingStation : Building
+	public class MechStation : Building
 	{
 		
     }

@@ -23,19 +23,23 @@ namespace MuvLuvAnnihilation
 			{
 				if (refuelableComp == null)
                 {
-					if (Refuelable.TryGetComp<CompRefuelableSteel>().Props.fuelFilter.Allows(Fuel))
+					if (Refuelable.TryGetComp<CompRefuelableSteel>().FuelFilter.Allows(Fuel))
 					{
 						refuelableComp = Refuelable.TryGetComp<CompRefuelableSteel>();
 					}
-					if (Refuelable.TryGetComp<CompRefuelableChemfuel>().Props.fuelFilter.Allows(Fuel))
+					else if (Refuelable.TryGetComp<CompRefuelableChemfuel>().FuelFilter.Allows(Fuel))
 					{
 						refuelableComp = Refuelable.TryGetComp<CompRefuelableChemfuel>();
 					}
-					if (Refuelable.TryGetComp<CompRefuelableAmmo>().Props.fuelFilter.Allows(Fuel))
+					else if (Refuelable.TryGetComp<CompRefuelableAmmoFirst>().FuelFilter.Allows(Fuel))
 					{
-						refuelableComp = Refuelable.TryGetComp<CompRefuelableAmmo>();
+						refuelableComp = Refuelable.TryGetComp<CompRefuelableAmmoFirst>();
 					}
-                }
+					else if (Refuelable.TryGetComp<CompRefuelableAmmoSecond>().FuelFilter.Allows(Fuel))
+					{
+						refuelableComp = Refuelable.TryGetComp<CompRefuelableAmmoSecond>();
+					}
+				}
 				return refuelableComp;
 			}
 		}
@@ -75,19 +79,13 @@ namespace MuvLuvAnnihilation
 
 		public static Toil FinalizeRefueling(TargetIndex refuelableInd, TargetIndex fuelInd, CompRefuelableMulti RefuelableComp)
 		{
-			Log.Message(" - FinalizeRefueling - Toil toil = new Toil(); - 1", true);
 			Toil toil = new Toil();
 			toil.initAction = delegate
 			{
-				Log.Message(" - FinalizeRefueling - Job curJob = toil.actor.CurJob; - 2", true);
 				Job curJob = toil.actor.CurJob;
-				Log.Message(" - FinalizeRefueling - Thing thing = curJob.GetTarget(refuelableInd).Thing; - 3", true);
 				Thing thing = curJob.GetTarget(refuelableInd).Thing;
-				Log.Message(" - FinalizeRefueling - if (toil.actor.CurJob.placedThings.NullOrEmpty()) - 4", true);
 				if (toil.actor.CurJob.placedThings.NullOrEmpty())
 				{
-					Log.Message(" - FinalizeRefueling - RefuelableComp.Refuel(toil.actor.CurJob.placedThings.Select((ThingCountClass p) => p.thing).ToList()); - 5", true);
-
 					RefuelableComp.Refuel(new List<Thing>
 										{
 												curJob.GetTarget(fuelInd).Thing
@@ -95,13 +93,10 @@ namespace MuvLuvAnnihilation
 				}
 				else
 				{
-					Log.Message(" - FinalizeRefueling - RefuelableComp.Refuel(toil.actor.CurJob.placedThings.Select((ThingCountClass p) => p.thing).ToList()); - 6", true);
 					RefuelableComp.Refuel(toil.actor.CurJob.placedThings.Select((ThingCountClass p) => p.thing).ToList());
 				}
 			};
-			Log.Message(" - FinalizeRefueling - toil.defaultCompleteMode = ToilCompleteMode.Instant; - 8", true);
 			toil.defaultCompleteMode = ToilCompleteMode.Instant;
-			Log.Message(" - FinalizeRefueling - return toil; - 9", true);
 			return toil;
 		}
 	}

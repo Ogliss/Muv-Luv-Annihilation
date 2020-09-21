@@ -15,6 +15,15 @@ namespace MuvLuvAnnihilation
 
 		public bool allowAutoRefuel = true;
 
+		public ThingFilter fuelFilter;
+		public virtual ThingFilter FuelFilter
+        {
+			get
+            {
+				return Props.fuelFilter;
+            }
+        }
+
 		private CompFlickable flickComp;
 
 		public const string RefueledSignal = "Refueled";
@@ -108,9 +117,9 @@ namespace MuvLuvAnnihilation
 		public override void PostExposeData()
 		{
 			base.PostExposeData();
-			Scribe_Values.Look(ref fuel, "fuel", 0f);
-			Scribe_Values.Look(ref configuredTargetFuelLevel, "configuredTargetFuelLevel", -1f);
-			Scribe_Values.Look(ref allowAutoRefuel, "allowAutoRefuel", defaultValue: false);
+			Scribe_Values.Look(ref fuel, this.GetType().ToString() + "fuel", 0f);
+			Scribe_Values.Look(ref configuredTargetFuelLevel, this.GetType().ToString() + "configuredTargetFuelLevel", -1f);
+			Scribe_Values.Look(ref allowAutoRefuel, this.GetType().ToString() + "allowAutoRefuel", defaultValue: false);
 			if (Scribe.mode == LoadSaveMode.PostLoadInit && !Props.showAllowAutoRefuelToggle)
 			{
 				allowAutoRefuel = Props.initialAllowAutoRefuel;
@@ -147,9 +156,9 @@ namespace MuvLuvAnnihilation
 		public override void PostDestroy(DestroyMode mode, Map previousMap)
 		{
 			base.PostDestroy(mode, previousMap);
-			if (previousMap != null && Props.fuelFilter.AllowedDefCount == 1 && Props.initialFuelPercent == 0f)
+			if (previousMap != null && FuelFilter.AllowedDefCount == 1 && Props.initialFuelPercent == 0f)
 			{
-				ThingDef thingDef = Props.fuelFilter.AllowedThingDefs.First();
+				ThingDef thingDef = FuelFilter.AllowedThingDefs.First();
 				int num = GenMath.RoundRandom(1f * fuel);
 				while (num > 0)
 				{
@@ -163,19 +172,23 @@ namespace MuvLuvAnnihilation
 
 		public override string CompInspectStringExtra()
 		{
-			string text = Props.FuelLabel + ": " + fuel.ToStringDecimalIfSmall() + " / " + Props.fuelCapacity.ToStringDecimalIfSmall();
-			if (!Props.consumeFuelOnlyWhenUsed && HasFuel)
-			{
-				int numTicks = (int)(fuel / Props.fuelConsumptionRate * 60000f);
-				text = text + " (" + numTicks.ToStringTicksToPeriod() + ")";
-			}
-			if (!HasFuel && !Props.outOfFuelMessage.NullOrEmpty())
-			{
-				text += $"\n{Props.outOfFuelMessage} ({GetFuelCountToFullyRefuel()}x {Props.fuelFilter.AnyAllowedDef.label})";
-			}
-			if (Props.targetFuelLevelConfigurable)
-			{
-				text += "\n" + "ConfiguredTargetFuelLevel".Translate(TargetFuelLevel.ToStringDecimalIfSmall());
+			string text = "";
+			if (FuelFilter != null)
+            {
+				text += FuelFilter.Summary.CapitalizeFirst() + ": " + fuel.ToStringDecimalIfSmall() + " / " + Props.fuelCapacity.ToStringDecimalIfSmall();
+				if (!Props.consumeFuelOnlyWhenUsed && HasFuel)
+				{
+					int numTicks = (int)(fuel / Props.fuelConsumptionRate * 60000f);
+					text = text + " (" + numTicks.ToStringTicksToPeriod() + ")";
+				}
+				if (!HasFuel && !Props.outOfFuelMessage.NullOrEmpty())
+				{
+					text += $"\n{Props.outOfFuelMessage} ({GetFuelCountToFullyRefuel()}x {FuelFilter.AnyAllowedDef.label})";
+				}
+				if (Props.targetFuelLevelConfigurable)
+				{
+					text += "\n" + "ConfiguredTargetFuelLevel".Translate(TargetFuelLevel.ToStringDecimalIfSmall());
+				}
 			}
 			return text;
 		}
