@@ -7,7 +7,7 @@ using Verse;
 
 namespace MuvLuvAnnihilation
 {
-    public static class ClaimExtensions
+    public static class MechExtensions
     {
         public static bool UnclaimMech(this Pawn pawn, MechSuit AssignedMech)
         {
@@ -41,6 +41,21 @@ namespace MuvLuvAnnihilation
                 comp.mechOwnerships = new Dictionary<Pawn, MechSuit>();
             comp.mechOwnerships[pawn] = newSuit;
             return true;
+        }
+
+        public static MechSuit GetMechSuit(this Pawn pawn)
+        {
+            if (pawn?.apparel?.WornApparel != null)
+            {
+                foreach (var a in pawn.apparel.WornApparel)
+                {
+                    if (a is MechSuit mechSuit)
+                    {
+                        return mechSuit;
+                    }
+                }
+            }
+            return null;
         }
     }
 }

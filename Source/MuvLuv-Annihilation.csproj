@@ -31,12 +31,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Harmony\Patches\IncidentWorker_Raid_ResolveRaidArriveMode_BETA_Patch - Copy.cs" />
+    <Compile Include="ChargingStations\JobDriver_RefuelChargingStationAtomic.cs" />
+    <Compile Include="ChargingStations\RefuelWorkGiverUtilityMulti.cs" />
+    <Compile Include="ChargingStations\JobDriver_RefuelChargingStation.cs" />
+    <Compile Include="ChargingStations\WorkGiver_RefuelChargingStation.cs" />
+    <Compile Include="ChargingStations\CompRefuelables.cs" />
+    <Compile Include="ChargingStations\Gizmo_RefuelableFuelStatusMulti.cs" />
+    <Compile Include="ChargingStations\Command_SetTargetFuelLevelMulti.cs" />
+    <Compile Include="ChargingStations\CompRefuelableMulti.cs" />
+    <Compile Include="ChargingStations\ChargingStation.cs" />
+    <Compile Include="Harmony\Patches\Patch_ArmorUtility.cs" />
+    <Compile Include="Harmony\Patches\Patch_GetGizmos.cs" />
     <Compile Include="MechOwnership\MechOwnership.cs" />
     <Compile Include="BETADefOf.cs" />
     <None Include="Harmony\Patches\Projectile_Launch_MuzzlePosition_Patch.cs.bak" />
     <Compile Include="Apparels\MechSuit.cs" />
-    <Compile Include="Extensions\ClaimExtensions.cs" />
+    <Compile Include="Extensions\MechExtensions.cs" />
     <Compile Include="Comps\CompAssignableToPawn_Mech.cs" />
     <Compile Include="Harmony\Patches\ThingListGroupHelper_Includes_CompBETAProjectileInterceptor_Patch.cs" />
     <Compile Include="ProjectileDefExtension.cs" />
@@ -108,20 +118,12 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\Harmony\Current\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="1AnimatedProjectile">
       <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\AnimatedProjectile\bin\Debug\1AnimatedProjectile.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="1CompOversizedWeapon">
       <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\CompOversizedWeapon\bin\Debug\1CompOversizedWeapon.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="CompTurret">

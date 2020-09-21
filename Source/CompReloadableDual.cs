@@ -107,6 +107,10 @@ namespace MuvLuvAnnihilation
 		// Token: 0x04003003 RID: 12291
 		public SoundDef soundReloadSecondry;
 
+		public int maxHitpoints;
+
+		public float breakWhenHitpointsBelow;
+
 		// Token: 0x04003004 RID: 12292
 		[MustTranslate]
 		public string chargeNounSecondry = "charge";
@@ -160,7 +164,15 @@ namespace MuvLuvAnnihilation
 		{
 			get
 			{
-				return this.remainingChargesSecondry > 0;
+				return !IsBroken && this.remainingChargesSecondry > 0;
+			}
+		}
+
+		public bool IsBroken
+		{
+			get
+			{
+				return (float)this.hitPoints / (float)this.Props.maxHitpoints * 100f <= this.Props.breakWhenHitpointsBelow;
 			}
 		}
 
@@ -418,5 +430,6 @@ namespace MuvLuvAnnihilation
 		// Token: 0x04003005 RID: 12293
 		private int remainingChargesSecondry;
 
+		public int hitPoints;
 	}
 }

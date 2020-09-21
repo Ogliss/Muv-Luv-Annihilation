@@ -33,5 +33,12 @@ namespace MuvLuvAnnihilation
 
 		public static FactionDef MuvLuv_BETA;
 
+		public static JobDef BETA_RefuelChargingStation;
+
+		public static JobDef BETA_RefuelAtomicChargingStation;
+
+		public static ThingDef MLB_ChargingStation;
+
+
 	}
 }

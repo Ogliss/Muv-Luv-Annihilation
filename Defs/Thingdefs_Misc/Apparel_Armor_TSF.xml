@@ -31,7 +31,8 @@
 		</costList>
 		<comps>
 			<li Class="MuvLuvAnnihilation.CompProperties_ReloadableDual">
-
+				<maxHitpoints>100</maxHitpoints>
+				<breakWhenHitpointsBelow>0.25</breakWhenHitpointsBelow>
 				<maxCharges>20</maxCharges>
 				<ammoDef>Chemfuel</ammoDef>
 				<ammoCountPerCharge>20</ammoCountPerCharge>
