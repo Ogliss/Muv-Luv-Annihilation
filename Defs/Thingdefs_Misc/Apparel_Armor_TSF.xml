@@ -30,6 +30,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
+			<li Class="MuvLuvAnnihilation.CompProperties_MechSuitAssignableToStation"></li>
 			<li Class="MuvLuvAnnihilation.CompProperties_ReloadableDual">
 				<maxCharges>20</maxCharges>
 				<ammoDef>Chemfuel</ammoDef>
@@ -39,7 +40,6 @@
 				<hotKey>Misc4</hotKey>
 				<chargeNoun>jump</chargeNoun>
 				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-
 				<maxChargesSecondry>5</maxChargesSecondry>
 				<ammoDefSecondry>Chemfuel</ammoDefSecondry>
 				<ammoCountPerChargeSecondry>20</ammoCountPerChargeSecondry>

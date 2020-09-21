@@ -40,25 +40,28 @@ namespace MuvLuvAnnihilation
 			{
 				float num = 0f;
 				bool flag = false;
-				flag = true;
-				Rect rect = new Rect(0f, num, viewRect.width * 0.7f, 32f);
-				Widgets.Label(rect, assignable.assignedStation.LabelCap);
-				rect.x = rect.xMax;
-				rect.width = viewRect.width * 0.3f;
-				if (Widgets.ButtonText(rect, "BuildingUnassign".Translate()))
-				{
-					assignable.TryUnassignStation(assignable.assignedStation);
-					SoundDefOf.Click.PlayOneShotOnCamera();
-					return;
+				if (assignable.assignedStation != null)
+                {
+					flag = true;
+					Rect rect = new Rect(0f, num, viewRect.width * 0.7f, 32f);
+					Widgets.Label(rect, assignable.assignedStation.LabelCap);
+					rect.x = rect.xMax;
+					rect.width = viewRect.width * 0.3f;
+					if (Widgets.ButtonText(rect, "BuildingUnassign".Translate()))
+					{
+						assignable.TryUnassignStation(assignable.assignedStation);
+						SoundDefOf.Click.PlayOneShotOnCamera();
+						return;
+					}
+					num += 35f;
 				}
-				num += 35f;
 				if (flag)
 				{
 					num += 15f;
 				}
 				foreach (MechStation assigningCandidate in assignable.AssigningCandidates)
 				{
-					if (assignable.assignedStation != assigningCandidate)
+					if (assignable.assignedStation == null || assignable.assignedStation != assigningCandidate)
 					{
 						AcceptanceReport acceptanceReport = assignable.CanAssignTo(assigningCandidate);
 						bool accepted = acceptanceReport.Accepted;
