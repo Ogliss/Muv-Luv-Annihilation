@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CompTurrets\CompTurretDamagable.cs" />
+    <Compile Include="MechStations\Command_SetAmmoType.cs" />
     <Compile Include="MechStations\Dialog_AssignBuildingOwnerStation.cs" />
     <Compile Include="MechStations\JobDriver_RefuelChargingStationAtomic.cs" />
     <Compile Include="MechStations\RefuelWorkGiverUtilityMulti.cs" />

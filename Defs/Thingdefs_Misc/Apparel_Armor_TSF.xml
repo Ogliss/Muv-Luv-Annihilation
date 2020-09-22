@@ -16,6 +16,7 @@
 				<li>MLA_TSFFabrication</li>
 			</researchPrerequisites>
 		</recipeMaker>
+		<thingClass>MuvLuvAnnihilation.MechSuit</thingClass>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -92,7 +93,6 @@
 		<defName>Apparel_A10ThunderboltII</defName>
 		<label>A-10 Thunderbolt II</label>
 		<description>A variant of TSF armor with an integrated Daul Miniguns.</description>
-		<thingClass>MuvLuvAnnihilation.MechSuit</thingClass>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

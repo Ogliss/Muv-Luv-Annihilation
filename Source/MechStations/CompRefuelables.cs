@@ -85,7 +85,6 @@ namespace MuvLuvAnnihilation
 	[StaticConstructorOnStartup]
 	public class CompRefuelableAmmoFirst : CompRefuelableMulti
 	{
-		public ThingDef ammoToReload;
 		public override ThingFilter FuelFilter
 		{
 			get
@@ -130,19 +129,18 @@ namespace MuvLuvAnnihilation
 				};
 				yield return command_Toggle;
 			}
+			var command_Action = new Command_SetAmmoType(this, this.parent.Map);
+			command_Action.defaultLabel = "SetAmmoTypeFirst".Translate();
+			command_Action.defaultDesc = "SetAmmoTypeFirstDesc".Translate();
+			command_Action.hotKey = KeyBindingDefOf.Misc8;
+			command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/LoadTransporter");
+			yield return command_Action;
 		}
-
-        public override void PostExposeData()
-        {
-            base.PostExposeData();
-			Scribe_Defs.Look<ThingDef>(ref ammoToReload, "ammoToReload");
-        }
     }
 
 	[StaticConstructorOnStartup]
 	public class CompRefuelableAmmoSecond : CompRefuelableMulti
 	{
-		public ThingDef ammoToReload;
 		public override ThingFilter FuelFilter
 		{
 			get
@@ -187,11 +185,12 @@ namespace MuvLuvAnnihilation
 				};
 				yield return command_Toggle;
 			}
-		}
-		public override void PostExposeData()
-		{
-			base.PostExposeData();
-			Scribe_Defs.Look<ThingDef>(ref ammoToReload, "ammoToReload");
+			var command_Action = new Command_SetAmmoType(this, this.parent.Map);
+			command_Action.defaultLabel = "SetAmmoTypeSecond".Translate();
+			command_Action.defaultDesc = "SetAmmoTypeSecondDesc".Translate();
+			command_Action.hotKey = KeyBindingDefOf.Misc8;
+			command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/LoadTransporter");
+			yield return command_Action;
 		}
 	}
 }

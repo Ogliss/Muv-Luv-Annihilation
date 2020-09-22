@@ -9,7 +9,7 @@ namespace MuvLuvAnnihilation
 	[StaticConstructorOnStartup]
 	public class CompRefuelableMulti : ThingComp
 	{
-		protected float fuel;
+		public float fuel;
 
 		private float configuredTargetFuelLevel = -1f;
 

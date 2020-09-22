@@ -27,34 +27,49 @@ namespace MuvLuvAnnihilation
 			{
 				return true;
 			}
+			Log.Message(pawn + " - " + t, true);
 			return false;
         }
 		public static bool CheckIfCanRefuel(Pawn pawn, Thing t, CompRefuelableMulti compRefuelable, bool forced = false)
 		{
+			Log.Message(" - CheckIfCanRefuel - if (compRefuelable == null || compRefuelable.IsFull || (!forced && !compRefuelable.allowAutoRefuel)) - 1", true);
 			if (compRefuelable == null || compRefuelable.IsFull || (!forced && !compRefuelable.allowAutoRefuel))
 			{
+				Log.Message(" - CheckIfCanRefuel - return false; - 2", true);
 				return false;
 			}
+			Log.Message(" - CheckIfCanRefuel - if (!forced && !compRefuelable.ShouldAutoRefuelNow) - 3", true);
 			if (!forced && !compRefuelable.ShouldAutoRefuelNow)
 			{
+				Log.Message(" - CheckIfCanRefuel - return false; - 4", true);
 				return false;
 			}
+			Log.Message(" - CheckIfCanRefuel - if (t.IsForbidden(pawn) || !pawn.CanReserve(t, 1, -1, null, forced)) - 5", true);
 			if (t.IsForbidden(pawn) || !pawn.CanReserve(t, 1, -1, null, forced))
 			{
+				Log.Message(" - CheckIfCanRefuel - return false; - 6", true);
 				return false;
 			}
+			Log.Message(" - CheckIfCanRefuel - if (t.Faction != pawn.Faction) - 7", true);
 			if (t.Faction != pawn.Faction)
 			{
+				Log.Message(" - CheckIfCanRefuel - return false; - 8", true);
 				return false;
 			}
+			Log.Message(" - CheckIfCanRefuel - if (FindBestFuel(pawn, compRefuelable.FuelFilter) == null) - 9", true);
 			if (FindBestFuel(pawn, compRefuelable.FuelFilter) == null)
 			{
+				Log.Message(" - CheckIfCanRefuel - JobFailReason.Is(\"NoFuelToRefuel\".Translate(compRefuelable.FuelFilter.Summary)); - 10", true);
 				JobFailReason.Is("NoFuelToRefuel".Translate(compRefuelable.FuelFilter.Summary));
+				Log.Message(" - CheckIfCanRefuel - return false; - 11", true);
 				return false;
 			}
+			Log.Message(" - CheckIfCanRefuel - if (t.TryGetComp<CompRefuelableMulti>().Props.atomicFueling && FindAllFuel(pawn, t, compRefuelable) == null) - 12", true);
 			if (t.TryGetComp<CompRefuelableMulti>().Props.atomicFueling && FindAllFuel(pawn, t, compRefuelable) == null)
 			{
+				Log.Message(" - CheckIfCanRefuel - JobFailReason.Is(\"NoFuelToRefuel\".Translate(compRefuelable.FuelFilter.Summary)); - 13", true);
 				JobFailReason.Is("NoFuelToRefuel".Translate(compRefuelable.FuelFilter.Summary));
+				Log.Message(" - CheckIfCanRefuel - return false; - 14", true);
 				return false;
 			}
 			return true;

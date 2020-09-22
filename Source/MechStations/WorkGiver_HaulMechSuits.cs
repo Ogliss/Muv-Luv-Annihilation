@@ -21,7 +21,8 @@ namespace MuvLuvAnnihilation
 
 		public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
 		{
-			if (HaulAIUtility.PawnCanAutomaticallyHaulFast(pawn, t, forced) && t is MechSuit mechSuit && mechSuit.AssignedStation != null)
+			if (HaulAIUtility.PawnCanAutomaticallyHaulFast(pawn, t, forced) && t is MechSuit mechSuit && mechSuit.AssignedStation != null 
+				&& mechSuit.Position != mechSuit.AssignedStation.InteractionCell)
 			{
 				Job job = JobMaker.MakeJob(JobDefOf.HaulToCell, t, mechSuit.AssignedStation.InteractionCell);
 				job.count = 1;

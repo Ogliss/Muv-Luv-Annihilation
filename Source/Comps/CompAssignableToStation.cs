@@ -80,13 +80,13 @@ namespace MuvLuvAnnihilation
         {
             Log.Message("ForceAddStation");
             assignedStation = station;
-            assignedStation.assignedSuit = this.MechSuit;
+            station.InitSuitsData(MechSuit);
         }
 
         public virtual void ForceRemoveStation(MechStation station)
         {
             Log.Message("ForceRemoveStation");
-            assignedStation.assignedSuit = null;
+            assignedStation.EraseSuitsData();
             assignedStation = null;
         }
 
@@ -94,13 +94,13 @@ namespace MuvLuvAnnihilation
         {
             Log.Message("TryAssignStation");
             assignedStation = station;
-            assignedStation.assignedSuit = this.MechSuit;
+            assignedStation.InitSuitsData(this.MechSuit);
         }
 
         public virtual void TryUnassignStation(MechStation station)
         {
             Log.Message("TryUnassignStation");
-            assignedStation.assignedSuit = null;
+            assignedStation.EraseSuitsData();
             assignedStation = null;
         }
 
