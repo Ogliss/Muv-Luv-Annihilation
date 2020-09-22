@@ -16,6 +16,7 @@
 				<li>MLA_TSFFabrication</li>
 			</researchPrerequisites>
 		</recipeMaker>
+		<thingClass>MuvLuvAnnihilation.MechSuit</thingClass>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -30,9 +31,8 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
+			<li Class="MuvLuvAnnihilation.CompProperties_MechSuitAssignableToStation"></li>
 			<li Class="MuvLuvAnnihilation.CompProperties_ReloadableDual">
-				<maxHitpoints>100</maxHitpoints>
-				<breakWhenHitpointsBelow>0.25</breakWhenHitpointsBelow>
 				<maxCharges>20</maxCharges>
 				<ammoDef>Chemfuel</ammoDef>
 				<ammoCountPerCharge>20</ammoCountPerCharge>
@@ -41,7 +41,6 @@
 				<hotKey>Misc4</hotKey>
 				<chargeNoun>jump</chargeNoun>
 				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-
 				<maxChargesSecondry>5</maxChargesSecondry>
 				<ammoDefSecondry>Chemfuel</ammoDefSecondry>
 				<ammoCountPerChargeSecondry>20</ammoCountPerChargeSecondry>
@@ -94,7 +93,6 @@
 		<defName>Apparel_A10ThunderboltII</defName>
 		<label>A-10 Thunderbolt II</label>
 		<description>A variant of TSF armor with an integrated Daul Miniguns.</description>
-		<thingClass>MuvLuvAnnihilation.MechSuit</thingClass>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -109,7 +107,8 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+				<breakWhenHitpointsBelow>0.25</breakWhenHitpointsBelow>
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
 				<ammoDef>Ammo_TSF_Minigun</ammoDef>
@@ -133,7 +132,8 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+				<breakWhenHitpointsBelow>0.25</breakWhenHitpointsBelow>
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
 				<ammoDef>Ammo_TSF_Minigun</ammoDef>
@@ -199,7 +199,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
 				<ammoDef>Ammo_TSF_Minigun</ammoDef>
@@ -223,7 +223,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>90</maxCharges>
 				<ammoDef>Ammo_TSF_Missile</ammoDef>
@@ -285,7 +285,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>90</maxCharges>
 				<ammoDef>Ammo_TSF_Missile</ammoDef>
@@ -309,7 +309,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>90</maxCharges>
 				<ammoDef>Ammo_TSF_Missile</ammoDef>
@@ -371,7 +371,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
 				<ammoDef>Ammo_TSF_Minigun</ammoDef>
@@ -395,7 +395,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>15</maxCharges>
 				<ammoDef>Ammo_TSF_Cannon120mm</ammoDef>
@@ -457,7 +457,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
 				<ammoDef>Ammo_TSF_Minigun</ammoDef>
@@ -481,7 +481,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>15</maxCharges>
 				<ammoDef>Ammo_TSF_Mortar</ammoDef>
@@ -543,7 +543,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>15</maxCharges>
 				<ammoDef>Ammo_TSF_Mortar</ammoDef>
@@ -567,7 +567,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_Turret"> 
+			<li Class="CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>15</maxCharges>
 				<ammoDef>Ammo_TSF_Mortar</ammoDef>

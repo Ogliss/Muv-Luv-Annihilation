@@ -36,7 +36,7 @@
 			<Flammability>0</Flammability>
 			<Mass>15</Mass>
 		</statBases>
-		<thingClass>MuvLuvAnnihilation.ChargingStation</thingClass>
+		<thingClass>MuvLuvAnnihilation.MechStation</thingClass>
 		<tickerType>Normal</tickerType>
 		<size>(5, 5)</size>
 		<costList>
@@ -51,35 +51,50 @@
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<compClass>MuvLuvAnnihilation.CompRefuelableSteel</compClass>
-				<fuelConsumptionRate>22.0</fuelConsumptionRate>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
 				<fuelCapacity>75.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
 						<li>Steel</li>
 					</thingDefs>
 				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<compClass>MuvLuvAnnihilation.CompRefuelableChemfuel</compClass>
-				<fuelConsumptionRate>22.0</fuelConsumptionRate>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
 				<fuelCapacity>40.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
 						<li>Chemfuel</li>
 					</thingDefs>
 				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<compClass>MuvLuvAnnihilation.CompRefuelableAmmo</compClass>
-				<fuelConsumptionRate>22.0</fuelConsumptionRate>
-				<fuelCapacity>20.0</fuelCapacity>
+				<compClass>MuvLuvAnnihilation.CompRefuelableAmmoFirst</compClass>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
 				<fuelFilter>
 					<thingDefs>
 						<li>WoodLog</li>
 					</thingDefs>
 				</fuelFilter>
+				<fuelCapacity>100.0</fuelCapacity>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<compClass>MuvLuvAnnihilation.CompRefuelableAmmoSecond</compClass>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
+				<fuelCapacity>100.0</fuelCapacity>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 		</comps>

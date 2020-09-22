@@ -20,6 +20,20 @@ namespace MuvLuvAnnihilation
 			}
 		}
 
+		public CompMechSuitAssignableToStation CompAssignableToStation => GetComp<CompMechSuitAssignableToStation>();
+		public MechStation AssignedStation
+		{
+			get
+			{
+				if (CompAssignableToStation == null || CompAssignableToStation.assignedStation == null)
+				{
+					return null;
+				}
+				return CompAssignableToStation.assignedStation;
+			}
+		}
+
+
 		public void TakeArmorDamage(float armorDamage)
         {
 			this.HitPoints -= (int)armorDamage;

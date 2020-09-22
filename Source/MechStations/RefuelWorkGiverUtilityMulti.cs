@@ -19,7 +19,11 @@ namespace MuvLuvAnnihilation
 			{
 				return true;
 			}
-			if (CheckIfCanRefuel(pawn, t, t.TryGetComp<CompRefuelableAmmo>(), forced))
+			if (CheckIfCanRefuel(pawn, t, t.TryGetComp<CompRefuelableAmmoFirst>(), forced))
+			{
+				return true;
+			}
+			if (CheckIfCanRefuel(pawn, t, t.TryGetComp<CompRefuelableAmmoSecond>(), forced))
 			{
 				return true;
 			}
@@ -43,16 +47,14 @@ namespace MuvLuvAnnihilation
 			{
 				return false;
 			}
-			if (FindBestFuel(pawn, compRefuelable.Props.fuelFilter) == null)
+			if (FindBestFuel(pawn, compRefuelable.FuelFilter) == null)
 			{
-				ThingFilter fuelFilter = t.TryGetComp<CompRefuelableMulti>().Props.fuelFilter;
-				JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter.Summary));
+				JobFailReason.Is("NoFuelToRefuel".Translate(compRefuelable.FuelFilter.Summary));
 				return false;
 			}
-			if (t.TryGetComp<CompRefuelableMulti>().Props.atomicFueling && FindAllFuel(pawn, t, compRefuelable) == null)
+			if (compRefuelable.Props.atomicFueling && FindAllFuel(pawn, t, compRefuelable) == null)
 			{
-				ThingFilter fuelFilter2 = t.TryGetComp<CompRefuelableMulti>().Props.fuelFilter;
-				JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter2.Summary));
+				JobFailReason.Is("NoFuelToRefuel".Translate(compRefuelable.FuelFilter.Summary));
 				return false;
 			}
 			return true;
@@ -68,9 +70,13 @@ namespace MuvLuvAnnihilation
 			{
 				return GiveRefuelJob(pawn, t, t.TryGetComp<CompRefuelableChemfuel>(), forced, customRefuelJob, customAtomicRefuelJob);
 			}
-			if (CheckIfCanRefuel(pawn, t, t.TryGetComp<CompRefuelableAmmo>(), forced))
+			if (CheckIfCanRefuel(pawn, t, t.TryGetComp<CompRefuelableAmmoFirst>(), forced))
 			{
-				return GiveRefuelJob(pawn, t, t.TryGetComp<CompRefuelableAmmo>(), forced, customRefuelJob, customAtomicRefuelJob);
+				return GiveRefuelJob(pawn, t, t.TryGetComp<CompRefuelableAmmoFirst>(), forced, customRefuelJob, customAtomicRefuelJob);
+			}
+			if (CheckIfCanRefuel(pawn, t, t.TryGetComp<CompRefuelableAmmoSecond>(), forced))
+			{
+				return GiveRefuelJob(pawn, t, t.TryGetComp<CompRefuelableAmmoSecond>(), forced, customRefuelJob, customAtomicRefuelJob);
 			}
 			return null;
 		}
@@ -78,7 +84,7 @@ namespace MuvLuvAnnihilation
 		{
 			if (!refuelable.Props.atomicFueling)
 			{
-				Thing t2 = FindBestFuel(pawn, refuelable.Props.fuelFilter);
+				Thing t2 = FindBestFuel(pawn, refuelable.FuelFilter);
 				return JobMaker.MakeJob(customRefuelJob ?? BETADefOf.BETA_RefuelChargingStation, t, t2);
 			}
 			List<Thing> source = FindAllFuel(pawn, t, refuelable);
@@ -103,7 +109,7 @@ namespace MuvLuvAnnihilation
 		private static List<Thing> FindAllFuel(Pawn pawn, Thing refuelable, CompRefuelableMulti refuelableComp)
 		{
 			int fuelCountToFullyRefuel = refuelableComp.GetFuelCountToFullyRefuel();
-			ThingFilter filter = refuelableComp.Props.fuelFilter;
+			ThingFilter filter = refuelableComp.FuelFilter;
 			return FindEnoughReservableThings(pawn, refuelable.Position, new IntRange(fuelCountToFullyRefuel, fuelCountToFullyRefuel), (Thing t) => filter.Allows(t));
 		}
 
