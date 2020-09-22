@@ -120,6 +120,7 @@ namespace MuvLuvAnnihilation
 			Scribe_Values.Look(ref fuel, this.GetType().ToString() + "fuel", 0f);
 			Scribe_Values.Look(ref configuredTargetFuelLevel, this.GetType().ToString() + "configuredTargetFuelLevel", -1f);
 			Scribe_Values.Look(ref allowAutoRefuel, this.GetType().ToString() + "allowAutoRefuel", defaultValue: false);
+			Scribe_Deep.Look<ThingFilter>(ref this.fuelFilter, "fuelFilter", new object[0]);
 			if (Scribe.mode == LoadSaveMode.PostLoadInit && !Props.showAllowAutoRefuelToggle)
 			{
 				allowAutoRefuel = Props.initialAllowAutoRefuel;

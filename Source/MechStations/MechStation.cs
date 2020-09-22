@@ -12,8 +12,8 @@ namespace MuvLuvAnnihilation
         public CompRefuelableChemfuel compRefuelableChemfuel;
         public CompRefuelableAmmoFirst compRefuelableAmmoFirst;
         public CompRefuelableAmmoSecond compRefuelableAmmoSecond;
-        public CompTurretGun compTurretGunFirst;
-        public CompTurretGun compTurretGunSecond;
+        public CompTurretGunDamagable compTurretGunFirst;
+        public CompTurretGunDamagable compTurretGunSecond;
         public override void Tick()
         {
             base.Tick();
@@ -21,18 +21,22 @@ namespace MuvLuvAnnihilation
             {
                 if (assignedSuit.HitPoints != assignedSuit.MaxHitPoints && compRefuelableSteel != null && compRefuelableSteel.HasFuel)
                 {
+                    Log.Message("compRefuelableSteel.ConsumeFuel(1f) - 1");
+
                     compRefuelableSteel.ConsumeFuel(1f);
                     assignedSuit.HitPoints += 1;
                 }
                 if (compTurretGunFirst != null && compTurretGunFirst.gun.HitPoints != compTurretGunFirst.gun.MaxHitPoints 
                     && compRefuelableSteel != null && compRefuelableSteel.HasFuel)
                 {
+                    Log.Message(compTurretGunFirst.gun.HitPoints + " - " + compTurretGunFirst.gun.MaxHitPoints + " - compRefuelableSteel.ConsumeFuel(1f) - 2");
                     compRefuelableSteel.ConsumeFuel(1f);
                     compTurretGunFirst.gun.HitPoints += 1;
                 }
                 if (compTurretGunSecond != null && compTurretGunSecond.gun.HitPoints != compTurretGunSecond.gun.MaxHitPoints
                     && compRefuelableSteel != null && compRefuelableSteel.HasFuel)
                 {
+                    Log.Message(compTurretGunSecond.gun.HitPoints + " - " + compTurretGunSecond.gun.MaxHitPoints + " - compRefuelableSteel.ConsumeFuel(1f) - 3");
                     compRefuelableSteel.ConsumeFuel(1f);
                     compTurretGunSecond.gun.HitPoints += 1;
                 }
@@ -40,6 +44,7 @@ namespace MuvLuvAnnihilation
                     && compRefuelableAmmoFirst != null && compRefuelableAmmoFirst.FuelFilter != null 
                     && compRefuelableAmmoFirst.FuelFilter.Allows(compTurretGunFirst.AmmoDef) && compRefuelableAmmoFirst.HasFuel)
                 {
+                    Log.Message("compRefuelableAmmoFirst.ConsumeFuel(1f)");
                     compRefuelableAmmoFirst.ConsumeFuel(1f);
                     compTurretGunFirst.remainingCharges += 1;
                 }
@@ -47,6 +52,7 @@ namespace MuvLuvAnnihilation
                     && compRefuelableAmmoSecond != null && compRefuelableAmmoSecond.FuelFilter != null 
                     && compRefuelableAmmoSecond.FuelFilter.Allows(compTurretGunSecond.AmmoDef) && compRefuelableAmmoSecond.HasFuel)
                 {
+                    Log.Message("compRefuelableAmmoSecond.ConsumeFuel(1f)");
                     compRefuelableAmmoSecond.ConsumeFuel(1f);
                     compTurretGunSecond.remainingCharges += 1;
                 }
@@ -60,7 +66,10 @@ namespace MuvLuvAnnihilation
             this.compRefuelableChemfuel = this.TryGetComp<CompRefuelableChemfuel>();
             this.compRefuelableAmmoFirst = this.TryGetComp<CompRefuelableAmmoFirst>();
             this.compRefuelableAmmoSecond = this.TryGetComp<CompRefuelableAmmoSecond>();
-            InitSuitsData(assignedSuit);
+            if (assignedSuit != null)
+            {
+                InitSuitsData(assignedSuit);
+            }
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
@@ -74,11 +83,11 @@ namespace MuvLuvAnnihilation
             var turrets = assignedSuit.AllComps.Where(x => x is CompTurretGun);
             if (turrets.Count() > 0)
             {
-                this.compTurretGunFirst = turrets.ElementAt(0) as CompTurretGun;
+                this.compTurretGunFirst = turrets.ElementAt(0) as CompTurretGunDamagable;
             }
             if (turrets.Count() > 1)
             {
-                this.compTurretGunSecond = turrets.ElementAt(1) as CompTurretGun;
+                this.compTurretGunSecond = turrets.ElementAt(1) as CompTurretGunDamagable;
             }
         }
 

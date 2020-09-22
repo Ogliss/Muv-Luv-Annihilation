@@ -174,8 +174,8 @@ namespace MuvLuvAnnihilation
 			if (Props.showAllowAutoRefuelToggle)
 			{
 				Command_Toggle command_Toggle = new Command_Toggle();
-				command_Toggle.defaultLabel = "4 CommandToggleAllowAutoRefuel".Translate();
-				command_Toggle.defaultDesc = "4 CommandToggleAllowAutoRefuelDesc".Translate();
+				command_Toggle.defaultLabel = "5 CommandToggleAllowAutoRefuel".Translate();
+				command_Toggle.defaultDesc = "5 CommandToggleAllowAutoRefuelDesc".Translate();
 				command_Toggle.hotKey = KeyBindingDefOf.Command_ItemForbid;
 				command_Toggle.icon = (allowAutoRefuel ? TexCommand.ForbidOff : TexCommand.ForbidOn);
 				command_Toggle.isActive = (() => allowAutoRefuel);
