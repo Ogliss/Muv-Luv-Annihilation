@@ -8,6 +8,7 @@
     <label>neck</label>
     <hitPoints>30</hitPoints>
     <skinCovered>true</skinCovered>
+    <bleedRate>0.25</bleedRate>
     <canSuggestAmputation>false</canSuggestAmputation>
     <tags>
       <li>BreathingPathway</li>
@@ -21,6 +22,7 @@
     <label>head</label>
     <hitPoints>30</hitPoints>
     <skinCovered>true</skinCovered>
+    <bleedRate>0.25</bleedRate>
     <canSuggestAmputation>false</canSuggestAmputation>
   </BodyPartDef>
   
@@ -41,6 +43,7 @@
     <hitPoints>10</hitPoints>
     <delicate>true</delicate>
     <skinCovered>false</skinCovered>
+    <bleedRate>0.25</bleedRate>
     <canSuggestAmputation>false</canSuggestAmputation>
     <tags>
       <li>ConsciousnessSource</li>
@@ -51,7 +54,7 @@
     <defName>BETAHeart</defName>
     <label>heart</label>
     <hitPoints>20</hitPoints>
-    <bleedRate>5</bleedRate>
+    <bleedRate>1</bleedRate>
     <canSuggestAmputation>false</canSuggestAmputation>
     <tags>
       <li>BloodPumpingSource</li>
@@ -62,6 +65,7 @@
     <defName>BETAFluidReprocessor</defName>
     <label>fluid reprocessor</label>
     <hitPoints>15</hitPoints>
+    <bleedRate>0.25</bleedRate>
     <skinCovered>false</skinCovered>
     <tags>
       <li>BloodFiltrationSource</li>
@@ -75,6 +79,7 @@
     <frostbiteVulnerability>2</frostbiteVulnerability>
     <permanentInjuryChanceFactor>15</permanentInjuryChanceFactor>
     <delicate>true</delicate>
+    <bleedRate>0.25</bleedRate>
     <skinCovered>false</skinCovered>
     <socketed>true</socketed>
     <tags>
@@ -87,6 +92,7 @@
     <label>sound sensor</label>
     <hitPoints>10</hitPoints>
     <frostbiteVulnerability>2</frostbiteVulnerability>
+    <bleedRate>0.25</bleedRate>
     <skinCovered>true</skinCovered>
     <tags>
       <li>HearingSource</li>
@@ -98,6 +104,7 @@
     <label>chemical analyzer</label>
     <hitPoints>10</hitPoints>
     <frostbiteVulnerability>5</frostbiteVulnerability>
+    <bleedRate>0.25</bleedRate>
     <skinCovered>true</skinCovered>
   </BodyPartDef>
 
@@ -106,6 +113,7 @@
     <label>shoulder</label>
     <hitPoints>25</hitPoints>
     <skinCovered>true</skinCovered>
+    <bleedRate>0.25</bleedRate>
     <tags>
       <li>ManipulationLimbSegment</li>
     </tags>
@@ -116,6 +124,7 @@
     <label>arm</label>
     <hitPoints>30</hitPoints>
     <skinCovered>true</skinCovered>
+    <bleedRate>0.25</bleedRate>
     <tags>
       <li>ManipulationLimbCore</li>
     </tags>
@@ -126,6 +135,7 @@
     <label>hand</label>
     <hitPoints>20</hitPoints>
     <skinCovered>true</skinCovered>
+    <bleedRate>0.25</bleedRate>
     <tags>
       <li>ManipulationLimbSegment</li>
     </tags>
@@ -137,6 +147,7 @@
     <hitPoints>7</hitPoints>
     <frostbiteVulnerability>10</frostbiteVulnerability>
     <skinCovered>true</skinCovered>
+    <bleedRate>0.25</bleedRate>
     <tags>
       <li>ManipulationLimbDigit</li>
     </tags>
@@ -147,6 +158,7 @@
     <label>leg</label>
     <hitPoints>30</hitPoints>
     <skinCovered>true</skinCovered>
+    <bleedRate>0.25</bleedRate>
     <tags>
       <li>MovingLimbCore</li>
     </tags>
@@ -158,6 +170,7 @@
     <hitPoints>20</hitPoints>
     <frostbiteVulnerability>2</frostbiteVulnerability>
     <skinCovered>true</skinCovered>
+    <bleedRate>0.25</bleedRate>
     <tags>
       <li>MovingLimbSegment</li>
     </tags>
@@ -169,6 +182,7 @@
     <defName>BETAHeavyThorax</defName>
     <label>thorax</label>
     <hitPoints>80</hitPoints>
+    <bleedRate>0.25</bleedRate>
     <skinCovered>true</skinCovered>
   </BodyPartDef>
 
@@ -183,6 +197,7 @@
     <defName>BETAThorax</defName>
     <label>thorax</label>
     <hitPoints>40</hitPoints>
+    <bleedRate>0.25</bleedRate>
     <skinCovered>true</skinCovered>
   </BodyPartDef>
 
@@ -210,6 +225,7 @@
   
   <BodyPartDef Abstract="True" Name="BETASoldierRingBase">
     <labelShort>body ring</labelShort>
+    <bleedRate>0.25</bleedRate>
     <skinCovered>true</skinCovered>
     <tags>
       <li>MovingLimbCore</li>
