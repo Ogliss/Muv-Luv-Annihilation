@@ -23,19 +23,19 @@ namespace MuvLuvAnnihilation
 			{
 				if (refuelableComp == null)
                 {
-					if (Refuelable.TryGetComp<CompRefuelableSteel>().FuelFilter.Allows(Fuel))
+					if (Refuelable.TryGetComp<CompRefuelableSteel>().FuelFilter.Allows(Fuel) && !Refuelable.TryGetComp<CompRefuelableSteel>().IsFull)
 					{
 						refuelableComp = Refuelable.TryGetComp<CompRefuelableSteel>();
 					}
-					else if (Refuelable.TryGetComp<CompRefuelableChemfuel>().FuelFilter.Allows(Fuel))
+					else if (Refuelable.TryGetComp<CompRefuelableChemfuel>().FuelFilter.Allows(Fuel) && !Refuelable.TryGetComp<CompRefuelableChemfuel>().IsFull)
 					{
 						refuelableComp = Refuelable.TryGetComp<CompRefuelableChemfuel>();
 					}
-					else if (Refuelable.TryGetComp<CompRefuelableAmmoFirst>().FuelFilter.Allows(Fuel))
+					else if (Refuelable.TryGetComp<CompRefuelableAmmoFirst>().FuelFilter.Allows(Fuel) && !Refuelable.TryGetComp<CompRefuelableAmmoFirst>().IsFull)
 					{
 						refuelableComp = Refuelable.TryGetComp<CompRefuelableAmmoFirst>();
 					}
-					else if (Refuelable.TryGetComp<CompRefuelableAmmoSecond>().FuelFilter.Allows(Fuel))
+					else if (Refuelable.TryGetComp<CompRefuelableAmmoSecond>().FuelFilter.Allows(Fuel) && !Refuelable.TryGetComp<CompRefuelableAmmoSecond>().IsFull)
 					{
 						refuelableComp = Refuelable.TryGetComp<CompRefuelableAmmoSecond>();
 					}

@@ -33,37 +33,30 @@ namespace MuvLuvAnnihilation
 		{
 			if (compRefuelable == null || compRefuelable.IsFull || (!forced && !compRefuelable.allowAutoRefuel))
 			{
-				Log.Message(compRefuelable + " - CheckIfCanRefuel - return false; - 2", true);
 				return false;
 			}
 			if (!forced && !compRefuelable.ShouldAutoRefuelNow)
 			{
-				Log.Message(compRefuelable + " - CheckIfCanRefuel - return false; - 4", true);
 				return false;
 			}
 			if (t.IsForbidden(pawn) || !pawn.CanReserve(t, 1, -1, null, forced))
 			{
-				Log.Message(compRefuelable + " - CheckIfCanRefuel - return false; - 6", true);
 				return false;
 			}
 			if (t.Faction != pawn.Faction)
 			{
-				Log.Message(compRefuelable + " - CheckIfCanRefuel - return false; - 8", true);
 				return false;
 			}
 			if (FindBestFuel(pawn, compRefuelable.FuelFilter) == null)
 			{
 				JobFailReason.Is("NoFuelToRefuel".Translate(compRefuelable.FuelFilter.Summary));
-				Log.Message(compRefuelable + " - CheckIfCanRefuel - return false; - 11", true);
 				return false;
 			}
 			if (compRefuelable.Props.atomicFueling && FindAllFuel(pawn, t, compRefuelable) == null)
 			{
 				JobFailReason.Is("NoFuelToRefuel".Translate(compRefuelable.FuelFilter.Summary));
-				Log.Message(compRefuelable + " - CheckIfCanRefuel - return false; - 14", true);
 				return false;
 			}
-			Log.Message(compRefuelable + " - CheckIfCanRefuel - return true; - 15", true);
 			return true;
 		}
 

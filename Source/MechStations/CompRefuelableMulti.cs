@@ -120,7 +120,7 @@ namespace MuvLuvAnnihilation
 			Scribe_Values.Look(ref fuel, this.GetType().ToString() + "fuel", 0f);
 			Scribe_Values.Look(ref configuredTargetFuelLevel, this.GetType().ToString() + "configuredTargetFuelLevel", -1f);
 			Scribe_Values.Look(ref allowAutoRefuel, this.GetType().ToString() + "allowAutoRefuel", defaultValue: false);
-			Scribe_Deep.Look<ThingFilter>(ref this.fuelFilter, "fuelFilter", new object[0]);
+			Scribe_Deep.Look<ThingFilter>(ref this.fuelFilter, this.GetType().ToString() + "fuelFilter", new object[0]);
 			if (Scribe.mode == LoadSaveMode.PostLoadInit && !Props.showAllowAutoRefuelToggle)
 			{
 				allowAutoRefuel = Props.initialAllowAutoRefuel;
@@ -199,10 +199,12 @@ namespace MuvLuvAnnihilation
 			base.CompTick();
 			if (!Props.consumeFuelOnlyWhenUsed && (flickComp == null || flickComp.SwitchIsOn))
 			{
+				Log.Message(this + " - ConsumeFuel(ConsumptionRatePerTick)", true);
 				ConsumeFuel(ConsumptionRatePerTick);
 			}
 			if (Props.fuelConsumptionPerTickInRain > 0f && parent.Spawned && parent.Map.weatherManager.RainRate > 0.4f && !parent.Map.roofGrid.Roofed(parent.Position))
 			{
+				Log.Message(this + " - ConsumeFuel(Props.fuelConsumptionPerTickInRain)", true);
 				ConsumeFuel(Props.fuelConsumptionPerTickInRain);
 			}
 		}

@@ -51,32 +51,38 @@
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<compClass>MuvLuvAnnihilation.CompRefuelableSteel</compClass>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
 				<fuelCapacity>75.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
 						<li>Steel</li>
 					</thingDefs>
 				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<compClass>MuvLuvAnnihilation.CompRefuelableChemfuel</compClass>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
 				<fuelCapacity>40.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
 						<li>Chemfuel</li>
 					</thingDefs>
 				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<compClass>MuvLuvAnnihilation.CompRefuelableAmmoFirst</compClass>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
 				<fuelFilter>
 					<thingDefs>
 						<li>WoodLog</li>
 					</thingDefs>
 				</fuelFilter>
-				<fuelCapacity>500.0</fuelCapacity>
+				<fuelCapacity>100.0</fuelCapacity>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_Refuelable">
@@ -86,7 +92,9 @@
 						<li>WoodLog</li>
 					</thingDefs>
 				</fuelFilter>
-				<fuelCapacity>500.0</fuelCapacity>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
+				<fuelCapacity>100.0</fuelCapacity>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 		</comps>
