@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Thoughts\ThoughtWorker_SleepingInMech.cs" />
+    <Compile Include="Thoughts\ThoughtWorker_EatingInMech.cs" />
+    <Compile Include="Thoughts\ThoughtWorker_WearingMech.cs" />
     <Compile Include="CompTurrets\CompTurretDamagable.cs" />
     <Compile Include="MechStations\Command_SetAmmoType.cs" />
     <Compile Include="MechStations\Dialog_AssignBuildingOwnerStation.cs" />

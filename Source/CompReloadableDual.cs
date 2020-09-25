@@ -328,7 +328,6 @@ namespace MuvLuvAnnihilation
 			return this.RemainingChargesSecondry != this.MaxChargesSecondry;
 		}
 
-		// Token: 0x06005668 RID: 22120 RVA: 0x001CE4D4 File Offset: 0x001CC6D4
 		public void ReloadFromSecondry(Thing ammo)
 		{
 			if (!this.NeedsReloadSecondry(true))
@@ -359,6 +358,7 @@ namespace MuvLuvAnnihilation
 				this.Props.soundReload.PlayOneShot(new TargetInfo(this.Wearer.Position, this.Wearer.Map, false));
 			}
 		}
+
 
 		// Token: 0x06005669 RID: 22121 RVA: 0x001CE5D0 File Offset: 0x001CC7D0
 		public int MinAmmoNeededSecondry(bool allowForcedReload)

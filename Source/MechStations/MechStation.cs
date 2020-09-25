@@ -14,6 +14,7 @@ namespace MuvLuvAnnihilation
         public CompRefuelableAmmoSecond compRefuelableAmmoSecond;
         public CompTurretGunDamagable compTurretGunFirst;
         public CompTurretGunDamagable compTurretGunSecond;
+        public CompReloadableDual compReloadableDual;
         public override void Tick()
         {
             base.Tick();
@@ -22,7 +23,6 @@ namespace MuvLuvAnnihilation
                 if (assignedSuit.HitPoints != assignedSuit.MaxHitPoints && compRefuelableSteel != null && compRefuelableSteel.HasFuel)
                 {
                     Log.Message("compRefuelableSteel.ConsumeFuel(1f) - 1");
-
                     compRefuelableSteel.ConsumeFuel(1f);
                     assignedSuit.HitPoints += 1;
                 }
@@ -55,6 +55,33 @@ namespace MuvLuvAnnihilation
                     Log.Message("compRefuelableAmmoSecond.ConsumeFuel(1f)");
                     compRefuelableAmmoSecond.ConsumeFuel(1f);
                     compTurretGunSecond.remainingCharges += 1;
+                }
+                if (compReloadableDual != null && compReloadableDual.RemainingCharges != compReloadableDual.MaxCharges
+                    && compRefuelableChemfuel != null && compRefuelableChemfuel.FuelFilter != null
+                    && compRefuelableChemfuel.FuelFilter.Allows(compReloadableDual.AmmoDef) && compRefuelableChemfuel.Fuel >= compReloadableDual.Props.ammoCountPerCharge)
+                {
+                    Log.Message("1 compRefuelableChemfuel.ConsumeFuel(20f)");
+                    compRefuelableChemfuel.ConsumeFuel(compReloadableDual.Props.ammoCountPerCharge);
+                    Thing chemfuel = ThingMaker.MakeThing(compReloadableDual.AmmoDef);
+                    chemfuel.stackCount = compReloadableDual.Props.ammoCountPerCharge;
+                    var soundDef = compReloadableDual.Props.soundReload;
+                    compReloadableDual.Props.soundReload = null;
+                    compReloadableDual.ReloadFrom(chemfuel);
+                    compReloadableDual.Props.soundReload = soundDef;
+                }
+                if (compReloadableDual != null && compReloadableDual.RemainingChargesSecondry != compReloadableDual.MaxChargesSecondry
+                        && compRefuelableChemfuel != null && compRefuelableChemfuel.FuelFilter != null
+                        && compRefuelableChemfuel.FuelFilter.Allows(compReloadableDual.AmmoDefSecondry) 
+                        && compRefuelableChemfuel.Fuel >= compReloadableDual.Props.ammoCountPerChargeSecondry)
+                {
+                    Log.Message("2 compRefuelableChemfuel.ConsumeFuel(20f)");
+                    compRefuelableChemfuel.ConsumeFuel(compReloadableDual.Props.ammoCountPerChargeSecondry);
+                    Thing chemfuel = ThingMaker.MakeThing(compReloadableDual.AmmoDefSecondry);
+                    chemfuel.stackCount = compReloadableDual.Props.ammoCountPerChargeSecondry;
+                    var soundDef = compReloadableDual.Props.soundReload;
+                    compReloadableDual.Props.soundReload = null;
+                    compReloadableDual.ReloadFromSecondry(chemfuel);
+                    compReloadableDual.Props.soundReload = soundDef;
                 }
             }
         }
@@ -89,6 +116,7 @@ namespace MuvLuvAnnihilation
             {
                 this.compTurretGunSecond = turrets.ElementAt(1) as CompTurretGunDamagable;
             }
+            this.compReloadableDual = assignedSuit.GetComp<CompReloadableDual>();
         }
 
         public void EraseSuitsData()
@@ -96,6 +124,7 @@ namespace MuvLuvAnnihilation
             this.assignedSuit = null;
             this.compTurretGunFirst = null;
             this.compTurretGunSecond = null;
+            this.compReloadableDual = null;
         }
 
         public override void ExposeData()
