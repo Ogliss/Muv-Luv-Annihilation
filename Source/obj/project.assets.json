@@ -515,21 +515,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Vova\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GAMES\\Rimworld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
+      "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
       "projectName": "MuvLuv-Annihilation",
-      "projectPath": "C:\\GAMES\\Rimworld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
-      "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
-      "outputPath": "C:\\GAMES\\Rimworld\\Mods\\Muv-Luv-Annihilation\\Source\\obj\\",
+      "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Vova\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "net472"
