@@ -94,11 +94,11 @@
 		<label>A-10 Thunderbolt II</label>
 		<description>A variant of TSF armor with an integrated Daul Miniguns.</description>
 		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+			<texPath>Things/Item/Apparel/TSF/Thunderbolt/Base_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<apparel>
-			<!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+			<!--wornGraphicPath>Things/Item/Apparel/TSF/Thunderbolt/Base</wornGraphicPath-->
 			<wornGraphicPath/>
 		</apparel>
 		<costList>
@@ -161,7 +161,7 @@
 					<li>
 						<UseBodytypeOffsets>True</UseBodytypeOffsets>
 						<shaderType>CutoutComplex</shaderType>
-						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<extraTexPath>Things/Item/Apparel/TSF/Thunderbolt/Base</extraTexPath>
 						<commonality>10</commonality>
 						<drawSize>4,4</drawSize>
 						<hidesHair>True</hidesHair>
@@ -186,11 +186,11 @@
 		<label>EF-2000 Typhoon</label>
 		<description>A variant of TSF armor with an integrated Minigun and Missile Launcher.</description>
 		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+			<texPath>Things/Item/Apparel/TSF/Typhoon/Base_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<apparel>
-			<!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+			<!--wornGraphicPath>Things/Item/Apparel/TSF/Typhoon/Base</wornGraphicPath-->
 			<wornGraphicPath/>
 		</apparel>
 		<costList>
@@ -251,7 +251,7 @@
 					<li>
 						<UseBodytypeOffsets>True</UseBodytypeOffsets>
 						<shaderType>CutoutComplex</shaderType>
-						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<extraTexPath>Things/Item/Apparel/TSF/Typhoon/Base</extraTexPath>
 						<commonality>10</commonality>
 						<drawSize>4,4</drawSize>
 						<hidesHair>True</hidesHair>
@@ -272,11 +272,11 @@
 		<label>F-18E/F Super Hornet</label>
 		<description>A variant of TSF armor with integrated Dual Missile Launchers.</description>
 		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+			<texPath>Things/Item/Apparel/TSF/SuperHornet/Base_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<apparel>
-			<!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+			<!--wornGraphicPath>Things/Item/Apparel/TSF/SuperHornet/Base</wornGraphicPath-->
 			<wornGraphicPath/>
 		</apparel>
 		<costList>
@@ -337,7 +337,7 @@
 					<li>
 						<UseBodytypeOffsets>True</UseBodytypeOffsets>
 						<shaderType>CutoutComplex</shaderType>
-						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<extraTexPath>Things/Item/Apparel/TSF/SuperHornet/Base</extraTexPath>
 						<commonality>10</commonality>
 						<drawSize>4,4</drawSize>
 						<hidesHair>True</hidesHair>
@@ -358,11 +358,11 @@
 		<label>XFJ-01 Shiranui</label>
 		<description>A variant of TSF armor with an integrated Minigun and Missile Launcher.</description>
 		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+			<texPath>Things/Item/Apparel/TSF/Shiranui/Base_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<apparel>
-			<!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+			<!--wornGraphicPath>Things/Item/Apparel/TSF/Shiranui/Base</wornGraphicPath-->
 			<wornGraphicPath/>
 		</apparel>
 		<costList>
@@ -423,7 +423,7 @@
 					<li>
 						<UseBodytypeOffsets>True</UseBodytypeOffsets>
 						<shaderType>CutoutComplex</shaderType>
-						<extraTexPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</extraTexPath>
+						<extraTexPath>Things/Item/Apparel/TSF/Shiranui/Base</extraTexPath>
 						<commonality>10</commonality>
 						<drawSize>4,4</drawSize>
 						<hidesHair>True</hidesHair>
@@ -443,12 +443,12 @@
 		<defName>Apparel_SU37Terminator</defName>
 		<label>SU-37 Terminator</label>
 		<description>A variant of TSF armor with an integrated Minigun and Mortar.</description>
-		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+		<!--graphicData>
+			<texPath>Things/Item/Apparel/TSF/Thunderbolt/Base_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
+		</graphicData-->
 		<apparel>
-			<!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+			<!--wornGraphicPath>Things/Item/Apparel/TSF/Thunderbolt/Base</wornGraphicPath-->
 			<wornGraphicPath/>
 		</apparel>
 		<costList>
@@ -529,12 +529,12 @@
 		<defName>Apparel_JAS39Gripen</defName>
 		<label>JAS-39 Gripen</label>
 		<description>A variant of TSF armor with an integrated Dual Mortars.</description>
-		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+		<!--graphicData>
+			<texPath>Things/Item/Apparel/TSF/Thunderbolt/Base_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
+		</graphicData-->
 		<apparel>
-			<!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+			<!--wornGraphicPath>Things/Item/Apparel/TSF/Thunderbolt/Base</wornGraphicPath-->
 			<wornGraphicPath/>
 		</apparel>
 		<costList>
@@ -615,10 +615,10 @@
 		<defName>Apparel_Type00RTakemikazuchi</defName>
 		<label>Type-00R Takemikazuchi</label>
 		<description>A Melee focused variant of TSF armor.</description>
-		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</texPath>
+		<!--graphicData>
+			<texPath>Things/Item/Apparel/TSF/Thunderbolt/Base_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
+		</graphicData-->
 		<statBases>
 			<ArmorRating_Sharp>1.32</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
@@ -628,7 +628,7 @@
 			<MeleeDodgeChance>0.15</MeleeDodgeChance>
 		</equippedStatOffsets>
 		<apparel>
-			<!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/CataphractArmor/CataphractArmor</wornGraphicPath-->
+			<!--wornGraphicPath>Things/Item/Apparel/TSF/Thunderbolt/Base</wornGraphicPath-->
 			<wornGraphicPath/>
 		</apparel>
 		<costList>
