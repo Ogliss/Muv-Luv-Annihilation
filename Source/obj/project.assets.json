@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
-      "Krafs.Rimworld.Ref/1.2.2753": {
+      "Krafs.Rimworld.Ref/1.3.3117": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -35,7 +35,6 @@
           "ref/net472/UnityEngine.CrashReportingModule.dll": {},
           "ref/net472/UnityEngine.DSPGraphModule.dll": {},
           "ref/net472/UnityEngine.DirectorModule.dll": {},
-          "ref/net472/UnityEngine.FileSystemHttpModule.dll": {},
           "ref/net472/UnityEngine.GameCenterModule.dll": {},
           "ref/net472/UnityEngine.GridModule.dll": {},
           "ref/net472/UnityEngine.HotReloadModule.dll": {},
@@ -56,6 +55,7 @@
           "ref/net472/UnityEngine.SpriteShapeModule.dll": {},
           "ref/net472/UnityEngine.StreamingModule.dll": {},
           "ref/net472/UnityEngine.SubstanceModule.dll": {},
+          "ref/net472/UnityEngine.SubsystemsModule.dll": {},
           "ref/net472/UnityEngine.TLSModule.dll": {},
           "ref/net472/UnityEngine.TerrainModule.dll": {},
           "ref/net472/UnityEngine.TerrainPhysicsModule.dll": {},
@@ -85,11 +85,8 @@
           "ref/net472/mscorlib.dll": {}
         }
       },
-      "Lib.Harmony/2.0.2": {
+      "Lib.Harmony/2.1.1": {
         "type": "package",
-        "frameworkAssemblies": [
-          "System.Runtime.InteropServices.RuntimeInformation"
-        ],
         "compile": {
           "lib/net472/0Harmony.dll": {}
         },
@@ -99,7 +96,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
-      "Krafs.Rimworld.Ref/1.2.2753": {
+      "Krafs.Rimworld.Ref/1.3.3117": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -132,7 +129,6 @@
           "ref/net472/UnityEngine.CrashReportingModule.dll": {},
           "ref/net472/UnityEngine.DSPGraphModule.dll": {},
           "ref/net472/UnityEngine.DirectorModule.dll": {},
-          "ref/net472/UnityEngine.FileSystemHttpModule.dll": {},
           "ref/net472/UnityEngine.GameCenterModule.dll": {},
           "ref/net472/UnityEngine.GridModule.dll": {},
           "ref/net472/UnityEngine.HotReloadModule.dll": {},
@@ -153,6 +149,7 @@
           "ref/net472/UnityEngine.SpriteShapeModule.dll": {},
           "ref/net472/UnityEngine.StreamingModule.dll": {},
           "ref/net472/UnityEngine.SubstanceModule.dll": {},
+          "ref/net472/UnityEngine.SubsystemsModule.dll": {},
           "ref/net472/UnityEngine.TLSModule.dll": {},
           "ref/net472/UnityEngine.TerrainModule.dll": {},
           "ref/net472/UnityEngine.TerrainPhysicsModule.dll": {},
@@ -182,11 +179,8 @@
           "ref/net472/mscorlib.dll": {}
         }
       },
-      "Lib.Harmony/2.0.2": {
+      "Lib.Harmony/2.1.1": {
         "type": "package",
-        "frameworkAssemblies": [
-          "System.Runtime.InteropServices.RuntimeInformation"
-        ],
         "compile": {
           "lib/net472/0Harmony.dll": {}
         },
@@ -196,7 +190,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
-      "Krafs.Rimworld.Ref/1.2.2753": {
+      "Krafs.Rimworld.Ref/1.3.3117": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -229,7 +223,6 @@
           "ref/net472/UnityEngine.CrashReportingModule.dll": {},
           "ref/net472/UnityEngine.DSPGraphModule.dll": {},
           "ref/net472/UnityEngine.DirectorModule.dll": {},
-          "ref/net472/UnityEngine.FileSystemHttpModule.dll": {},
           "ref/net472/UnityEngine.GameCenterModule.dll": {},
           "ref/net472/UnityEngine.GridModule.dll": {},
           "ref/net472/UnityEngine.HotReloadModule.dll": {},
@@ -250,6 +243,7 @@
           "ref/net472/UnityEngine.SpriteShapeModule.dll": {},
           "ref/net472/UnityEngine.StreamingModule.dll": {},
           "ref/net472/UnityEngine.SubstanceModule.dll": {},
+          "ref/net472/UnityEngine.SubsystemsModule.dll": {},
           "ref/net472/UnityEngine.TLSModule.dll": {},
           "ref/net472/UnityEngine.TerrainModule.dll": {},
           "ref/net472/UnityEngine.TerrainPhysicsModule.dll": {},
@@ -279,11 +273,8 @@
           "ref/net472/mscorlib.dll": {}
         }
       },
-      "Lib.Harmony/2.0.2": {
+      "Lib.Harmony/2.1.1": {
         "type": "package",
-        "frameworkAssemblies": [
-          "System.Runtime.InteropServices.RuntimeInformation"
-        ],
         "compile": {
           "lib/net472/0Harmony.dll": {}
         },
@@ -293,7 +284,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
-      "Krafs.Rimworld.Ref/1.2.2753": {
+      "Krafs.Rimworld.Ref/1.3.3117": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -326,7 +317,6 @@
           "ref/net472/UnityEngine.CrashReportingModule.dll": {},
           "ref/net472/UnityEngine.DSPGraphModule.dll": {},
           "ref/net472/UnityEngine.DirectorModule.dll": {},
-          "ref/net472/UnityEngine.FileSystemHttpModule.dll": {},
           "ref/net472/UnityEngine.GameCenterModule.dll": {},
           "ref/net472/UnityEngine.GridModule.dll": {},
           "ref/net472/UnityEngine.HotReloadModule.dll": {},
@@ -347,6 +337,7 @@
           "ref/net472/UnityEngine.SpriteShapeModule.dll": {},
           "ref/net472/UnityEngine.StreamingModule.dll": {},
           "ref/net472/UnityEngine.SubstanceModule.dll": {},
+          "ref/net472/UnityEngine.SubsystemsModule.dll": {},
           "ref/net472/UnityEngine.TLSModule.dll": {},
           "ref/net472/UnityEngine.TerrainModule.dll": {},
           "ref/net472/UnityEngine.TerrainPhysicsModule.dll": {},
@@ -376,11 +367,8 @@
           "ref/net472/mscorlib.dll": {}
         }
       },
-      "Lib.Harmony/2.0.2": {
+      "Lib.Harmony/2.1.1": {
         "type": "package",
-        "frameworkAssemblies": [
-          "System.Runtime.InteropServices.RuntimeInformation"
-        ],
         "compile": {
           "lib/net472/0Harmony.dll": {}
         },
@@ -391,16 +379,16 @@
     }
   },
   "libraries": {
-    "Krafs.Rimworld.Ref/1.2.2753": {
-      "sha512": "RcATKz8BRv64vWy3l7ufxasgMXeZV9fFI7BwYdohP293t+6Y8+LA1sLBW7DN2l7zh/eJKyNm+oLQ+p0D9F9j0A==",
+    "Krafs.Rimworld.Ref/1.3.3117": {
+      "sha512": "mxTQbelrvwpnVfA+WztZFk68J/49uwbZQPgb1TpG9rC6+rRB0IhJLmR85jZ1Ua7WetNGiwkbmVltDyKlpEGudQ==",
       "type": "package",
-      "path": "krafs.rimworld.ref/1.2.2753",
+      "path": "krafs.rimworld.ref/1.3.3117",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "icon.png",
-        "krafs.rimworld.ref.1.2.2753.nupkg.sha512",
+        "krafs.rimworld.ref.1.3.3117.nupkg.sha512",
         "krafs.rimworld.ref.nuspec",
         "ref/net472/Assembly-CSharp-firstpass.dll",
         "ref/net472/Assembly-CSharp.dll",
@@ -432,7 +420,6 @@
         "ref/net472/UnityEngine.CrashReportingModule.dll",
         "ref/net472/UnityEngine.DSPGraphModule.dll",
         "ref/net472/UnityEngine.DirectorModule.dll",
-        "ref/net472/UnityEngine.FileSystemHttpModule.dll",
         "ref/net472/UnityEngine.GameCenterModule.dll",
         "ref/net472/UnityEngine.GridModule.dll",
         "ref/net472/UnityEngine.HotReloadModule.dll",
@@ -453,6 +440,7 @@
         "ref/net472/UnityEngine.SpriteShapeModule.dll",
         "ref/net472/UnityEngine.StreamingModule.dll",
         "ref/net472/UnityEngine.SubstanceModule.dll",
+        "ref/net472/UnityEngine.SubsystemsModule.dll",
         "ref/net472/UnityEngine.TLSModule.dll",
         "ref/net472/UnityEngine.TerrainModule.dll",
         "ref/net472/UnityEngine.TerrainPhysicsModule.dll",
@@ -482,16 +470,16 @@
         "ref/net472/mscorlib.dll"
       ]
     },
-    "Lib.Harmony/2.0.2": {
-      "sha512": "QzJnBhb8TiM0cYlxh82rHJMdhZNTmi9HNQQJ15qNyjMvdeDYF9V2aljmrnGafQ+bh6Af/L0iWHxuYlNrHck0nQ==",
+    "Lib.Harmony/2.1.1": {
+      "sha512": "CZiVcq01bVIjL2baWW5SVGZWyd6ew8adFp4BB2bzZfIGcWkTEto0G9sKu+9HDrEd75qBq3EHnZxx/gizi4NnqA==",
       "type": "package",
-      "path": "lib.harmony/2.0.2",
+      "path": "lib.harmony/2.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "HarmonyLogo.png",
         "LICENSE",
-        "lib.harmony.2.0.2.nupkg.sha512",
+        "lib.harmony.2.1.1.nupkg.sha512",
         "lib.harmony.nuspec",
         "lib/net35/0Harmony.dll",
         "lib/net35/0Harmony.xml",
@@ -501,6 +489,8 @@
         "lib/net472/0Harmony.xml",
         "lib/net48/0Harmony.dll",
         "lib/net48/0Harmony.xml",
+        "lib/net5.0/0Harmony.dll",
+        "lib/net5.0/0Harmony.xml",
         "lib/netcoreapp3.0/0Harmony.dll",
         "lib/netcoreapp3.0/0Harmony.xml",
         "lib/netcoreapp3.1/0Harmony.dll",
@@ -510,31 +500,26 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
-      "Krafs.Rimworld.Ref >= 1.2.2753",
-      "Lib.Harmony >= 2.0.2"
+      "Krafs.Rimworld.Ref >= 1.3.3117",
+      "Lib.Harmony >= 2.1.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+    "C:\\Users\\Vova\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
+      "projectUniqueName": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
       "projectName": "MuvLuv-Annihilation",
-      "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\obj\\",
+      "projectPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
+      "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
+      "outputPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Vova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net472"
@@ -554,11 +539,11 @@
         "dependencies": {
           "Krafs.Rimworld.Ref": {
             "target": "Package",
-            "version": "[1.2.2753, )"
+            "version": "[1.3.3117, )"
           },
           "Lib.Harmony": {
             "target": "Package",
-            "version": "[2.0.2, )"
+            "version": "[2.1.1, )"
           }
         }
       }

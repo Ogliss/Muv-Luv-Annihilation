@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef Name="MLB_TSF_TurretBase" Abstract="True">
     <tickerType>Normal</tickerType>
@@ -62,7 +62,6 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
-    <menuHidden>true</menuHidden>
     <destroyOnDrop>true</destroyOnDrop>
     <tradeability>None</tradeability>
     <statBases>
@@ -242,7 +241,6 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
-    <menuHidden>true</menuHidden>
     <destroyOnDrop>true</destroyOnDrop>
     <tradeability>None</tradeability>
     <statBases>

@@ -26,8 +26,8 @@ namespace MuvLuvAnnihilation
 			return 140f;
 		}
 
-		public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth)
-		{
+        public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
+        {
 			Rect overRect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
 			Find.WindowStack.ImmediateWindow(1523289473, overRect, WindowLayer.GameUI, delegate
 			{

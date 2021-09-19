@@ -205,7 +205,7 @@ namespace MuvLuvAnnihilation
             Pawn pawn = searcher as Pawn;
             if (pawn != null)
             {
-                if (!pawn.CanReach(target, PathEndMode.Touch, Danger.Some, canBash, TraverseMode.ByPawn))
+                if (!pawn.CanReach(target, PathEndMode.Touch, Danger.Some, canBash))
                 {
                     return false;
                 }

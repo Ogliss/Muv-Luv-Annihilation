@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <ThingDef Name="BETABasePawn" Abstract="True">
@@ -45,7 +45,6 @@
       <needsRest>false</needsRest>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
       <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
-      <nameOnNuzzleChance>0.5</nameOnNuzzleChance>
       <trainability>Intermediate</trainability>
       <hediffGiverSets>
         <li>OrganicStandard</li>

@@ -129,7 +129,7 @@ namespace MuvLuvAnnihilation
 			{
 				this.def.pawnFlyer.soundLanding.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
 			}
-			MoteMaker.ThrowDustPuff(base.DestinationPos + Gen.RandomHorizontalVector(0.5f), base.Map, 2f);
+			FleckMaker.ThrowDustPuff(base.DestinationPos + Gen.RandomHorizontalVector(0.5f), base.Map, 2f);
 		}
 
 		// Token: 0x060051F1 RID: 20977 RVA: 0x001B9BC8 File Offset: 0x001B7DC8

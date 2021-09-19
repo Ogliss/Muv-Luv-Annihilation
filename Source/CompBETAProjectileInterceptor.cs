@@ -374,11 +374,11 @@ namespace MuvLuvAnnihilation
 				fTheta = (float)Math.PI * 2f / (float)num;
 				for (int i = 0; i < num; i++)
 				{
-					MoteMaker.MakeConnectingLine(PosAtIndex(i), PosAtIndex((i + 1) % num), ThingDefOf.Mote_LineEMP, parent.Map, 1.5f);
+					FleckMaker.ConnectingLine(PosAtIndex(i), PosAtIndex((i + 1) % num), FleckDefOf.LineEMP, parent.Map, 1.5f);
 				}
 			}
 			dinfo.SetAmount((float)Props.disarmedByEmpForTicks / 30f);
-			stunner.Notify_DamageApplied(dinfo, affectedByEMP: true);
+			stunner.Notify_DamageApplied(dinfo);
 			Vector3 PosAtIndex(int index)
 			{
 				return new Vector3(Props.radius * Mathf.Cos(fTheta * (float)index) + (float)parent.Position.x, 0f, Props.radius * Mathf.Sin(fTheta * (float)index) + (float)parent.Position.z);

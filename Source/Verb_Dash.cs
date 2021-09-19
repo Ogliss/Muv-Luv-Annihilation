@@ -77,12 +77,12 @@ namespace MuvLuvAnnihilation
 		public override void OrderForceTarget(LocalTargetInfo target)
 		{
 			Map map = CasterPawn.Map;
-			IntVec3 intVec = RCellFinder.BestOrderedGotoDestNear_NewTemp(target.Cell, CasterPawn, AcceptableDestination);
+			IntVec3 intVec = RCellFinder.BestOrderedGotoDestNear(target.Cell, CasterPawn, AcceptableDestination);
 			Job job = JobMaker.MakeJob(RimWorld.JobDefOf.CastJump, intVec);
 			job.verbToUse = this;
 			if (CasterPawn.jobs.TryTakeOrderedJob(job))
 			{
-				MoteMaker.MakeStaticMote(intVec, map, ThingDefOf.Mote_FeedbackGoto);
+				FleckMaker.Static(intVec, map, FleckDefOf.FeedbackGoto);
 			}
 			bool AcceptableDestination(IntVec3 c)
 			{
@@ -94,8 +94,8 @@ namespace MuvLuvAnnihilation
 			}
 		}
 
-		public override bool ValidateTarget(LocalTargetInfo target)
-		{
+        public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
+        {
 			if (caster == null)
 			{
 				return false;

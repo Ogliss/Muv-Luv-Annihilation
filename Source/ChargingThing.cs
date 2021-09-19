@@ -88,7 +88,7 @@ namespace MuvLuvAnnihilation
             bool flag = this.pawn != null;
             if (flag)
             {
-                MoteMaker.ThrowDustPuff(this.pawn.Position, this.pawn.Map, Rand.Range(1.2f, 1.8f));
+                FleckMaker.ThrowDustPuff(this.pawn.Position, this.pawn.Map, Rand.Range(1.2f, 1.8f));
             }
         }
 
@@ -142,7 +142,7 @@ namespace MuvLuvAnnihilation
                 base.Position = this.ExactPosition.ToIntVec3();
                 if (Find.TickManager.TicksGame % 2 == 0)
                 {
-                    MoteMaker.ThrowDustPuff(base.Position, base.Map, Rand.Range(0.6f, 0.8f));
+                    FleckMaker.ThrowDustPuff(base.Position, base.Map, Rand.Range(0.6f, 0.8f));
                 }
                 if (this.ticksToImpact <= 0)
                 {

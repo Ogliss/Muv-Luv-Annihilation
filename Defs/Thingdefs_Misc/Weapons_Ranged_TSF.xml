@@ -506,7 +506,7 @@
         <explosiveDamageType>Bomb</explosiveDamageType>
         <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
       </li>
-      <li Class="CompProperties_BiocodableWeapon"/>
+      <li Class="CompProperties_Biocodable"/>
     </comps>
   </ThingDef>
   <ThingDef ParentName="BaseBullet">

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 
 <Defs>
   <FleshTypeDef>
@@ -7,7 +7,7 @@
     <ateAsIngredient>AteInsectMeatAsIngredient</ateAsIngredient>
     <corpseCategory>CorpsesBETA</corpseCategory>
     <damageEffecter>Damage_HitFlesh</damageEffecter>
-    <wounds>
+    <genericWounds>
       <li>
         <texture>Things/Pawn/Wounds/WoundA</texture>
         <color>170,24,24</color>
@@ -20,6 +20,6 @@
         <texture>Things/Pawn/Wounds/WoundC</texture>
         <color>170,24,24</color>
       </li>
-    </wounds>
+    </genericWounds>
   </FleshTypeDef>
 </Defs>

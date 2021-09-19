@@ -72,7 +72,7 @@ namespace MuvLuvAnnihilation
 		{
 			Pawn thrownPawn = this.FlyingPawn;
 			Thing thing;
-			this.innerContainer.TryDrop_NewTmp(thrownPawn, base.Position, thrownPawn.MapHeld, ThingPlaceMode.Direct, out thing, null, null, false);
+			this.innerContainer.TryDrop(thrownPawn, base.Position, thrownPawn.MapHeld, ThingPlaceMode.Direct, out thing, null, null, false);
 			if (thrownPawn.drafter != null)
 			{
 				thrownPawn.drafter.Drafted = this.pawnWasDrafted;

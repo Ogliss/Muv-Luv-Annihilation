@@ -22,7 +22,7 @@ namespace MuvLuvAnnihilation.HarmonyInstance
 				Thing second = pair.Second;
 				string text4 = "Reload".Translate(comp.parent.Named("GEAR"), comp.AmmoDefSecondry.Named("AMMO")) + " (" + comp.LabelRemainingSecondry + ")";
 				List<Thing> chosenAmmo;
-				if (!pawn.CanReach(second, PathEndMode.ClosestTouch, Danger.Deadly, false, TraverseMode.ByPawn))
+				if (!pawn.CanReach(second, PathEndMode.ClosestTouch, Danger.Deadly, false))
 				{
 					opts.Add(new FloatMenuOption(text4 + ": " + "NoPath".Translate().CapitalizeFirst(), null, MenuOptionPriority.Default, null, null, 0f, null, null));
 				}

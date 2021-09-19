@@ -76,12 +76,12 @@ namespace MuvLuvAnnihilation
 			this.ThrowDebugText("ToHit" + (this.canHitNonTargetPawnsNow ? "\nchntp" : ""));
 			if (this.currentTarget.Thing != null)
 			{
-				projectile2.Launch(launcher, drawPos, this.currentTarget, this.currentTarget, projectileHitFlags4, equipment, targetCoverDef);
+				projectile2.Launch(launcher, drawPos, this.currentTarget, this.currentTarget, projectileHitFlags4, false, equipment, targetCoverDef);
 				this.ThrowDebugText("Hit\nDest", this.currentTarget.Cell);
 			}
 			else
 			{
-				projectile2.Launch(launcher, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags4, equipment, targetCoverDef);
+				projectile2.Launch(launcher, drawPos, shootLine.Dest, this.currentTarget, projectileHitFlags4, false, equipment, targetCoverDef);
 				this.ThrowDebugText("Hit\nDest", shootLine.Dest);
 			}
 			return true;
