@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
     [StaticConstructorOnStartup]
     class Main
@@ -34,9 +34,9 @@ namespace ExtraHives
                     break;
                 }
             }
-            HiveDefs = DefDatabase<ThingDef>.AllDefs.Where(x=> x.HasModExtension<ExtraHives.HiveDefExtension>()).ToList();
-            TunnelDefs = DefDatabase<ThingDef>.AllDefs.Where(x=> x.HasModExtension<ExtraHives.TunnelExtension>()).ToList();
-        //    Log.Message("ExtraHives: loaded "+HiveDefs.Count + " HiveDefs and " + TunnelDefs.Count + " TunnelDefs");
+            HiveDefs = DefDatabase<ThingDef>.AllDefs.Where(x=> x.HasModExtension<OgsOld_ExtraHives.HiveDefExtension>()).ToList();
+            TunnelDefs = DefDatabase<ThingDef>.AllDefs.Where(x=> x.HasModExtension<OgsOld_ExtraHives.TunnelExtension>()).ToList();
+        //    Log.Message("OgsOld_ExtraHives: loaded "+HiveDefs.Count + " HiveDefs and " + TunnelDefs.Count + " TunnelDefs");
         }
 
     }

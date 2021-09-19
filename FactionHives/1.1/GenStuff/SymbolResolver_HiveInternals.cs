@@ -7,9 +7,9 @@ using UnityEngine;
 using Verse;
 using Verse.Noise;
 
-namespace ExtraHives.GenStuff
+namespace OgsOld_ExtraHives.GenStuff
 {
-	// Token: 0x020010B0 RID: 4272 ExtraHives.GenStuff.SymbolResolver_HiveInterals
+	// Token: 0x020010B0 RID: 4272 OgsOld_ExtraHives.GenStuff.SymbolResolver_HiveInterals
 	public class SymbolResolver_HiveInternals : SymbolResolver
 	{
 		List<IntVec3> cells = new List<IntVec3>();

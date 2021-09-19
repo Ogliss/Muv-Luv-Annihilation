@@ -7,7 +7,7 @@ using Verse.AI;
 using Verse.AI.Group;
 using Verse.Sound;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	// Token: 0x02000D60 RID: 3424
 	public class CompProperties_SpawnerPawn : CompProperties
@@ -44,7 +44,7 @@ namespace ExtraHives
 			base.ResolveReferences(parentDef);
 			if (factionGroupKindDef == null)
 			{
-				factionGroupKindDef = PawnGroupKindDefOf.Hive_ExtraHives;
+				factionGroupKindDef = PawnGroupKindDefOf.Hive_OgsOld_ExtraHives;
 			}
 		}
 	}

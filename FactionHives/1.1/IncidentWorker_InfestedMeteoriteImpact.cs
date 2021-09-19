@@ -5,9 +5,9 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
-	// Token: 0x020009E9 RID: 2537 ExtraHives.IncidentWorker_InfestedMeteoriteImpact
+	// Token: 0x020009E9 RID: 2537 OgsOld_ExtraHives.IncidentWorker_InfestedMeteoriteImpact
 	public class IncidentWorker_InfestedMeteoriteImpact : IncidentWorker
 	{
 		// Token: 0x06003C69 RID: 15465 RVA: 0x0013F354 File Offset: 0x0013D554
@@ -75,14 +75,14 @@ namespace ExtraHives
 			List<Thing> list = new List<Thing>();
 
 		//	Log.Message("TunnelRaidSpawner");
-			TunnelRaidSpawner tunnelHiveSpawner = (TunnelRaidSpawner)ThingMaker.MakeThing(ThingDefOf.Tunneler_ExtraHives, null);
+			TunnelRaidSpawner tunnelHiveSpawner = (TunnelRaidSpawner)ThingMaker.MakeThing(ThingDefOf.Tunneler_OgsOld_ExtraHives, null);
 			tunnelHiveSpawner.spawnHive = false;
 			Rand.PushState();
 			tunnelHiveSpawner.initialPoints = Mathf.Max(parms.points * Rand.Range(0.3f, 0.6f), 200f);
 			Rand.PopState();
 			tunnelHiveSpawner.spawnedByInfestationThingComp = true;
 			tunnelHiveSpawner.ResultSpawnDelay = new FloatRange(0.1f,0.5f);
-			tunnelHiveSpawner.spawnablePawnKinds = faction.def.pawnGroupMakers.Where(x=> x.kindDef == RimWorld.PawnGroupKindDefOf.Combat || x.kindDef == PawnGroupKindDefOf.Tunneler_ExtraHives).RandomElement().options;
+			tunnelHiveSpawner.spawnablePawnKinds = faction.def.pawnGroupMakers.Where(x=> x.kindDef == RimWorld.PawnGroupKindDefOf.Combat || x.kindDef == PawnGroupKindDefOf.Tunneler_OgsOld_ExtraHives).RandomElement().options;
 			if (tunnelHiveSpawner.SpawnedFaction == null)
 			{
 				if (faction != null)
@@ -96,7 +96,7 @@ namespace ExtraHives
 			List<Thing> outThings;
 			Generate(out outThings);
 			list.AddRange(outThings);
-			SkyfallerMaker.SpawnSkyfaller(ThingDefOf.InfestedMeteoriteIncoming_ExtraHives, list, intVec, map);
+			SkyfallerMaker.SpawnSkyfaller(ThingDefOf.InfestedMeteoriteIncoming_OgsOld_ExtraHives, list, intVec, map);
 			LetterDef baseLetterDef = list[list.Count-1].def.building.isResourceRock ? LetterDefOf.PositiveEvent : LetterDefOf.NeutralEvent;
 			string str = string.Format(this.def.letterText, list[list.Count - 1].def.label).CapitalizeFirst();
 			base.SendStandardLetter(this.def.letterLabel + ": " + list[list.Count - 1].def.LabelCap, str, baseLetterDef, parms, new TargetInfo(intVec, map, false), Array.Empty<NamedArgument>());
@@ -119,7 +119,7 @@ namespace ExtraHives
 		private bool TryFindCell(out IntVec3 cell, Map map)
 		{
 			int maxMineables = ThingSetMaker_Meteorite.MineablesCountRange.max;
-			return CellFinderLoose.TryFindSkyfallerCell(ThingDefOf.InfestedMeteoriteIncoming_ExtraHives, map, out cell, 10, default(IntVec3), -1, true, false, false, false, true, true, delegate (IntVec3 x)
+			return CellFinderLoose.TryFindSkyfallerCell(ThingDefOf.InfestedMeteoriteIncoming_OgsOld_ExtraHives, map, out cell, 10, default(IntVec3), -1, true, false, false, false, true, true, delegate (IntVec3 x)
 			{
 				int num = Mathf.CeilToInt(Mathf.Sqrt((float)maxMineables)) + 2;
 				CellRect cellRect = CellRect.CenteredOn(x, num, num);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	// Token: 0x02000D5C RID: 3420
 	public class CompProperties_SpawnerHives : CompProperties

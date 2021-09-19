@@ -9,7 +9,7 @@ using Verse.AI;
 using Verse.AI.Group;
 using Verse.Sound;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
     // Token: 0x0200025A RID: 602
     public class CompProperties_SpawnerOnDamaged : CompProperties

@@ -38,19 +38,19 @@ namespace MuvLuvAnnihilation.HarmonyInstance
                             }
                             if (parms.raidArrivalMode == RimWorld.PawnsArrivalModeDefOf.CenterDrop)
                             {
-                                parms.raidArrivalMode = tunnelchance ? ExtraHives.PawnsArrivalModeDefOf.CenterTunnelIn_ExtraHives : RimWorld.PawnsArrivalModeDefOf.EdgeWalkIn;
+                                parms.raidArrivalMode = tunnelchance ? OgsOld_ExtraHives.PawnsArrivalModeDefOf.CenterTunnelIn_OgsOld_ExtraHives : RimWorld.PawnsArrivalModeDefOf.EdgeWalkIn;
                             }
                             if (parms.raidArrivalMode == RimWorld.PawnsArrivalModeDefOf.EdgeDrop)
                             {
-                                parms.raidArrivalMode = tunnelchance ? ExtraHives.PawnsArrivalModeDefOf.EdgeTunnelIn_ExtraHives : RimWorld.PawnsArrivalModeDefOf.EdgeWalkIn;
+                                parms.raidArrivalMode = tunnelchance ? OgsOld_ExtraHives.PawnsArrivalModeDefOf.EdgeTunnelIn_OgsOld_ExtraHives : RimWorld.PawnsArrivalModeDefOf.EdgeWalkIn;
                             }
-                            if (parms.raidArrivalMode == ExtraHives.PawnsArrivalModeDefOf.EdgeDropGroups)
+                            if (parms.raidArrivalMode == OgsOld_ExtraHives.PawnsArrivalModeDefOf.EdgeDropGroups)
                             {
-                                parms.raidArrivalMode = tunnelchance ? ExtraHives.PawnsArrivalModeDefOf.EdgeTunnelInGroups_ExtraHives : ExtraHives.PawnsArrivalModeDefOf.EdgeWalkInGroups;
+                                parms.raidArrivalMode = tunnelchance ? OgsOld_ExtraHives.PawnsArrivalModeDefOf.EdgeTunnelInGroups_OgsOld_ExtraHives : OgsOld_ExtraHives.PawnsArrivalModeDefOf.EdgeWalkInGroups;
                             }
                             if (parms.raidArrivalMode == RimWorld.PawnsArrivalModeDefOf.RandomDrop)
                             {
-                                parms.raidArrivalMode = tunnelchance ? ExtraHives.PawnsArrivalModeDefOf.RandomTunnelIn_ExtraHives : ExtraHives.PawnsArrivalModeDefOf.EdgeWalkInGroups;
+                                parms.raidArrivalMode = tunnelchance ? OgsOld_ExtraHives.PawnsArrivalModeDefOf.RandomTunnelIn_OgsOld_ExtraHives : OgsOld_ExtraHives.PawnsArrivalModeDefOf.EdgeWalkInGroups;
                             }
                             if (parms.raidArrivalMode.minTechLevel >= TechLevel.Industrial)
                             {

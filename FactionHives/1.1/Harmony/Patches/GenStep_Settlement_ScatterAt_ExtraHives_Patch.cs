@@ -11,13 +11,13 @@ using Verse.AI.Group;
 using RimWorld.Planet;
 using UnityEngine;
 using RimWorld.BaseGen;
-using ExtraHives.ExtensionMethods;
+using OgsOld_ExtraHives.ExtensionMethods;
 
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
     
     [HarmonyPatch(typeof(GenStep_Settlement), "ScatterAt")]
-	public static class GenStep_Settlement_ScatterAt_ExtraHives_Patch
+	public static class GenStep_Settlement_ScatterAt_OgsOld_ExtraHives_Patch
     {
 		[HarmonyPrefix, HarmonyPriority(Priority.Last)]
         public static bool Prefix(IntVec3 c, Map map,ref GenStepParams parms, int stackCount = 1)
@@ -46,18 +46,18 @@ namespace ExtraHives.HarmonyInstance
 						BaseGen.globalSettings.map = map;
 						BaseGen.globalSettings.minBuildings = 8;
 						BaseGen.globalSettings.minBarracks = 2;
-						BaseGen.symbolStack.Push(HFExt.baseGenOverride.NullOrEmpty() ? "ExtraHives_HiveBaseMaker" : HFExt.baseGenOverride, resolveParams, null);
+						BaseGen.symbolStack.Push(HFExt.baseGenOverride.NullOrEmpty() ? "OgsOld_ExtraHives_HiveBaseMaker" : HFExt.baseGenOverride, resolveParams, null);
 						BaseGen.Generate();
 						if (HFExt.baseDamage)
 						{
 							BaseGen.globalSettings.map = map;
-							BaseGen.symbolStack.Push("ExtraHives_HiveRandomDamage", resolveParams, null);
+							BaseGen.symbolStack.Push("OgsOld_ExtraHives_HiveRandomDamage", resolveParams, null);
 							BaseGen.Generate();
 						}
 						if (HFExt.randomHives)
 						{
 							BaseGen.globalSettings.map = map;
-							BaseGen.symbolStack.Push("ExtraHives_HiveRandomHives", resolveParams, null);
+							BaseGen.symbolStack.Push("OgsOld_ExtraHives_HiveRandomHives", resolveParams, null);
 							BaseGen.Generate();
 						}
 						result = false;

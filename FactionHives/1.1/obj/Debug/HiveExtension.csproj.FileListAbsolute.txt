@@ -1,7 +1,7 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Assemblies\ExtraHives.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Assemblies\OgsOld_ExtraHives.dll
 c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\FactionHives\1.1\obj\Debug\HiveExtension.csproj.AssemblyReference.cache
 c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\FactionHives\1.1\obj\Debug\HiveExtension.AssemblyInfoInputs.cache
 c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\FactionHives\1.1\obj\Debug\HiveExtension.AssemblyInfo.cs
 c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\FactionHives\1.1\obj\Debug\HiveExtension.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\FactionHives\1.1\obj\Debug\HiveExtension.csproj.CopyComplete
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\FactionHives\1.1\obj\Debug\ExtraHives.dll
+c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\FactionHives\1.1\obj\Debug\OgsOld_ExtraHives.dll

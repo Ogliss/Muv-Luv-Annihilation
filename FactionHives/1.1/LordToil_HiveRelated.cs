@@ -1,4 +1,4 @@
-﻿using ExtraHives.ExtensionMethods;
+﻿using OgsOld_ExtraHives.ExtensionMethods;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	// Token: 0x02000796 RID: 1942
 	public abstract class LordToil_HiveRelated : LordToil

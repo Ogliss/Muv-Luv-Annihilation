@@ -69,7 +69,7 @@
 	  </li>
 	  <li>
 		<!-- Tunnel raids, No Destoyers/Forts-->
-		<kindDef>Tunneler_ExtraHives</kindDef>
+		<kindDef>Tunneler_OgsOld_ExtraHives</kindDef>
 		<commonality>100</commonality>
 		<options>
 		  <BETA_SoldierClass>1000</BETA_SoldierClass>
@@ -142,7 +142,7 @@
 	  </li>
 	</pawnGroupMakers>
 	<modExtensions>
-		<li Class="ExtraHives.HiveFactionExtension">
+		<li Class="OgsOld_ExtraHives.HiveFactionExtension">
 			<overrideBaseGen>True</overrideBaseGen>
 			<noPawnPointsCurve>True</noPawnPointsCurve>
 			<sizeRange>40~50</sizeRange>
@@ -186,7 +186,7 @@
 					  </li>
 					  <li>
 						<!-- Tunnel raids, No Destoyers/Forts-->
-						<kindDef>Tunneler_ExtraHives</kindDef>
+						<kindDef>Tunneler_OgsOld_ExtraHives</kindDef>
 						<commonality>100</commonality>
 						<options>
 						  <BETA_SoldierClass>950</BETA_SoldierClass>
@@ -286,7 +286,7 @@
 					  </li>
 					  <li>
 						<!-- Tunnel raids, No Destoyers/Forts-->
-						<kindDef>Tunneler_ExtraHives</kindDef>
+						<kindDef>Tunneler_OgsOld_ExtraHives</kindDef>
 						<commonality>100</commonality>
 						<options>
 						  <BETA_SoldierClass>900</BETA_SoldierClass>
@@ -386,7 +386,7 @@
 					  </li>
 					  <li>
 						<!-- Tunnel raids, No Destoyers/Forts-->
-						<kindDef>Tunneler_ExtraHives</kindDef>
+						<kindDef>Tunneler_OgsOld_ExtraHives</kindDef>
 						<commonality>100</commonality>
 						<options>
 						  <BETA_SoldierClass>850</BETA_SoldierClass>
@@ -486,7 +486,7 @@
 					  </li>
 					  <li>
 						<!-- Tunnel raids, No Destoyers/Forts-->
-						<kindDef>Tunneler_ExtraHives</kindDef>
+						<kindDef>Tunneler_OgsOld_ExtraHives</kindDef>
 						<commonality>100</commonality>
 						<options>
 						  <!--BETA_SoldierClass>0</BETA_SoldierClass>
@@ -586,7 +586,7 @@
 					  </li>
 					  <li>
 						<!-- Tunnel raids, No Destoyers/Forts-->
-						<kindDef>Tunneler_ExtraHives</kindDef>
+						<kindDef>Tunneler_OgsOld_ExtraHives</kindDef>
 						<commonality>100</commonality>
 						<options>
 						  <!--BETA_SoldierClass>0</BETA_SoldierClass>

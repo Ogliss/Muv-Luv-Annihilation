@@ -29,9 +29,9 @@ namespace MuvLuvAnnihilation.HarmonyInstance
                     }
                 }
                 /*
-                if (faction.def.HasModExtension<ExtraHives.HiveFactionExtension>())
+                if (faction.def.HasModExtension<OgsOld_ExtraHives.HiveFactionExtension>())
                 {
-                    __result = map.listerBuildings.allBuildingsNonColonist.Any(x => x.def.HasModExtension<ExtraHives.HiveDefExtension>());
+                    __result = map.listerBuildings.allBuildingsNonColonist.Any(x => x.def.HasModExtension<OgsOld_ExtraHives.HiveDefExtension>());
                 }
                 */
             }

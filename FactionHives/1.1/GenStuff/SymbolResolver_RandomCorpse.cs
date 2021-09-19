@@ -4,7 +4,7 @@ using RimWorld.BaseGen;
 using Verse;
 using static Verse.DamageInfo;
 
-namespace ExtraHives.GenStuff
+namespace OgsOld_ExtraHives.GenStuff
 {
 	// Token: 0x02000050 RID: 80
 	internal class SymbolResolver_RandomCorpse : SymbolResolver

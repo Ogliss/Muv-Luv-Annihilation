@@ -2,7 +2,7 @@
 using System;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	[DefOf]
 	public static class PawnGroupKindDefOf
@@ -12,8 +12,8 @@ namespace ExtraHives
 			DefOfHelper.EnsureInitializedInCtor(typeof(PawnGroupKindDefOf));
 		}
 		
-		public static PawnGroupKindDef Hive_ExtraHives;
-		public static PawnGroupKindDef Tunneler_ExtraHives;
+		public static PawnGroupKindDef Hive_OgsOld_ExtraHives;
+		public static PawnGroupKindDef Tunneler_OgsOld_ExtraHives;
 		
 	}
 }

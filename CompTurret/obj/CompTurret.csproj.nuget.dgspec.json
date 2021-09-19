@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\CompTurret.csproj": {}
+    "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\OgsOld_CompTurret\\OgsOld_CompTurret.csproj": {}
   },
   "projects": {
-    "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\CompTurret.csproj": {
+    "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\OgsOld_CompTurret\\OgsOld_CompTurret.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\CompTurret.csproj",
-        "projectName": "CompTurret",
-        "projectPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\CompTurret.csproj",
+        "projectUniqueName": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\OgsOld_CompTurret\\OgsOld_CompTurret.csproj",
+        "projectName": "OgsOld_CompTurret",
+        "projectPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\OgsOld_CompTurret\\OgsOld_CompTurret.csproj",
         "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
-        "outputPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\obj\\",
+        "outputPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\OgsOld_CompTurret\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vova\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,10 +1,10 @@
 ﻿using System;
-using ExtraHives.ExtensionMethods;
+using OgsOld_ExtraHives.ExtensionMethods;
 using RimWorld;
 using RimWorld.BaseGen;
 using Verse;
 
-namespace ExtraHives.GenStuff
+namespace OgsOld_ExtraHives.GenStuff
 {
 	// Token: 0x02000052 RID: 82
 	internal class SymbolResolver_RandomHives : SymbolResolver

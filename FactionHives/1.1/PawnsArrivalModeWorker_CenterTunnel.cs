@@ -4,9 +4,9 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
-	// Token: 0x02000B92 RID: 2962 ExtraHives.PawnsArrivalModeWorker_CenterTunnel
+	// Token: 0x02000B92 RID: 2962 OgsOld_ExtraHives.PawnsArrivalModeWorker_CenterTunnel
 	public class PawnsArrivalModeWorker_CenterTunnel : PawnsArrivalModeWorker
 	{
 		// Token: 0x060045CB RID: 17867 RVA: 0x001780CB File Offset: 0x001762CB
@@ -47,7 +47,7 @@ namespace ExtraHives
 				else if (!DropCellFinder.TryFindRaidDropCenterClose(out parms.spawnCenter, map, !flag && flag2, !flag, true, -1))
 				{
 					
-					parms.raidArrivalMode = Rand.Chance(0.75f) ? PawnsArrivalModeDefOf.EdgeTunnelIn_ExtraHives : PawnsArrivalModeDefOf.EdgeTunnelInGroups_ExtraHives;
+					parms.raidArrivalMode = Rand.Chance(0.75f) ? PawnsArrivalModeDefOf.EdgeTunnelIn_OgsOld_ExtraHives : PawnsArrivalModeDefOf.EdgeTunnelInGroups_OgsOld_ExtraHives;
 					return parms.raidArrivalMode.Worker.TryResolveRaidSpawnCenter(parms);
 				}
 				Rand.PopState();

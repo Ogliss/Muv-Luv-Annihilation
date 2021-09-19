@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Verse;
 
-namespace ExtraHives.Planet
+namespace OgsOld_ExtraHives.Planet
 {
 	// Token: 0x02001329 RID: 4905
 	public class HiveBaseComp : WorldObjectComp 

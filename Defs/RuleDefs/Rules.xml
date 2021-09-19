@@ -5,7 +5,7 @@
     <defName>BETABase</defName>
     <symbol>BETABase</symbol>
     <resolvers>
-      <li Class="ExtraHives.GenStuff.SymbolResolver_Hivebase" />
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_Hivebase" />
     </resolvers>
   </RuleDef>
 
@@ -13,7 +13,7 @@
     <defName>HiveMountMaker</defName>
     <symbol>HiveMountMaker</symbol>
     <resolvers>
-      <li Class="ExtraHives.GenStuff.SymbolResolver_HiveBaseMoundMaker" />
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_HiveBaseMoundMaker" />
     </resolvers>
   </RuleDef>
   
@@ -21,7 +21,7 @@
     <defName>HiveClearChamber</defName>
     <symbol>HiveClearChamber</symbol>
     <resolvers>
-      <li Class="ExtraHives.GenStuff.SymbolResolver_ClearChamber" />
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_ClearChamber" />
     </resolvers>
   </RuleDef>
   
@@ -29,7 +29,7 @@
     <defName>HiveInterals</defName>
     <symbol>HiveInterals</symbol>
     <resolvers>
-      <li Class="ExtraHives.GenStuff.SymbolResolver_HiveInternals" />
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_HiveInternals" />
     </resolvers>
   </RuleDef>
   
@@ -37,7 +37,7 @@
     <defName>BETABaseLightning</defName>
     <symbol>BETABaseLightning</symbol>
     <resolvers>
-      <li Class="ExtraHives.GenStuff.SymbolResolver_OutdoorLightingHivebase" />
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_OutdoorLightingHivebase" />
     </resolvers>
   </RuleDef>
 
@@ -45,7 +45,7 @@
     <defName>BETABaseRCorpse</defName>
     <symbol>BETABaseRCorpse</symbol>
     <resolvers>
-      <li Class="ExtraHives.GenStuff.SymbolResolver_RandomCorpse" />
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_RandomCorpse" />
     </resolvers>
   </RuleDef>
 
@@ -53,7 +53,7 @@
     <defName>BETABaseRDamage</defName>
     <symbol>BETABaseRDamage</symbol>
     <resolvers>
-      <li Class="ExtraHives.GenStuff.SymbolResolver_RandomDamage" />
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_RandomDamage" />
     </resolvers>
   </RuleDef>
 
@@ -61,7 +61,7 @@
     <defName>BETARandHives</defName>
     <symbol>BETARandHives</symbol>
     <resolvers>
-      <li Class="ExtraHives.GenStuff.SymbolResolver_RandomHives" />
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_RandomHives" />
     </resolvers>
   </RuleDef>
 -->

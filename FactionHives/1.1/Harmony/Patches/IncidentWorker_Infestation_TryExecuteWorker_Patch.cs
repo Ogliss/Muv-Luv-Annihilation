@@ -11,9 +11,9 @@ using Verse.AI.Group;
 using RimWorld.Planet;
 using UnityEngine;
 
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
-    [HarmonyPatch(typeof(ExtraHives.IncidentWorker_Infestation), "TryExecuteWorker")]
+    [HarmonyPatch(typeof(OgsOld_ExtraHives.IncidentWorker_Infestation), "TryExecuteWorker")]
     public static class IncidentWorker_Infestation_TryExecuteWorker_Patch
     {
         [HarmonyPrefix]

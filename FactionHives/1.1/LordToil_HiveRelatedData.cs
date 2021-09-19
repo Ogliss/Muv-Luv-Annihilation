@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Verse;
 using Verse.AI.Group;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	// Token: 0x02000797 RID: 1943
 	public class LordToil_HiveRelatedData : LordToilData

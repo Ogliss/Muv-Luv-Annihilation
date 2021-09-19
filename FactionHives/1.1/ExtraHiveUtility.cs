@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	// Token: 0x02000CA2 RID: 3234
 	public static class HiveUtility

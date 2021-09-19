@@ -3,7 +3,7 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
 
     [HarmonyPatch(typeof(GetOrGenerateMapUtility), "GetOrGenerateMap", new[] { typeof(int), typeof(IntVec3), typeof(WorldObjectDef) })]

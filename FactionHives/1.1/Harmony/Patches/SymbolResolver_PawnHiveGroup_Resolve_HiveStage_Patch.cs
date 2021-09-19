@@ -12,7 +12,7 @@ using RimWorld.Planet;
 using UnityEngine;
 using RimWorld.BaseGen;
 
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
     
     [HarmonyPatch(typeof(GenStuff.SymbolResolver_PawnHiveGroup), "Resolve")]

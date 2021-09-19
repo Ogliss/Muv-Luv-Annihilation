@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
     public class TunnelExtension : DefModExtension
     {

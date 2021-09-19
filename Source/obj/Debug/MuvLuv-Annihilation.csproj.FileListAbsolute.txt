@@ -1,9 +1,7 @@
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Assemblies\MuvLuv-Annihilation.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Assemblies\MuvLuv-Annihilation.pdb
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Source\obj\Debug\MuvLuv-Annihilation.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Source\obj\Debug\MuvLuv-Annihilation.csproj.CopyComplete
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Source\obj\Debug\MuvLuv-Annihilation.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Source\obj\Debug\MuvLuv-Annihilation.pdb
 C:\GAMES\Rimworld\Mods\Muv-Luv-Annihilation\Assemblies\MuvLuv-Annihilation.dll
 C:\GAMES\Rimworld\Mods\Muv-Luv-Annihilation\Assemblies\MuvLuv-Annihilation.pdb
 C:\GAMES\Rimworld\Mods\Muv-Luv-Annihilation\Source\obj\Debug\MuvLuv-Annihilation.csprojAssemblyReference.cache

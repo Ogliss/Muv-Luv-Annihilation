@@ -11,7 +11,7 @@ using Verse.AI.Group;
 using RimWorld.Planet;
 using UnityEngine;
 
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
     [HarmonyPatch(typeof(Def), "get_LabelCap")]
     public static class Def_get_LabelCap_HiveFactionPhase_Patch

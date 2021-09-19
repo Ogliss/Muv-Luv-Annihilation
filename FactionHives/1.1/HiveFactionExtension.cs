@@ -3,7 +3,7 @@ using RimWorld.BaseGen;
 using System.Collections.Generic;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
     public class HiveFactionExtension : DefModExtension
 	{

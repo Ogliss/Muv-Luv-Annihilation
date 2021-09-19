@@ -5,7 +5,7 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	public class HiveFactionEvolutionTracker : WorldComponent
 	{

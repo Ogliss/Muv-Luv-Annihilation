@@ -3,7 +3,7 @@ using System;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	// Token: 0x0200078C RID: 1932
 	public class LordToil_AssaultColony : LordToil

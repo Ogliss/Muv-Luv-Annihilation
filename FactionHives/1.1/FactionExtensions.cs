@@ -5,7 +5,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace ExtraHives.ExtensionMethods
+namespace OgsOld_ExtraHives.ExtensionMethods
 {
     public static class FactionExtensions
     {
@@ -15,9 +15,9 @@ namespace ExtraHives.ExtensionMethods
         }
         public static HiveFactionExtension HiveExt(this FactionDef faction)
         {
-            if (faction.HasModExtension<ExtraHives.HiveFactionExtension>())
+            if (faction.HasModExtension<OgsOld_ExtraHives.HiveFactionExtension>())
             {
-                return faction.GetModExtension<ExtraHives.HiveFactionExtension>();
+                return faction.GetModExtension<OgsOld_ExtraHives.HiveFactionExtension>();
             }
             return null;
         }
@@ -28,9 +28,9 @@ namespace ExtraHives.ExtensionMethods
         public static List<ThingDef> HivedefsFor(this FactionDef factionDef)
         {
             List<ThingDef> defs = new List<ThingDef>();
-            if (Main.HiveDefs.Any(x => x.GetModExtension<ExtraHives.HiveDefExtension>().Faction == factionDef && x.thingClass == typeof(Hive)))
+            if (Main.HiveDefs.Any(x => x.GetModExtension<OgsOld_ExtraHives.HiveDefExtension>().Faction == factionDef && x.thingClass == typeof(Hive)))
             {
-                defs = Main.HiveDefs.FindAll(x => x.GetModExtension<ExtraHives.HiveDefExtension>().Faction == factionDef);
+                defs = Main.HiveDefs.FindAll(x => x.GetModExtension<OgsOld_ExtraHives.HiveDefExtension>().Faction == factionDef);
             }
         //    Log.Message(defs.Count + " Hives loaded for " + factionDef);
             return defs;

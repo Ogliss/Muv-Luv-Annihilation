@@ -885,9 +885,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\CompTurret.csproj",
-      "projectName": "CompTurret",
-      "projectPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\CompTurret.csproj",
+      "projectUniqueName": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\OgsOld_CompTurret.csproj",
+      "projectName": "OgsOld_CompTurret",
+      "projectPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\OgsOld_CompTurret.csproj",
       "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
       "outputPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\obj\\",
       "projectStyle": "PackageReference",

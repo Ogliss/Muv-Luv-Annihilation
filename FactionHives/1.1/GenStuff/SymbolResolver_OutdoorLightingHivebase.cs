@@ -4,7 +4,7 @@ using RimWorld;
 using RimWorld.BaseGen;
 using Verse;
 
-namespace ExtraHives.GenStuff
+namespace OgsOld_ExtraHives.GenStuff
 {
 	// Token: 0x02000054 RID: 84
 	internal class SymbolResolver_OutdoorLightingHivebase : SymbolResolver

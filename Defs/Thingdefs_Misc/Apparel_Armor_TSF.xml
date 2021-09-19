@@ -107,7 +107,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<breakWhenHitpointsBelow>0.25</breakWhenHitpointsBelow>
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
@@ -132,7 +132,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<breakWhenHitpointsBelow>0.25</breakWhenHitpointsBelow>
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
@@ -199,7 +199,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
 				<ammoDef>Ammo_TSF_Minigun</ammoDef>
@@ -223,7 +223,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>90</maxCharges>
 				<ammoDef>Ammo_TSF_Missile</ammoDef>
@@ -285,7 +285,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>90</maxCharges>
 				<ammoDef>Ammo_TSF_Missile</ammoDef>
@@ -309,7 +309,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>90</maxCharges>
 				<ammoDef>Ammo_TSF_Missile</ammoDef>
@@ -371,7 +371,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
 				<ammoDef>Ammo_TSF_Minigun</ammoDef>
@@ -395,7 +395,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>15</maxCharges>
 				<ammoDef>Ammo_TSF_Cannon120mm</ammoDef>
@@ -457,7 +457,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1.5</projectileOffset>
 				<maxCharges>750</maxCharges>
 				<ammoDef>Ammo_TSF_Minigun</ammoDef>
@@ -481,7 +481,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>15</maxCharges>
 				<ammoDef>Ammo_TSF_Mortar</ammoDef>
@@ -543,7 +543,7 @@
 			<Chemfuel>20</Chemfuel>
 		</costList>
 		<comps>
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>15</maxCharges>
 				<ammoDef>Ammo_TSF_Mortar</ammoDef>
@@ -567,7 +567,7 @@
 				<offsetWest>0,0.0,0.65</offsetWest>
 			</li>
 
-			<li Class="CompTurret.CompProperties_TurretDamagable"> 
+			<li Class="OgsOld_CompTurret.CompProperties_TurretDamagable"> 
 				<projectileOffset>1</projectileOffset>
 				<maxCharges>15</maxCharges>
 				<ammoDef>Ammo_TSF_Mortar</ammoDef>

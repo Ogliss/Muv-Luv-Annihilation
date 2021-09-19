@@ -7,7 +7,7 @@ using Verse;
 using Verse.AI.Group;
 using Verse.Sound;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
     // Token: 0x020006E5 RID: 1765
     [StaticConstructorOnStartup]

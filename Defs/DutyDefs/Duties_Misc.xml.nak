@@ -2,10 +2,10 @@
 <Defs>
 
   <DutyDef>
-    <defName>ExtraHivesDefendAndExpandHive</defName>
+    <defName>OgsOld_ExtraHivesDefendAndExpandHive</defName>
     <thinkNode Class="ThinkNode_Priority">
       <subNodes>
-        <li Class="ExtraHives.JobGiver_HiveDefense">
+        <li Class="OgsOld_ExtraHives.JobGiver_HiveDefense">
           <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
           <targetAcquireRadius>30</targetAcquireRadius>
           <chaseTarget>false</chaseTarget>
@@ -52,10 +52,10 @@
   </DutyDef>
 
   <DutyDef>
-    <defName>ExtraHivesDefendHiveAggressively</defName>
+    <defName>OgsOld_ExtraHivesDefendHiveAggressively</defName>
     <thinkNode Class="ThinkNode_Priority">
       <subNodes>
-        <li Class="ExtraHives.JobGiver_HiveDefense">
+        <li Class="OgsOld_ExtraHives.JobGiver_HiveDefense">
           <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
           <targetAcquireRadius>50</targetAcquireRadius>
           <chaseTarget>false</chaseTarget>

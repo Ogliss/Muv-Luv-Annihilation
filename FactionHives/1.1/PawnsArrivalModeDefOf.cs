@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using System;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	[DefOf]
 	public static class PawnsArrivalModeDefOf
@@ -13,9 +13,9 @@ namespace ExtraHives
 
 		public static PawnsArrivalModeDef EdgeWalkInGroups;
 		public static PawnsArrivalModeDef EdgeDropGroups;
-		public static PawnsArrivalModeDef EdgeTunnelIn_ExtraHives;
-		public static PawnsArrivalModeDef EdgeTunnelInGroups_ExtraHives;
-		public static PawnsArrivalModeDef CenterTunnelIn_ExtraHives;
-		public static PawnsArrivalModeDef RandomTunnelIn_ExtraHives;
+		public static PawnsArrivalModeDef EdgeTunnelIn_OgsOld_ExtraHives;
+		public static PawnsArrivalModeDef EdgeTunnelInGroups_OgsOld_ExtraHives;
+		public static PawnsArrivalModeDef CenterTunnelIn_OgsOld_ExtraHives;
+		public static PawnsArrivalModeDef RandomTunnelIn_OgsOld_ExtraHives;
 	}
 }

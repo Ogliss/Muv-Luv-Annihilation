@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	public static class InfestationUtility
     {

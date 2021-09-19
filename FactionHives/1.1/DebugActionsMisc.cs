@@ -10,7 +10,7 @@ using Verse.AI.Group;
 using Verse.Profile;
 using Verse.Sound;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
     public static class DebugActionsMisc
 	{

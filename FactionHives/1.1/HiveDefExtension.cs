@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
     public class HiveDefExtension : DefModExtension
 	{

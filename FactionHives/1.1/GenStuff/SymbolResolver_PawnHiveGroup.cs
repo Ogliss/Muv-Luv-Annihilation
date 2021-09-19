@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
-namespace ExtraHives.GenStuff
+namespace OgsOld_ExtraHives.GenStuff
 {
     // Token: 0x02001155 RID: 4437
     public class SymbolResolver_PawnHiveGroup : SymbolResolver
@@ -41,7 +41,7 @@ namespace ExtraHives.GenStuff
 			//	Log.Message("generating "+ pawn);
 				ResolveParams resolveParams = rp;
 				resolveParams.singlePawnToSpawn = pawn;
-				BaseGen.symbolStack.Push("ExtraHives_Pawn", resolveParams, null);
+				BaseGen.symbolStack.Push("OgsOld_ExtraHives_Pawn", resolveParams, null);
 			}
 		}
 

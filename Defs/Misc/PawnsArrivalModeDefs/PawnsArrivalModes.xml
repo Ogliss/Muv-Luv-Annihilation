@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <!--PawnsArrivalModeDef>
-    <defName>EdgeTunnelIn_ExtraHives</defName>
-    <workerClass>ExtraHives.PawnsArrivalModeWorker_EdgeTunnel</workerClass>
+    <defName>EdgeTunnelIn_OgsOld_ExtraHives</defName>
+    <workerClass>OgsOld_ExtraHives.PawnsArrivalModeWorker_EdgeTunnel</workerClass>
     <selectionWeightCurve>
       <points>
         <li>(300, 0)</li>
@@ -16,8 +16,8 @@
   </PawnsArrivalModeDef>
 
   <PawnsArrivalModeDef>
-    <defName>EdgeTunnelInGroups_ExtraHives</defName>
-    <workerClass>ExtraHives.PawnsArrivalModeWorker_EdgeTunnelGroups</workerClass>
+    <defName>EdgeTunnelInGroups_OgsOld_ExtraHives</defName>
+    <workerClass>OgsOld_ExtraHives.PawnsArrivalModeWorker_EdgeTunnelGroups</workerClass>
     <selectionWeightCurve>
       <points>
         <li>(100, 0)</li>
@@ -36,8 +36,8 @@
   </PawnsArrivalModeDef>
 
   <PawnsArrivalModeDef>
-    <defName>CenterTunnelIn_ExtraHives</defName>
-    <workerClass>ExtraHives.PawnsArrivalModeWorker_CenterTunnel</workerClass>
+    <defName>CenterTunnelIn_OgsOld_ExtraHives</defName>
+    <workerClass>OgsOld_ExtraHives.PawnsArrivalModeWorker_CenterTunnel</workerClass>
     <selectionWeightCurve>
       <points>
         <li>(300, 0.0)</li>
@@ -56,8 +56,8 @@
   </PawnsArrivalModeDef>
 
   <PawnsArrivalModeDef>
-    <defName>RandomTunnelIn_ExtraHives</defName>
-    <workerClass>ExtraHives.PawnsArrivalModeWorker_RandomTunnel</workerClass>
+    <defName>RandomTunnelIn_OgsOld_ExtraHives</defName>
+    <workerClass>OgsOld_ExtraHives.PawnsArrivalModeWorker_RandomTunnel</workerClass>
     <selectionWeightCurve>
       <points>
         <li>(300, 0)</li>

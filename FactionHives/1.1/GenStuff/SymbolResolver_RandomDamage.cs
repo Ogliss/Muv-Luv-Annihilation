@@ -2,7 +2,7 @@
 using RimWorld.BaseGen;
 using Verse;
 
-namespace ExtraHives.GenStuff
+namespace OgsOld_ExtraHives.GenStuff
 {
 	// Token: 0x02000051 RID: 81
 	internal class SymbolResolver_RandomDamage : SymbolResolver

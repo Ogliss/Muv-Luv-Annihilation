@@ -11,7 +11,7 @@ using Verse.AI.Group;
 using RimWorld.Planet;
 using UnityEngine;
 
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
     [HarmonyPatch(typeof(PawnGroupMakerUtility), "TryGetRandomPawnGroupMaker")]
     public static class PawnGroupMakerUtility_TryGetRandomPawnGroupMaker_Patch

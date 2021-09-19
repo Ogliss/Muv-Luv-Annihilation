@@ -1,4 +1,4 @@
-﻿using ExtraHives;
+﻿using OgsOld_ExtraHives;
 using HarmonyLib;
 using RimWorld;
 using System;
@@ -8,10 +8,10 @@ using Verse.AI;
 
 namespace MuvLuvAnnihilation.HarmonyInstance
 {
-    [HarmonyPatch(typeof(ExtraHives.TunnelHiveSpawner), "MakeLord")]
+    [HarmonyPatch(typeof(OgsOld_ExtraHives.TunnelHiveSpawner), "MakeLord")]
     public static class TunnelRaidSpawner_MakeLord_BETA_Patch
     {
-        static void Postfix(ExtraHives.TunnelHiveSpawner __instance, Type lordJobType, List<Pawn> list)
+        static void Postfix(OgsOld_ExtraHives.TunnelHiveSpawner __instance, Type lordJobType, List<Pawn> list)
         {
             if (__instance.SpawnedFaction != null)
             {

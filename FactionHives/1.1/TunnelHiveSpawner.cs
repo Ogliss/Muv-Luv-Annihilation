@@ -6,7 +6,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI.Group;
 using Verse.Sound;
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 
 //	[StaticConstructorOnStartup]

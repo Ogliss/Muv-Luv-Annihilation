@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
-	// Token: 0x02000B98 RID: 2968 ExtraHives.PawnsArrivalModeWorker_RandomTunnel
+	// Token: 0x02000B98 RID: 2968 OgsOld_ExtraHives.PawnsArrivalModeWorker_RandomTunnel
 	public class PawnsArrivalModeWorker_RandomTunnel : PawnsArrivalModeWorker
 	{
 		// Token: 0x060045E0 RID: 17888 RVA: 0x00178498 File Offset: 0x00176698

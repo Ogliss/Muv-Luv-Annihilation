@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <!-- =============================== BETA ship part ============================ -->
@@ -53,9 +53,9 @@
     <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one contains a device which annihilates plant life near itself without directly affecting flesh creatures. These kinds of weapons are sometimes scattered across farmlands or forests during land, to remove the enemy's food supply and hiding places without permanently ruining the territory. They're usually associated with orbital-drop mechanoid armies.</description>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected> <!-- Hack to draw defoliant radius -->
     <placeWorkers>
-      <li>ExtraHives.PlaceWorker_ShowHiveRadius</li>
+      <li>OgsOld_ExtraHives.PlaceWorker_ShowHiveRadius</li>
     </placeWorkers>
-    <!--thingClass>ExtraHives.Hive</thingClass-->
+    <!--thingClass>OgsOld_ExtraHives.Hive</thingClass-->
     <graphicData>
       <texPath>Things/Special/BETA/Monument</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -65,7 +65,7 @@
     </graphicData>
     <size>(5,5)</size>
 	<modExtensions>
-		<li Class="ExtraHives.HiveDefExtension">
+		<li Class="OgsOld_ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
 	</modExtensions>
@@ -109,7 +109,7 @@
         <initialPawnsPoints>500</initialPawnsPoints>
         <maxSpawnedPawnsPoints>1500</maxSpawnedPawnsPoints>
       </li>
-      <li Class="ExtraHives.CompProperties_SpawnerHives">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerHives">
 		<hiveDef>MLB_BETAHive_Tunnel</hiveDef>
 		<tunnelDef>MLB_BETAHiveSpawner_Tunnel</tunnelDef>
         <requireRoofed>false</requireRoofed>

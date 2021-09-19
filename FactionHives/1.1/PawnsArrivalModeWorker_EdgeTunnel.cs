@@ -4,9 +4,9 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
-	// Token: 0x02000B94 RID: 2964 ExtraHives.PawnsArrivalModeWorker_EdgeTunnel
+	// Token: 0x02000B94 RID: 2964 OgsOld_ExtraHives.PawnsArrivalModeWorker_EdgeTunnel
 	public class PawnsArrivalModeWorker_EdgeTunnel : PawnsArrivalModeWorker
 	{
 		// Token: 0x060045D3 RID: 17875 RVA: 0x001780CB File Offset: 0x001762CB

@@ -7,7 +7,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
     // Token: 0x0200070C RID: 1804
     public static class TunnelRaidUtility
@@ -22,7 +22,7 @@ namespace ExtraHives
         // Token: 0x06002762 RID: 10082 RVA: 0x0012C458 File Offset: 0x0012A858
         public static void MakeTunnelAt(IntVec3 c, Map map, ActiveDropPodInfo info, Faction faction = null)
         {
-            ThingDef TunnelDef = ThingDefOf.Tunneler_ExtraHives;
+            ThingDef TunnelDef = ThingDefOf.Tunneler_OgsOld_ExtraHives;
             //    Log.Message(string.Format("making tunnelSpawner: {0}, @: {1}, {2}, {3}", TunnelDef, c, map, info.innerContainer.ContentsString));
             TunnelRaidSpawner tunnelSpawner = (TunnelRaidSpawner)ThingMaker.MakeThing(TunnelDef, null);
             if (tunnelSpawner.SpawnedFaction == null)

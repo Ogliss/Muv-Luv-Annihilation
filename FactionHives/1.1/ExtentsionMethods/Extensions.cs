@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
     public static class Extensions
     {

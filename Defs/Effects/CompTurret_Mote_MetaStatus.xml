@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <!--=============== Thrown status ==============-->
 
 
   <ThingDef ParentName="MoteBase">
-    <defName>Mote_CompTurretStun</defName>
-    <thingClass>CompTurret.MoteCompTurretAttached</thingClass>
+    <defName>Mote_OgsOld_CompTurretStun</defName>
+    <thingClass>OgsOld_CompTurret.MoteOgsOld_CompTurretAttached</thingClass>
     <altitudeLayer>MetaOverlays</altitudeLayer>
     <mote>
       <solidTime>9999</solidTime>

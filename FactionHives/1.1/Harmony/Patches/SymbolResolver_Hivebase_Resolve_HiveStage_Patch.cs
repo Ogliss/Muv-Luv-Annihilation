@@ -12,13 +12,13 @@ using RimWorld.Planet;
 using UnityEngine;
 using RimWorld.BaseGen;
 
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
     
     [HarmonyPatch(typeof(GenStuff.SymbolResolver_Hivebase), "Resolve")]
     public static class SymbolResolver_Hivebase_Resolve_HiveStage_Patch
     {
-        public static void Postfix(ExtraHives.GenStuff.SymbolResolver_Hivebase __instance, ref ResolveParams rp)
+        public static void Postfix(OgsOld_ExtraHives.GenStuff.SymbolResolver_Hivebase __instance, ref ResolveParams rp)
         {
             Map map = BaseGen.globalSettings.map;
             if (rp.faction.def.HasModExtension<HiveFactionExtension>())

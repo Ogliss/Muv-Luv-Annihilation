@@ -3,9 +3,9 @@ using System;
 using Verse;
 using Verse.AI.Group;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
-	// Token: 0x0200076B RID: 1899 ExtraHives.LordJob_DefendAndExpandHive
+	// Token: 0x0200076B RID: 1899 OgsOld_ExtraHives.LordJob_DefendAndExpandHive
 	public class LordJob_DefendAndExpandHive : LordJob
 	{
 		// Token: 0x170008F9 RID: 2297

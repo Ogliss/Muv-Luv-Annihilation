@@ -11,7 +11,7 @@ using Verse.AI.Group;
 using RimWorld.Planet;
 using UnityEngine;
 
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
     [HarmonyPatch(typeof(PawnGroupMakerUtility), "MaxPawnCost")]
     public static class PawnGroupMakerUtility_MaxPawnCost_Patch

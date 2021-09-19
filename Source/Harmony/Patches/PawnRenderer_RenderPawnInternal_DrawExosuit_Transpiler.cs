@@ -77,8 +77,8 @@ namespace MuvLuvAnnihilation.HarmonyInstance
                         }
                     }
                     /*
-                    Comp_TurretGun compTurret = apparel.TryGetComp<Comp_TurretGun>();
-                    if (compTurret != null)
+                    Comp_TurretGun OgsOld_CompTurret = apparel.TryGetComp<Comp_TurretGun>();
+                    if (OgsOld_CompTurret != null)
                     {
                         foreach (Comp_TurretGun Extas in apparel.AllComps.Where(x => x.GetType() == typeof(Comp_TurretGun)))
                         {

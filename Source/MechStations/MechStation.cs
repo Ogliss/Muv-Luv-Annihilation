@@ -1,4 +1,4 @@
-﻿using CompTurret;
+﻿using OgsOld_CompTurret;
 using RimWorld;
 using System.Linq;
 using Verse;
@@ -12,8 +12,8 @@ namespace MuvLuvAnnihilation
         public CompRefuelableChemfuel compRefuelableChemfuel;
         public CompRefuelableAmmoFirst compRefuelableAmmoFirst;
         public CompRefuelableAmmoSecond compRefuelableAmmoSecond;
-        public CompTurretGunDamagable compTurretGunFirst;
-        public CompTurretGunDamagable compTurretGunSecond;
+        public OgsOld_CompTurretGunDamagable OgsOld_CompTurretGunFirst;
+        public OgsOld_CompTurretGunDamagable OgsOld_CompTurretGunSecond;
         public CompReloadableDual compReloadableDual;
         public override void Tick()
         {
@@ -26,35 +26,35 @@ namespace MuvLuvAnnihilation
                     compRefuelableSteel.ConsumeFuel(1f);
                     assignedSuit.HitPoints += 1;
                 }
-                if (compTurretGunFirst != null && compTurretGunFirst.gun.HitPoints != compTurretGunFirst.gun.MaxHitPoints 
+                if (OgsOld_CompTurretGunFirst != null && OgsOld_CompTurretGunFirst.gun.HitPoints != OgsOld_CompTurretGunFirst.gun.MaxHitPoints 
                     && compRefuelableSteel != null && compRefuelableSteel.HasFuel)
                 {
-                    Log.Message(compTurretGunFirst.gun.HitPoints + " - " + compTurretGunFirst.gun.MaxHitPoints + " - compRefuelableSteel.ConsumeFuel(1f) - 2");
+                    Log.Message(OgsOld_CompTurretGunFirst.gun.HitPoints + " - " + OgsOld_CompTurretGunFirst.gun.MaxHitPoints + " - compRefuelableSteel.ConsumeFuel(1f) - 2");
                     compRefuelableSteel.ConsumeFuel(1f);
-                    compTurretGunFirst.gun.HitPoints += 1;
+                    OgsOld_CompTurretGunFirst.gun.HitPoints += 1;
                 }
-                if (compTurretGunSecond != null && compTurretGunSecond.gun.HitPoints != compTurretGunSecond.gun.MaxHitPoints
+                if (OgsOld_CompTurretGunSecond != null && OgsOld_CompTurretGunSecond.gun.HitPoints != OgsOld_CompTurretGunSecond.gun.MaxHitPoints
                     && compRefuelableSteel != null && compRefuelableSteel.HasFuel)
                 {
-                    Log.Message(compTurretGunSecond.gun.HitPoints + " - " + compTurretGunSecond.gun.MaxHitPoints + " - compRefuelableSteel.ConsumeFuel(1f) - 3");
+                    Log.Message(OgsOld_CompTurretGunSecond.gun.HitPoints + " - " + OgsOld_CompTurretGunSecond.gun.MaxHitPoints + " - compRefuelableSteel.ConsumeFuel(1f) - 3");
                     compRefuelableSteel.ConsumeFuel(1f);
-                    compTurretGunSecond.gun.HitPoints += 1;
+                    OgsOld_CompTurretGunSecond.gun.HitPoints += 1;
                 }
-                if (compTurretGunFirst != null && compTurretGunFirst.RemainingCharges != compTurretGunFirst.MaxCharges
+                if (OgsOld_CompTurretGunFirst != null && OgsOld_CompTurretGunFirst.RemainingCharges != OgsOld_CompTurretGunFirst.MaxCharges
                     && compRefuelableAmmoFirst != null && compRefuelableAmmoFirst.FuelFilter != null 
-                    && compRefuelableAmmoFirst.FuelFilter.Allows(compTurretGunFirst.AmmoDef) && compRefuelableAmmoFirst.HasFuel)
+                    && compRefuelableAmmoFirst.FuelFilter.Allows(OgsOld_CompTurretGunFirst.AmmoDef) && compRefuelableAmmoFirst.HasFuel)
                 {
                     Log.Message("compRefuelableAmmoFirst.ConsumeFuel(1f)");
                     compRefuelableAmmoFirst.ConsumeFuel(1f);
-                    compTurretGunFirst.remainingCharges += 1;
+                    OgsOld_CompTurretGunFirst.remainingCharges += 1;
                 }
-                if (compTurretGunSecond != null && compTurretGunSecond.RemainingCharges != compTurretGunSecond.MaxCharges
+                if (OgsOld_CompTurretGunSecond != null && OgsOld_CompTurretGunSecond.RemainingCharges != OgsOld_CompTurretGunSecond.MaxCharges
                     && compRefuelableAmmoSecond != null && compRefuelableAmmoSecond.FuelFilter != null 
-                    && compRefuelableAmmoSecond.FuelFilter.Allows(compTurretGunSecond.AmmoDef) && compRefuelableAmmoSecond.HasFuel)
+                    && compRefuelableAmmoSecond.FuelFilter.Allows(OgsOld_CompTurretGunSecond.AmmoDef) && compRefuelableAmmoSecond.HasFuel)
                 {
                     Log.Message("compRefuelableAmmoSecond.ConsumeFuel(1f)");
                     compRefuelableAmmoSecond.ConsumeFuel(1f);
-                    compTurretGunSecond.remainingCharges += 1;
+                    OgsOld_CompTurretGunSecond.remainingCharges += 1;
                 }
                 if (compReloadableDual != null && compReloadableDual.RemainingCharges != compReloadableDual.MaxCharges
                     && compRefuelableChemfuel != null && compRefuelableChemfuel.FuelFilter != null
@@ -107,14 +107,14 @@ namespace MuvLuvAnnihilation
         public void InitSuitsData(MechSuit suit)
         {
             this.assignedSuit = suit;
-            var turrets = assignedSuit.AllComps.Where(x => x is CompTurretGun);
+            var turrets = assignedSuit.AllComps.Where(x => x is OgsOld_CompTurretGun);
             if (turrets.Count() > 0)
             {
-                this.compTurretGunFirst = turrets.ElementAt(0) as CompTurretGunDamagable;
+                this.OgsOld_CompTurretGunFirst = turrets.ElementAt(0) as OgsOld_CompTurretGunDamagable;
             }
             if (turrets.Count() > 1)
             {
-                this.compTurretGunSecond = turrets.ElementAt(1) as CompTurretGunDamagable;
+                this.OgsOld_CompTurretGunSecond = turrets.ElementAt(1) as OgsOld_CompTurretGunDamagable;
             }
             this.compReloadableDual = assignedSuit.GetComp<CompReloadableDual>();
         }
@@ -122,8 +122,8 @@ namespace MuvLuvAnnihilation
         public void EraseSuitsData()
         {
             this.assignedSuit = null;
-            this.compTurretGunFirst = null;
-            this.compTurretGunSecond = null;
+            this.OgsOld_CompTurretGunFirst = null;
+            this.OgsOld_CompTurretGunSecond = null;
             this.compReloadableDual = null;
         }
 

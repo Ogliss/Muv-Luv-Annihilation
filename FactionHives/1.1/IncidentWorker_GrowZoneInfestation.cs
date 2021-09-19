@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	// Token: 0x02000A2D RID: 2605
 	public class IncidentWorker_GrowZoneInfestation : IncidentWorker

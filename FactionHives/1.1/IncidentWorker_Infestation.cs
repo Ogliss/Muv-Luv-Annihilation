@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace ExtraHives //ExtraHives.IncidentWorker_Infestation
+namespace OgsOld_ExtraHives //OgsOld_ExtraHives.IncidentWorker_Infestation
 {
 	public class IncidentWorker_Infestation : IncidentWorker
 	{

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <!-- ============================== Big threats ==============================-->
@@ -8,7 +8,7 @@
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
-    <workerClass>ExtraHives.IncidentWorker_Infestation</workerClass>
+    <workerClass>OgsOld_ExtraHives.IncidentWorker_Infestation</workerClass>
     <letterLabel>BETA Infestation</letterLabel>
     <letterText>BETA are tunneling towards the interior of your base! They will break through before too long, leaving tunnels where they emerge.\n\nThe tunnels will spawn more BETA and more tunnels.\n\nIf you don't want the BETA to infest the whole area, destroy the tunnels. But beware - the BETA will defend their tunnels.</letterText>
     <letterDef>ThreatBig</letterDef>
@@ -27,7 +27,7 @@
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
-    <workerClass>ExtraHives.IncidentWorker_GrowZoneInfestation</workerClass>
+    <workerClass>OgsOld_ExtraHives.IncidentWorker_GrowZoneInfestation</workerClass>
     <letterLabel>BETA Infestation</letterLabel>
     <letterText>BETA are tunneling towards the exterior of your base! They will break through before too long, leaving tunnels where they emerge.\n\nThe tunnels will spawn more BETA and more tunnels.\n\nIf you don't want the BETA to infest the whole area, destroy the tunnels. But beware - the BETA will defend their tunnels.</letterText>
     <letterDef>ThreatBig</letterDef>
@@ -66,7 +66,7 @@
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
-    <workerClass>ExtraHives.IncidentWorker_InfestedMeteoriteImpact</workerClass>
+    <workerClass>OgsOld_ExtraHives.IncidentWorker_InfestedMeteoriteImpact</workerClass>
     <baseChance>0.5</baseChance>
     <category>ThreatBig</category>
     <pointsScaleable>true</pointsScaleable>

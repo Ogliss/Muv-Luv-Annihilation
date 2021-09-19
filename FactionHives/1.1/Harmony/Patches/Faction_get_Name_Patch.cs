@@ -11,7 +11,7 @@ using Verse.AI.Group;
 using RimWorld.Planet;
 using UnityEngine;
 
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
 //    [HarmonyPatch(typeof(Faction), "get_Name")]
     public static class Faction_get_Name_Patch

@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using Verse;
 
-namespace ExtraHives.GenStuff
+namespace OgsOld_ExtraHives.GenStuff
 {
 	// Token: 0x02001158 RID: 4440
 	public class SymbolResolver_SingleHivePawn : SymbolResolver

@@ -82,7 +82,7 @@
       <Chemfuel>20</Chemfuel>
     </costList>
     <comps>
-	  <li Class="CompTurret.CompProperties_Turret"> 
+	  <li Class="OgsOld_CompTurret.CompProperties_Turret"> 
         <projectileOffset>1.5</projectileOffset>
         <maxCharges>750</maxCharges>
         <ammoDef>Ammo_TSF_Minigun</ammoDef>

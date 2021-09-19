@@ -6,8 +6,8 @@
     <ProjectGuid>{FC10BCFE-3722-4A62-A9FE-FC56AA3C5162}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExtraHives</RootNamespace>
-    <AssemblyName>ExtraHives</AssemblyName>
+    <RootNamespace>OgsOld_ExtraHives</RootNamespace>
+    <AssemblyName>OgsOld_ExtraHives</AssemblyName>
     <TargetFramework>net472</TargetFramework>
     <FileAlignment>512</FileAlignment>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -36,6 +36,7 @@
     <Compile Include="DebugActionsMisc.cs" />
     <Compile Include="ExtentsionMethods\FactionExtensions.cs" />
     <Compile Include="ExtentsionMethods\Extensions.cs" />
+    <Compile Include="Harmony\Patches\GenStep_Settlement_ScatterAt_ExtraHives_Patch.cs" />
     <None Include="Harmony\Patches\PawnGroupMakerUtility_ChoosePawnGenOptionsByPoints_NoPawnPointCurve_Patch.cs.bak" />
     <Compile Include="Harmony\Patches\GetOrGenerateMapUtility_GetOrGenerateMap_BETA_Patch.cs" />
     <Compile Include="Harmony\Patches\PawnGroupMakerUtility_MaxPawnCost_Patch.cs" />
@@ -62,7 +63,6 @@
     <Compile Include="GenStuff\SymbolResolver_RandomCorpse.cs" />
     <Compile Include="GenStuff\SymbolResolver_RandomDamage.cs" />
     <Compile Include="GenStuff\SymbolResolver_RandomHives.cs" />
-    <Compile Include="Harmony\Patches\GenStep_Settlement_ScatterAt_ExtraHives_Patch.cs" />
     <Compile Include="HiveFactionExtension.cs" />
     <Compile Include="IncidentWorker_InfestedMeteoriteImpact.cs" />
     <Compile Include="Harmony\MainHarmonyInstance.cs" />

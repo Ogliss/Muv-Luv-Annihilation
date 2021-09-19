@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <ThingDef ParentName="BuildingNaturalBase">
     <defName>MLB_BETAHive_Interior</defName>
     <label>BETA tunnel</label>
     <description>A BETA tunnel. If activated, it will spawn additional BETA and tunnels over time.</description>
-    <thingClass>ExtraHives.Hive</thingClass>
+    <thingClass>OgsOld_ExtraHives.Hive</thingClass>
     <graphicData>
       <texPath>Things/Special/TunnelExit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -35,7 +35,7 @@
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
 	<modExtensions>
-		<li Class="ExtraHives.HiveDefExtension">
+		<li Class="OgsOld_ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 			<TunnelDef>MLB_BETAHiveSpawner_Interior</TunnelDef>
 			<minTemp>-250</minTemp>
@@ -50,7 +50,7 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerPawn">
 		<!--
         <spawnablePawnKinds>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
@@ -69,7 +69,7 @@
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
 		-->
         <factionGroupKindDef>BETA_InteriorHive</factionGroupKindDef>
-        <!--lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob-->
+        <!--lordJob>OgsOld_ExtraHives.LordJob_DefendAndExpandHive</lordJob-->
         <lordJob>MuvLuvAnnihilation.LordJob_AssaultColony_CutPower</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <showNextSpawnInInspect>false</showNextSpawnInInspect>
@@ -79,7 +79,7 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
-      <li Class="ExtraHives.CompProperties_SpawnerHives" />
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerHives" />
       <!--li Class="CompProperties_Spawner">
         <thingToSpawn>InsectJelly</thingToSpawn>
         <spawnCount>20</spawnCount>
@@ -117,9 +117,9 @@
   <ThingDef ParentName="EtherealThingBase">
     <defName>MLB_BETAHiveSpawner_Interior</defName>
     <label>BETA hive inside</label>
-    <thingClass>ExtraHives.TunnelHiveSpawner</thingClass>
+    <thingClass>OgsOld_ExtraHives.TunnelHiveSpawner</thingClass>
 	<modExtensions>
-		<li Class="ExtraHives.TunnelExtension">
+		<li Class="OgsOld_ExtraHives.TunnelExtension">
 			<HiveDef>MLB_BETAHive_Interior</HiveDef>
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
@@ -134,7 +134,7 @@
     <defName>MLB_BETAHive_Exterior</defName>
     <label>BETA hive</label>
     <description>A BETA tunnel. If activated, it will spawn additional BETA and tunnels over time.</description>
-    <thingClass>ExtraHives.Hive</thingClass>
+    <thingClass>OgsOld_ExtraHives.Hive</thingClass>
     <graphicData>
       <texPath>Things/Special/TunnelExit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -164,7 +164,7 @@
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
 	<modExtensions>
-		<li Class="ExtraHives.HiveDefExtension">
+		<li Class="OgsOld_ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 			<TunnelDef>MLB_BETAHiveSpawner_Exterior</TunnelDef>
 		</li>
@@ -181,7 +181,7 @@
           <BETA_FortClass>1</BETA_FortClass>
           <BETA_HeavyLaserClass>25</BETA_HeavyLaserClass>
 		  -->
-      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerPawn">
 	  <!--
         <spawnablePawnKinds>
           <BETA_SoldierClass>900</BETA_SoldierClass>
@@ -194,7 +194,7 @@
 		  <li>BETA_GrapplerClass</li>
 		  <li>BETA_LaserClass</li>
 		</AlwaysSpawnWith>
-        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+        <lordJob>OgsOld_ExtraHives.LordJob_DefendAndExpandHive</lordJob>
 		-->
         <factionGroupKindDef>BETA_ExteriorHive</factionGroupKindDef>
         <initialPawnsPoints>250</initialPawnsPoints>
@@ -210,7 +210,7 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
-      <li Class="ExtraHives.CompProperties_SpawnerHives" />
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerHives" />
       <!--li Class="CompProperties_Spawner">
         <thingToSpawn>GlowPod</thingToSpawn>
         <spawnCount>1</spawnCount>
@@ -240,9 +240,9 @@
   <ThingDef ParentName="EtherealThingBase">
     <defName>MLB_BETAHiveSpawner_Exterior</defName>
     <label>BETA hive outside</label>
-    <thingClass>ExtraHives.TunnelHiveSpawner</thingClass>
+    <thingClass>OgsOld_ExtraHives.TunnelHiveSpawner</thingClass>
 	<modExtensions>
-		<li Class="ExtraHives.TunnelExtension">
+		<li Class="OgsOld_ExtraHives.TunnelExtension">
 			<HiveDef>MLB_BETAHive_Exterior</HiveDef>
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
@@ -256,7 +256,7 @@
     <defName>MLB_BETAHive_Tunnel</defName>
     <label>BETA tunnel</label>
     <description>A BETA tunnel. If activated, it will spawn additional BETA over time.</description>
-    <thingClass>ExtraHives.Hive</thingClass>
+    <thingClass>OgsOld_ExtraHives.Hive</thingClass>
     <graphicData>
       <texPath>Things/Special/TunnelExit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -286,7 +286,7 @@
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
 	<modExtensions>
-		<li Class="ExtraHives.HiveDefExtension">
+		<li Class="OgsOld_ExtraHives.HiveDefExtension">
 			<TunnelDef>MLB_BETAHiveSpawner_Tunnel</TunnelDef>
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
@@ -297,7 +297,7 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerPawn">
         <spawnablePawnKinds>
           <BETA_SoldierClass>1000</BETA_SoldierClass>
           <BETA_WarriorClass>1000</BETA_WarriorClass>
@@ -310,9 +310,9 @@
         </spawnablePawnKinds>
 		<!-- 
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
-        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+        <lordJob>OgsOld_ExtraHives.LordJob_DefendAndExpandHive</lordJob>
 		-->
-        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+        <lordJob>OgsOld_ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <initialPawnsPoints>200</initialPawnsPoints>
         <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
@@ -323,9 +323,9 @@
   <ThingDef ParentName="EtherealThingBase">
     <defName>MLB_BETAHiveSpawner_Tunnel</defName>
     <label>BETA hive child</label>
-    <thingClass>ExtraHives.TunnelHiveSpawner</thingClass>
+    <thingClass>OgsOld_ExtraHives.TunnelHiveSpawner</thingClass>
 	<modExtensions>
-		<li Class="ExtraHives.TunnelExtension">
+		<li Class="OgsOld_ExtraHives.TunnelExtension">
 			<HiveDef>MLB_BETAHive_Tunnel</HiveDef>
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
@@ -359,7 +359,7 @@
     <defName>MLB_BETAHive_SmallCave</defName>
     <label>BETA tunnel</label>
     <description>A BETA tunnel. If activated, it will spawn additional BETA and tunnels over time.</description>
-    <thingClass>ExtraHives.Hive</thingClass>
+    <thingClass>OgsOld_ExtraHives.Hive</thingClass>
     <graphicData>
       <texPath>Things/Special/TunnelExit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -389,7 +389,7 @@
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
 	<modExtensions>
-		<li Class="ExtraHives.HiveDefExtension">
+		<li Class="OgsOld_ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 			<minTemp>-250</minTemp>
 			<maxTemp>250</maxTemp>
@@ -402,16 +402,16 @@
         <startsDormant>false</startsDormant>
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
-      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerPawn">
         <factionGroupKindDef>BETA_InteriorHive</factionGroupKindDef>
-        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+        <lordJob>OgsOld_ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <showNextSpawnInInspect>true</showNextSpawnInInspect>
         <initialPawnsPoints>750</initialPawnsPoints>
         <maxSpawnedPawnsPoints>1550</maxSpawnedPawnsPoints>
         <pawnSpawnIntervalDays>0.1</pawnSpawnIntervalDays>
       </li>
-      <li Class="ExtraHives.CompProperties_SpawnerOnDamaged">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerOnDamaged">
         <factionGroupKindDef>BETA_InteriorHive</factionGroupKindDef>
       </li>
       <li Class="CompProperties_SelfhealHitpoints">
@@ -435,7 +435,7 @@
     <defName>MLB_BETAHive_BigCave</defName>
     <label>BETA hive</label>
     <description>A BETA tunnel. If activated, it will spawn additional BETA and tunnels over time.</description>
-    <thingClass>ExtraHives.Hive</thingClass>
+    <thingClass>OgsOld_ExtraHives.Hive</thingClass>
     <graphicData>
       <texPath>Things/Special/TunnelExit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -465,7 +465,7 @@
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
 	<modExtensions>
-		<li Class="ExtraHives.HiveDefExtension">
+		<li Class="OgsOld_ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
 	</modExtensions>
@@ -474,19 +474,19 @@
         <startsDormant>false</startsDormant>
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
-      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerPawn">
         <factionGroupKindDef>BETA_ExteriorHive</factionGroupKindDef>
         <initialPawnsPoints>750</initialPawnsPoints>
         <maxSpawnedPawnsPoints>1550</maxSpawnedPawnsPoints>
         <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
         <showNextSpawnInInspect>true</showNextSpawnInInspect>
-        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+        <lordJob>OgsOld_ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <pawnSpawnIntervalDays>0.05</pawnSpawnIntervalDays>
         <assaultOnSpawn>True</assaultOnSpawn>
         <shouldJoinParentLord>True</shouldJoinParentLord>
         <spawnSound>Hive_Spawn</spawnSound>
       </li>
-      <li Class="ExtraHives.CompProperties_SpawnerOnDamaged">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerOnDamaged">
         <factionGroupKindDef>BETA_ExteriorHive</factionGroupKindDef>
       </li>
       <li Class="CompProperties_SelfhealHitpoints">
@@ -505,7 +505,7 @@
     <defName>MLB_BETAMonument_CaveCenter</defName>
     <label>BETA Monument</label>
     <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one contains a device which annihilates plant life near itself without directly affecting flesh creatures. These kinds of weapons are sometimes scattered across farmlands or forests during land, to remove the enemy's food supply and hiding places without permanently ruining the territory. They're usually associated with orbital-drop mechanoid armies.</description>
-    <thingClass>ExtraHives.Hive</thingClass>
+    <thingClass>OgsOld_ExtraHives.Hive</thingClass>
     <graphicData>
       <texPath>Things/Special/BETA/Monument</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -515,7 +515,7 @@
     </graphicData>
     <size>(5,5)</size>
 	<modExtensions>
-		<li Class="ExtraHives.HiveDefExtension">
+		<li Class="OgsOld_ExtraHives.HiveDefExtension">
 			<Faction>MuvLuv_BETA</Faction>
 		</li>
 	</modExtensions>
@@ -524,19 +524,19 @@
         <startsDormant>false</startsDormant>
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
-      <li Class="ExtraHives.CompProperties_SpawnerPawn">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerPawn">
         <factionGroupKindDef>Settlement</factionGroupKindDef>
         <initialPawnsPoints>1550</initialPawnsPoints>
         <maxSpawnedPawnsPoints>1550</maxSpawnedPawnsPoints>
         <chooseSingleTypeToSpawn>False</chooseSingleTypeToSpawn>
         <showNextSpawnInInspect>true</showNextSpawnInInspect>
-        <lordJob>ExtraHives.LordJob_DefendAndExpandHive</lordJob>
+        <lordJob>OgsOld_ExtraHives.LordJob_DefendAndExpandHive</lordJob>
         <pawnSpawnIntervalDays>0.01</pawnSpawnIntervalDays>
         <assaultOnSpawn>True</assaultOnSpawn>
         <shouldJoinParentLord>True</shouldJoinParentLord>
         <spawnSound>Hive_Spawn</spawnSound>
       </li>
-      <li Class="ExtraHives.CompProperties_SpawnerOnDamaged">
+      <li Class="OgsOld_ExtraHives.CompProperties_SpawnerOnDamaged">
         <factionGroupKindDef>Settlement</factionGroupKindDef>
       </li>
     </comps>

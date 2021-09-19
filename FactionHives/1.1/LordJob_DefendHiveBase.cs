@@ -3,7 +3,7 @@ using System;
 using Verse;
 using Verse.AI.Group;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	// Token: 0x02000786 RID: 1926
 	public class LordJob_DefendHiveBase : LordJob

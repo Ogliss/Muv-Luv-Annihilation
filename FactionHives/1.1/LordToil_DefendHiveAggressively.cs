@@ -2,7 +2,7 @@
 using System;
 using Verse.AI;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	// Token: 0x02000792 RID: 1938
 	public class LordToil_DefendHiveAggressively : LordToil_HiveRelated

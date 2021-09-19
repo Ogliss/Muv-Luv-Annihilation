@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
 	public static class InfestationCellFinder
 	{

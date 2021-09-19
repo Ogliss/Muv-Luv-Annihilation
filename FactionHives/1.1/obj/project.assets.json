@@ -934,7 +934,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\FactionHives\\1.1\\HiveExtension.csproj",
-      "projectName": "ExtraHives",
+      "projectName": "OgsOld_ExtraHives",
       "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\FactionHives\\1.1\\HiveExtension.csproj",
       "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
       "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\FactionHives\\1.1\\obj\\",

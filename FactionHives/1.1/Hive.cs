@@ -8,9 +8,9 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace ExtraHives
+namespace OgsOld_ExtraHives
 {
-	// ExtraHives.Hive
+	// OgsOld_ExtraHives.Hive
 	public class Hive : Building, IAttackTarget, ILoadReferenceable
 	{
 		public HiveDefExtension Ext => this.def.HasModExtension<HiveDefExtension>() ? this.def.GetModExtension<HiveDefExtension>() : null;

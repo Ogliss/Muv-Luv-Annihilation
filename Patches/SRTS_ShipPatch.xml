@@ -53,7 +53,7 @@
 						</costList>
 						<comps>
 						
-						  <li Class="CompTurret.CompProperties_Turret"> 
+						  <li Class="OgsOld_CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
 							<!--drawTurret>false</drawTurret-->
 							<allowForcedTarget>false</allowForcedTarget>
@@ -76,7 +76,7 @@
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
-						  <li Class="CompTurret.CompProperties_Turret"> 
+						  <li Class="OgsOld_CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
 							<!--drawTurret>false</drawTurret-->
 							<allowForcedTarget>false</allowForcedTarget>
@@ -99,7 +99,7 @@
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
-						  <li Class="CompTurret.CompProperties_Turret"> 
+						  <li Class="OgsOld_CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
 							<!--drawTurret>false</drawTurret-->
 							<allowForcedTarget>false</allowForcedTarget>
@@ -122,7 +122,7 @@
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
-						  <li Class="CompTurret.CompProperties_Turret"> 
+						  <li Class="OgsOld_CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
 							<!--drawTurret>false</drawTurret-->
 							<allowForcedTarget>false</allowForcedTarget>
@@ -145,7 +145,7 @@
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
-						  <li Class="CompTurret.CompProperties_Turret"> 
+						  <li Class="OgsOld_CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
 							<!--drawTurret>false</drawTurret-->
 							<allowForcedTarget>false</allowForcedTarget>
@@ -168,7 +168,7 @@
 							<offsetEast>0,0.0,0.0</offsetEast>
 							<offsetWest>0,0.0,0.0</offsetWest>
 						  </li>
-						  <li Class="CompTurret.CompProperties_Turret"> 
+						  <li Class="OgsOld_CompTurret.CompProperties_Turret"> 
 							<projectileOffset>0</projectileOffset>
 							<!--drawTurret>false</drawTurret-->
 							<allowForcedTarget>false</allowForcedTarget>

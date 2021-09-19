@@ -5,7 +5,7 @@ using RimWorld.BaseGen;
 using Verse;
 using Verse.AI.Group;
 
-namespace ExtraHives.GenStuff
+namespace OgsOld_ExtraHives.GenStuff
 {
 	// Token: 0x02000053 RID: 83
 	public class SymbolResolver_Hivebase : SymbolResolver
@@ -60,8 +60,8 @@ namespace ExtraHives.GenStuff
 			{
 			//	Log.Message("Points " + resolveParams.pawnGroupMakerParams.points);
 			}
-			BaseGen.symbolStack.Push("ExtraHives_PawnGroup", resolveParams, null);
-			PawnGenerationRequest value = new PawnGenerationRequest(parentFaction.def.pawnGroupMakers.Where(x=> x.kindDef == PawnGroupKindDefOf.Hive_ExtraHives|| 
+			BaseGen.symbolStack.Push("OgsOld_ExtraHives_PawnGroup", resolveParams, null);
+			PawnGenerationRequest value = new PawnGenerationRequest(parentFaction.def.pawnGroupMakers.Where(x=> x.kindDef == PawnGroupKindDefOf.Hive_OgsOld_ExtraHives|| 
 			x.kindDef == RimWorld.PawnGroupKindDefOf.Combat).RandomElement().options.RandomElementByWeight(x=> x.Cost).kind,
 			parentFaction, PawnGenerationContext.NonPlayer, -1, false, false, false, false, true, false, 1f, false, true, true, true, false, false, false, false);
 			ResolveParams resolveParams2 = rp;
@@ -69,14 +69,14 @@ namespace ExtraHives.GenStuff
 			resolveParams2.singlePawnGenerationRequest = new PawnGenerationRequest?(value);
 			resolveParams2.rect = rp.rect;
 			resolveParams2.singlePawnLord = singlePawnLord;
-			BaseGen.symbolStack.Push("ExtraHives_Pawn", resolveParams2, null);
+			BaseGen.symbolStack.Push("OgsOld_ExtraHives_Pawn", resolveParams2, null);
 			ResolveParams resolveParams3 = rp;
 			resolveParams3.rect = rp.rect.ContractedBy(dist);
 			resolveParams3.faction = parentFaction;
 			BaseGen.symbolStack.Push("ensureCanReachMapEdge", resolveParams3, null);
 
 			ResolveParams resolveParams5 = rp;
-			BaseGen.symbolStack.Push("ExtraHives_HiveRandomCorpse", rp, null);
+			BaseGen.symbolStack.Push("OgsOld_ExtraHives_HiveRandomCorpse", rp, null);
 
 			ResolveParams resolveParams4 = rp;
 			resolveParams4.rect = rp.rect.ContractedBy(dist);
@@ -91,9 +91,9 @@ namespace ExtraHives.GenStuff
 			resolveParams4.filthDensity = new FloatRange?(new FloatRange(0.5f, 1f));
 			resolveParams4.cultivatedPlantDef = null;
 
-			BaseGen.symbolStack.Push("ExtraHives_HiveInterals", resolveParams4, null);
+			BaseGen.symbolStack.Push("OgsOld_ExtraHives_HiveInterals", resolveParams4, null);
 
-			BaseGen.symbolStack.Push("ExtraHives_HiveMoundMaker", resolveParams4, null);
+			BaseGen.symbolStack.Push("OgsOld_ExtraHives_HiveMoundMaker", resolveParams4, null);
 		}
 
 		// Token: 0x040000C5 RID: 197

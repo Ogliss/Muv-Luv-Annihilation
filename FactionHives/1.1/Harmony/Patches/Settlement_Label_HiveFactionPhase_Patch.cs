@@ -12,7 +12,7 @@ using RimWorld.Planet;
 using UnityEngine;
 
 // Settlement
-namespace ExtraHives.HarmonyInstance
+namespace OgsOld_ExtraHives.HarmonyInstance
 {
     [HarmonyPatch(typeof(Settlement), "get_Label")]
     public static class Settlement_Label_HiveFactionPhase_Patch

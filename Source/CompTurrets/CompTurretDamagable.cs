@@ -4,20 +4,20 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
-using CompTurret;
+using OgsOld_CompTurret;
 
-namespace CompTurret
+namespace OgsOld_CompTurret
 {
     public class CompProperties_TurretDamagable : CompProperties_Turret
     {
         public float breakWhenHitpointsBelow;
         public CompProperties_TurretDamagable()
         {
-            this.compClass = typeof(CompTurretGunDamagable);
+            this.compClass = typeof(OgsOld_CompTurretGunDamagable);
         }
     }
 
-    public class CompTurretGunDamagable : CompTurretGun
+    public class OgsOld_CompTurretGunDamagable : OgsOld_CompTurretGun
     {
         public int currentHP;
         public new CompProperties_TurretDamagable Props => this.props as CompProperties_TurretDamagable;
