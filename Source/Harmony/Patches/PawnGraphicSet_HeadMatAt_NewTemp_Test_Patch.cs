@@ -12,8 +12,8 @@ using UnityEngine;
 
 namespace MuvLuvAnnihilation.HarmonyInstance
 {
-    [HarmonyPatch(typeof(PawnGraphicSet), "HeadMatAt_NewTemp")]
-    public static class PawnGraphicSet_HeadMatAt_NewTemp_Test_Patch
+    [HarmonyPatch(typeof(PawnGraphicSet), "HeadMatAt")]
+    public static class PawnGraphicSet_HeadMatAt_Test_Patch
     {
         public static void Postfix(PawnGraphicSet __instance, bool portrait, ref Material __result)
         {

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "sW0Gbr3/GXY5NJFnyTj9KjqV5Gbb5i1S60GsWnX36CBE7e1RcCJ1NQfKTUsZbRD/vG0vlYS6z68LNKowWmkGaA==",
+  "success": true,
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\OgsLasers\\OgsLasers.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.publicizer\\1.0.1\\krafs.publicizer.1.0.1.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.2.3062\\krafs.rimworld.ref.1.2.3062.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.0.4\\lib.harmony.2.0.4.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\nuget.build.tasks.pack\\5.2.0\\nuget.build.tasks.pack.5.2.0.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\rimworld.multiplayerapi\\0.3.0\\rimworld.multiplayerapi.0.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

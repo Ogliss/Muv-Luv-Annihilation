@@ -17,33 +17,33 @@ namespace MuvLuvAnnihilation.HarmonyInstance
     [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal", new Type[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) }), HarmonyPriority(Priority.Last)]
     public static class PawnRenderer_RenderPawnInternal_DrawExosuit_Transpiler
     {
-        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-
-            List<CodeInstruction> instructionList = instructions.ToList();
-
-            for (int i = 0; i < instructionList.Count; i++)
-            {
-                CodeInstruction instruction = instructionList[index: i];
-                if (i > 1 && instructionList[index: i - 1].OperandIs(AccessTools.Method(type: typeof(Graphics), name: nameof(Graphics.DrawMesh), parameters: new[] { typeof(Mesh), typeof(Vector3), typeof(Quaternion), typeof(Material), typeof(Int32) })) && (i + 1) < instructionList.Count /* && instructionList[index: i + 1].opcode == OpCodes.Brtrue_S*/)
-                {
-                    yield return instruction; // portrait
-                    yield return new CodeInstruction(opcode: OpCodes.Ldarg_1);
-                    yield return new CodeInstruction(opcode: OpCodes.Ldarg_0);
-                    yield return new CodeInstruction(opcode: OpCodes.Ldfld, operand: AccessTools.Field(type: typeof(PawnRenderer), name: "pawn"));
-                    yield return new CodeInstruction(opcode: OpCodes.Ldloc_0);             // quat
-                    yield return new CodeInstruction(opcode: OpCodes.Ldarg_S, operand: 4); // bodyfacing
-                    yield return new CodeInstruction(opcode: OpCodes.Ldarg_S, operand: 9); //invisible
-                    yield return new CodeInstruction(opcode: OpCodes.Ldloc_1);             // Mesh
-                    yield return new CodeInstruction(opcode: OpCodes.Ldarg_S, operand: 5); // bodyfacing
-                    yield return new CodeInstruction(opcode: OpCodes.Call, operand: typeof(PawnRenderer_RenderPawnInternal_DrawExosuit_Transpiler).GetMethod("DrawAddons"));
-
-                    instruction = new CodeInstruction(opcode: OpCodes.Ldarg_S, operand: 7);
-                }
-
-                yield return instruction;
-            }
-        }
+        //static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        //{
+        //
+        //    List<CodeInstruction> instructionList = instructions.ToList();
+        //
+        //    for (int i = 0; i < instructionList.Count; i++)
+        //    {
+        //        CodeInstruction instruction = instructionList[index: i];
+        //        if (i > 1 && instructionList[index: i - 1].OperandIs(AccessTools.Method(type: typeof(Graphics), name: nameof(Graphics.DrawMesh), parameters: new[] { typeof(Mesh), typeof(Vector3), typeof(Quaternion), typeof(Material), typeof(Int32) })) && (i + 1) < instructionList.Count /* && instructionList[index: i + 1].opcode == OpCodes.Brtrue_S*/)
+        //        {
+        //            yield return instruction; // portrait
+        //            yield return new CodeInstruction(opcode: OpCodes.Ldarg_1);
+        //            yield return new CodeInstruction(opcode: OpCodes.Ldarg_0);
+        //            yield return new CodeInstruction(opcode: OpCodes.Ldfld, operand: AccessTools.Field(type: typeof(PawnRenderer), name: "pawn"));
+        //            yield return new CodeInstruction(opcode: OpCodes.Ldloc_0);             // quat
+        //            yield return new CodeInstruction(opcode: OpCodes.Ldarg_S, operand: 4); // bodyfacing
+        //            yield return new CodeInstruction(opcode: OpCodes.Ldarg_S, operand: 9); //invisible
+        //            yield return new CodeInstruction(opcode: OpCodes.Ldloc_1);             // Mesh
+        //            yield return new CodeInstruction(opcode: OpCodes.Ldarg_S, operand: 5); // bodyfacing
+        //            yield return new CodeInstruction(opcode: OpCodes.Call, operand: typeof(PawnRenderer_RenderPawnInternal_DrawExosuit_Transpiler).GetMethod("DrawAddons"));
+        //
+        //            instruction = new CodeInstruction(opcode: OpCodes.Ldarg_S, operand: 7);
+        //        }
+        //
+        //        yield return instruction;
+        //    }
+        //}
 
         public static void DrawAddons(bool portrait, Vector3 vector, Pawn pawn, Quaternion quat, Rot4 bodyFacing, bool invisible, Mesh mesh, Rot4 headfacing)
         {

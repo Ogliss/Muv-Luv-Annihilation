@@ -5,8 +5,8 @@ using HarmonyLib;
 
 namespace MuvLuvAnnihilation.HarmonyInstance
 {
-    [HarmonyPatch(typeof(PawnGraphicSet), "HairMatAt_NewTemp")]
-    public static class PawnGraphicSet_HairMatAt_NewTemp_Test_Patch
+    [HarmonyPatch(typeof(PawnGraphicSet), "HairMatAt")]
+    public static class PawnGraphicSet_HairMatAt_Patch
     {
         public static void Postfix(PawnGraphicSet __instance, bool portrait, ref Material __result)
         {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RlaB/fejYgO641EjxSh+2RDLe7Br8k5C+iJZGq25jIhPCrswQXNVJfhz5FlH7jqoDvJxCXaj1Wz6Gaaefj28hw==",
+  "dgSpecHash": "F5HUVFuBrAGqghHOXd5Iwmq6I+QyAWDwO2Q8rByTZaPPcnqNSe1p2wBfIflX3kIs19jIvnvkE33fD9FyvphRQg==",
   "success": true,
-  "projectFilePath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\Source\\MuvLuv-Annihilation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.3.3117\\krafs.rimworld.ref.1.3.3117.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.1.1\\lib.harmony.2.1.1.nupkg.sha512"
