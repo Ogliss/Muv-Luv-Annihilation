@@ -5,8 +5,8 @@ using Verse;
 
 namespace MuvLuvAnnihilation
 {
-	public class MechStation : Building
-	{
+    public class MechStation : Building
+    {
         public MechSuit assignedSuit;
         public CompRefuelableSteel compRefuelableSteel;
         public CompRefuelableChemfuel compRefuelableChemfuel;
@@ -22,37 +22,32 @@ namespace MuvLuvAnnihilation
             {
                 if (assignedSuit.HitPoints != assignedSuit.MaxHitPoints && compRefuelableSteel != null && compRefuelableSteel.HasFuel)
                 {
-                    Log.Message("compRefuelableSteel.ConsumeFuel(1f) - 1");
                     compRefuelableSteel.ConsumeFuel(1f);
                     assignedSuit.HitPoints += 1;
                 }
-                if (OgsOld_CompTurretGunFirst != null && OgsOld_CompTurretGunFirst.gun.HitPoints != OgsOld_CompTurretGunFirst.gun.MaxHitPoints 
+                if (OgsOld_CompTurretGunFirst != null && OgsOld_CompTurretGunFirst.gun.HitPoints != OgsOld_CompTurretGunFirst.gun.MaxHitPoints
                     && compRefuelableSteel != null && compRefuelableSteel.HasFuel)
                 {
-                    Log.Message(OgsOld_CompTurretGunFirst.gun.HitPoints + " - " + OgsOld_CompTurretGunFirst.gun.MaxHitPoints + " - compRefuelableSteel.ConsumeFuel(1f) - 2");
                     compRefuelableSteel.ConsumeFuel(1f);
                     OgsOld_CompTurretGunFirst.gun.HitPoints += 1;
                 }
                 if (OgsOld_CompTurretGunSecond != null && OgsOld_CompTurretGunSecond.gun.HitPoints != OgsOld_CompTurretGunSecond.gun.MaxHitPoints
                     && compRefuelableSteel != null && compRefuelableSteel.HasFuel)
                 {
-                    Log.Message(OgsOld_CompTurretGunSecond.gun.HitPoints + " - " + OgsOld_CompTurretGunSecond.gun.MaxHitPoints + " - compRefuelableSteel.ConsumeFuel(1f) - 3");
                     compRefuelableSteel.ConsumeFuel(1f);
                     OgsOld_CompTurretGunSecond.gun.HitPoints += 1;
                 }
                 if (OgsOld_CompTurretGunFirst != null && OgsOld_CompTurretGunFirst.RemainingCharges != OgsOld_CompTurretGunFirst.MaxCharges
-                    && compRefuelableAmmoFirst != null && compRefuelableAmmoFirst.FuelFilter != null 
+                    && compRefuelableAmmoFirst != null && compRefuelableAmmoFirst.FuelFilter != null
                     && compRefuelableAmmoFirst.FuelFilter.Allows(OgsOld_CompTurretGunFirst.AmmoDef) && compRefuelableAmmoFirst.HasFuel)
                 {
-                    Log.Message("compRefuelableAmmoFirst.ConsumeFuel(1f)");
                     compRefuelableAmmoFirst.ConsumeFuel(1f);
                     OgsOld_CompTurretGunFirst.remainingCharges += 1;
                 }
                 if (OgsOld_CompTurretGunSecond != null && OgsOld_CompTurretGunSecond.RemainingCharges != OgsOld_CompTurretGunSecond.MaxCharges
-                    && compRefuelableAmmoSecond != null && compRefuelableAmmoSecond.FuelFilter != null 
+                    && compRefuelableAmmoSecond != null && compRefuelableAmmoSecond.FuelFilter != null
                     && compRefuelableAmmoSecond.FuelFilter.Allows(OgsOld_CompTurretGunSecond.AmmoDef) && compRefuelableAmmoSecond.HasFuel)
                 {
-                    Log.Message("compRefuelableAmmoSecond.ConsumeFuel(1f)");
                     compRefuelableAmmoSecond.ConsumeFuel(1f);
                     OgsOld_CompTurretGunSecond.remainingCharges += 1;
                 }
@@ -60,7 +55,6 @@ namespace MuvLuvAnnihilation
                     && compRefuelableChemfuel != null && compRefuelableChemfuel.FuelFilter != null
                     && compRefuelableChemfuel.FuelFilter.Allows(compReloadableDual.AmmoDef) && compRefuelableChemfuel.Fuel >= compReloadableDual.Props.ammoCountPerCharge)
                 {
-                    Log.Message("1 compRefuelableChemfuel.ConsumeFuel(20f)");
                     compRefuelableChemfuel.ConsumeFuel(compReloadableDual.Props.ammoCountPerCharge);
                     Thing chemfuel = ThingMaker.MakeThing(compReloadableDual.AmmoDef);
                     chemfuel.stackCount = compReloadableDual.Props.ammoCountPerCharge;
@@ -71,10 +65,9 @@ namespace MuvLuvAnnihilation
                 }
                 if (compReloadableDual != null && compReloadableDual.RemainingChargesSecondry != compReloadableDual.MaxChargesSecondry
                         && compRefuelableChemfuel != null && compRefuelableChemfuel.FuelFilter != null
-                        && compRefuelableChemfuel.FuelFilter.Allows(compReloadableDual.AmmoDefSecondry) 
+                        && compRefuelableChemfuel.FuelFilter.Allows(compReloadableDual.AmmoDefSecondry)
                         && compRefuelableChemfuel.Fuel >= compReloadableDual.Props.ammoCountPerChargeSecondry)
                 {
-                    Log.Message("2 compRefuelableChemfuel.ConsumeFuel(20f)");
                     compRefuelableChemfuel.ConsumeFuel(compReloadableDual.Props.ammoCountPerChargeSecondry);
                     Thing chemfuel = ThingMaker.MakeThing(compReloadableDual.AmmoDefSecondry);
                     chemfuel.stackCount = compReloadableDual.Props.ammoCountPerChargeSecondry;

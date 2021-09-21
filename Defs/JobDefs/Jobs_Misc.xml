@@ -17,4 +17,11 @@
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
   
+  <JobDef>
+    <defName>BETA_Ingest</defName>
+    <driverClass>MuvLuvAnnihilation.JobDriver_IngestMonster</driverClass>
+    <reportString>consuming TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
 </Defs>

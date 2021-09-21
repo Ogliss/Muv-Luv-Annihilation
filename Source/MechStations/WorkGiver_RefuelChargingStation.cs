@@ -31,7 +31,6 @@ namespace MuvLuvAnnihilation
 		public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
 		{
 			Job job = RefuelWorkGiverUtilityMulti.RefuelJob(pawn, t, forced, JobStandard, JobAtomic);
-			Log.Message(pawn + " - " + job);
 			return job;
 		}
 	}

@@ -39,6 +39,8 @@ namespace MuvLuvAnnihilation
 
 		public static ThingDef MLB_ChargingStation;
 
+		public static JobDef BETA_Ingest;
+
 
 	}
 }

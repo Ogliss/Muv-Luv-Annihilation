@@ -17,12 +17,12 @@ namespace MuvLuvAnnihilation
 
 		public ThingFilter fuelFilter;
 		public virtual ThingFilter FuelFilter
-        {
+		{
 			get
-            {
+			{
 				return Props.fuelFilter;
-            }
-        }
+			}
+		}
 
 		private CompFlickable flickComp;
 
@@ -175,7 +175,7 @@ namespace MuvLuvAnnihilation
 		{
 			string text = "";
 			if (FuelFilter != null)
-            {
+			{
 				text += FuelFilter.Summary.CapitalizeFirst() + ": " + fuel.ToStringDecimalIfSmall() + " / " + Props.fuelCapacity.ToStringDecimalIfSmall();
 				if (!Props.consumeFuelOnlyWhenUsed && HasFuel)
 				{
@@ -199,12 +199,10 @@ namespace MuvLuvAnnihilation
 			base.CompTick();
 			if (!Props.consumeFuelOnlyWhenUsed && (flickComp == null || flickComp.SwitchIsOn))
 			{
-				Log.Message(this + " - ConsumeFuel(ConsumptionRatePerTick)", true);
 				ConsumeFuel(ConsumptionRatePerTick);
 			}
 			if (Props.fuelConsumptionPerTickInRain > 0f && parent.Spawned && parent.Map.weatherManager.RainRate > 0.4f && !parent.Map.roofGrid.Roofed(parent.Position))
 			{
-				Log.Message(this + " - ConsumeFuel(Props.fuelConsumptionPerTickInRain)", true);
 				ConsumeFuel(Props.fuelConsumptionPerTickInRain);
 			}
 		}

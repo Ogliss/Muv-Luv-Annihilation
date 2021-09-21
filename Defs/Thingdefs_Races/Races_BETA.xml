@@ -4,6 +4,7 @@
   <ThingDef ParentName="BaseBETA">
     <defName>BETA_SoldierClass</defName>
     <label>soldier</label>
+	<thingClass>MuvLuvAnnihilation.BetaEater</thingClass>
     <description>Classification: Soldier\nScientific Name: Venarius: Caput grande\nCommon name: "Venator"\n\nIronically named "Soldier", this BETA stands at 2.3 meters tall, 1.2 meters long and 1.4 meters wide[4] and is the smallest strain of BETA encountered on Earth. First spotted in 1995, the Soldier-class has little to no capability against mechanized units, and is solely anti-personnel; it has the highest personnel detection capability amongst all BETA, arm and jaw strength several times that of an average human's, and is able to maintain relative silence during movement,[4] making it harder for anyone on foot to detect their approach unless from the front.\n\nTheir size and low defensive capabilities means they can be dispatched by guns, knives, swords, or other weaponry effective against regular humans. Despite their size and strength, an adrenaline infused punch from an average built 16 year old boy is enough to make their frontal face turn ninety degrees.</description>
     <uiIconScale>1.1</uiIconScale>
     <statBases>
@@ -15,6 +16,8 @@
     </statBases>
     <race>
       <body>BETASoldier</body>
+	  <thinkTreeMain>BETA_Eater_ThinkTree</thinkTreeMain>
+      <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
       <baseHungerRate>0.25</baseHungerRate>
       <baseBodySize>1.3</baseBodySize>
       <baseHealthScale>1.5</baseHealthScale>
@@ -145,6 +148,7 @@
     <label>tank</label>
     <description>Classification: Tank\nScientific Name: Manderium: Ungulam crus\nCommon name: "Equus pedis"\n\nThe Tank-class BETA is the third smallest strain, measuring at 2.8 meters tall, 4.4 meters long and 1.9 meters wide.[5] Infantry weapons are effective against them, but while it is lightly armored and classified as an anti-infantry unit, the Tank-class has gained notoriety as the smallest physical anti-TSF unit the BETA have; their physical strength and jumping abilities are prodigious and their powerful jaws can bite through even metal, concrete,[5] and even super-carbon. Paired with their capability to reach 80km/h even on uneven terrain, Tank-class BETA are able to easily catch and demolish vehicles and TSFs. Countless numbers of battle tank operators and TSF pilots have been lost to this strain.\n\nstanding 2.8 meters tall the manderium is on the smaller end of the BETA Strains spectrum, while they are lightly armoured, heavy machinegun fire has proven effective against them, their powerful bite can cut through all but the thickest armour.</description>
     <uiIconScale>1.1</uiIconScale>
+	<thingClass>MuvLuvAnnihilation.BetaEater</thingClass>
     <statBases>
       <MarketValue>200</MarketValue>
       <LeatherAmount>0</LeatherAmount>
@@ -154,6 +158,8 @@
     </statBases>
     <race>
       <body>BETATank</body>
+	  <thinkTreeMain>BETA_Eater_ThinkTree</thinkTreeMain>
+      <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
       <baseHungerRate>0.25</baseHungerRate>
       <baseBodySize>1.8</baseBodySize>
       <baseHealthScale>2.80</baseHealthScale>

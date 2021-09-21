@@ -32,7 +32,6 @@ namespace MuvLuvAnnihilation.HarmonyInstance
                             float hivepoints = parms.points;
                             if (Rand.Chance(0.25f))
                             {
-                        	//        Log.Message("Tripple Threat strikes in " + strikedelay + " "+ hivepoints + " points each strikes in " + strikedelay);
                                 int @int = Rand.Int;
                                 IncidentParms raidParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, map);
                                 raidParms.forced = true;
@@ -52,7 +51,6 @@ namespace MuvLuvAnnihilation.HarmonyInstance
                             {
 
                                 IncidentDef incidentDef = Rand.Chance(0.5f) ? IncidentDefOf.BETAInfestationInterior : IncidentDefOf.BETAInfestationExterior;
-                        	//        Log.Message("Double Threat " + incidentDef.defName +" strikes in "+ strikedelay);
                                 int @int = Rand.Int;
                                 IncidentParms raidParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, map);
                                 raidParms.forced = true;

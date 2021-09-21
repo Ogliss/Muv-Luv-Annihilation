@@ -25,11 +25,9 @@ namespace MuvLuvAnnihilation.HarmonyInstance
                 {
                     if ((parms.target is Map map))
                     {
-                	 //   Log.Message("groupKind " + groupKind+" for "+parms.faction);
                         if (parms.raidArrivalMode.defName.Contains("TunnelIn"))
                         {
                             groupKind = OgsOld_ExtraHives.PawnGroupKindDefOf.Tunneler_OgsOld_ExtraHives;
-                        //    Log.Message("groupKind now " + groupKind);
                         }
                     }
                 }

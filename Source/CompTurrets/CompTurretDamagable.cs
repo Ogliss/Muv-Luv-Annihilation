@@ -42,13 +42,11 @@ namespace OgsOld_CompTurret
         public override bool CanBeUsed => !IsBroken && base.CanBeUsed;
         public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
         {
-            Log.Message(this + " - TEST - PostPreApplyDamage", true);
             base.PostPreApplyDamage(dinfo, out absorbed);
         }
 
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
-            Log.Message(this + " - TEST - PostPostApplyDamage", true);
             base.PostPostApplyDamage(dinfo, totalDamageDealt);
         }
 

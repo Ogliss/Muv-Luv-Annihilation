@@ -31,7 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Harmony\HarmonyPatches.cs" />
     <Compile Include="CompTurrets\CompTurretDamagable.cs" />
+    <Compile Include="Jobs\JobDriver_IngestMonster.cs" />
+    <Compile Include="Jobs\JobGiver_GetFoodMonster.cs" />
+    <Compile Include="Jobs\Toils_MonsterIngest.cs" />
+    <Compile Include="BetaEater.cs" />
     <Compile Include="Thoughts\ThoughtWorker_SleepingInMech.cs" />
     <Compile Include="Thoughts\ThoughtWorker_EatingInMech.cs" />
     <Compile Include="Thoughts\ThoughtWorker_WearingMech.cs" />
