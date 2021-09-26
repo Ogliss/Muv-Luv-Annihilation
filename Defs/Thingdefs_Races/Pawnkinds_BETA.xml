@@ -19,7 +19,7 @@
       <li>
         <bodyGraphicData>
           <texPath>Things/Pawn/ToolUser/BETA/Soldier</texPath>
-          <drawSize>1.75</drawSize>
+          <drawSize>2</drawSize>
           <color>(156,148,125)</color>
           <shadowData>
             <volume>(0.4, 0.5, 0.37)</volume>
@@ -187,7 +187,7 @@
       <li>
         <bodyGraphicData>
           <texPath>Things/Pawn/ToolUser/BETA/HeavyLaser</texPath>
-          <drawSize>3.5</drawSize>
+          <drawSize>5</drawSize>
           <color>(154,125,94)</color>
           <shadowData>
             <volume>(0.5, 0.7, 0.43)</volume>

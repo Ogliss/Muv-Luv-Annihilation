@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DamageWorker_Tear.cs" />
     <Compile Include="Harmony\HarmonyPatches.cs" />
     <Compile Include="CompTurrets\CompTurretDamagable.cs" />
     <Compile Include="Jobs\JobDriver_IngestMonster.cs" />
