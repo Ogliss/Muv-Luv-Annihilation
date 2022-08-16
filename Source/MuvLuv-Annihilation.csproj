@@ -34,6 +34,7 @@
     <Compile Include="DamageWorker_Tear.cs" />
     <Compile Include="Harmony\HarmonyPatches.cs" />
     <Compile Include="CompTurrets\CompTurretDamagable.cs" />
+    <Compile Include="Harmony\Patches\Settlement_GetInspectString_Patch.cs" />
     <Compile Include="Jobs\JobDriver_IngestMonster.cs" />
     <Compile Include="Jobs\JobGiver_GetFoodMonster.cs" />
     <Compile Include="Jobs\Toils_MonsterIngest.cs" />
@@ -126,10 +127,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.3.3117</Version>
+      <Version>1.3.3389</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
-      <Version>2.1.1</Version>
+      <Version>2.2.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -154,10 +155,6 @@
     <Reference Include="1OgsOld_ExtraHives, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assemblies\1OgsOld_ExtraHives.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="CrashedShipsExtension">
-      <HintPath>..\..\..\..\..\..\..\..\Users\User\Desktop\OgsTools\ExpandedCrashedShips\bin\Debug\CrashedShipsExtension.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

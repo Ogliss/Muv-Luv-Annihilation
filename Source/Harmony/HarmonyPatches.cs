@@ -8,6 +8,26 @@ using Verse.AI;
 
 namespace MuvLuvAnnihilation
 {
+    [HarmonyPatch(typeof(FactionUIUtility), nameof(FactionUIUtility.DoWindowContents))]
+    public static class FactionUIUtility_Patch
+    {
+        public static void Prefix()
+        {
+            var faction = Find.FactionManager.FirstFactionOfDef(BETADefOf.MuvLuv_BETA);
+            if (faction != null)
+            {
+                faction.hidden = false;
+            }
+        }
+        public static void Postfix()
+        {
+            var faction = Find.FactionManager.FirstFactionOfDef(BETADefOf.MuvLuv_BETA);
+            if (faction != null)
+            {
+                faction.hidden = true;
+            }
+        }
+    }
     [HarmonyPatch(typeof(Pawn_JobTracker), "EndCurrentJob")]
     public class EndCurrentJobPatch
     {

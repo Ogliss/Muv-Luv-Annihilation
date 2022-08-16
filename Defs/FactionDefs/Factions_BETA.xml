@@ -18,7 +18,7 @@
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <settlementNameMaker>NamerSettlementBETA</settlementNameMaker>
-    <factionIconPath>World/WorldObjects/Expanding/Sites/MechCluster</factionIconPath>
+    <factionIconPath>World/WorldObjects/Expanding/Mechanoids</factionIconPath>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
     <allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
     <raidLootValueFromPointsCurve>

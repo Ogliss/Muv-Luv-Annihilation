@@ -14,7 +14,26 @@ namespace MuvLuvAnnihilation
 			mechOwnerships = new Dictionary<Pawn, MechSuit>();
 		}
 
-        public override void ExposeData()
+		public override void LoadedGame()
+		{
+			base.LoadedGame();
+            var faction = Find.FactionManager.FirstFactionOfDef(BETADefOf.MuvLuv_BETA);
+            if (faction != null)
+            {
+                faction.hidden = true;
+            }
+        }
+
+		public override void StartedNewGame()
+		{
+			base.StartedNewGame();
+			var faction = Find.FactionManager.FirstFactionOfDef(BETADefOf.MuvLuv_BETA);
+			if (faction != null)
+			{
+                faction.hidden = true;
+            }
+		}
+		public override void ExposeData()
         {
             base.ExposeData();
 			Scribe_Collections.Look<Pawn, MechSuit>(ref mechOwnerships, "mechOwnerships", LookMode.Reference, LookMode.Reference);

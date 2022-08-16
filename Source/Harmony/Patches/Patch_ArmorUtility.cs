@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using System.Text;
 using UnityEngine;
 using Verse;
 using RimWorld;
@@ -12,7 +11,7 @@ using OgsOld_CompTurret;
 
 namespace MuvLuvAnnihilation.HarmonyInstance
 {
-    public static class Patch_ArmorUtility
+	public static class Patch_ArmorUtility
     {
         [HarmonyPatch(typeof(ArmorUtility), nameof(ArmorUtility.GetPostArmorDamage))]
         public static class GetPostArmorDamage_Patch
