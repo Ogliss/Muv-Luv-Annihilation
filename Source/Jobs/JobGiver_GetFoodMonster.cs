@@ -1,12 +1,6 @@
 ﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 using Verse.AI;
-using Verse.AI.Group;
 
 namespace MuvLuvAnnihilation
 {
@@ -27,12 +21,25 @@ namespace MuvLuvAnnihilation
         }
         protected override Job TryGiveJob(Pawn pawn)
         {
+            if (pawn.needs.food.CurLevelPercentage > 0.9f)
+            {
+                return null;
+            }
             bool allowCorpse = true;
             bool desperate = pawn.needs.food.CurCategory == HungerCategory.Starving;
+            var foodSource = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
+    ThingRequest.ForGroup(ThingRequestGroup.Corpse), PathEndMode.ClosestTouch, TraverseParms.For(pawn), 9999,
+    (Thing x) => x is Corpse victim && victim.InnerPawn.RaceProps.Humanlike && pawn.CanReserve(victim));
+            ThingDef foodDef = (foodSource as Corpse)?.def;
 
-            var foodSource = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.Pawn), PathEndMode.ClosestTouch, TraverseParms.For(pawn), 9999,
-                (Thing x) => x is Pawn victim && victim.RaceProps.Humanlike && victim.Downed && pawn.CanReserve(victim));
-            ThingDef foodDef = (foodSource as Pawn)?.Corpse?.def;
+            if (foodSource is null)
+            {
+                foodSource = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
+                    ThingRequest.ForGroup(ThingRequestGroup.Pawn), PathEndMode.ClosestTouch, TraverseParms.For(pawn), 9999,
+                    (Thing x) => x is Pawn victim && victim.RaceProps.Humanlike && victim.Downed && pawn.CanReserve(victim));
+                foodDef = (foodSource as Pawn).MakeCorpse(null, null)?.def;
+            }
+
 
             if (foodSource is null && !FoodUtility.TryFindBestFoodSourceFor_NewTemp(pawn, pawn, desperate, out foodSource, out foodDef, canRefillDispenser: true, canUseInventory: true, allowCorpse, pawn.IsWildMan(), forceScanWholeMap))
             {
@@ -46,7 +53,6 @@ namespace MuvLuvAnnihilation
                 job.killIncappedTarget = true;
                 return job;
             }
-
             float nutrition = FoodUtility.GetNutrition(pawn, foodSource, foodDef);
             Job job3 = JobMaker.MakeJob(BETADefOf.BETA_Ingest, foodSource);
             if (pawn2 != null)

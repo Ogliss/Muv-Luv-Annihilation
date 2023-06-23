@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- ========================= Soldier Class ============================= -->
 	<ThingDef ParentName="BaseBETA">
@@ -317,8 +317,6 @@
 				<power>14</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-				<chanceFactor>0.25</chanceFactor>
 			</li>
 			<li>
 				<label>left fist</label>

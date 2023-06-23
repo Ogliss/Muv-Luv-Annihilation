@@ -114,7 +114,6 @@ namespace MuvLuvAnnihilation
         protected override DamageWorker.DamageResult ApplyMeleeDamageToTarget(LocalTargetInfo target)
         {
             DamageWorker.DamageResult result = new DamageWorker.DamageResult();
-            
             foreach (DamageInfo dinfo in this.DamageInfosToApply(target))
             {
                 if (target.ThingDestroyed)
