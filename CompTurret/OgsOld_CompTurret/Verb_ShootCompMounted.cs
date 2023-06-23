@@ -268,40 +268,41 @@ namespace OgsOld_CompTurret
 			}
 			return true;
 		}
-        public override bool TryStartCastOn(LocalTargetInfo castTarg, LocalTargetInfo destTarg, bool surpriseAttack = false, bool canHitNonTargetPawns = true, bool preventFriendlyFire = false)
-		{
-			//	Log.Messageage("TryStartCastOn ");
-			if (this.Caster == null)
-			{
-				Log.Error("Verb " + this.GetUniqueLoadID() + " needs Caster to work (possibly lost during saving/loading).", false);
-				return false;
-			}
-			if (this.state == VerbState.Bursting || !this.CanHitTarget(castTarg))
-			{
-				//	Log.Messageage("TryStartCastOn !this.CanHitTarget(castTarg): "+ !this.CanHitTarget(castTarg));
-				return false;
-			}
-			if (turretGun != null)
-			{
-				if (turretGun.UseAmmo)
-				{
-					if (turretGun.RemainingCharges <= 0)
-					{
-						//	Log.Messageage("TryStartCastOn out of ammo: ");
-						return false;
-					}
-				}
-			}
-			if (this.CausesTimeSlowdown(castTarg))
-			{
-				Find.TickManager.slower.SignalForceNormalSpeed();
-			}
-			this.surpriseAttack = surpriseAttack;
-			this.canHitNonTargetPawnsNow = canHitNonTargetPawns;
-			this.currentTarget = castTarg;
-			this.currentDestination = destTarg;
-			//	Log.Message("TryStartCastOn 5");
-			/*
+
+        public override bool TryStartCastOn(LocalTargetInfo castTarg, LocalTargetInfo destTarg, bool surpriseAttack = false, bool canHitNonTargetPawns = true, bool preventFriendlyFire = false, bool nonInterruptingSelfCast = false)
+        {
+            //	Log.Messageage("TryStartCastOn ");
+            if (this.Caster == null)
+            {
+                Log.Error("Verb " + this.GetUniqueLoadID() + " needs Caster to work (possibly lost during saving/loading).", false);
+                return false;
+            }
+            if (this.state == VerbState.Bursting || !this.CanHitTarget(castTarg))
+            {
+                //	Log.Messageage("TryStartCastOn !this.CanHitTarget(castTarg): "+ !this.CanHitTarget(castTarg));
+                return false;
+            }
+            if (turretGun != null)
+            {
+                if (turretGun.UseAmmo)
+                {
+                    if (turretGun.RemainingCharges <= 0)
+                    {
+                        //	Log.Messageage("TryStartCastOn out of ammo: ");
+                        return false;
+                    }
+                }
+            }
+            if (this.CausesTimeSlowdown(castTarg))
+            {
+                Find.TickManager.slower.SignalForceNormalSpeed();
+            }
+            this.surpriseAttack = surpriseAttack;
+            this.canHitNonTargetPawnsNow = canHitNonTargetPawns;
+            this.currentTarget = castTarg;
+            this.currentDestination = destTarg;
+            //	Log.Message("TryStartCastOn 5");
+            /*
 			if (this.CasterIsPawn && this.verbProps.warmupTime > 0f)
 			{
 			//	Log.Messageage("TryStartCastOn DoWarmup");
@@ -323,11 +324,11 @@ namespace OgsOld_CompTurret
 			}
 			*/
 
-			//	Log.Messageage("TryStartCastOn WarmupComplete");
-			this.WarmupComplete();
-			//	Log.Message("TryStartCastOn 6");
-			return true;
-		}
+            //	Log.Messageage("TryStartCastOn WarmupComplete");
+            this.WarmupComplete();
+            //	Log.Message("TryStartCastOn 6");
+            return true;
+        }
 		protected new void TryCastNextBurstShot()
 		{
 		//	Log.Messageage("TryCastNextBurstShot ");

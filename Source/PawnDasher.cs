@@ -106,9 +106,9 @@ namespace MuvLuvAnnihilation
 		// Token: 0x06005228 RID: 21032 RVA: 0x001BB348 File Offset: 0x001B9548
 		public override void Tick()
 		{
-			if (this.flightEffecter == null && this.def.pawnFlyer.flightEffecterDef != null)
+			if (this.flightEffecter == null)
 			{
-				this.flightEffecter = this.def.pawnFlyer.flightEffecterDef.Spawn();
+				this.flightEffecter = BETADefOf.JumpFlightEffect.Spawn();
 				this.flightEffecter.Trigger(this, TargetInfo.Invalid);
 			}
 			else
@@ -125,11 +125,8 @@ namespace MuvLuvAnnihilation
 		// Token: 0x06005229 RID: 21033 RVA: 0x001BB3C4 File Offset: 0x001B95C4
 		private void LandingEffects()
 		{
-			if (this.def.pawnFlyer.soundLanding != null)
-			{
-				this.def.pawnFlyer.soundLanding.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
-			}
-			FleckMaker.ThrowDustPuff(base.DestinationPos + Gen.RandomHorizontalVector(0.5f), base.Map, 2f);
+            BETADefOf.JumpPackLand.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
+            FleckMaker.ThrowDustPuff(base.DestinationPos + Gen.RandomHorizontalVector(0.5f), base.Map, 2f);
 		}
 
 		// Token: 0x0600522A RID: 21034 RVA: 0x001BB434 File Offset: 0x001B9634

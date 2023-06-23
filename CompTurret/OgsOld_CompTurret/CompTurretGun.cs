@@ -365,9 +365,9 @@ namespace OgsOld_CompTurret
 				return;
 			}
 			//	Log.Message("TryStartShootSomething 4");
-			if (this.Props.TurretDef.building.turretBurstWarmupTime > 0f)
+			if (this.Props.TurretDef.building.turretBurstWarmupTime.min > 0f)
 			{
-				this.burstWarmupTicksLeft = this.Props.TurretDef.building.turretBurstWarmupTime.SecondsToTicks();
+				this.burstWarmupTicksLeft = this.Props.TurretDef.building.turretBurstWarmupTime.RandomInRange.SecondsToTicks();
 				return;
 			}
 			//	Log.Message("TryStartShootSomething 5");
@@ -404,7 +404,7 @@ namespace OgsOld_CompTurret
 				targetScanFlags |= TargetScanFlags.NeedLOSToAll;
 				targetScanFlags |= TargetScanFlags.LOSBlockableByGas;
 			}
-			if (this.AttackVerb.IsIncendiary())
+			if (this.AttackVerb.IsIncendiary_Ranged())
 			{
 				targetScanFlags |= TargetScanFlags.NeedNonBurning;
 			}

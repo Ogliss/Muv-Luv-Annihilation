@@ -70,8 +70,7 @@ namespace OgsOld_ExtraHives.GenStuff
 							return;
 						}
 					}
-					value = new PawnGenerationRequest(pawnKindDef2, faction, PawnGenerationContext.NonPlayer, map.Tile, 
-						false, false, false, false, true, false, 1f, false, true, true, true, false, false, false, false, 0f);
+					value = new PawnGenerationRequest(pawnKindDef2, faction, PawnGenerationContext.NonPlayer, map.Tile);
 				}
 				pawn = PawnGenerator.GeneratePawn(value);
 				if (rp.postThingGenerate != null)

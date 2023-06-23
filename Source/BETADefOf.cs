@@ -41,6 +41,10 @@ namespace MuvLuvAnnihilation
 
 		public static JobDef BETA_Ingest;
 
+		public static EffecterDef JumpFlightEffect;
+		public static SoundDef JumpPackLand;
 
-	}
+
+
+    }
 }

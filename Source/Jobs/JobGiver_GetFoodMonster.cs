@@ -34,7 +34,7 @@ namespace MuvLuvAnnihilation
                 (Thing x) => x is Pawn victim && victim.RaceProps.Humanlike && victim.Downed && pawn.CanReserve(victim));
             ThingDef foodDef = (foodSource as Pawn)?.Corpse?.def;
 
-            if (foodSource is null && !FoodUtility.TryFindBestFoodSourceFor(pawn, pawn, desperate, out foodSource, out foodDef, canRefillDispenser: true, canUseInventory: true, allowForbidden: false, allowCorpse, allowSociallyImproper: false, pawn.IsWildMan(), forceScanWholeMap))
+            if (foodSource is null && !FoodUtility.TryFindBestFoodSourceFor_NewTemp(pawn, pawn, desperate, out foodSource, out foodDef, canRefillDispenser: true, canUseInventory: true, allowCorpse, pawn.IsWildMan(), forceScanWholeMap))
             {
                 return null;
             }
@@ -47,7 +47,7 @@ namespace MuvLuvAnnihilation
                 return job;
             }
 
-            float nutrition = FoodUtility.GetNutrition(foodSource, foodDef);
+            float nutrition = FoodUtility.GetNutrition(pawn, foodSource, foodDef);
             Job job3 = JobMaker.MakeJob(BETADefOf.BETA_Ingest, foodSource);
             if (pawn2 != null)
             {

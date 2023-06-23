@@ -17,6 +17,7 @@
     <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <settlementGenerationWeight>1</settlementGenerationWeight>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
     <settlementNameMaker>NamerSettlementBETA</settlementNameMaker>
     <factionIconPath>World/WorldObjects/Expanding/Mechanoids</factionIconPath>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>

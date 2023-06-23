@@ -63,7 +63,7 @@ namespace OgsOld_ExtraHives.GenStuff
 			BaseGen.symbolStack.Push("OgsOld_ExtraHives_PawnGroup", resolveParams, null);
 			PawnGenerationRequest value = new PawnGenerationRequest(parentFaction.def.pawnGroupMakers.Where(x=> x.kindDef == PawnGroupKindDefOf.Hive_OgsOld_ExtraHives|| 
 			x.kindDef == RimWorld.PawnGroupKindDefOf.Combat).RandomElement().options.RandomElementByWeight(x=> x.Cost).kind,
-			parentFaction, PawnGenerationContext.NonPlayer, -1, false, false, false, false, true, false, 1f, false, true, true, true, false, false, false, false);
+			parentFaction, PawnGenerationContext.NonPlayer, -1, false, false, false, false, true);
 			ResolveParams resolveParams2 = rp;
 			resolveParams2.faction = parentFaction;
 			resolveParams2.singlePawnGenerationRequest = new PawnGenerationRequest?(value);
@@ -83,7 +83,6 @@ namespace OgsOld_ExtraHives.GenStuff
 			resolveParams4.faction = parentFaction;
 			resolveParams4.floorOnlyIfTerrainSupports = new bool?(rp.floorOnlyIfTerrainSupports ?? true);
 			resolveParams4.wallStuff = (rp.wallStuff ?? BaseGenUtility.RandomCheapWallStuff(rp.faction, true));
-			resolveParams4.chanceToSkipWallBlock = new float?(rp.chanceToSkipWallBlock ?? 0.1f);
 			resolveParams4.clearEdificeOnly = new bool?(rp.clearEdificeOnly ?? true);
 			resolveParams4.noRoof = new bool?(rp.noRoof ?? true);
 			resolveParams4.chanceToSkipFloor = new float?(rp.chanceToSkipFloor ?? 0.1f);

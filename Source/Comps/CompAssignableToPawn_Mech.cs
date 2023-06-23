@@ -55,9 +55,9 @@ namespace MuvLuvAnnihilation
 			pawn.ClaimMech((MechSuit)parent);
 		}
 
-		public override void TryUnassignPawn(Pawn pawn, bool sort = true)
-		{
-			pawn.UnclaimMech((MechSuit)parent);
-		}
+        public override void TryUnassignPawn(Pawn pawn, bool sort = true, bool uninstall = false)
+        {
+            pawn.UnclaimMech((MechSuit)parent);
+        }
 	}
 }

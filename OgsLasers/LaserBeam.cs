@@ -47,7 +47,7 @@ namespace OgsLasers
             }
         }
 
-        protected override void Impact(Thing hitThing)
+        public override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             this.hitThing = hitThing;
             bool shielded = hitThing.IsShielded() && def.IsWeakToShields;
@@ -79,14 +79,14 @@ namespace OgsLasers
 
             a.y = b.y = def.Altitude;
 
-        //    SpawnBeam(a, b);
-            
+            //    SpawnBeam(a, b);
+
             if (this.def.projectile.explosionRadius > 0f)
             {
                 this.Explode(hitThing, false);
                 GenExplosion.NotifyNearbyPawnsOfDangerousExplosive(this, this.def.projectile.damageDef, this.launcher.Faction);
             }
-            
+
             Pawn pawn = launcher as Pawn;
             IDrawnWeaponWithRotation weapon = null;
             if (pawn != null && pawn.equipment != null) weapon = pawn.equipment.Primary as IDrawnWeaponWithRotation;
@@ -204,7 +204,7 @@ namespace OgsLasers
             float postExplosionSpawnChance = this.def.projectile.postExplosionSpawnChance;
             int postExplosionSpawnThingCount = this.def.projectile.postExplosionSpawnThingCount;
             ThingDef preExplosionSpawnThingDef = this.def.projectile.preExplosionSpawnThingDef;
-            GenExplosion.DoExplosion(center, map2, explosionRadius, damageDef, launcher, damageAmount, 0f, soundExplode, equipmentDef, def, null, postExplosionSpawnThingDef, postExplosionSpawnChance, postExplosionSpawnThingCount, this.def.projectile.applyDamageToExplosionCellsNeighbors, preExplosionSpawnThingDef, this.def.projectile.preExplosionSpawnChance, this.def.projectile.preExplosionSpawnThingCount, this.def.projectile.explosionChanceToStartFire, this.def.projectile.explosionDamageFalloff);
+            GenExplosion.DoExplosion(center, map2, explosionRadius, damageDef, launcher, damageAmount, 0f, soundExplode, equipmentDef, def, null, postExplosionSpawnThingDef, postExplosionSpawnChance, postExplosionSpawnThingCount, this.def.projectile.postExplosionGasType, this.def.projectile.applyDamageToExplosionCellsNeighbors, preExplosionSpawnThingDef, this.def.projectile.preExplosionSpawnChance, this.def.projectile.preExplosionSpawnThingCount, this.def.projectile.explosionChanceToStartFire, this.def.projectile.explosionDamageFalloff);
         }
 
 

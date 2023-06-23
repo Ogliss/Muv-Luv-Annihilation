@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OgsOld_ExtraHives</RootNamespace>
-    <AssemblyName>OgsOld_ExtraHives</AssemblyName>
+    <AssemblyName>1OgsOld_ExtraHives</AssemblyName>
     <TargetFramework>net472</TargetFramework>
     <FileAlignment>512</FileAlignment>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -104,17 +104,16 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="CrashedShipsExtension">
-      <HintPath>..\..\Assemblies\CrashedShipsExtension.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\Assemblies\1CrashedShipsExtension.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.3.3117" GeneratePathProperty="true" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.3704" GeneratePathProperty="true" />
     <PackageReference Include="Lib.Harmony">
-      <Version>2.1.1</Version>
+      <Version>2.2.2</Version>
     </PackageReference>
-    <PackageReference Include="RimWorld.MultiplayerAPI" Version="0.3.0" />
+    <PackageReference Include="RimWorld.MultiplayerAPI" Version="0.4.0" />
     <PackageReference Include="TaskPubliciser">
       <Version>1.0.3</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

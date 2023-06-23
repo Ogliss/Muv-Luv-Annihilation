@@ -402,9 +402,7 @@ namespace OgsOld_ExtraHives
 			{
 				parent.SetFaction(faction);
 			}
-			pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(this.chosenKind, faction, PawnGenerationContext.NonPlayer, -1, 
-				false, false, false, false, true, false, 1f, false, true, true, true, false, false, false, false, 
-				fixedBiologicalAge: new float?(this.chosenKind.race.race.lifeStageAges.Last().minAge)));
+			pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(this.chosenKind, faction, PawnGenerationContext.NonPlayer, -1, fixedBiologicalAge: new float?(this.chosenKind.race.race.lifeStageAges.Last().minAge)));
 
 			this.spawnedPawns.Add(pawn);
 			GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(this.parent.OccupiedRect().AdjacentCells.RandomElement(), this.parent.Map, this.Props.pawnSpawnRadius, null),

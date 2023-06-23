@@ -73,14 +73,6 @@ namespace OgsOld_ExtraHives.GenStuff
 				thingList[j].Destroy(DestroyMode.Vanish);
 			}
 
-			Rand.PushState();
-			bool f = Rand.Chance(rp.chanceToSkipWallBlock.Value);
-			Rand.PopState();
-			if (rp.chanceToSkipWallBlock != null && f)
-			{
-				return null;
-			}
-			
 			Thing thing = ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("ExtraHive_Hive_Wall"), null);
 			thing.SetFaction(rp.faction, null);
 			return GenSpawn.Spawn(thing, c, map, WipeMode.Vanish);

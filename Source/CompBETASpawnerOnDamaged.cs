@@ -73,7 +73,7 @@ namespace MuvLuvAnnihilation
                         break;
                     }
                     //    Log.Message(string.Format("kindDef: {0}", kind));
-                    PawnGenerationRequest request = new PawnGenerationRequest(kd, Faction, PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, false, true, true, false, false, false, false);
+                    PawnGenerationRequest request = new PawnGenerationRequest(kd, Faction, PawnGenerationContext.NonPlayer);
                     Pawn pawn = PawnGenerator.GeneratePawn(request);
                     if (!GenPlace.TryPlaceThing(pawn, center, this.parent.Map, ThingPlaceMode.Near, null, null))
                     {

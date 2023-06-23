@@ -65,7 +65,7 @@
     <statBases>
       <PainShockThreshold>0.9999</PainShockThreshold>
       <PsychicSensitivity>2</PsychicSensitivity>
-      <ToxicSensitivity>1</ToxicSensitivity>
+      <ToxicResistance>0</ToxicResistance>
       <MoveSpeed>4.50</MoveSpeed>
       <ComfyTemperatureMin>-250</ComfyTemperatureMin>
       <ComfyTemperatureMax>1700</ComfyTemperatureMax>

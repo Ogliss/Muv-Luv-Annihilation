@@ -18,7 +18,7 @@ namespace MuvLuvAnnihilation
 
 		public Gizmo_RefuelableFuelStatusMulti()
 		{
-			order = -100f;
+			Order = -100f;
 		}
 
 		public override float GetWidth(float maxWidth)

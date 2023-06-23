@@ -222,7 +222,7 @@ namespace MuvLuvAnnihilation
             bool flag5 = this.def.projectile.explosionRadius > 0;
             if (flag5)
             {
-                GenExplosion.DoExplosion(base.Position, base.Map, this.def.projectile.explosionRadius, this.def.projectile.damageDef, flyingThing, -1, -1f, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                GenExplosion.DoExplosion(base.Position, base.Map, this.def.projectile.explosionRadius, this.def.projectile.damageDef, flyingThing);
             }
             Pawn p = this.flyingThing as Pawn;
             if (drafted && p != null && !p.Downed)

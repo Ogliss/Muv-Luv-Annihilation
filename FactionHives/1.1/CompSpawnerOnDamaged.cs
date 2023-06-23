@@ -170,7 +170,7 @@ namespace OgsOld_ExtraHives
                         break;
                     }
                     //    Log.Message(string.Format("kindDef: {0}", kind));
-                    PawnGenerationRequest request = new PawnGenerationRequest(kind.kind, faction, PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, false, true, true, false, false, false, false);
+                    PawnGenerationRequest request = new PawnGenerationRequest(kind.kind, faction, PawnGenerationContext.NonPlayer, -1);
                     Pawn pawn = PawnGenerator.GeneratePawn(request);
                     if (!GenPlace.TryPlaceThing(pawn, center, this.parent.Map, ThingPlaceMode.Near, null, null))
                     {

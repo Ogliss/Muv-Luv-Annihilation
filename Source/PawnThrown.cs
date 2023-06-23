@@ -79,7 +79,7 @@ namespace MuvLuvAnnihilation
 			}
 			if (this.pawnWasSelected && Find.CurrentMap == thrownPawn.Map)
 			{
-				Find.Selector.Unshelve(thrownPawn, false, true);
+				Find.Selector.Select(thrownPawn, false, true);
 			}
 			if (this.jobQueue != null)
 			{
@@ -156,7 +156,7 @@ namespace MuvLuvAnnihilation
 			this.RespawnPawn();
 			if (this.def.projectile.explosionRadius > 0)
 			{
-				GenExplosion.DoExplosion(base.Position, base.Map, this.def.projectile.explosionRadius, this.def.projectile.damageDef, FlyingPawn, -1, -1f, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+				GenExplosion.DoExplosion(base.Position, base.Map, this.def.projectile.explosionRadius, this.def.projectile.damageDef, FlyingPawn);
 			}
 			this.Destroy(0);
 		}
@@ -194,7 +194,7 @@ namespace MuvLuvAnnihilation
 			pawnFlyer.pawnWasSelected = Find.Selector.IsSelected(pawn);
 			if (pawnFlyer.pawnWasDrafted)
 			{
-				Find.Selector.ShelveSelected(pawn);
+				Find.Selector.Deselect(pawn);
 			}
 			pawnFlyer.jobQueue = pawn.jobs.CaptureAndClearJobQueue();
 			pawn.DeSpawn(DestroyMode.Vanish);

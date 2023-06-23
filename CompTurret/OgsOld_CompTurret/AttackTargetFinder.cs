@@ -46,8 +46,7 @@ namespace OgsOld_CompTurret
 			{
 				losValidator = delegate (IntVec3 vec3)
 				{
-					Gas gas = vec3.GetGas(searcherThing.Map);
-					return gas == null || !gas.def.gas.blockTurretTracking;
+					return !vec3.AnyGas(searcherThing.Map, GasType.BlindSmoke);
 				};
 			}
 			Predicate<IAttackTarget> innerValidator = delegate (IAttackTarget t)

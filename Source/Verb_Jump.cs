@@ -61,7 +61,7 @@ namespace MuvLuvAnnihilation
 				//	Log.Message("reloadableCompSource UsedOnce " + reloadableCompSource.RemainingCharges);
 				}
 			}
-			PawnFlyer pawnFlyer = PawnFlyer.MakeFlyer(ThingDefOf.PawnJumper, casterPawn, cell);
+			PawnFlyer pawnFlyer = PawnFlyer.MakeFlyer(ThingDefOf.PawnJumper, casterPawn, cell, BETADefOf.JumpFlightEffect, BETADefOf.JumpPackLand);
 			if (pawnFlyer != null)
 			{
 				GenSpawn.Spawn(pawnFlyer, cell, map);

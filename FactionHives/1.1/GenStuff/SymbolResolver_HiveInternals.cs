@@ -128,7 +128,8 @@ namespace OgsOld_ExtraHives.GenStuff
 				entranceChance -= 0.0f;
 				float dist = Rand.RangeInclusive(3, 10);
 				List<IntVec3> ecells = new List<IntVec3>();
-				ecells.AddRange(cells.Where(x => InQuad(x, CenterCell, rot) && GenRadial.RadialCellsAround(x, dist, true).Any(z => map.reachability.CanReachMapEdge(z, TraverseParms.For(TraverseMode.ByPawn))) && GenRadial.RadialCellsAround(x, dist, true).Any(z => QuadCells.Contains(z))));
+				ecells.AddRange(cells.Where(x => InQuad(x, CenterCell, rot) && GenRadial.RadialCellsAround(x, dist, true)
+				.Any(z => map.reachability.CanReachMapEdge(z, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly, false))) && GenRadial.RadialCellsAround(x, dist, true).Any(z => QuadCells.Contains(z))));
 				IntVec3 cell = ecells.NullOrEmpty() ? IntVec3.Invalid : ecells.RandomElement();
 
 				if (cell != IntVec3.Invalid)
