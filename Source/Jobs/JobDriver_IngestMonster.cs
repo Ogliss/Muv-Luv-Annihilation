@@ -69,7 +69,7 @@ namespace MuvLuvAnnihilation
 			}
 			yield return chew;
 			yield return Toils_MonsterIngest.FinalizeIngest(pawn, TargetIndex.A);
-			yield return Toils_Jump.JumpIf(chew, () => job.GetTarget(TargetIndex.A).Thing is Corpse && pawn.needs.food.CurLevelPercentage < 0.9f);
+			yield return Toils_Jump.JumpIf(chew, () => job.GetTarget(TargetIndex.A).Thing is Corpse corpse && corpse.Destroyed is false);
 		}
 
 		private IEnumerable<Toil> PrepareToIngestToils(Toil chewToil)

@@ -21,10 +21,6 @@ namespace MuvLuvAnnihilation
         }
         protected override Job TryGiveJob(Pawn pawn)
         {
-            if (pawn.needs.food.CurLevelPercentage > 0.9f)
-            {
-                return null;
-            }
             bool allowCorpse = true;
             bool desperate = pawn.needs.food.CurCategory == HungerCategory.Starving;
             var foodSource = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
@@ -54,6 +50,7 @@ namespace MuvLuvAnnihilation
             Pawn pawn2 = foodSource as Pawn;
             if (pawn2 != null && !pawn2.Downed)
             {
+                pawn.mindState.lastPredatorHuntingPlayerNotificationTick = Find.TickManager.TicksGame + 60000;
                 Job job = JobMaker.MakeJob(JobDefOf.PredatorHunt, pawn2);
                 job.killIncappedTarget = true;
                 return job;
