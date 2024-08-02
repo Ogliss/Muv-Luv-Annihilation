@@ -12,7 +12,12 @@
 		
         <!-- Do a queued job -->
         <li Class="ThinkNode_QueuedJob" />
-		
+
+		<li Class="JobGiver_AIFightEnemies">
+		  <targetAcquireRadius>65</targetAcquireRadius>
+		  <targetKeepRadius>72</targetKeepRadius>
+		</li>
+
         <!-- Lord -->
         <li Class="ThinkNode_Subtree">
           <treeDef>LordDuty</treeDef>
@@ -23,10 +28,6 @@
           <tagToGive>Idle</tagToGive>
           <subNodes>
 			
-		<li Class="JobGiver_AIFightEnemies">
-		  <targetAcquireRadius>65</targetAcquireRadius>
-		  <targetKeepRadius>72</targetKeepRadius>
-		</li>
 		<!--li Class="JobGiver_AIGotoNearestHostile" /-->
 		
             <li Class="JobGiver_WanderAnywhere">
@@ -43,6 +44,50 @@
     </thinkRoot>
   </ThinkTreeDef>
   
+  <ThinkTreeDef>
+    <defName>BETA_Destroyer_ThinkTree</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Downed -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+		
+        <!-- Do a queued job -->
+        <li Class="ThinkNode_QueuedJob" />
+		
+		<li Class="JobGiver_AIFightEnemies">
+		  <targetAcquireRadius>65</targetAcquireRadius>
+		  <targetKeepRadius>72</targetKeepRadius>
+		</li>
+		<!--li Class="JobGiver_AIGotoNearestHostile" /-->
+	            <li Class="JobGiver_AITrashColonyClose" />
+	            <li Class="JobGiver_AITrashBuildingsDistant" />
+
+        <!-- Lord -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+		
+        <!-- Idle -->
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Idle</tagToGive>
+          <subNodes>
+			
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+			
+          </subNodes>
+
+        </li>
+        
+        <!-- Idle error -->
+        <li Class="JobGiver_IdleError"/>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
   <ThinkTreeDef>
     <defName>BETA_Eater_ThinkTree</defName>
     <thinkRoot Class="ThinkNode_Priority">

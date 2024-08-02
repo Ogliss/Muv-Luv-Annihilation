@@ -109,6 +109,10 @@ namespace MuvLuvAnnihilation
         {
             bool spawned = flyingThing.Spawned;
             this.pawn = (launcher as Pawn);
+            if (pawn != null)
+            {
+                pawn.jobs.StopAll();
+            }
             if (spawned)
             {
                 flyingThing.DeSpawn(DestroyMode.Vanish);

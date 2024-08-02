@@ -407,6 +407,7 @@
 		</statBases>
 		<race>
 			<body>BETADestroyer</body>
+      			<thinkTreeMain>BETA_Destroyer_ThinkTree</thinkTreeMain>
 			<baseHungerRate>0.35</baseHungerRate>
 			<baseBodySize>6</baseBodySize>
 			<baseHealthScale>7.68375</baseHealthScale>
@@ -453,12 +454,12 @@
 		<comps>
 			<li Class="MuvLuvAnnihilation.CompProperties_Charger">
 				<RangeMax>20</RangeMax>
-				<RangeMin>7</RangeMin>
+				<RangeMin>3</RangeMin>
 				<explodingRadius>3</explodingRadius>
 				<ticksBetweenChargeChance>600</ticksBetweenChargeChance>
 				<Chance>0.75</Chance>
 				<textMotes>true</textMotes>
-				<targetPawns>false</targetPawns>
+				<targetPawns>true</targetPawns>
 				<targetBuildings>true</targetBuildings>
 			</li>
 		</comps>

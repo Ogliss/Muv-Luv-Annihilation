@@ -100,7 +100,8 @@ namespace MuvLuvAnnihilation
                     }
                 }
                 */
-                bool flag3 = Find.TickManager.TicksGame % this.nextLeap == 0 && !this.Pawn.Downed && !this.Pawn.Dead;
+                bool flag3 = Find.TickManager.TicksGame % this.nextLeap == 0 && !this.Pawn.Downed 
+                    && !this.Pawn.Dead;
                 if (flag3)
                 {
                     LocalTargetInfo a = null;
@@ -117,7 +118,8 @@ namespace MuvLuvAnnihilation
                         if (flag6)
                         {
                             float lengthHorizontal = (thing.Position - this.Pawn.Position).LengthHorizontal;
-                            bool flag7 = lengthHorizontal <= this.Props.RangeMax && lengthHorizontal > this.Props.RangeMin;
+                            bool flag7 = lengthHorizontal <= this.Props.RangeMax 
+                                && lengthHorizontal > this.Props.RangeMin;
                             if (flag7)
                             {
                                 bool flag8 = Rand.Chance(this.Props.GetChargeChance);
@@ -194,7 +196,9 @@ namespace MuvLuvAnnihilation
             bool flag2 = flag;
             if (flag2)
             {
-                bool flag3 = this.Pawn != null && this.Pawn.Position.IsValid && this.Pawn.Spawned && this.Pawn.Map != null && !this.Pawn.Downed && !this.Pawn.Dead && !target.Thing.DestroyedOrNull();
+                bool flag3 = this.Pawn != null && this.Pawn.Position.IsValid && this.Pawn.Spawned 
+                    && this.Pawn.Map != null && !this.Pawn.Downed && !this.Pawn.Dead 
+                    && !target.Thing.DestroyedOrNull();
                 if (flag3)
                 {
                     this.Pawn.jobs.StopAll(false);
@@ -209,6 +213,8 @@ namespace MuvLuvAnnihilation
 
                         chargingThing.Launch(this.Pawn, target.Cell, this.Pawn);
                     }
+                    this.nextLeap = Mathf.RoundToInt(Rand.Range(this.Props.ticksBetweenChargeChance * 0.75f, 1.25f * this.Props.ticksBetweenChargeChance));
+                    this.explosionRadius = this.Props.explodingRadius * Rand.Range(0.8f, 1.25f);
                 }
             }
         }

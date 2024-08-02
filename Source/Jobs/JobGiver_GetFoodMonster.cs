@@ -37,13 +37,12 @@ namespace MuvLuvAnnihilation
                 foodSource = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
                     ThingRequest.ForGroup(ThingRequestGroup.Pawn), PathEndMode.ClosestTouch, TraverseParms.For(pawn), 9999,
                     (Thing x) => x is Pawn victim && victim.RaceProps.Humanlike 
-                    && victim.Downed && pawn.CanReserve(victim));
+                    && pawn.CanReserve(victim));
                 if (foodSource is Pawn pawnVictim)
                 {
                     foodDef = pawnVictim.def.race.corpseDef;
                 }
             }
-
 
             if (foodSource is null && !FoodUtility.TryFindBestFoodSourceFor(pawn, pawn, desperate, out foodSource, 
                 out foodDef, canRefillDispenser: true, canUseInventory: true, allowCorpse, 
