@@ -202,7 +202,8 @@ namespace OgsOld_CompTurret
 			Rand.PopState();
 			if (f)
 			{
-				shootLine.ChangeDestToMissWild(shotReport.AimOnTargetChance_StandardTarget);
+                bool flyOverhead = projectile2?.def?.projectile != null && projectile2.def.projectile.flyOverhead;
+                shootLine.ChangeDestToMissWild_NewTemp(shotReport.AimOnTargetChance_StandardTarget, flyOverhead, caster.Map);
 				this.ThrowDebugText("ToWild" + (this.canHitNonTargetPawnsNow ? "\nchntp" : ""));
 				this.ThrowDebugText("Wild\nDest", shootLine.Dest);
 				ProjectileHitFlags projectileHitFlags2 = ProjectileHitFlags.NonTargetWorld;
@@ -274,7 +275,7 @@ namespace OgsOld_CompTurret
             //	Log.Messageage("TryStartCastOn ");
             if (this.Caster == null)
             {
-                Log.Error("Verb " + this.GetUniqueLoadID() + " needs Caster to work (possibly lost during saving/loading).", false);
+                Log.Error("Verb " + this.GetUniqueLoadID() + " needs Caster to work (possibly lost during saving/loading).");
                 return false;
             }
             if (this.state == VerbState.Bursting || !this.CanHitTarget(castTarg))
@@ -586,7 +587,7 @@ namespace OgsOld_CompTurret
 					goodDest = IntVec3.Invalid;
 					return false;
 				}
-				ShootLeanUtility.CalcShootableCellsOf(Verb_ShootCompMounted.tempDestList, targ.Thing);
+				ShootLeanUtility.CalcShootableCellsOf(Verb_ShootCompMounted.tempDestList, targ.Thing, caster.Position);
 				for (int i = 0; i < Verb_ShootCompMounted.tempDestList.Count; i++)
 				{
 					if (this.CanHitCellFromCellIgnoringRange(sourceCell, Verb_ShootCompMounted.tempDestList[i], targ.Thing.def.Fillage == FillCategory.Full))

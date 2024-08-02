@@ -40,10 +40,6 @@ namespace OgsOld_CompTurret
         }
         public override bool Active => !IsBroken && base.Active;
         public override bool CanBeUsed => !IsBroken && base.CanBeUsed;
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
-        {
-            base.PostPreApplyDamage(dinfo, out absorbed);
-        }
 
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {

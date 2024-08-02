@@ -220,7 +220,7 @@ namespace OgsLasers
             }
         }
 
-        public override void Draw()
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             SetupDrawing();
 
@@ -253,7 +253,7 @@ namespace OgsLasers
                         }
                     }
                     float mult = Mathf.InverseLerp(projDef.lifetime, 0f, ticks);
-                //    if (Find.TickManager.TicksGame % this.projDef.flickerFrameTime != 0)  Log.Message("Mult for Arc "+(i+1)+" : "+mult);
+                    //    if (Find.TickManager.TicksGame % this.projDef.flickerFrameTime != 0)  Log.Message("Mult for Arc "+(i+1)+" : "+mult);
                     meshes[i] = Find.TickManager.Paused || Find.TickManager.TicksGame % this.projDef.flickerFrameTime != 0 || meshes[i] != null && Static ? meshes[i] : LightningLaserBoltMeshMaker.NewBoltMesh(new Vector2(0, -(distance + 0.25f)), projDef.LightningVariance * mult, beamWidth * mult);
                     Graphics.DrawMesh(this.meshes[i], b, Quaternion.LookRotation((vector - this.a).normalized), material, 0, null, 0, LaserBeamGraphic.MatPropertyBlock, 0);
                     Graphics.DrawMesh(this.meshes[i], b, Quaternion.LookRotation((vector - this.a).normalized), BeamEndMat, 0, null, 0, LaserBeamGraphic.MatPropertyBlock, 0);
@@ -277,9 +277,10 @@ namespace OgsLasers
                 }
                 Graphics.DrawMesh(mesh, drawingMatrix, materialBeam, 0, null, 0, LaserBeamGraphic.MatPropertyBlock);
                 Graphics.DrawMesh(mesh, drawingMatrix, BeamEndMat, 0, null, 0, LaserBeamGraphic.MatPropertyBlock);
-            //    Graphics.DrawMesh(mesh, drawingMatrix, FadedMaterialPool.FadedVersionOf(materialBeam, opacity), 0);
+                //    Graphics.DrawMesh(mesh, drawingMatrix, FadedMaterialPool.FadedVersionOf(materialBeam, opacity), 0);
             }
         }
+
         protected virtual void Explode()
         {
             Map map = base.Map;

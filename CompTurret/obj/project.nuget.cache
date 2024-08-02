@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "q3ocsTeljfXnAB+4SvUgWd0un5m8Fd/KFgU+vJcxN/CohXVu/Q3Xpv7IrZ68r57pVF+a0EH1DfyjduvOTYEr2g==",
+  "dgSpecHash": "12cCKu35Zuc=",
   "success": true,
   "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\CompTurret\\OgsOld_CompTurret.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.4.3704\\krafs.rimworld.ref.1.4.3704.nupkg.sha512",
-    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.2.2\\lib.harmony.2.2.2.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.5.4104\\krafs.rimworld.ref.1.5.4104.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.3.3\\lib.harmony.2.3.3.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\microsoft.build.framework\\15.1.548\\microsoft.build.framework.15.1.548.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\microsoft.build.utilities.core\\15.1.548\\microsoft.build.utilities.core.15.1.548.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",

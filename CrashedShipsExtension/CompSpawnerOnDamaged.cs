@@ -194,9 +194,9 @@ namespace CrashedShipsExtension
 		}
 
 		// Token: 0x0600002A RID: 42 RVA: 0x00003694 File Offset: 0x00001894
-		public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+		public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
 		{
-			base.PostPreApplyDamage(dinfo, out absorbed);
+			base.PostPreApplyDamage(ref dinfo, out absorbed);
 			bool flag = absorbed;
 			if (!flag)
 			{
@@ -281,7 +281,8 @@ namespace CrashedShipsExtension
 						bool flag8 = !CellFinder.TryFindRandomCellNear(this.parent.Position, this.parent.Map, 5, (IntVec3 c) => c.Standable(this.parent.Map) && this.parent.Map.reachability.CanReach(c, this.parent, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly, false)), out invalid, -1);
 						if (flag8)
 						{
-							Log.Error("Found no place for Pawns to defend " + ((this != null) ? this.ToString() : null), false);
+							Log.Error("Found no place for Pawns to defend " + ((this != null) ? this.ToString()
+								: null));
 							invalid = IntVec3.Invalid;
 						}
 						LordJob_PawnsDefendShip lordJob_PawnsDefendShip = new LordJob_PawnsDefendShip(this.parent, this.parent.Faction, 21f, invalid);

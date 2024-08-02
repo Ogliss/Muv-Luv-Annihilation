@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using LudeonTK;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +54,9 @@ namespace OgsOld_ExtraHives
 			Vector3 vector = base.Position.ToVector3Shifted();
 			TargetInfo localTarget = new TargetInfo(this);
 			Rand.PushState();
-			if (Rand.MTBEventOccurs(FilthSpawnMTB, 1f, 1.TicksToSeconds()) && CellFinder.TryFindRandomReachableCellNear(base.Position, base.Map, FilthSpawnRadius, TraverseParms.For(TraverseMode.NoPassClosedDoors), null, null, out IntVec3 result) && !filthTypes.NullOrEmpty())
+			if (!filthTypes.NullOrEmpty() && Rand.MTBEventOccurs(FilthSpawnMTB, 1f, 1.TicksToSeconds()) 
+				&& CellFinder.TryFindRandomReachableCellNearPosition(base.Position, base.Position, base.Map, 
+				FilthSpawnRadius, TraverseParms.For(TraverseMode.NoPassClosedDoors), null, null, out IntVec3 result))
 			{
 				FilthMaker.TryMakeFilth(result, base.Map, filthTypes.RandomElement());
 			}
@@ -179,17 +182,16 @@ namespace OgsOld_ExtraHives
 			EventDraw(map, strikeLoc, boltMesh);
 		}
 
-
-		public override void Draw()
-		{
-			Rand.PushState();
-			Rand.Seed = thingIDNumber;
-			for (int i = 0; i < 6; i++)
-			{
-				DrawDustPart(Rand.Range(0f, 360f), Rand.Range(0.9f, 1.1f) * (float)Rand.Sign * 4f, Rand.Range(1f, 1.5f));
-			}
-			Rand.PopState();
-		}
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            Rand.PushState();
+            Rand.Seed = thingIDNumber;
+            for (int i = 0; i < 6; i++)
+            {
+                DrawDustPart(Rand.Range(0f, 360f), Rand.Range(0.9f, 1.1f) * (float)Rand.Sign * 4f, Rand.Range(1f, 1.5f));
+            }
+            Rand.PopState();
+        }
 
 		// Token: 0x0600139F RID: 5023 RVA: 0x00096229 File Offset: 0x00094629
 		public void EventDraw(Map map, IntVec3 strikeLoc, Mesh boltMesh)

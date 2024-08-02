@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = OgsOld_ExtraHives
 build_property.ProjectDir = C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\FactionHives\1.1\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

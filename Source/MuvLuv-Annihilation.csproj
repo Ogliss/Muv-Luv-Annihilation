@@ -78,13 +78,10 @@
     <Compile Include="PawnThrower.cs" />
     <Compile Include="PawnThrown.cs" />
     <Compile Include="CompExosuitDrawer.cs" />
-    <Compile Include="Harmony\Patches\PawnGraphicSet_HairMatAt_NewTemp_Test_Patch.cs" />
-    <Compile Include="Harmony\Patches\PawnGraphicSet_HeadMatAt_NewTemp_Test_Patch.cs" />
-    <Compile Include="Harmony\Patches\PawnGraphicSet_MatsBodyBaseAt_Test_Patch.cs" />
+    <Compile Include="Harmony\Patches\PawnRenderNodeWorker_AppendDrawRequests_Patch.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="PawnGraphicSet_Invisible.cs" />
     <Compile Include="Graphic_Invisible.cs" />
-    <Compile Include="Harmony\Patches\PawnRenderer_RenderPawnInternal_DrawExosuit_Transpiler.cs" />
     <Compile Include="CompBETASpawnerOnDamaged.cs" />
     <None Include="Harmony\Patches\SymbolResolver_PawnHiveGroup_Resolve_BETA_Patch.cs.bak" />
     <None Include="Harmony\Patches\SymbolResolver_Hivebase_Resolve_BETA_Patch.cs.bak" />
@@ -127,10 +124,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.4.3704</Version>
+      <Version>1.5.4104</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
-      <Version>2.2.2</Version>
+      <Version>2.3.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

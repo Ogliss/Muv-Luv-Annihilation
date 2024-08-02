@@ -353,23 +353,12 @@ namespace MuvLuvAnnihilation
 			return stringBuilder.ToString();
 		}
 
-		public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
-		{
-			base.PostPreApplyDamage(dinfo, out absorbed);
-			/*
-			if (dinfo.Def == DamageDefOf.EMP)
-			{
-				BreakShield(dinfo);
-			}
-			*/
-		}
-
 		private void BreakShield(DamageInfo dinfo)
 		{
 			float fTheta;
 			if (Active)
 			{
-				SoundDefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(parent));
+				BETADefOf.EnergyShield_Broken.PlayOneShot(new TargetInfo(parent));
 				int num = Mathf.CeilToInt(Props.radius * 2f);
 				fTheta = (float)Math.PI * 2f / (float)num;
 				for (int i = 0; i < num; i++)

@@ -15,9 +15,9 @@ namespace MuvLuvAnnihilation
 		{
 			get
 			{
-				if (this.cachedShadowMaterial == null && !this.def.pawnFlyer.shadow.NullOrEmpty())
+				if (this.cachedShadowMaterial == null)
 				{
-					this.cachedShadowMaterial = MaterialPool.MatFrom(this.def.pawnFlyer.shadow, ShaderDatabase.Transparent);
+					this.cachedShadowMaterial = this.def.pawnFlyer.ShadowMaterial;
 				}
 				return this.cachedShadowMaterial;
 			}
@@ -44,12 +44,18 @@ namespace MuvLuvAnnihilation
 			}
 		}
 
-		// Token: 0x060051EA RID: 20970 RVA: 0x001B996C File Offset: 0x001B7B6C
-		protected override bool ValidateFlyer()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            this.RecomputePosition();
+            this.DrawShadow(this.groundPos, this.effectiveHeight);
+            base.FlyingPawn.DynamicDrawPhaseAt(DrawPhase.Draw, this.effectivePos, flip);
+        }
+
+        // Token: 0x060051EA RID: 20970 RVA: 0x001B996C File Offset: 0x001B7B6C
+        protected override bool ValidateFlyer()
 		{
 			if (!ModLister.RoyaltyInstalled)
 			{
-				Log.ErrorOnce("Items with jump capability are a Royalty-specific game system. If you want to use this code please check ModLister.RoyaltyInstalled before calling it. See rules on the Ludeon forum for more info.", 550136797, false);
 				return false;
 			}
 			return true;
@@ -71,14 +77,6 @@ namespace MuvLuvAnnihilation
 			Vector3 b = Altitudes.AltIncVect * this.effectiveHeight;
 			Vector3 b2 = a * this.effectiveHeight;
 			this.effectivePos = this.groundPos + b + b2;
-		}
-
-		// Token: 0x060051EC RID: 20972 RVA: 0x001B9A3E File Offset: 0x001B7C3E
-		public override void DrawAt(Vector3 drawLoc, bool flip = false)
-		{
-			this.RecomputePosition();
-			this.DrawShadow(this.groundPos, this.effectiveHeight);
-			base.FlyingPawn.DrawAt(this.effectivePos, flip);
 		}
 
 		// Token: 0x060051ED RID: 20973 RVA: 0x001B9A6C File Offset: 0x001B7C6C

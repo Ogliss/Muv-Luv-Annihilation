@@ -23,7 +23,7 @@ namespace OgsOld_ExtraHives.GenStuff
 			cells.Clear();
 			Map map = BaseGen.globalSettings.map;
 			IntVec3 CenterCell = rp.rect.CenterCell;
-			float dist = rp.rect.TopRight.DistanceTo(rp.rect.BottomLeft);
+			float dist = new IntVec3(rp.rect.maxX, 0, rp.rect.maxZ).DistanceTo(new IntVec3(rp.rect.minX, 0, rp.rect.minZ));
 		//	Log.Message(Faction+" hive radius "+ dist);
 			cells = map.AllCells.Where(x=> x.DistanceTo(CenterCell)<= dist).ToList();
 			RoofGrid roofGrid = BaseGen.globalSettings.map.roofGrid;

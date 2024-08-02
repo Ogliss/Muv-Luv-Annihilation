@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\OgsLasers\\OgsLasers.csproj",
-        "projectName": "OgsLasers",
+        "projectName": "1OgsLasers",
         "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\OgsLasers\\OgsLasers.csproj",
         "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\OgsLasers\\obj\\",
@@ -29,6 +29,11 @@
           "net472": {
             "projectReferences": {}
           }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -42,15 +47,15 @@
             },
             "Krafs.Rimworld.Ref": {
               "target": "Package",
-              "version": "[1.4.3704, )"
+              "version": "[1.5.4104, )"
             },
             "Lib.Harmony": {
               "target": "Package",
-              "version": "[2.2.2, )"
+              "version": "[2.3.3, )"
             },
             "RimWorld.MultiplayerAPI": {
               "target": "Package",
-              "version": "[0.4.0, )"
+              "version": "[0.5.0, )"
             }
           }
         }

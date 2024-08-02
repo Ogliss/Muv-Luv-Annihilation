@@ -223,7 +223,7 @@ namespace OgsOld_ExtraHives
 					{
 						minDist = 0f;
 					}
-					flag = CellFinder.TryFindRandomReachableCellNear(pos, map, Radius, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), (IntVec3 c) => CompSpawnerHives.CanSpawnHiveAt(c, map, pos, parentDef, minDist, ignoreRoofedRequirement), null, out intVec, 999999);
+					flag = CellFinder.TryFindRandomReachableCellNearPosition(pos, pos, map, Radius, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), (IntVec3 c) => CompSpawnerHives.CanSpawnHiveAt(c, map, pos, parentDef, minDist, ignoreRoofedRequirement), null, out intVec, 999999);
 
 				}
 				else

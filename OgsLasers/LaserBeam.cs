@@ -12,7 +12,9 @@ namespace OgsLasers
     public class LaserBeam : Bullet
     {
         new LaserBeamDef def => base.def as LaserBeamDef;
-        public override void Draw() { }
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+        }
         Effecter effecter;
         Thing hitThing;
         public void TriggerEffect(EffecterDef effect, Vector3 position, Thing hitThing = null)
@@ -111,7 +113,7 @@ namespace OgsLasers
                 Rand.PopState();
                 if (flag2)
                 {
-                    FireUtility.TryStartFireIn(b.ToIntVec3(), pawn.Map, 0.01f);
+                    FireUtility.TryStartFireIn(b.ToIntVec3(), pawn.Map, 0.01f, launcher);
                 }
             }
             else
@@ -129,7 +131,7 @@ namespace OgsLasers
                 Rand.PopState();
                 if (flag2)
                 {
-                    hitThing.TryAttachFire(0.01f);
+                    hitThing.TryAttachFire(0.01f, launcher);
                 }
                 AddeEffects(hitThing);
             }

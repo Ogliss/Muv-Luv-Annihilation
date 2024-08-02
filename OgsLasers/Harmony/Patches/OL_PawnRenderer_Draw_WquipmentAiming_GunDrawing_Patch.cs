@@ -10,12 +10,13 @@ using Verse;
 namespace OgsLasers
 {
 
-    [HarmonyPatch(typeof(PawnRenderer), "DrawEquipmentAiming", new Type[] { typeof(Thing), typeof(Vector3), typeof(float) }), StaticConstructorOnStartup]
+    [HarmonyPatch(typeof(PawnRenderUtility), "DrawEquipmentAiming"), StaticConstructorOnStartup]
     public static class OL_PawnRenderer_Draw_WquipmentAiming_GunDrawing_Patch
     {
         [HarmonyPrefix, HarmonyPriority(Priority.First)]
-        static void Prefix(Pawn ___pawn, ref Thing eq, ref Vector3 drawLoc, ref float aimAngle, PawnRenderer __instance)
+        static void Prefix(Thing eq, ref Vector3 drawLoc, ref float aimAngle)
         {
+            var ___pawn = (eq.ParentHolder as Pawn_EquipmentTracker)?.pawn;
             if (___pawn == null) return;
 
             IDrawnWeaponWithRotation gun = eq as IDrawnWeaponWithRotation;

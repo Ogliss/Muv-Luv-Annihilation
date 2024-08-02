@@ -8,7 +8,7 @@ using Verse.Sound;
 namespace MuvLuvAnnihilation
 {
 	// MuvLuvBeta.CompProperties_ReloadableDual
-	public class CompProperties_ReloadableDual : CompProperties_Reloadable
+	public class CompProperties_ReloadableDual : CompProperties_ApparelReloadable
 	{
 		// Token: 0x17000F2C RID: 3884
 		// (get) Token: 0x0600564B RID: 22091 RVA: 0x001CE00E File Offset: 0x001CC20E
@@ -112,7 +112,7 @@ namespace MuvLuvAnnihilation
 		public string chargeNounSecondry = "charge";
 	}
 	// Token: 0x02000DC7 RID: 3527
-	public class CompReloadableDual : CompReloadable
+	public class CompReloadableDual : CompApparelReloadable
 	{
 		// Token: 0x17000F2D RID: 3885
 		// (get) Token: 0x06005651 RID: 22097 RVA: 0x001CE08E File Offset: 0x001CC28E
@@ -208,7 +208,7 @@ namespace MuvLuvAnnihilation
 			
 			foreach (Gizmo gizmo in base.CompGetWornGizmosExtra())
 			{
-				Command_Reloadable _Reloadable = gizmo as Command_Reloadable;
+				var _Reloadable = gizmo as Command_VerbOwner;
 				if (_Reloadable != null)
 				{
 					if (_Reloadable.verb.verbProps.label != Props.chargeNoun)
@@ -278,7 +278,7 @@ namespace MuvLuvAnnihilation
 			{
 				command_Reloadable.Disable("IsIncapableOfViolenceLower".Translate(this.Wearer.LabelShort, this.Wearer).CapitalizeFirst() + ".");
 			}
-			else if (!this.CanBeUsed)
+			else if (!this.CanBeUsed(out _))
 			{
 				string r = Primary ? this.DisabledReason(this.MinAmmoNeeded(false), this.MaxAmmoNeeded(false)) : this.DisabledReasonSecondry(this.MinAmmoNeededSecondry(false), this.MaxAmmoNeededSecondry(false));
 				command_Reloadable.Disable(r);

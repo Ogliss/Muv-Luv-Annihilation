@@ -76,7 +76,7 @@ namespace MuvLuvAnnihilation
                 bool flag2 = flag;
                 if (flag2)
                 {
-                    Log.Error("pawn is null", false);
+                    Log.Error("pawn is null");
                 }
                 return pawn;
             }

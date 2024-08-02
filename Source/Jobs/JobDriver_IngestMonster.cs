@@ -165,13 +165,14 @@ namespace MuvLuvAnnihilation
 			};
 		}
 
-		public override bool ModifyCarriedThingDrawPos(ref Vector3 drawPos, ref bool behind, ref bool flip)
-		{
-			IntVec3 cell = job.GetTarget(TargetIndex.B).Cell;
-			return ModifyCarriedThingDrawPosWorker(ref drawPos, ref behind, ref flip, cell, pawn);
-		}
+        public override bool ModifyCarriedThingDrawPos(ref Vector3 drawPos, ref bool flip)
+        {
+            IntVec3 cell = job.GetTarget(TargetIndex.B).Cell;
+            return ModifyCarriedThingDrawPosWorker(ref drawPos, ref flip, cell, pawn);
+        }
 
-		public static bool ModifyCarriedThingDrawPosWorker(ref Vector3 drawPos, ref bool behind, ref bool flip, IntVec3 placeCell, Pawn pawn)
+
+		public static bool ModifyCarriedThingDrawPosWorker(ref Vector3 drawPos, ref bool flip, IntVec3 placeCell, Pawn pawn)
 		{
 			if (pawn.pather.Moving)
 			{
@@ -193,7 +194,6 @@ namespace MuvLuvAnnihilation
 				if (holdOffset != null)
 				{
 					drawPos += holdOffset.offset;
-					behind = holdOffset.behind;
 					flip = holdOffset.flip;
 					return true;
 				}

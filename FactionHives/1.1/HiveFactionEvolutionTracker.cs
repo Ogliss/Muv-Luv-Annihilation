@@ -180,9 +180,9 @@ namespace OgsOld_ExtraHives
 		//	Scribe_Values.Look(ref ticks, "ticks");
 			Scribe_Values.Look(ref startMsg, "startMsg");
 			Scribe_Values.Look(ref activetMsg, "activetMsg");
-			Scribe_Collections.Look<string, int>(ref this.HiveFactionStages, "HiveFactionStages", LookMode.Value, LookMode.Value, ref factions, ref stages);
-			Scribe_Collections.Look<string>(ref this.factions, false, "Hivefactions", LookMode.Value, new List<string>());
-			Scribe_Collections.Look<int>(ref this.stages, "Hivestages", LookMode.Value, new List<int>());
+			Scribe_Collections.Look(ref this.HiveFactionStages, "HiveFactionStages", LookMode.Value, LookMode.Value, ref factions, ref stages);
+			Scribe_Collections.Look(ref this.factions, "Hivefactions", LookMode.Value, new List<string>());
+			Scribe_Collections.Look(ref this.stages, "Hivestages", LookMode.Value, new List<int>());
 		}
 
 		private List<string> factions;

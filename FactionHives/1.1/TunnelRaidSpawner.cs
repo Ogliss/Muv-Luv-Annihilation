@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using LudeonTK;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,7 +82,8 @@ namespace OgsOld_ExtraHives
                 IntVec3 c;
                 // throws dust and filth 
                 Rand.PushState();
-                if (Rand.MTBEventOccurs(TunnelRaidSpawner.FilthSpawnMTB, 1f, 1.TicksToSeconds()) && CellFinder.TryFindRandomReachableCellNear(base.Position, base.Map, TunnelRaidSpawner.FilthSpawnRadius, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c, 999999))
+                if (Rand.MTBEventOccurs(TunnelRaidSpawner.FilthSpawnMTB, 1f, 1.TicksToSeconds()) 
+                    && CellFinder.TryFindRandomReachableCellNearPosition(base.Position, base.Position, base.Map, TunnelRaidSpawner.FilthSpawnRadius, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c, 999999))
                 {
                     FilthMaker.TryMakeFilth(c, base.Map, TunnelRaidSpawner.filthTypes.RandomElement<ThingDef>(), 1);
                 }
@@ -172,8 +174,7 @@ namespace OgsOld_ExtraHives
             }
         }
 
-        // Token: 0x06002629 RID: 9769 RVA: 0x001225E4 File Offset: 0x001209E4
-        public override void Draw()
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             Rand.PushState();
             Rand.Seed = this.thingIDNumber;

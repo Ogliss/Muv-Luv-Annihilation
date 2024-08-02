@@ -387,7 +387,7 @@ namespace MuvLuvAnnihilation
 
         public static bool CanSee(this Thing seer, Thing target, Func<IntVec3, bool> validator = null)
         {
-            ShootLeanUtility.CalcShootableCellsOf(MLB_AttackTargetFinder.tempDestList, target);
+            ShootLeanUtility.CalcShootableCellsOf(MLB_AttackTargetFinder.tempDestList, target, seer.Position);
             for (int i = 0; i < MLB_AttackTargetFinder.tempDestList.Count; i++)
             {
                 if (GenSight.LineOfSight(seer.Position, MLB_AttackTargetFinder.tempDestList[i], seer.Map, true, validator, 0, 0))

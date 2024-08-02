@@ -71,7 +71,7 @@ namespace MuvLuvAnnihilation
         }
         public IEnumerable<Command> GetVerbsCommands()
         {
-            return this.verbTracker.GetVerbsCommands(KeyCode.None);
+            return this.verbTracker.GetVerbsCommands();
         }
         // Token: 0x17000C0C RID: 3084
         // (get) Token: 0x06004C86 RID: 19590 RVA: 0x00239F59 File Offset: 0x00238359

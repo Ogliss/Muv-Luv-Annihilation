@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "BFPCnWtfJ8R9FsCT11JI60x1GI/gK2oaysiBGNnMj9VNDzp/Po+kv1WN/qgvdpO9ynhrEyISlWJaFQt+dBM9dQ==",
+  "dgSpecHash": "+zwvbdP4eGQ=",
   "success": true,
   "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Muv-Luv-Annihilation\\FactionHives\\1.1\\HiveExtension.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.4.3704\\krafs.rimworld.ref.1.4.3704.nupkg.sha512",
-    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.2.2\\lib.harmony.2.2.2.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.5.4104\\krafs.rimworld.ref.1.5.4104.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.3.3\\lib.harmony.2.3.3.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\microsoft.build.framework\\15.1.548\\microsoft.build.framework.15.1.548.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\microsoft.build.utilities.core\\15.1.548\\microsoft.build.utilities.core.15.1.548.nupkg.sha512",
-    "C:\\Users\\Vova\\.nuget\\packages\\rimworld.multiplayerapi\\0.4.0\\rimworld.multiplayerapi.0.4.0.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\rimworld.multiplayerapi\\0.5.0\\rimworld.multiplayerapi.0.5.0.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\system.diagnostics.debug\\4.0.11\\system.diagnostics.debug.4.0.11.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\system.globalization\\4.0.11\\system.globalization.4.0.11.nupkg.sha512",

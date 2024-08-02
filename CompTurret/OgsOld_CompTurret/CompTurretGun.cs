@@ -428,7 +428,7 @@ namespace OgsOld_CompTurret
 			//	Log.Message("BestShootTargetFromCurrentPosition searcher: " + searcher + " Verb: " + currentEffectiveVerb + " flags: " + flags);
 			if (currentEffectiveVerb == null)
 			{
-				Log.Error("BestShootTargetFromCurrentPosition with " + searcher.ToStringSafe<IAttackTargetSearcher>() + " who has no attack verb.", false);
+				Log.Error("BestShootTargetFromCurrentPosition with " + searcher.ToStringSafe<IAttackTargetSearcher>() + " who has no attack verb.");
 				return null;
 			}
 			if (building)

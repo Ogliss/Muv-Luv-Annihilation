@@ -133,7 +133,7 @@ public class CompSpawnerPawn : ThingComp
     {
         if (!CellFinder.TryFindRandomCellNear(byThing.Position, byThing.Map, 5, (IntVec3 c) => c.Standable(byThing.Map) && byThing.Map.reachability.CanReach(c, byThing, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly, false)), out var result))
         {
-            Log.Error("Found no place for pawns to defend " + byThing, ignoreStopLoggingLimit: false);
+            Log.Error("Found no place for pawns to defend " + byThing);
             result = IntVec3.Invalid;
         }
         return LordMaker.MakeNewLord(byThing.Faction, Activator.CreateInstance(lordJobType, new SpawnedPawnParams
@@ -174,7 +174,7 @@ public class CompSpawnerPawn : ThingComp
             num++;
             if (num > 1000)
             {
-                Log.Error("Too many iterations.", ignoreStopLoggingLimit: false);
+                Log.Error("Too many iterations.");
                 break;
             }
             if (!TrySpawnPawn(out var _))

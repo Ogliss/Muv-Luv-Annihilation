@@ -149,7 +149,7 @@ namespace OgsOld_ExtraHives
 			float value = regionsDistanceToUnroofed.TryGetValue(region, out value) ? Mathf.Min(value, (float)num * 4f) : ((float)num * 1.15f);
 			value = Mathf.Pow(value, 1.55f);
 			float num2 = Mathf.InverseLerp(0f, 12f, num);
-			float num3 = Mathf.Lerp(1f, 0.18f, map.glowGrid.GameGlowAt(cell));
+			float num3 = Mathf.Lerp(1f, 0.18f, map.glowGrid.GroundGlowAt(cell));
 			float num4 = 1f - Mathf.Clamp(DistToBlocker(cell, map) / 11f, 0f, 0.6f);
 			float num5 = Mathf.InverseLerp(-17f, -7f, temperature);
 			float f = value * num2 * num4 * mountainousnessScoreAt * num3 * num5;

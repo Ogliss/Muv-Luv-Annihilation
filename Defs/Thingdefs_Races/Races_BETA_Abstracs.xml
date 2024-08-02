@@ -46,6 +46,7 @@
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
       <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
       <trainability>Intermediate</trainability>
+      <renderTree>Animal</renderTree>
       <hediffGiverSets>
         <li>OrganicStandard</li>
       </hediffGiverSets>

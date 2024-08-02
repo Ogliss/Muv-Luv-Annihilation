@@ -155,8 +155,7 @@ namespace MuvLuvAnnihilation
             }
         }
 
-        // Token: 0x060005FD RID: 1533 RVA: 0x00057178 File Offset: 0x00055378
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             if (this.flyingThing != null)
             {
@@ -168,7 +167,7 @@ namespace MuvLuvAnnihilation
                         return;
                     }
                     Pawn pawn = this.flyingThing as Pawn;
-                    pawn.Drawer.DrawAt(this.DrawPos);
+                    pawn.DynamicDrawPhaseAt(DrawPhase.Draw, this.DrawPos);
                 }
                 else
                 {

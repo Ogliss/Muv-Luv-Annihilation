@@ -31,7 +31,7 @@
       <Chemfuel>20</Chemfuel>
     </costList>
     <comps>
-      <li Class="CompProperties_Reloadable">
+      <li Class="CompProperties_ApparelReloadable">
         <maxCharges>5</maxCharges>
         <ammoDef>Chemfuel</ammoDef>
         <ammoCountPerCharge>20</ammoCountPerCharge>

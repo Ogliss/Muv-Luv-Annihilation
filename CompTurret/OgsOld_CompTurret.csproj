@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OgsOld_CompTurret</RootNamespace>
-    <AssemblyName>OgsOld_CompTurret</AssemblyName>
+    <AssemblyName>1OgsOld_CompTurret</AssemblyName>
     <TargetFramework>net472</TargetFramework>
     <FileAlignment>512</FileAlignment>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -70,9 +70,9 @@
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.3704" GeneratePathProperty="true" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4104" GeneratePathProperty="true" />
     <PackageReference Include="Lib.Harmony">
-      <Version>2.2.2</Version>
+      <Version>2.3.3</Version>
     </PackageReference>
     <PackageReference Include="TaskPubliciser">
       <Version>1.0.3</Version>

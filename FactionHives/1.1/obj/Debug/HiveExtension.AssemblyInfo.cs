@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("1OgsOld_ExtraHives")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54269b2cc79f36ba7f36f440aa4e5ff6e61485d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("1OgsOld_ExtraHives")]
 [assembly: System.Reflection.AssemblyTitleAttribute("1OgsOld_ExtraHives")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

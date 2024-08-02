@@ -1,8 +1,8 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Assemblies\OgsOld_CompTurret.dll
 c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\CompTurret\obj\Debug\OgsOld_CompTurret.csproj.AssemblyReference.cache
 c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\CompTurret\obj\Debug\OgsOld_CompTurret.AssemblyInfoInputs.cache
 c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\CompTurret\obj\Debug\OgsOld_CompTurret.AssemblyInfo.cs
 c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\CompTurret\obj\Debug\OgsOld_CompTurret.csproj.CoreCompileInputs.cache
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\CompTurret\obj\Debug\OgsOld_CompTurret.csproj.CopyComplete
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\CompTurret\obj\Debug\OgsOld_CompTurret.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\CompTurret\obj\Debug\OgsOld_CompTurret.GeneratedMSBuildEditorConfig.editorconfig
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\CompTurret\obj\Debug\OgsOld_C.42DD98EA.Up2Date
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Assemblies\1OgsOld_CompTurret.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\CompTurret\obj\Debug\1OgsOld_CompTurret.dll

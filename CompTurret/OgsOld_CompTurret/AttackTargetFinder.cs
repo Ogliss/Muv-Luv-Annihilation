@@ -542,7 +542,7 @@ namespace OgsOld_CompTurret
 		public static bool CanSee(this Thing seer, Thing target, Func<IntVec3, bool> validator = null)
 		{
 		//	Log.Messageage(seer+" CanSee "+ target+"?");
-			ShootLeanUtility.CalcShootableCellsOf(tempDestList, target);
+			ShootLeanUtility.CalcShootableCellsOf(tempDestList, target, seer.Position);
 			for (int i = 0; i < tempDestList.Count; i++)
 			{
 				if (GenSight.LineOfSight(seer.Position, tempDestList[i], seer.Map, skipFirstCell: true, validator))

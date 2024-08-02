@@ -79,10 +79,10 @@ namespace OgsOld_ExtraHives
                 this.lastSpawnTick--;
             }
         }
-        // Token: 0x060029EC RID: 10732 RVA: 0x0013D960 File Offset: 0x0013BD60
-        public override void PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)
+
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
-            base.PostPreApplyDamage(dinfo, out absorbed);
+            base.PostPreApplyDamage(ref dinfo, out absorbed);
             if (absorbed)
             {
                 return;
@@ -101,6 +101,7 @@ namespace OgsOld_ExtraHives
             }
             absorbed = false;
         }
+
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {

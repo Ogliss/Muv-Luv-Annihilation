@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.Utility;
 using System;
 using UnityEngine;
 using Verse;
@@ -11,7 +12,7 @@ namespace MuvLuvAnnihilation
 	{
 		private float cachedEffectiveRange = -1f;
 
-		protected override float EffectiveRange
+        public override float EffectiveRange
 		{
 			get
 			{
@@ -32,9 +33,9 @@ namespace MuvLuvAnnihilation
 				return false;
 			}
 
-			CompReloadable reloadableCompSource = base.ReloadableCompSource;
+			var reloadableCompSource = base.ReloadableCompSource;
 			Pawn casterPawn = CasterPawn;
-			if (casterPawn == null || reloadableCompSource == null || !reloadableCompSource.CanBeUsed)
+			if (casterPawn == null || reloadableCompSource == null || !reloadableCompSource.CanBeUsed(out _))
 			{
 				return false;
 			}
@@ -61,7 +62,7 @@ namespace MuvLuvAnnihilation
 				//	Log.Message("reloadableCompSource UsedOnce " + reloadableCompSource.RemainingCharges);
 				}
 			}
-			PawnFlyer pawnFlyer = PawnFlyer.MakeFlyer(ThingDefOf.PawnJumper, casterPawn, cell, BETADefOf.JumpFlightEffect, BETADefOf.JumpPackLand);
+			PawnFlyer pawnFlyer = PawnFlyer.MakeFlyer(ThingDefOf.PawnFlyer, casterPawn, cell, BETADefOf.JumpFlightEffect, BETADefOf.JumpPackLand);
 			if (pawnFlyer != null)
 			{
 				GenSpawn.Spawn(pawnFlyer, cell, map);

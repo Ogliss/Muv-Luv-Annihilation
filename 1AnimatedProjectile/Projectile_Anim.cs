@@ -153,13 +153,12 @@ namespace AnimatedProjectile
 			}
 		}
 
-		// Token: 0x06000020 RID: 32 RVA: 0x00002DAC File Offset: 0x00000FAC
-		public override void Draw()
-		{
-			Mesh mesh = MeshPool.GridPlane(this.def.graphicData.drawSize * this.Drawsize);
-			Graphics.DrawMesh(mesh, this.DrawPos, this.ExactRotation, this.Graphic.MatSingle, 0);
-			base.Comps_PostDraw();
-		}
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            Mesh mesh = MeshPool.GridPlane(this.def.graphicData.drawSize * this.Drawsize);
+            Graphics.DrawMesh(mesh, this.DrawPos, this.ExactRotation, this.Graphic.MatSingle, 0);
+            base.Comps_PostDraw();
+        }
 
 		// Token: 0x06000021 RID: 33 RVA: 0x00002E04 File Offset: 0x00001004
 		public override void ExposeData()

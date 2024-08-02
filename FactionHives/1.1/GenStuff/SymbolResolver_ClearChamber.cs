@@ -13,7 +13,7 @@ namespace OgsOld_ExtraHives.GenStuff
 		public override void Resolve(ResolveParams rp)
 		{
 			Map map = BaseGen.globalSettings.map;
-			float dist = Math.Min(rp.rect.TopRight.DistanceTo(rp.rect.BottomLeft), GenRadial.MaxRadialPatternRadius);
+			float dist = Math.Min(new IntVec3(rp.rect.maxX, 0, rp.rect.maxZ).DistanceTo(new IntVec3(rp.rect.minX, 0, rp.rect.minZ)), GenRadial.MaxRadialPatternRadius);
 			List<IntVec3> cells = GenRadial.RadialCellsAround(rp.rect.CenterCell, dist, true).ToList();
 			foreach (IntVec3 c in cells)
 			{

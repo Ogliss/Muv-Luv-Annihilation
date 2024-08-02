@@ -35,7 +35,7 @@ namespace OgsOld_ExtraHives.GenStuff
 			Map map = BaseGen.globalSettings.map;
 			IntVec3 CenterCell = rp.rect.CenterCell;
 			cavecells.AddRange(GenRadial.RadialCellsAround(CenterCell, 10, true));
-			float dist = rp.rect.TopRight.DistanceTo(rp.rect.BottomLeft);
+			float dist = new IntVec3(rp.rect.maxX, 0, rp.rect.maxZ).DistanceTo(new IntVec3(rp.rect.minX, 0, rp.rect.minZ));
 			cells = map.AllCells.Where(x => x.DistanceTo(CenterCell) <= dist).ToList();
 			//	int cavecountBig = Rand.RangeInclusive(1, 4);
 			List<IntVec3> cellst = cells.Where(x => x.DistanceTo(CenterCell) > 15 && x.DistanceTo(CenterCell) < dist - 10).ToList();

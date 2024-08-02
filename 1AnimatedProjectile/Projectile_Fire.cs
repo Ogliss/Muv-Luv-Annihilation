@@ -109,7 +109,7 @@ namespace AnimatedProjectile
 					bool flag2 = num > 0.1f;
 					if (flag2)
 					{
-						FireUtility.TryStartFireIn(intVec, map, num);
+						FireUtility.TryStartFireIn(intVec, map, num, launcher);
 					}
 				}
 			}
@@ -164,7 +164,7 @@ namespace AnimatedProjectile
 					}
 					else
 					{
-						FireUtility.TryStartFireIn(intVec, base.Map, 0.1f);
+						FireUtility.TryStartFireIn(intVec, base.Map, 0.1f, launcher);
 					}
 				}
 				Rand.PopState();
@@ -200,18 +200,17 @@ namespace AnimatedProjectile
 			}
 		}
 
-		// Token: 0x0600000B RID: 11 RVA: 0x00002780 File Offset: 0x00000980
-		public override void Draw()
-		{
-			bool drawGlow = base.Props.drawGlow;
-			if (drawGlow)
-			{
-				string text = ((!base.Props.drawGlowMote.NullOrEmpty()) ? base.Props.drawGlowMote : "Mote_FireGlow");
-				Mesh mesh = MeshPool.GridPlane(DefDatabase<ThingDef>.GetNamed(text, true).graphicData.drawSize * (base.Drawsize * base.Props.drawGlowSizeFactor));
-				Graphics.DrawMesh(mesh, this.DrawPos, this.ExactRotation, DefDatabase<ThingDef>.GetNamed(text, true).graphic.MatSingle, 0);
-			}
-			base.Draw();
-		}
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            bool drawGlow = base.Props.drawGlow;
+            if (drawGlow)
+            {
+                string text = ((!base.Props.drawGlowMote.NullOrEmpty()) ? base.Props.drawGlowMote : "Mote_FireGlow");
+                Mesh mesh = MeshPool.GridPlane(DefDatabase<ThingDef>.GetNamed(text, true).graphicData.drawSize * (base.Drawsize * base.Props.drawGlowSizeFactor));
+                Graphics.DrawMesh(mesh, this.DrawPos, this.ExactRotation, DefDatabase<ThingDef>.GetNamed(text, true).graphic.MatSingle, 0);
+            }
+            base.DrawAt(drawLoc, flip);
+        }
 
 		// Token: 0x0600000C RID: 12 RVA: 0x0000281E File Offset: 0x00000A1E
 		public override void SpawnSetup(Map map, bool respawningAfterLoad)

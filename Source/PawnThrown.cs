@@ -200,7 +200,7 @@ namespace MuvLuvAnnihilation
 			pawn.DeSpawn(DestroyMode.Vanish);
 			if (!pawnFlyer.innerContainer.TryAdd(pawn, true))
 			{
-				Log.Error("Could not add " + pawn.ToStringSafe<Pawn>() + " to a thrower.", false);
+				Log.Error("Could not add " + pawn.ToStringSafe<Pawn>() + " to a thrower.");
 				pawn.Destroy(DestroyMode.Vanish);
 			}
 			return pawnFlyer;

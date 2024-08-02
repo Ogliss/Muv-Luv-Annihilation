@@ -29,19 +29,25 @@ namespace MuvLuvAnnihilation
             bool desperate = pawn.needs.food.CurCategory == HungerCategory.Starving;
             var foodSource = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
     ThingRequest.ForGroup(ThingRequestGroup.Corpse), PathEndMode.ClosestTouch, TraverseParms.For(pawn), 9999,
-    (Thing x) => x is Corpse victim && victim.InnerPawn.RaceProps.Humanlike && pawn.CanReserve(victim));
+    (Thing x) => x is Corpse victim && victim.InnerPawn.RaceProps.Humanlike && pawn.CanReserve(victim) && x.IngestibleNow);
             ThingDef foodDef = (foodSource as Corpse)?.def;
 
             if (foodSource is null)
             {
                 foodSource = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
                     ThingRequest.ForGroup(ThingRequestGroup.Pawn), PathEndMode.ClosestTouch, TraverseParms.For(pawn), 9999,
-                    (Thing x) => x is Pawn victim && victim.RaceProps.Humanlike && victim.Downed && pawn.CanReserve(victim));
-                foodDef = (foodSource as Pawn).MakeCorpse(null, null)?.def;
+                    (Thing x) => x is Pawn victim && victim.RaceProps.Humanlike 
+                    && victim.Downed && pawn.CanReserve(victim));
+                if (foodSource is Pawn pawnVictim)
+                {
+                    foodDef = pawnVictim.def.race.corpseDef;
+                }
             }
 
 
-            if (foodSource is null && !FoodUtility.TryFindBestFoodSourceFor_NewTemp(pawn, pawn, desperate, out foodSource, out foodDef, canRefillDispenser: true, canUseInventory: true, allowCorpse, pawn.IsWildMan(), forceScanWholeMap))
+            if (foodSource is null && !FoodUtility.TryFindBestFoodSourceFor(pawn, pawn, desperate, out foodSource, 
+                out foodDef, canRefillDispenser: true, canUseInventory: true, allowCorpse, 
+                pawn.IsWildMan(), true))
             {
                 return null;
             }

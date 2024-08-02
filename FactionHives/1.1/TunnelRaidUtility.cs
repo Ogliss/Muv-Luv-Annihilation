@@ -72,7 +72,7 @@ namespace OgsOld_ExtraHives
                         " near ",
                         dropCenter,
                         ". Dropping on random square instead."
-                    }), false);
+                    }));
                     intVec = CellFinderLoose.RandomCellWith((IntVec3 c) => c.Walkable(map) && (c.Roofed(map) && c.GetRoof(map) != RoofDefOf.RoofRockThick), map, 1000);
                 }
                 for (int i = 0; i < list.Count; i++)

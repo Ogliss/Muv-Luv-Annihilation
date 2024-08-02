@@ -110,7 +110,8 @@ namespace MuvLuvAnnihilation.HarmonyInstance
             Rand.PopState();
             if (!chance)
             {
-                shootLine.ChangeDestToMissWild(shotReport.AimOnTargetChance_StandardTarget);
+                bool flyOverhead = projectile2?.def?.projectile != null && projectile2.def.projectile.flyOverhead;
+                shootLine.ChangeDestToMissWild_NewTemp(shotReport.AimOnTargetChance_StandardTarget, flyOverhead, __instance.caster.Map);
                 ProjectileHitFlags projectileHitFlags2 = ProjectileHitFlags.NonTargetWorld;
                 Rand.PushState();
                 if (Rand.Chance(0.5f) && canHitNonTargetPawnsNow)

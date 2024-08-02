@@ -239,7 +239,7 @@ namespace OgsOld_ExtraHives
 			IntVec3 invalid;
 			if (!CellFinder.TryFindRandomCellNear(byThing.Position, byThing.Map, 5, (IntVec3 c) => c.Standable(byThing.Map) && byThing.Map.reachability.CanReach(c, byThing, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly, false)), out invalid, -1))
 			{
-				Log.Error("Found no place for mechanoids to defend " + byThing, false);
+				Log.Error("Found no place for mechanoids to defend " + byThing);
 				invalid = IntVec3.Invalid;
 			}
 			Lord lord =  LordMaker.MakeNewLord(byThing.Faction, Activator.CreateInstance(lordJobType, new object[]
@@ -287,7 +287,7 @@ namespace OgsOld_ExtraHives
 				num++;
 				if (num > 1000)
 				{
-					Log.Error("Too many iterations.", false);
+					Log.Error("Too many iterations.");
 					break;
 				}
 				Pawn pawn;

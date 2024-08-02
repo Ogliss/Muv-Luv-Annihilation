@@ -112,7 +112,7 @@ namespace MuvLuvAnnihilation
 			string text = null;
 			if (!Event.current.shift)
 			{
-				if (!compReloadable.CanBeUsed)
+				if (!compReloadable.CanBeUsed(out _))
 				{
 					text = compReloadable.DisabledReason(compReloadable.MinAmmoNeededSecondry(false), compReloadable.MaxAmmoNeededSecondry(false));
 				}
