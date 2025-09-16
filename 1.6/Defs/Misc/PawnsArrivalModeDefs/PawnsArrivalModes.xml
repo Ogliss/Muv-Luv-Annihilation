@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--PawnsArrivalModeDef>
+    <defName>EdgeTunnelIn_OgsOld_ExtraHives</defName>
+    <workerClass>OgsOld_ExtraHives.PawnsArrivalModeWorker_EdgeTunnel</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(300, 0)</li>
+        <li>(700, 0.30)</li>
+      </points>
+    </selectionWeightCurve>
+    <textEnemy>A group of {0} from {1} have tunneled in nearby.</textEnemy>
+    <textFriendly>A group of friendly {0} from {1} have tunneled in nearby.</textFriendly>
+    <textWillArrive>{0_pawnsPluralDef} will tunnel in.</textWillArrive>
+  </PawnsArrivalModeDef>
+
+  <PawnsArrivalModeDef>
+    <defName>EdgeTunnelInGroups_OgsOld_ExtraHives</defName>
+    <workerClass>OgsOld_ExtraHives.PawnsArrivalModeWorker_EdgeTunnelGroups</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(100, 0)</li>
+        <li>(300, 0.2)</li>
+        <li>(700, 0.5)</li>
+      </points>
+    </selectionWeightCurve>
+    <pointsFactorCurve>
+      <points>
+        <li>0, 0.9</li>
+      </points>
+    </pointsFactorCurve>
+    <textEnemy>Several separate groups of {0} from {1} have tunneled in nearby.</textEnemy>
+    <textFriendly>Several separate groups of friendly {0} from {1} have tunneled in nearby.</textFriendly>
+    <textWillArrive>Several separate groups of {0_pawnsPluralDef} will tunnel in.</textWillArrive>
+  </PawnsArrivalModeDef>
+
+  <PawnsArrivalModeDef>
+    <defName>CenterTunnelIn_OgsOld_ExtraHives</defName>
+    <workerClass>OgsOld_ExtraHives.PawnsArrivalModeWorker_CenterTunnel</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(300, 0.0)</li>
+        <li>(1000, 3.5)</li>
+      </points>
+    </selectionWeightCurve>
+    <pointsFactorCurve>
+      <points>
+        <li>0, 0.75</li>
+        <li>5000, 0.5</li>
+      </points>
+    </pointsFactorCurve>
+    <textEnemy>A group of {0} from {1} have tunneled in right on top of you!</textEnemy>
+    <textFriendly>A group of friendly {0} from {1} have tunneled in right on top of you!</textFriendly>
+    <textWillArrive>{0_pawnsPluralDef} will tunnel in right on top of you.</textWillArrive>
+  </PawnsArrivalModeDef>
+
+  <PawnsArrivalModeDef>
+    <defName>RandomTunnelIn_OgsOld_ExtraHives</defName>
+    <workerClass>OgsOld_ExtraHives.PawnsArrivalModeWorker_RandomTunnel</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(300, 0)</li>
+        <li>(1000, 1.9)</li>
+      </points>
+    </selectionWeightCurve>
+    <pointsFactorCurve>
+      <points>
+        <li>0, 0.70</li>
+        <li>5000, 0.45</li>
+      </points>
+    </pointsFactorCurve>
+    <textEnemy>A group of {0} from {1} have tunneled in. They are scattered all over the area!</textEnemy>
+    <textFriendly>A group of friendly {0} from {1} have tunneled in. They are scattered all over the area!</textFriendly>
+    <textWillArrive>{0_pawnsPluralDef} will tunnel in.</textWillArrive>
+  </PawnsArrivalModeDef-->
+
+</Defs>

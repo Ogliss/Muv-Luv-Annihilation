@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ========================= Soldier Class ============================= -->
+	<ThingDef ParentName="BaseBETA">
+		<defName>BETA_SoldierClass</defName>
+		<label>soldier</label>
+		<thingClass>MuvLuvAnnihilation.BetaEater</thingClass>
+		<description>Classification: Soldier\nScientific Name: Venarius: Caput grande\nCommon name: "Venator"\n\nIronically named "Soldier", this BETA stands at 2.3 meters tall, 1.2 meters long and 1.4 meters wide[4] and is the smallest strain of BETA encountered on Earth. First spotted in 1995, the Soldier-class has little to no capability against mechanized units, and is solely anti-personnel; it has the highest personnel detection capability amongst all BETA, arm and jaw strength several times that of an average human's, and is able to maintain relative silence during movement,[4] making it harder for anyone on foot to detect their approach unless from the front.\n\nTheir size and low defensive capabilities means they can be dispatched by guns, knives, swords, or other weaponry effective against regular humans. Despite their size and strength, an adrenaline infused punch from an average built 16 year old boy is enough to make their frontal face turn ninety degrees.</description>
+		<uiIconScale>1.1</uiIconScale>
+		<statBases>
+			<MarketValue>200</MarketValue>
+			<LeatherAmount>0</LeatherAmount>
+			<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.20</ArmorRating_Heat>
+			<Wildness>0.95</Wildness>
+		</statBases>
+		<race>
+			<body>BETASoldier</body>
+			<thinkTreeMain>BETA_Eater_ThinkTree</thinkTreeMain>
+			<foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+			<baseHungerRate>0.25</baseHungerRate>
+			<baseBodySize>1.3</baseBodySize>
+			<baseHealthScale>1.5</baseHealthScale>
+			<gestationPeriodDays>12</gestationPeriodDays>
+			<useMeatFrom>Megaspider</useMeatFrom>
+			<lifeExpectancy>6</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EusocialInsectAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Spelopede_Pain</soundWounded>
+					<soundDeath>Pawn_Spelopede_Death</soundDeath>
+					<soundCall>Pawn_Spelopede_Call</soundCall>
+					<soundAngry>Pawn_Spelopede_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+		</race>
+		<tools>
+			<li>
+				<label>mouth</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+			<li>
+				<label>left fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<!-- ========================= Warrior Class ============================= -->
+	<ThingDef ParentName="BaseBETA">
+		<defName>BETA_WarriorClass</defName>
+		<label>warrior</label>
+		<description>Classification: Warrior\nScientific Name: Agilisis: Naris prolix\nCommon name: "Barrus naris"\n\nAt 2.5 meters tall, 1.7 meters long and 1.5 meters wide, the Warrior-class is one of the smaller strains of BETA, having high detection capability in the anti-personnel role, but ineffective against TSFs. As they are extremely lightly armored, even handguns and rifles are effective on them. However, it is hard to actually hit them due to their agility, and once close their single trunk-like arm has enough strength to easily pull a human's head off.</description>
+		<uiIconScale>1.1</uiIconScale>
+		<statBases>
+			<MarketValue>200</MarketValue>
+			<LeatherAmount>0</LeatherAmount>
+			<ArmorRating_Blunt>0.11</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.11</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.11</ArmorRating_Heat>
+			<MeleeDodgeChance>1.75</MeleeDodgeChance>
+			<Wildness>0.95</Wildness>
+		</statBases>
+		<race>
+			<body>BETAWarrior</body>
+			<baseHungerRate>0.0</baseHungerRate>
+			<baseBodySize>1.5</baseBodySize>
+			<baseHealthScale>1.5</baseHealthScale>
+			<gestationPeriodDays>12</gestationPeriodDays>
+			<useMeatFrom>Megaspider</useMeatFrom>
+			<lifeExpectancy>6</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EusocialInsectAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Spelopede_Pain</soundWounded>
+					<soundDeath>Pawn_Spelopede_Death</soundDeath>
+					<soundCall>Pawn_Spelopede_Call</soundCall>
+					<soundAngry>Pawn_Spelopede_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+		</race>
+		<tools>
+			<li>
+				<label>trunk</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>arm</label>
+				<capacities>
+					<li>BETA_Tear</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<DamageDef ParentName="CutBase">
+		<defName>BETA_Tear</defName>
+		<label>tear</label>
+		<workerClass>MuvLuvAnnihilation.DamageWorker_Tear</workerClass>
+		<deathMessage>{0} has died during tearing.</deathMessage>
+		<harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+		<hasForcefulImpact>false</hasForcefulImpact>
+		<canInterruptJobs>false</canInterruptJobs>
+		<impactSoundType/>
+		<armorCategory/>
+	</DamageDef>
+
+	<ToolCapacityDef>
+		<defName>BETA_Tear</defName>
+		<label>tear</label>
+	</ToolCapacityDef>
+
+	<ManeuverDef>
+		<defName>BETA_Tear</defName>
+		<requiredCapacity>BETA_Tear</requiredCapacity>
+		<verb>
+			<verbClass>Verb_MeleeAttackDamage</verbClass>
+			<meleeDamageDef>BETA_Tear</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Bite_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Bite_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Bite_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Bite_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+	<!-- ========================= Tank Class ============================= -->
+	<ThingDef ParentName="BaseBETA">
+		<defName>BETA_TankClass</defName>
+		<label>tank</label>
+		<description>Classification: Tank\nScientific Name: Manderium: Ungulam crus\nCommon name: "Equus pedis"\n\nThe Tank-class BETA is the third smallest strain, measuring at 2.8 meters tall, 4.4 meters long and 1.9 meters wide.[5] Infantry weapons are effective against them, but while it is lightly armored and classified as an anti-infantry unit, the Tank-class has gained notoriety as the smallest physical anti-TSF unit the BETA have; their physical strength and jumping abilities are prodigious and their powerful jaws can bite through even metal, concrete,[5] and even super-carbon. Paired with their capability to reach 80km/h even on uneven terrain, Tank-class BETA are able to easily catch and demolish vehicles and TSFs. Countless numbers of battle tank operators and TSF pilots have been lost to this strain.\n\nstanding 2.8 meters tall the manderium is on the smaller end of the BETA Strains spectrum, while they are lightly armoured, heavy machinegun fire has proven effective against them, their powerful bite can cut through all but the thickest armour.</description>
+		<uiIconScale>1.1</uiIconScale>
+		<thingClass>MuvLuvAnnihilation.BetaEater</thingClass>
+		<statBases>
+			<MarketValue>200</MarketValue>
+			<LeatherAmount>0</LeatherAmount>
+			<ArmorRating_Blunt>0.27</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.27</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.27</ArmorRating_Heat>
+			<Wildness>0.95</Wildness>
+		</statBases>
+		<race>
+			<body>BETATank</body>
+			<thinkTreeMain>BETA_Eater_ThinkTree</thinkTreeMain>
+			<foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+			<baseHungerRate>0.25</baseHungerRate>
+			<baseBodySize>1.8</baseBodySize>
+			<baseHealthScale>1.80</baseHealthScale>
+			<gestationPeriodDays>12</gestationPeriodDays>
+			<useMeatFrom>Megaspider</useMeatFrom>
+			<lifeExpectancy>6</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EusocialInsectAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Spelopede_Pain</soundWounded>
+					<soundDeath>Pawn_Spelopede_Death</soundDeath>
+					<soundCall>Pawn_Spelopede_Call</soundCall>
+					<soundAngry>Pawn_Spelopede_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+		</race>
+		<tools>
+			<li>
+				<label>mouth</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+			<li>
+				<label>left fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<!-- ========================= Grappler Class ============================= -->
+	<ThingDef ParentName="BaseBETA">
+		<defName>BETA_GrapplerClass</defName>
+		<label>grappler</label>
+		<description>Classification: Grappler\nScientific Name: Rrabidusius: Bracchium acutas\nCommon name: "Medium"\n\nThe Grappler-class measures 12 meters tall, 19 meters long and 28 meters wide, is armed with two extremely tough forearms, with hardness 15 on the Mohs scale, which they use to batter enemies to death, and can also act as shields against poorly-aimed weapons fire from the front. While not particularly fast, the Grappler-class is considerably mobile and nimble in combat, and is capable of turning to face a different direction quickly, with anything within a diameter of 39 meters of its position falling within attack range from its claws. Because of this, it is recommended that pilots attack from the sides or rear to minimize exposure to danger, or to take advantage of its relatively unarmored body with precise shots and good tactical judgment.</description><uiIconScale>1.15</uiIconScale>
+		<statBases>
+			<MoveSpeed>4.75</MoveSpeed>
+			<MarketValue>500</MarketValue>
+			<LeatherAmount>0</LeatherAmount>
+			<ArmorRating_Blunt>0.42</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.42</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.42</ArmorRating_Heat>
+			<Wildness>0.95</Wildness>
+		</statBases>
+		<race>
+			<body>BETAGrappler</body>
+			<baseHungerRate>0.35</baseHungerRate>
+			<baseBodySize>4.95</baseBodySize>
+			<baseHealthScale>6.365625</baseHealthScale>
+			<gestationPeriodDays>12</gestationPeriodDays>
+			<meatLabel>BETA meat</meatLabel>
+			<lifeExpectancy>6</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EusocialInsectAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_BigInsect_Pain</soundWounded>
+					<soundDeath>Pawn_BigInsect_Death</soundDeath>
+					<soundCall>Pawn_BigInsect_Call</soundCall>
+					<soundAngry>Pawn_BigInsect_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+		<tools>
+			<!--li>
+        <label>head claw</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      </li-->
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>BETA_GrapplerClass_Throw</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>left fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>16</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>16</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>BETA_GrapplerClassThrown</defName>
+		<thingClass>MuvLuvAnnihilation.MLB_ThrownObject</thingClass>
+		<label>charge</label>
+		<graphicData>
+			<texPath>DummyTexture</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<flyOverhead>true</flyOverhead>
+			<explosionRadius>4</explosionRadius>
+			<damageDef>DrawAgro</damageDef>
+			<damageAmountBase>6</damageAmountBase>
+			<speed>250</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="PawnFlyerBase">
+		<defName>PawnThrown</defName>
+		<thingClass>MuvLuvAnnihilation.PawnThrower</thingClass>
+		<label>charge</label>
+		<graphicData>
+			<texPath>DummyTexture</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<explosionRadius>4</explosionRadius>
+			<damageDef>DrawAgro</damageDef>
+			<damageAmountBase>6</damageAmountBase>
+			<speed>250</speed>
+		</projectile>
+		<pawnFlyer>
+			<flightDurationMin>0.5</flightDurationMin>
+			<flightSpeed>12</flightSpeed>
+			<!--flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+		  <soundLanding>JumpPackLand</soundLanding-->
+		</pawnFlyer>
+	</ThingDef>
+
+	<!-- DamageWorker_Agro -->
+
+	<DamageDef ParentName="StunBase">
+		<defName>DrawAgro</defName>
+		<label>agro</label>
+		<workerClass>DamageWorker_Agro</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stunned to death.</deathMessage>
+		<defaultDamage>20</defaultDamage>
+		<combatLogRules>Damage_Stun</combatLogRules>
+		<soundExplosion>Pawn_Melee_SmallScratch_HitPawn</soundExplosion>
+	</DamageDef>
+
+	<!-- ========================= Destroyer Class ============================= -->
+	<ThingDef ParentName="BaseBETA">
+		<defName>BETA_DestroyerClass</defName>
+		<label>destroyer</label>
+		<description>Classification: Destroyer\nScientific Name: Impestusis: Arma duras\nCommon name: "Ruitare"\nAt 16 meters tall, 18 meters long and 17 meters wide, the Destroyer-class is the second main strain used by the BETA against humanity's mechanized forces. They have extremely tough frontal armor in the form of a partial body carapace, with hardness 15 on the Mohs scale in front. Underneath that covering are two small heads.\n\nDue to that front carapace, their survivability against frontal attacks are extremely high.[11] In addition, their armor boasts a regeneration ability described as "phenomenal"; while not instantaneous, this means that a Destroyer-class left alive will someday return to the field again. The patterns on its shell are scars caused by tissue regeneration; a new Destroyer-class typically has an unblemished green front.</description>
+		<uiIconScale>1.15</uiIconScale>
+		<statBases>
+			<MoveSpeed>5</MoveSpeed>
+			<MarketValue>500</MarketValue>
+			<LeatherAmount>0</LeatherAmount>
+			<ArmorRating_Blunt>0.66</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.66</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.66</ArmorRating_Heat>
+		<Wildness>0.95</Wildness>
+		</statBases>
+		<race>
+			<body>BETADestroyer</body>
+      			<thinkTreeMain>BETA_Destroyer_ThinkTree</thinkTreeMain>
+			<baseHungerRate>0.35</baseHungerRate>
+			<baseBodySize>6</baseBodySize>
+			<baseHealthScale>7.68375</baseHealthScale>
+			<gestationPeriodDays>12</gestationPeriodDays>
+			<meatLabel>BETA meat</meatLabel>
+			<lifeExpectancy>6</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EusocialInsectAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_BigInsect_Pain</soundWounded>
+					<soundDeath>Pawn_BigInsect_Death</soundDeath>
+					<soundCall>Pawn_BigInsect_Call</soundCall>
+					<soundAngry>Pawn_BigInsect_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+		<tools>
+			<li>
+				<label>head claw</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<comps>
+			<li Class="MuvLuvAnnihilation.CompProperties_Charger">
+				<RangeMax>20</RangeMax>
+				<RangeMin>3</RangeMin>
+				<explodingRadius>3</explodingRadius>
+				<ticksBetweenChargeChance>600</ticksBetweenChargeChance>
+				<Chance>0.75</Chance>
+				<textMotes>true</textMotes>
+				<targetPawns>true</targetPawns>
+				<targetBuildings>true</targetBuildings>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>BETA_DestroyerClassCharge</defName>
+		<thingClass>MuvLuvAnnihilation.ChargingThing</thingClass>
+		<label>charge</label>
+		<graphicData>
+			<texPath>DummyTexture</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>6</damageAmountBase>
+			<speed>125</speed>
+		</projectile>
+	</ThingDef>
+
+	<!-- ========================= Fort Class ============================= -->
+	<ThingDef ParentName="BaseBETA">
+		<defName>BETA_FortClass</defName>
+		<label>fort</label>
+		<description>Classification: Fort\nScientific Name: Pergrandium: tria corpus\nCommon name: "Gravis"\n\nTowering above most things on the battlefield, the Fort-class, at 66 meters tall, 52 meters long and 37 meters wide, is the largest of the seven main strains; because of their large size, a TSF would require 120mm cannons or close-combat weapons to cut these behemoths down to size, with great care given to specifically target the sections in-between the three main segments of its body for maximum stopping power. Otherwise, the next option would be land artillery, or battleship cannons. It can attack with its ten legs, and those hits are extremely powerful; easily stabbing or bashing through a TSF with one hit.\n\nEach Fort-class also has a 50-meter long tentacle attached to its rear end, with a Mohs 15 stinger on the end which secretes an extremely strong acid; the stinger, which has been known to destroy naval warships in shallow-water combat, can be, if given the opportunity, launched as a projectile for a short distance or even swung around with a fairly high degree of control - a Fort-class is capable of accurately attacking targets to the side or even behind itself without hitting its own legs or body segments. They can also carry several smaller BETA of varying strains inside them; pilots should pay extra attention when around the corpse of a Fort-class (especially during the messy aftermaths of a large battle), as its occupants might be alive and well, waiting for a chance to strike.</description>
+		<uiIconScale>1.15</uiIconScale>
+		<statBases>
+			<MarketValue>250</MarketValue>
+			<LeatherAmount>0</LeatherAmount>
+			<ArmorRating_Blunt>1.21</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1.21</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.21</ArmorRating_Heat>
+
+		<Wildness>0.95</Wildness>
+		</statBases>
+		<race>
+			<body>BETAFort</body>
+			<baseHungerRate>0.35</baseHungerRate>
+			<baseBodySize>20</baseBodySize>
+			<baseHealthScale>20.35</baseHealthScale>
+			<gestationPeriodDays>12</gestationPeriodDays>
+			<meatLabel>BETA meat</meatLabel>
+			<lifeExpectancy>6</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EusocialInsectAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_BigInsect_Pain</soundWounded>
+					<soundDeath>Pawn_BigInsect_Death</soundDeath>
+					<soundCall>Pawn_BigInsect_Call</soundCall>
+					<soundAngry>Pawn_BigInsect_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+		<tools>
+			<li>
+				<label>head claw</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_SpawnerPawn">
+				<spawnablePawnKinds>
+					<li>BETA_GrapplerClass</li>
+				</spawnablePawnKinds>
+				<pawnSpawnIntervalDays>0.1</pawnSpawnIntervalDays>
+				<lordJob>LordJob_AssaultColony</lordJob>
+				<spawnSound>Hive_Spawn</spawnSound>
+				<initialPawnsPoints>0</initialPawnsPoints>
+				<maxSpawnedPawnsPoints>1000</maxSpawnedPawnsPoints>
+				<!--initialPawnsCount>4</initialPawnsCount-->
+			</li>
+			<li Class="MuvLuvAnnihilation.CompProperties_BETASpawnerOnDamaged">
+				<allowedKinddefs>
+					<li>BETA_SoldierClass</li>
+					<li>BETA_TankClass</li>
+					<li>BETA_GrapplerClass</li>
+					<li>BETA_HeavyLaserClass</li>
+				</allowedKinddefs>
+</li>
+		</comps>
+	</ThingDef>
+
+	<!-- ========================= Laser Class ============================= -->
+	<ThingDef ParentName="BaseBETA">
+		<defName>BETA_LaserClass</defName>
+		<label>laser</label>
+		<description>Classification: Laser\nScientific name: Luxcius: Duo oculus\nCommon name: "Lux"\n\nAt 3 meters tall, 1.2 meters long and 1.6 meters wide, the Laser-class BETA are some of the smaller anti-TSF units the BETA field, and are lightly armored enough that they can be easily taken down with heavy machine guns.[7] Their giant eyes fire lasers that are effective against targets of up to 10 kilometers high and 30 kilometers from where the Laser-class stands.\n\nWith the capability to track targets from 38 kilometers away, 12 seconds in-between each shot, and a perfect record of never hitting allied BETA strains in a crossfire, the Laser-class played an instrumental role in shutting down mankind's air superiority on the field of battle, and continues to be a deadly anti-air force to this day.</description>
+		<uiIconScale>1.1</uiIconScale>
+		<statBases>
+			<MarketValue>200</MarketValue>
+			<LeatherAmount>0</LeatherAmount>
+			<ArmorRating_Blunt>0.264</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.264</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.264</ArmorRating_Heat>
+			<ShootingAccuracyPawn>999999</ShootingAccuracyPawn>
+
+		<Wildness>0.95</Wildness>
+		</statBases>
+		<race>
+			<body>BETALaser</body>
+			<baseHungerRate>0.25</baseHungerRate>
+			<baseBodySize>1.8</baseBodySize>
+			<baseHealthScale>2.035</baseHealthScale>
+			<gestationPeriodDays>12</gestationPeriodDays>
+			<useMeatFrom>Megaspider</useMeatFrom>
+			<lifeExpectancy>6</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EusocialInsectAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Spelopede_Pain</soundWounded>
+					<soundDeath>Pawn_Spelopede_Death</soundDeath>
+					<soundCall>Pawn_Spelopede_Call</soundCall>
+					<soundAngry>Pawn_Spelopede_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+			<hediffGiverSets>
+				<li>Lux_Laser</li>
+			</hediffGiverSets>
+		</race>
+		<tools>
+			<li>
+				<label>head claw</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<comps>
+			<li Class="MuvLuvAnnihilation.CompProperties_BETAProjectileInterceptor">
+				<radius>12</radius>
+				<interceptAirProjectiles>true</interceptAirProjectiles>
+				<interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+				<color>(0.6, 0.6, 0.6)</color>
+				<reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
+				<!--activeSound>MortarShield_Ambience</activeSound-->
+				<disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
+				<chargeIntervalTicks>0</chargeIntervalTicks>
+				<chargeDurationTicks>0</chargeDurationTicks>
+				<Hediff>BETA_LaserClass_EyeBeam</Hediff>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef Name="BETALaserBaseHediff" Abstract="True">
+		<description>description</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<everCurableByItem>false</everCurableByItem>
+		<initialSeverity>0.5</initialSeverity>
+		<minSeverity>0.001</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<makesAlert>false</makesAlert>
+		<makesSickThought>false</makesSickThought>
+	</HediffDef>
+
+	<HediffDef ParentName="BETALaserBaseHediff">
+		<defName>BETA_LaserClass_EyeBeam</defName>
+		<label>Eye Laser</label>
+		<labelNoun>BETA laser attack</labelNoun>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+		<comps>
+			<li Class="MuvLuvAnnihilation.HediffCompProperties_VerbGiverBETA">
+				<verbs>
+					<li>
+						<accuracyTouch>1</accuracyTouch>
+						<accuracyShort>1</accuracyShort>
+						<accuracyMedium>1</accuracyMedium>
+						<accuracyLong>1</accuracyLong>
+						<verbClass>MuvLuvAnnihilation.Verb_LaunchProjectileCantMiss</verbClass>
+						<label>Standard</label>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>BETA_LuxLaser</defaultProjectile>
+						<warmupTime>0</warmupTime>
+						<defaultCooldownTime>6</defaultCooldownTime>
+						<range>31</range>
+						<burstShotCount>1</burstShotCount>
+						<ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+						<!--soundCast>OG_Las_Pistol_Sound</soundCast-->
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<muzzleFlashScale>14</muzzleFlashScale>
+						<targetParams>
+							<canTargetPawns>false</canTargetPawns>
+							<canTargetBuildings>true</canTargetBuildings>
+							<canTargetLocations>false</canTargetLocations>
+						</targetParams>
+					</li>
+				</verbs>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BETA_Bullet_LaserGeneric" Class="OgsLasers.LaserBeamDef">
+		<defName>BETA_LuxLaser</defName>
+		<label>laser</label>
+		<description>.</description>
+		<textures>
+			<li>Things/Projectile/BETALaser</li>
+		</textures>
+		<seam>0</seam>
+
+		<projectile>
+			<damageDef>Burn</damageDef>
+			<damageAmountBase>50</damageAmountBase>
+			<armorPenetrationBase>1.5</armorPenetrationBase>
+			<stoppingPower>1.25</stoppingPower>
+		</projectile>
+	</ThingDef>
+
+	<!-- ========================= Heavy Laser Class ============================= -->
+	<ThingDef ParentName="BaseBETA">
+		<defName>BETA_HeavyLaserClass</defName>
+		<label>heavy laser</label>
+		<description>Classification: Heavy Laser\nScientific name: Magnus Luxcius: Unioculus\nCommon name: "Magnus Lux"\n\nTowering over the Laser-class at (excluding the cooling fins) 21 meters tall, 15 meters long and 11 meters wide,[8] the Heavy Laser-class is a larger strain with firepower to match. Their large size affords them some protection against 36mm cannon fire, necessitating the use of 120mm cannons; even then, a quick kill is only possible with a direct attack on its laser-emitting "eye" when it is not closed; its only physical weakness.[8] Their giant eyes fire lasers and are effective against targets of up to a mere 500 meters high, and a spectacular range of over 100 kilometers with 36 seconds in-between shots. Likewise with the Laser-class, the Heavy Laser-class shares the distinctions of never hitting allies in the crossfire, and requiring some time for its laser to reach maximum output.</description>
+		<uiIconScale>1.15</uiIconScale>
+		<statBases>
+			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+			<MarketValue>500</MarketValue>
+			<LeatherAmount>0</LeatherAmount>
+			<ArmorRating_Blunt>0.33</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.33</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.33</ArmorRating_Heat>
+		<Wildness>0.95</Wildness>
+			<ShootingAccuracyPawn>999999</ShootingAccuracyPawn>
+		</statBases>
+		<race>
+			<body>BETAHeavyLaser</body>
+			<baseHungerRate>0.35</baseHungerRate>
+			<baseBodySize>2.6</baseBodySize>
+			<baseHealthScale>3.0525</baseHealthScale>
+			<gestationPeriodDays>12</gestationPeriodDays>
+			<meatLabel>BETA meat</meatLabel>
+			<lifeExpectancy>6</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EusocialInsectAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_BigInsect_Pain</soundWounded>
+					<soundDeath>Pawn_BigInsect_Death</soundDeath>
+					<soundCall>Pawn_BigInsect_Call</soundCall>
+					<soundAngry>Pawn_BigInsect_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+			<hediffGiverSets>
+				<li>MagnusLux_Laser</li>
+			</hediffGiverSets>
+		</race>
+		<tools>
+			<li>
+				<label>head claw</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<comps>
+			<li Class="MuvLuvAnnihilation.CompProperties_BETAProjectileInterceptor">
+				<radius>18</radius>
+				<interceptAirProjectiles>true</interceptAirProjectiles>
+				<color>(0.6, 0.6, 0.6)</color>
+				<reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
+				<!--activeSound>MortarShield_Ambience</activeSound-->
+				<disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
+				<chargeIntervalTicks>0</chargeIntervalTicks>
+				<chargeDurationTicks>0</chargeDurationTicks>
+				<Hediff>BETA_HeavyLaserClass_EyeBeam</Hediff>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef ParentName="BETALaserBaseHediff">
+		<defName>BETA_HeavyLaserClass_EyeBeam</defName>
+		<label>Heavy Eye Laser</label>
+		<labelNoun>servo arm attack</labelNoun>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+		<comps>
+			<li Class="MuvLuvAnnihilation.HediffCompProperties_VerbGiverBETA">
+				<verbs>
+					<li>
+						<accuracyTouch>1</accuracyTouch>
+						<accuracyShort>1</accuracyShort>
+						<accuracyMedium>1</accuracyMedium>
+						<accuracyLong>1</accuracyLong>
+						<verbClass>MuvLuvAnnihilation.Verb_LaunchProjectileCantMiss</verbClass>
+						<label>Standard</label>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>BETA_MagnusLuxLaser</defaultProjectile>
+						<warmupTime>0</warmupTime>
+						<defaultCooldownTime>12</defaultCooldownTime>
+						<range>42</range>
+						<burstShotCount>1</burstShotCount>
+						<ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+						<!--soundCast>OG_Las_Pistol_Sound</soundCast-->
+						<soundCastTail>GunTail_Heavy</soundCastTail>
+						<muzzleFlashScale>14</muzzleFlashScale>
+						<targetParams>
+							<canTargetPawns>false</canTargetPawns>
+							<canTargetBuildings>true</canTargetBuildings>
+							<canTargetLocations>false</canTargetLocations>
+						</targetParams>
+					</li>
+				</verbs>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BETA_Bullet_LaserGeneric" Class="OgsLasers.LaserBeamDef">
+		<defName>BETA_MagnusLuxLaser</defName>
+		<label>laser</label>
+		<description>.</description>
+		<textures>
+			<li>Things/Projectile/BETALaser</li>
+		</textures>
+		<seam>0</seam>
+
+		<projectile>
+			<explosionRadius>4</explosionRadius>
+			<damageDef>Burn</damageDef>
+			<damageAmountBase>50</damageAmountBase>
+			<armorPenetrationBase>1.5</armorPenetrationBase>
+			<stoppingPower>1.25</stoppingPower>
+		</projectile>
+	</ThingDef>
+</Defs>

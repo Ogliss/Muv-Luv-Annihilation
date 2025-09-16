@@ -1,7 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\Assemblies\OgsOld_CompTurret.dll
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\OgsOld_CompTurret\obj\Debug\OgsOld_CompTurret.csproj.AssemblyReference.cache
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\OgsOld_CompTurret\obj\Debug\OgsOld_CompTurret.AssemblyInfoInputs.cache
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\OgsOld_CompTurret\obj\Debug\OgsOld_CompTurret.AssemblyInfo.cs
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\OgsOld_CompTurret\obj\Debug\OgsOld_CompTurret.csproj.CoreCompileInputs.cache
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\OgsOld_CompTurret\obj\Debug\OgsOld_CompTurret.csproj.CopyComplete
-c:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Muv-Luv-Annihilation\OgsOld_CompTurret\obj\Debug\OgsOld_CompTurret.dll

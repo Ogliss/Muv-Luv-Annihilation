@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ApparelArmorReconBase" Name="MLB_ApparelExosuitBase" Abstract="true">
+    <defName>Apparel_ExosuitSuit</defName>
+    <label>prototype Exosuit armor</label>
+    <description>A variant of recon armor with an integrated burst rocket for short-ranged flight. Locust armor is slightly less protective than standard recon armor. Each jump consumes a burst of fuel, so the armor must be reloaded after several uses.\n\nUnlike most ultratech military units, locusts train primarily with melee weapons. They usually avoid static shootouts, preferring to jump straight into enemy fortifications and fight hand-to-hand. They do poorly in static defense or confined quarters, but excel in mixed cover or shipcracking operations.</description>
+    <statBases>
+      <JumpRange>23.9</JumpRange>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>0.70</MoveSpeed>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>MLA_TSFFabrication</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</wornGraphicPath-->
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>5</maxCharges>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>20</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>dash</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+	</comps>
+    <verbs>
+      <li>
+        <verbClass>MuvLuvAnnihilation.Verb_Dash</verbClass>
+        <defaultProjectile>PawnDasher</defaultProjectile>
+        <label>dash</label>
+        <commandIcon>UI/Icons/HostilityResponse/Flee</commandIcon>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>True</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.5</warmupTime>
+        <warmupEffecter>JumpWarmupEffect</warmupEffecter>
+        <requireLineOfSight>true</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="MLB_ApparelExosuitBase">
+    <defName>Apparel_ExosuitSuitMG</defName>
+    <label>Exosuit Minigun</label>
+    <description>A variant of Exosuit armor with an integrated Minigun.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <apparel>
+      <!--wornGraphicPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</wornGraphicPath-->
+      <wornGraphicPath></wornGraphicPath>
+    </apparel>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <comps>
+	  <li Class="OgsOld_CompTurret.CompProperties_Turret"> 
+        <projectileOffset>1.5</projectileOffset>
+        <maxCharges>750</maxCharges>
+        <ammoDef>Ammo_TSF_Minigun</ammoDef>
+        <ammoCountPerCharge>0.04</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <messageHalfRemaningWarning>TSF_LowAmmoMsg</messageHalfRemaningWarning>
+        <messageQuaterRemaningWarning>TSF_LowAmmoMsg</messageQuaterRemaningWarning>
+        <messageEmptyWarning>TSF_NoAmmoMsg</messageEmptyWarning>
+        <chargeNoun>minigun</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<TurretDef>MLB_TSF_TurretMinigun</TurretDef>
+		<iconPath>Things/Item/Equipment/WeaponRanged/Minigun</iconPath>
+		<gizmoID>1</gizmoID>
+        <hotKey>Misc4</hotKey>
+		<offsetNorth>0,-2.0,1.75</offsetNorth>
+		<offsetSouth>0,-0.0,1.65</offsetSouth>
+		<offsetEast>0,-2.0,1.65</offsetEast>
+		<offsetWest>0,0.0,1.65</offsetWest>
+	  </li>
+	  
+		  <li Class="MuvLuvAnnihilation.CompProperties_ExosuitDrawer">
+				<ExtrasEntries>
+					<li>
+						<UseBodytypeOffsets>True</UseBodytypeOffsets>
+						<shaderType>CutoutComplex</shaderType>
+						<extraTexPath>Things/Pawn/Humanlike/Apparel/LocustArmor/LocustArmor</extraTexPath>
+						<commonality>10</commonality>
+						<drawSize>2,2</drawSize>
+						<hidesHair>True</hidesHair>
+						<hidesHead>True</hidesHead>
+						<hidesBody>True</hidesBody>
+					</li>
+				</ExtrasEntries>
+				<NorthOffset>0,-0.0,0</NorthOffset>
+				<SouthOffset>0,0.0,0</SouthOffset>
+				<EastOffset>0,-0.0,0</EastOffset>
+				<WestOffset>0,0.0,0</WestOffset>
+		  </li>
+	</comps>
+  </ThingDef>
+
+
+</Defs>

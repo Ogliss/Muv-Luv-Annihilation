@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>BETA_RefuelChargingStation</defName>
+    <driverClass>MuvLuvAnnihilation.JobDriver_RefuelChargingStation</driverClass>
+    <reportString>refueling TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>BETA_RefuelAtomicChargingStation</defName>
+    <driverClass>MuvLuvAnnihilation.JobDriver_RefuelChargingStationAtomic</driverClass>
+    <reportString>refueling TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>BETA_Ingest</defName>
+    <driverClass>MuvLuvAnnihilation.JobDriver_IngestMonster</driverClass>
+    <reportString>consuming TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+</Defs>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>PawnDasher</defName>
+    <thingClass>MuvLuvAnnihilation.PawnDasher</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>0.5</flightDurationMin>
+      <flightSpeed>12</flightSpeed>
+    </pawnFlyer>
+  </ThingDef>
+
+</Defs>

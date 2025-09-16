@@ -4,7 +4,8 @@
 	<author>Ogliss</author>
 	<supportedVersions>
 		<li>1.5</li>
-	</supportedVersions>
+	        <li>1.6</li>
+    </supportedVersions>
    <packageId>Ogliss.MuvLuvBeta</packageId>
 	<description>
 	this mod adds the BETA's to the rim, a hostile bioweapon from the Muv-Luv universe.

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef Name="BETABaseKind" Abstract="True">
+    <defaultFactionDef>MuvLuv_BETA</defaultFactionDef>
+    <aiAvoidCover>true</aiAvoidCover>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+  </PawnKindDef>
+
+  <!-- ========================= Soldier Class ============================= -->
+  <PawnKindDef ParentName="BETABaseKind">
+    <defName>BETA_SoldierClass</defName>
+    <label>soldier class</label>
+    <race>BETA_SoldierClass</race>
+    <combatPower>70</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.35</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ToolUser/BETA/Soldier</texPath>
+          <drawSize>2</drawSize>
+          <color>(156,148,125)</color>
+          <shadowData>
+            <volume>(0.4, 0.5, 0.37)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <!-- ========================= Warrior Class ============================= -->
+  <PawnKindDef ParentName="BETABaseKind">
+    <defName>BETA_WarriorClass</defName>
+    <label>warrior class</label>
+    <race>BETA_WarriorClass</race>
+    <combatPower>100</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.35</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ToolUser/BETA/Warrior</texPath>
+          <drawSize>2.0</drawSize>
+          <color>(156,148,125)</color>
+          <shadowData>
+            <volume>(0.4, 0.5, 0.37)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <!-- ========================= Tank Class ============================= -->
+  <PawnKindDef ParentName="BETABaseKind">
+    <defName>BETA_TankClass</defName>
+    <label>tank class</label>
+    <race>BETA_TankClass</race>
+    <combatPower>150</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.35</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ToolUser/BETA/Tank</texPath>
+          <drawSize>2.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.5, 0.37)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <!-- ========================= Grappler Class ============================= -->
+  <PawnKindDef ParentName="BETABaseKind">
+    <defName>BETA_GrapplerClass</defName>
+    <label>grappler class</label>
+    <race>BETA_GrapplerClass</race>
+    <combatPower>200</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.50</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ToolUser/BETA/Grappler</texPath>
+          <drawSize>4.5</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+          <!--color>(154,125,94)</color>
+          <colorTwo>(80,0,80)</colorTwo-->
+          <shadowData>
+            <volume>(0.5, 0.7, 0.43)</volume>
+            <offset>(0,0,-0.1)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ========================= Destroyer Class ============================= -->
+  <PawnKindDef ParentName="BETABaseKind">
+    <defName>BETA_DestroyerClass</defName>
+    <label>destroyer class</label>
+    <race>BETA_DestroyerClass</race>
+    <combatPower>300</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.50</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ToolUser/BETA/Destroyer</texPath>
+          <drawSize>5</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+          <color>(154,125,94)</color>
+          <colorTwo>(80,0,80)</colorTwo>
+          <shadowData>
+            <volume>(0.5, 0.7, 01.43)</volume>
+            <offset>(0,0,-0.1)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <!-- ========================= Fort Class ============================= -->
+  <PawnKindDef ParentName="BETABaseKind">
+    <defName>BETA_FortClass</defName>
+    <label>fort class</label>
+    <race>BETA_FortClass</race>
+    <combatPower>500</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.50</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ToolUser/BETA/Fort</texPath>
+          <drawSize>12</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+          <color>(154,125,94)</color>
+          <colorTwo>(80,0,80)</colorTwo>
+          <shadowData>
+            <volume>(0.5, 0.7, 0.43)</volume>
+            <offset>(0,0,-0.1)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- ========================= Laser Class ============================= -->
+  <PawnKindDef ParentName="BETABaseKind">
+    <defName>BETA_LaserClass</defName>
+    <label>laser class</label>
+    <race>BETA_LaserClass</race>
+    <combatPower>100</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.35</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ToolUser/BETA/Laser</texPath>
+          <drawSize>2.65</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+          <color>(186,223,186)</color>
+          <colorTwo>(118,54,94)</colorTwo>
+          <shadowData>
+            <volume>(0.4, 0.5, 0.37)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <!-- ========================= Heavy Laser Class ============================= -->
+  <PawnKindDef ParentName="BETABaseKind">
+    <defName>BETA_HeavyLaserClass</defName>
+    <label>heavy laser class</label>
+    <race>BETA_HeavyLaserClass</race>
+    <combatPower>150</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.50</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/ToolUser/BETA/HeavyLaser</texPath>
+          <drawSize>5</drawSize>
+          <color>(154,125,94)</color>
+          <shadowData>
+            <volume>(0.5, 0.7, 0.43)</volume>
+            <offset>(0,0,-0.1)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

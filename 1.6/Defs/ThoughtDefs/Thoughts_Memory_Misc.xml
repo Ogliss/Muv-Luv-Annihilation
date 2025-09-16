@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>BETA_WearingMech</defName>
+    <workerClass>MuvLuvAnnihilation.ThoughtWorker_WearingMech</workerClass>
+    <stages>
+      <li>
+        <label>Wearing mech suit</label>
+        <description>Wearing mech suit</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+    <ThoughtDef>
+    <defName>BETA_EatingInMech</defName>
+    <workerClass>MuvLuvAnnihilation.ThoughtWorker_EatingInMech</workerClass>
+    <stages>
+      <li>
+        <label>Eating in mech suit</label>
+        <description>Eating in mech suit</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+    <ThoughtDef>
+    <defName>BETA_SleepingInMech</defName>
+    <workerClass>MuvLuvAnnihilation.ThoughtWorker_SleepingInMech</workerClass>
+    <stages>
+      <li>
+        <label>Sleeping in mech suit</label>
+        <description>Sleeping in mech suit</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

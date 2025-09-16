@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--========= General ============-->
+
+  <JobDef>
+		<defName>CompTurretReload</defName>
+		<driverClass>CompTurret.JobDriver_ReloadCompTurret</driverClass>
+		<reportString>reloading.</reportString>
+	</JobDef>
+</Defs>

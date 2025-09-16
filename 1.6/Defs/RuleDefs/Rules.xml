@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--
+  <RuleDef>
+    <defName>BETABase</defName>
+    <symbol>BETABase</symbol>
+    <resolvers>
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_Hivebase" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>HiveMountMaker</defName>
+    <symbol>HiveMountMaker</symbol>
+    <resolvers>
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_HiveBaseMoundMaker" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>HiveClearChamber</defName>
+    <symbol>HiveClearChamber</symbol>
+    <resolvers>
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_ClearChamber" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>HiveInterals</defName>
+    <symbol>HiveInterals</symbol>
+    <resolvers>
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_HiveInternals" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>BETABaseLightning</defName>
+    <symbol>BETABaseLightning</symbol>
+    <resolvers>
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_OutdoorLightingHivebase" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>BETABaseRCorpse</defName>
+    <symbol>BETABaseRCorpse</symbol>
+    <resolvers>
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_RandomCorpse" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>BETABaseRDamage</defName>
+    <symbol>BETABaseRDamage</symbol>
+    <resolvers>
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_RandomDamage" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>BETARandHives</defName>
+    <symbol>BETARandHives</symbol>
+    <resolvers>
+      <li Class="OgsOld_ExtraHives.GenStuff.SymbolResolver_RandomHives" />
+    </resolvers>
+  </RuleDef>
+-->
+</Defs>

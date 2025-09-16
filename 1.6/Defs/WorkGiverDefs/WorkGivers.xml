@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkGiverDef>
+    <defName>MLB_RefuelChargingStations</defName>
+    <label>refuel charging stations</label>
+    <giverClass>MuvLuvAnnihilation.WorkGiver_RefuelChargingStation</giverClass>
+    <workType>Hauling</workType>
+    <verb>refuel charging station</verb>
+    <gerund>refueling charging station</gerund>
+    <priorityInType>145</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>MLB_HaulMechSuits</defName>
+    <label>haul mech suits to station</label>
+    <giverClass>MuvLuvAnnihilation.WorkGiver_HaulMechSuits</giverClass>
+    <workType>Hauling</workType>
+    <verb>haul mech suits to station</verb>
+    <gerund>hauling mech suits to station</gerund>
+    <priorityInType>146</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+
+</Defs>
