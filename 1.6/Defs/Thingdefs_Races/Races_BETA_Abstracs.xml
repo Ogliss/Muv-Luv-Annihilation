@@ -67,6 +67,7 @@
       <PainShockThreshold>0.9999</PainShockThreshold>
       <PsychicSensitivity>2</PsychicSensitivity>
       <ToxicResistance>0</ToxicResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
       <MoveSpeed>4.50</MoveSpeed>
       <ComfyTemperatureMin>-250</ComfyTemperatureMin>
       <ComfyTemperatureMax>1700</ComfyTemperatureMax>
