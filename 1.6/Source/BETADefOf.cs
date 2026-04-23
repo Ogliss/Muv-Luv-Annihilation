@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,14 +37,10 @@ namespace MuvLuvAnnihilation
 
 		public static JobDef BETA_RefuelAtomicChargingStation;
 
-		public static ThingDef MLB_ChargingStation;
-
 		public static JobDef BETA_Ingest;
 
 		public static EffecterDef JumpFlightEffect;
 		public static SoundDef JumpPackLand, EnergyShield_Broken;
-
-
 
     }
 }

@@ -36,7 +36,7 @@ namespace AnimatedProjectile
 		}
 
 		// Token: 0x06000006 RID: 6 RVA: 0x00002120 File Offset: 0x00000320
-		protected override void Tick()
+		public override void Tick()
 		{
 			base.Tick();
 			this.pos = base.Position;
@@ -200,7 +200,7 @@ namespace AnimatedProjectile
 			}
 		}
 
-        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             bool drawGlow = base.Props.drawGlow;
             if (drawGlow)

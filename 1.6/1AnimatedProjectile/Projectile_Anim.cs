@@ -71,7 +71,7 @@ namespace AnimatedProjectile
 		}
 
 		// Token: 0x0600001D RID: 29 RVA: 0x00002B74 File Offset: 0x00000D74
-		protected override void Tick()
+		public override void Tick()
 		{
 			this.age++;
 			base.Tick();
@@ -153,7 +153,7 @@ namespace AnimatedProjectile
 			}
 		}
 
-        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             Mesh mesh = MeshPool.GridPlane(this.def.graphicData.drawSize * this.Drawsize);
             Graphics.DrawMesh(mesh, this.DrawPos, this.ExactRotation, this.Graphic.MatSingle, 0);

@@ -1,9 +1,10 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 using Verse.AI;
 
 namespace MuvLuvAnnihilation
 {
+	/*
 	public class WorkGiver_RefuelChargingStation : WorkGiver_Scanner
 	{
 		public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(BETADefOf.MLB_ChargingStation);
@@ -34,4 +35,5 @@ namespace MuvLuvAnnihilation
 			return job;
 		}
 	}
+	*/
 }

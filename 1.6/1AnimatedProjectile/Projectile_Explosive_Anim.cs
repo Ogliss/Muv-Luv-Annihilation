@@ -20,7 +20,7 @@ namespace AnimatedProjectile
 		}
 
 		// Token: 0x06000010 RID: 16 RVA: 0x00002888 File Offset: 0x00000A88
-		protected override void Tick()
+		public override void Tick()
 		{
 			base.Tick();
 			bool flag = this.def.graphicData.graphicClass == typeof(Graphic_Flicker);
@@ -77,7 +77,7 @@ namespace AnimatedProjectile
 			}
 		}
 
-        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             Mesh mesh = MeshPool.GridPlane(this.def.graphicData.drawSize);
             Graphics.DrawMesh(mesh, this.DrawPos, this.ExactRotation, this.Graphic.MatSingle, 0);

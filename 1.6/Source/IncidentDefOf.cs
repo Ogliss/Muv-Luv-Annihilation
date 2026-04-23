@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,5 @@ namespace MuvLuvAnnihilation
 
 		public static IncidentDef BETAInfestationInterior;
 		public static IncidentDef BETAInfestationExterior;
-		public static IncidentDef BETAShipPartCrash;
-		public static IncidentDef BETAMonumentCrash;
 	}
 }
